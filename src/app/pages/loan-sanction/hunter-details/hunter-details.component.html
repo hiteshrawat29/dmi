@@ -1,0 +1,192 @@
+<app-senction-side-bar></app-senction-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+        <!--Hunter start-->
+			<div class="tab-pane first-tab active" id="Hunter_Section">
+        <form [formGroup]="hunter_form" (ngSubmit)="onSubmit25()" >						
+      <div class="box box-default my_inner_box">
+        <div class="box-body wizard-content">
+        <div class="tab-content">
+          <div class="first_blk_line form-element">
+            <h4 class="inte-box-title"><strong>Hunter Section</strong></h4>	
+             
+
+            <div class="form-row">	
+              <div class="form-group col-6 col-md-6 col-xl-4 align-self-end">														
+                  <a class="underline_txt" href="javascript:void(0);">Generate Hunter Link</a>										
+              </div>
+              
+              <div class="form-group col-6 col-md-6 col-xl-4 align-self-end">														
+                  <a class="underline_txt" href="javascript:void(0);">Fetch Hunter Data Link</a>										
+              </div>
+              
+              <div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+                  <mat-form-field class="max-width-120">
+                      <mat-label>Hunter Result  <span class="txt-red">*</span>
+                      </mat-label>
+                      <mat-select [(value)]="LS_Hu_Hunter_Result" id="LS_Hu_Hunter_Result" [ngClass]="{ 'is-invalid': submitted25 && hunter_control.LS_Hu_Hunter_Result.errors }" type="text" formControlName="LS_Hu_Hunter_Result"  autocomplete="off" >
+                        <mat-option value="Match">Match</mat-option>
+                        <mat-option value="No Match">No Match</mat-option>
+                        <mat-option value="Match">Error</mat-option>
+                       
+                      </mat-select>
+                      </mat-form-field>
+                      
+                      <span *ngIf="submitted25 && hunter_control.LS_Hu_Hunter_Result.errors" class="error">
+                        <span *ngIf="hunter_control.LS_Hu_Hunter_Result.errors.required">{{ requireerror }}</span>
+                    </span>
+                   
+                      
+                   
+              </div>
+            </div>							
+             
+            
+            <!--Error blk start-->
+            <div id="Error" class="show_blk" >
+
+              
+
+                 <div class="form-row">
+                <div class="form-group col-6 col-md-6 col-xl-4">
+
+                    <mat-form-field class="max-width-165 date-fields">
+                        <input matInput [matDatepicker]="LS_Hu_Task_Assigned_Date" placeholder="Task Assigned Date" [ngClass]="{ 'is-invalid': submitted25 && hunter_control.LS_Hu_Task_Assigned_Date.errors }" formControlName="LS_Hu_Task_Assigned_Date" id="LS_Hu_Task_Assigned_Date" readonly required>
+                        <mat-datepicker-toggle matSuffix [for]="LS_Hu_Task_Assigned_Date"></mat-datepicker-toggle>
+                        <mat-datepicker #LS_Hu_Task_Assigned_Date></mat-datepicker>
+                      </mat-form-field>
+                      <span *ngIf="submitted25 && hunter_control.LS_Hu_Task_Assigned_Date.errors" class="error">
+                          <span *ngIf="hunter_control.LS_Hu_Task_Assigned_Date.errors.required">{{ requireerror }}</span>
+                      </span>
+                       
+
+
+                 
+                </div>
+                
+                <div class="form-group col-6 col-md-6 col-xl-4">
+
+                    <mat-form-field class="max-width-165 date-fields">
+                        <input matInput [matDatepicker]="LS_Hu_Task_Closure_Date" placeholder="Task Closure Date" [ngClass]="{ 'is-invalid': submitted25 && hunter_control.LS_Hu_Task_Closure_Date.errors }" formControlName="LS_Hu_Task_Closure_Date" id="LS_Hu_Task_Closure_Date" readonly required>
+                        <mat-datepicker-toggle matSuffix [for]="LS_Hu_Task_Closure_Date"></mat-datepicker-toggle>
+                        <mat-datepicker #LS_Hu_Task_Closure_Date></mat-datepicker>
+                      </mat-form-field>
+                      <span *ngIf="submitted25 && hunter_control.LS_Hu_Task_Closure_Date.errors" class="error">
+                          <span *ngIf="hunter_control.LS_Hu_Task_Closure_Date.errors.required">{{ requireerror }}</span>
+                      </span>	
+                     
+
+                                     
+                </div>
+                
+                <div class="form-group col-6 col-md-6 col-xl-4">
+                    <mat-form-field>
+                        <mat-label>Hunter Final Status <span class="txt-red">*</span> </mat-label>
+                        <mat-select [(value)]="LS__Hu_Hunter_Final_Status" id="LS__Hu_Hunter_Final_Status" [ngClass]="{ 'is-invalid': submitted25 && hunter_control.LS__Hu_Hunter_Final_Status.errors }" type="text" formControlName="LS__Hu_Hunter_Final_Status"  autocomplete="off"  >
+                          <mat-option>None</mat-option>
+                          <mat-option value="Clear">Clear</mat-option>
+                          <mat-option value="Not Started">Not Started</mat-option>
+                          <mat-option value="Declined">Declined</mat-option>
+                          <mat-option value="Under Investigation">Under Investigation</mat-option>
+                          <mat-option value="ITR">ITR</mat-option>
+                          <mat-option value="Form 16">Form 16 (Status Automatic from vendor)</mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                        <span *ngIf="submitted25 && hunter_control.LS__Hu_Hunter_Final_Status.errors" class="error">
+                          <span *ngIf="hunter_control.LS__Hu_Hunter_Final_Status.errors.required">{{ requireerror }}</span>
+                      </span>
+                        
+                        
+                        
+                   
+                </div>
+                <div class="form-group col-6 col-md-6 col-xl-4">
+                  <mat-form-field>
+                    <textarea matInput specialIsAlphaNumeric placeholder="Remarks" id="LS__Hu_Hunter_Final_Remarks" [ngClass]="{ 'is-invalid': submitted25 && hunter_control.LS__Hu_Hunter_Final_Remarks.errors }" type="text" formControlName="LS__Hu_Hunter_Final_Remarks"  autocomplete="off" required ></textarea>
+                    </mat-form-field>
+                    <span *ngIf="submitted25 && hunter_control.LS__Hu_Hunter_Final_Remarks.errors" class="error">
+                      <span *ngIf="hunter_control.LS__Hu_Hunter_Final_Remarks.errors.required">{{ requireerror }}</span>
+                  </span>
+
+                </div>
+                
+                
+
+              </div> 
+              <div class="form-row">
+
+                  <div class="col-12 col-md-12 col-xl-12 mt-4">
+                      <div class="add_button_blk text-left">
+                        <button class="btn btn-primary">Hunter Declined Approved By Fraud</button>
+                      </div>
+                    </div>
+
+                                 
+              </div>
+            </div>
+
+            
+              
+              
+            
+            <!--Error blk end-->
+            
+            
+            
+            
+            <!--Justification Remarks popup start 
+            <form id="Hunter_Declined_Approved_popup" class="mybasicform_blk my_popup_blk tab-content white-popup-block mfp-hide">										
+              <div class="first_blk_line form-element">
+              <h4>Justification <span>Remarks</span></h4>									
+              <div class="form-row">									
+                <div class="form-group col-12 col-md-12 col-xl-12">
+                  <textarea class="address_field address_field_big form-control effect-16" id="Hun_Justification_Remark" placeholder=""></textarea>
+                  <label for="Hun_Justification_Remark">Remarks</label>
+                </div>
+              </div>		
+                
+              <div class="form-row">
+                <div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+                  <button type="button" class="btn btn-rounded btn-primary">Save</button>
+                </div>													
+              </div>
+              </div>
+            </form>
+            ustification Remarks popup end-->
+            
+            <!--Declined blk end-->
+          
+            
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="tab-button text-center" >
+          <button class=" btn btn-lg btn-primary mx-1"><span>Save & Continue</span>  <i class="ti-angle-double-right"></i></button>
+        </div>
+
+    </form>
+
+    </div>
+    <!--Hunter end-->
+					
+          
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

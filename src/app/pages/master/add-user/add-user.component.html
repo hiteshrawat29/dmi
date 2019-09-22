@@ -1,0 +1,332 @@
+<app-master-sidebar></app-master-sidebar>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<!--- new add rolle -->
+			<div class="col-md-12">
+				<div class="content-header">
+					<div class="align-items-center">
+						<div class="mr-auto">
+							<h3 class="page-title">User Management</h3>
+							<div class="d-inline-block align-items-center">
+								<nav>
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a>
+										</li>
+										<li class="breadcrumb-item" aria-current="page">User Management</li>
+										<li class="breadcrumb-item active" aria-current="page">Add User</li>
+									</ol>
+								</nav>
+							</div>
+							<div class="pull-right">
+								<button routerLink="/master/manage_user" class="btn btn-rounded btn-info mb-5 ncust-btn">Manage User</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-12">
+					<!-- Basic Forms -->
+					<div class="box">
+						<h4 class="box-title">Add New User</h4> 
+						<!-- /.box-header -->
+						<form [formGroup]="add_user" (ngSubmit)="onSubmituser()">
+							<div class="box-body">
+								<div class="first_blk_line form-element">
+									<div class="form-row">
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<mat-label>User Type</mat-label>
+												<mat-select #add_user_Assign_Role value="Role 1" id="add_user_user_type" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_user_user_type.errors }" formControlName="add_user_user_type" autocomplete="off">
+													<mat-option value="Role 1">RM</mat-option>
+													<mat-option value="Role 1">LO</mat-option>
+													<mat-option value="Role 1">CO</mat-option>
+													<mat-option value="Role 1">DSA</mat-option>
+													<mat-option value="Role 1">Employee</mat-option>
+												</mat-select>
+											</mat-form-field> <span *ngIf="submitteduser && add_user_control.add_user_user_type.errors" class="error">
+                                <span *ngIf="add_user_control.add_user_user_type.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<mat-label>User Name</mat-label>
+												<mat-select placeholder="Bank" #singleSelect id="add_user_name" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_user_name.errors }" formControlName="add_user_name" autocomplete="off">
+													 
+													<mat-option  value="Role 1">EMP 001</mat-option>
+													<mat-option  value="Role 1">EMP 002</mat-option>
+												</mat-select>
+											</mat-form-field> <span *ngIf="submitteduser && add_user_control.add_user_name.errors" class="error">
+                                  <span *ngIf="add_user_control.add_user_name.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<mat-label>User Role</mat-label>
+												<mat-select placeholder="Bank" #singleSelect id="add_user_role" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_user_role.errors }" formControlName="add_user_role" autocomplete="off">
+												 
+													<mat-option value="Role 1">Role 001</mat-option>
+													<mat-option value="Role 1">Role 002</mat-option>
+												</mat-select>
+											</mat-form-field> <span *ngIf="submitteduser && add_user_control.add_user_role.errors" class="error">
+                                    <span *ngIf="add_user_control.add_user_role.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<mat-label>Branch</mat-label>
+												<mat-select placeholder="Bank" #singleSelect id="add_user_branch" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_user_branch.errors }" formControlName="add_user_branch" autocomplete="off" multiple>
+												 
+													<mat-option value="Role 1">Branch 1</mat-option>
+													<mat-option value="Role 1">Branch 2</mat-option>
+												</mat-select>
+											</mat-form-field> <span *ngIf="submitteduser && add_user_control.add_user_branch.errors" class="error">
+                                      <span *ngIf="add_user_control.add_user_branch.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput type="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_userPassword.errors }" formControlName="add_userPassword" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submitteduser && add_user_control.add_userPassword.errors" class="error">
+                                            <span *ngIf="add_user_control.add_userPassword.errors.required">{{ requireerror }}</span>
+											<span *ngIf="add_user_control.add_userPassword.errors.minlength">{{ minpass }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput type="password" placeholder="Confirm password" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_usercnfPassword.errors }" formControlName="add_usercnfPassword" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submitteduser && add_user_control.add_usercnfPassword.errors" class="error">
+                                            <span *ngIf="add_user_control.add_usercnfPassword.errors.required">{{ requireerror }}</span>
+											<span *ngIf="add_user_control.add_usercnfPassword.errors.minlength">{{ minpass }}</span>
+											</span>
+										</div>
+										<div class="clear"></div>
+										<div class="col-md-12">
+											<h4 class="inte-box-title1"><strong>User Permissions</strong></h4>
+										</div>
+										<div class="col-md-12">
+                        <div class="permission-table">
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Approve Document Check List</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Approve_Underwriter.errors }" formControlName="Can_Approve_Document_Check_List" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Recommend/Approve (Underwriter)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Approve_Underwriter.errors }" formControlName="Approve_Underwriter" autocomplete="off">Approve</mat-checkbox>
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Recommend_Underwriter.errors }" formControlName="Recommend_Underwriter" autocomplete="off">Recommend</mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Min Loan Amount Recommend(Underwriter)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-form-field class="max-width-150" appearance="legacy">
+														<input matInput [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Min_Loan_Amount_Recommend_Underwriter.errors }" formControlName="Min_Loan_Amount_Recommend_Underwriter" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="col-md-4">
+													<p>Max Loan Amount Recommend(Underwriter)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-form-field class="max-width-150" appearance="legacy">
+														<input matInput [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Max_Loan_Amount_Recommend_Underwriter.errors }" formControlName="Max_Loan_Amount_Recommend_Underwriter" autocomplete="off">
+													</mat-form-field>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Approve Dedupe Verification</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Dedupe_Verification.errors }" formControlName="Can_Approve_Dedupe_Verification" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Approve Manual Payment Advice</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Manual_Payment_Advice.errors }" formControlName="Can_Approve_Manual_Payment_Advice" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Cancel Sanction Letter</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Cancel_Sanction_Letter.errors }" formControlName="Can_Cancel_Sanction_Letter" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Approve Loan Reschedulement</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Loan_Reschedulement.errors }" formControlName="Can_Approve_Loan_Reschedulement" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Approve Lan Foreclosure</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Lan_Foreclosure.errors }" formControlName="Can_Approve_Lan_Foreclosure" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Approve Loan Requirement</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Loan_Requirement.errors }" formControlName="Can_Approve_Loan_Requirement" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Approve Charge Waiver</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Charge_Waiver.errors }" formControlName="Can_Approve_Charge_Waiver" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Approved Sale Channel</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approved_Sale_Channel.errors }" formControlName="Can_Approved_Sale_Channel" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Recommend/Approve (Meno)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Approve_Meno.errors }" formControlName="Approve_Meno" autocomplete="off">Approve</mat-checkbox>
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Recommend_Meno.errors }" formControlName="Recommend_Meno" autocomplete="off">Recommend</mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Edit Free After Sanction</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Edit_Free_After_Sanction.errors }" formControlName="Can_Edit_Free_After_Sanction" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Min Loan Amount Recommend (Memo)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-form-field class="max-width-150" appearance="legacy">
+														<input matInput [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Min_Loan_Amount_Recommend_Memo.errors }" formControlName="Min_Loan_Amount_Recommend_Memo" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="col-md-4">
+													<p>Max Loan Amount Recommend (Memo)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-form-field class="max-width-150" appearance="legacy">
+														<input matInput [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Max_Loan_Amount_Recommend_Memo.errors }" formControlName="Max_Loan_Amount_Recommend_Memo" autocomplete="off">
+													</mat-form-field>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Min Loan Amount Approve (Memo)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-form-field class="max-width-150" appearance="legacy">
+														<input matInput [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Min_Loan_Amount_Approve_Memo.errors }" formControlName="Min_Loan_Amount_Approve_Memo" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="col-md-4">
+													<p>Max Loan Amount Approve (Memo)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-form-field class="max-width-150" appearance="legacy">
+														<input matInput [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Max_Loan_Amount_Approve_Memo.errors }" formControlName="Max_Loan_Amount_Approve_Memo" autocomplete="off">
+													</mat-form-field>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Open Technical Verfical</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Open_Technical_Verfical.errors }" formControlName="Can_Open_Technical_Verfical" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Export Certificate in All Format</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Export_Certificate_in_All_Format.errors }" formControlName="Can_Export_Certificate_in_All_Format" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can View Pending Cases Technical</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_View_Pending_Cases_Technical.errors }" formControlName="Can_View_Pending_Cases_Technical" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Approve Technical Valuation</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Approve_Technical_Valuation.errors }" formControlName="Can_Approve_Technical_Valuation" autocomplete="off"></mat-checkbox>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-md-4">
+													<p>Can Transfer Fee (In File Report)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Transfer_Fee_In_File_Report.errors }" formControlName="Can_Transfer_Fee_In_File_Report" autocomplete="off"></mat-checkbox>
+												</div>
+												<div class="col-md-4">
+													<p>Can Send SMS (In File Report)</p>
+												</div>
+												<div class="col-md-2">
+													<mat-checkbox [ngClass]="{ 'is-invalid': submitteduser && add_user_control.Can_Send_SMS_In_File_Reports.errors }" formControlName="Can_Send_SMS_In_File_Report" autocomplete="off"></mat-checkbox>
+												</div>
+                      </div>
+                    </div>
+										</div>
+										<div class="col-md-12">
+											<h4 class="inte-box-title1"><strong>User status</strong></h4>
+										</div>
+										<div class="clear"></div>
+										<!-- radio -->
+										<div class="form-group col-12 col-md-12 col-xl-12">
+											<div class="form-group">
+												<label>Status</label>
+												<mat-radio-group aria-label="Select an option" id="add_user_Status" [ngClass]="{ 'is-invalid': submitteduser && add_user_control.add_user_Status.errors }" formControlName="add_user_Status" autocomplete="off">
+													<mat-radio-button value="Active" selected>Active</mat-radio-button>
+													<br/>
+													<mat-radio-button value="In-Active">In-Active</mat-radio-button>
+												</mat-radio-group>
+											</div>
+										</div>
+									</div>
+									<!-- form-row -->
+								</div>
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-danger">Cancel</button>
+							 
+								<a routerLink="/master/manage_permission" class="btn btn-success pull-right">Create & Assign Permission</a>
+
+							</div>
+						</form>
+					</div>
+					<!-- /.box -->
+				</div>
+			</div>
+			<!---col-md-12 -->
+			<!--- new add rolle ended -->
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

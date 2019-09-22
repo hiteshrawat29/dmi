@@ -1,0 +1,199 @@
+<app-master-sidebar></app-master-sidebar>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<!--- new add rolle -->
+			<div class="col-md-12">
+				<div class="content-header">
+					<div class="align-items-center">
+						<div class="mr-auto">
+							<h3 class="page-title">Branch Management</h3>
+							<div class="d-inline-block align-items-center">
+								<nav>
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a>
+										</li>
+										<li class="breadcrumb-item" aria-current="page">Branch Management</li>
+										<li class="breadcrumb-item active" aria-current="page">Add branch</li>
+									</ol>
+								</nav>
+							</div>
+							<div class="pull-right">
+								<button routerLink="/master/manage_branch" class="btn btn-rounded btn-info mb-5 ncust-btn">Manage branch</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8 col-12 offset-md-2">
+					<!-- Basic Forms -->
+					<div class="box">
+						<h4 class="box-title">Add New branch</h4> 
+						<!-- /.box-header -->
+						<form [formGroup]="add_branch" (ngSubmit)="onSubmitbranch()">
+							<div class="box-body">
+								<div class="first_blk_line form-element">
+									<div class="form-row">
+										<!--<div class="form-group col-md-6">
+                                                      <input type="text" class="form-control effect-16" autocomplete="off" id="addUserid">
+                                                      <label for="addUserid">User Id <span class="txt-red">*</span></label>
+                                                  </div>-->
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<input matInput specialIsAlphaNumeric placeholder="Branch Name" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Branch_Name.errors }" formControlName="add_branch_Branch_Name" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submittedbranch && add_branch_control.add_branch_Branch_Name.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_Branch_Name.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<div>
+												<mat-form-field>
+													<mat-label>Region</mat-label>
+													<mat-select #add_branch_Region id="add_branch_Region" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Region.errors }" formControlName="add_branch_Region" autocomplete="off">
+														<mat-option value="Agency 1">Region 1</mat-option>
+														<mat-option value="Agency 2">Region 2</mat-option>
+													</mat-select>
+												</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Region.errors" class="error">
+                                  <span *ngIf="add_branch_control.add_branch_Region.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										<div class="form-group col-md-4">
+											<div>
+												<mat-form-field>
+													<mat-label>Branch Incharge Name</mat-label>
+													<mat-select #add_branchRegion_Name id="add_branch_Branch_Incharge_Name" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Branch_Incharge_Name.errors }" formControlName="add_branch_Branch_Incharge_Name" autocomplete="off">
+														<mat-option value="Agency 1">Region 1</mat-option>
+														<mat-option value="Agency 2">Region 2</mat-option>
+													</mat-select>
+												</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Branch_Incharge_Name.errors" class="error">
+                                  <span *ngIf="add_branch_control.add_branch_Branch_Incharge_Name.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<input matInput placeholder="Branch Incharge Email " [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Branch_Incharge_Email.errors }" formControlName="add_branch_Branch_Incharge_Email" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submittedbranch && add_branch_control.add_branch_Branch_Incharge_Email.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_Branch_Incharge_Email.errors.required">{{ requireerror }}</span>
+											<span *ngIf="add_branch_control.add_branch_Branch_Incharge_Email.errors.email">{{ emailerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<input matInput numbersOnly placeholder="Telephone No " [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Telephone_No.errors }" formControlName="add_branch_Telephone_No" autocomplete="off" required maxlength="11">
+											</mat-form-field>	<span *ngIf="submittedbranch && add_branch_control.add_branch_Telephone_No.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_Telephone_No.errors.required">{{ requireerror }}</span>
+											<span *ngIf="add_branch_control.add_branch_Telephone_No.errors.minlength">{{ minerror }}</span>
+											</span>
+										</div>
+										<div class="clear"></div>
+										<div class="col-md-12">
+											<h4 class="inte-box-title1"><strong>Branch Code</strong></h4>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput placeholder="Batch Generation Code" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Batch_Generation_Code.errors }" formControlName="add_branch_Batch_Generation_Code" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submittedbranch && add_branch_control.add_branch_Batch_Generation_Code.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_Batch_Generation_Code.errors.required">{{ requireerror }}</span>
+											<span *ngIf="add_branch_control.add_branch_Batch_Generation_Code.errors.minlength">{{ minpass }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput specialIsAlphaNumeric placeholder="Cersai Code " [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Branch_Code.errors }" formControlName="add_branch_Branch_Code" autocomplete="off" required>
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Branch_Code.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_Branch_Code.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput specialIsAlphaNumeric placeholder="Nav Code" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Nav_Code.errors }" formControlName="add_branch_Nav_Code" autocomplete="off" required>
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Nav_Code.errors" class="error">
+                                  <span *ngIf="add_branch_control.add_branch_Nav_Code.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="col-md-12">
+											<h4 class="inte-box-title1"><strong>Branch Address</strong></h4>
+										</div>
+										<div class="clear"></div>
+										<div class="form-group col-md-12">
+											<mat-form-field>
+												<textarea matInput placeholder="Address" id="add_branch_Address" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Address.errors }" formControlName="add_branch_Address" autocomplete="off"></textarea>
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Address.errors" class="error">
+                          <span *ngIf="add_branch_control.add_branch_Address.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-6">
+											<mat-form-field  >
+												<input matInput placeholder="Landmark" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Landmark.errors }" formControlName="add_branch_Landmark" autocomplete="off"  >
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Landmark.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_Landmark.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-2">
+											<mat-form-field class="max-width-180">
+												<input matInput numbersOnly  placeholder="Pin Code" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Pin_Code.errors }" formControlName="add_branch_Pin_Code" autocomplete="off"  >
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Pin_Code.errors" class="error">
+                                  <span *ngIf="add_branch_control.add_branch_Pin_Code.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput specialIsAlphaNumeric placeholder="City" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_City.errors }" formControlName="add_branch_City" autocomplete="off"  >
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_City.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_City.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<input matInput specialIsAlphaNumeric placeholder="District" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_District.errors }" formControlName="add_branch_District" autocomplete="off" >
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_District.errors" class="error">
+                                    <span *ngIf="add_branch_control.add_branch_District.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-md-4">
+										 
+										 
+												<mat-form-field>
+													<mat-label>State</mat-label>
+													<mat-select #add_branch_State value="Role 1" id="add_branch_State" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_State.errors }" formControlName="add_branch_State" required autocomplete="off">
+														<mat-option value="Delhi">Delhi</mat-option>
+													</mat-select>
+												</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_State.errors" class="error">
+                                  <span *ngIf="add_branch_control.add_branch_State.errors.required">{{ requireerror }}</span>
+												</span>
+										 
+										</div>
+										<div class="form-group col-md-4">
+											<mat-form-field class="max-width-180">
+												<input matInput numbersOnly placeholder="Landline No" [ngClass]="{ 'is-invalid': submittedbranch && add_branch_control.add_branch_Landline_No.errors }" formControlName="add_branch_Landline_No" autocomplete="off" maxlength="11">
+											</mat-form-field> <span *ngIf="submittedbranch && add_branch_control.add_branch_Landline_No.errors" class="error">
+                                  <span *ngIf="add_branch_control.add_branch_Landline_No.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<hr>
+										 
+									</div>
+									<!-- form-row -->
+								</div>
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-danger">Cancel</button>
+								<button id="kycadded" class="btn btn-success pull-right">Add Now</button>
+							</div>
+						</form>
+					</div>
+					<!-- /.box -->
+				</div>
+			</div>
+			<!---col-md-12 -->
+			<!--- new add rolle ended -->
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

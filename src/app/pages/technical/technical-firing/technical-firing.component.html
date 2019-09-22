@@ -1,0 +1,180 @@
+<app-technical-side-bar></app-technical-side-bar>
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+          <app-lead-inform-bar></app-lead-inform-bar>
+           <!--Technical Firing Start-->
+           <div class="tab-pane first-tab active" id="technical">
+            <!--Create New Lead start-->
+            <div class="box box-default my_inner_box">
+              <div class="box-body wizard-content">
+                <div class="tab-content">
+                  <div class="first_blk_line form-element">
+                    <h4 class="inte-box-title"><strong>Technical Firing</strong></h4>
+                    <form [formGroup]="Technical_Firing" (ngSubmit)="onSubmit26()">
+                      <div class="form-row">
+                        <div class="form-group col-6 col-md-6 col-xl-4">
+                          <mat-form-field>
+                            <mat-label>Agency Name <span class="txt-red">*</span> 
+                            </mat-label>
+                            <mat-select [(value)]="Te_Te_Agency_Name" id="Te_Te_Agency_Name" [ngClass]="{ 'is-invalid': submitted26 && Firing_control.Te_Te_Agency_Name.errors }" type="text" formControlName="Te_Te_Agency_Name" value="" autocomplete="off">
+                              <mat-option>None</mat-option>
+                              <mat-option value="Residence">Agency 1</mat-option>
+                            </mat-select>
+                          </mat-form-field> <span *ngIf="submitted26 && Firing_control.Te_Te_Agency_Name.errors" class="error">
+                                      <span *ngIf="Firing_control.Te_Te_Agency_Name.errors.required">{{ requireerror }}</span>
+                          </span>
+                        </div>
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                          <button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+                          </button>
+                          <label for="Tec_Fir_UploadDocuments">Upload Documents</label>
+                        </div>
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                          <button class="btn btn-rounded btn-primary" id="technical_firing_add">Save</button>
+                        </div>
+                      </div>
+                    </form>
+                    <!--- table list new start -->
+                    <div class="form-row mt-4">
+                      <div class="col-md-12">
+                        <div class="tabl-screen1 bank-table show_technical_firing box_effect">
+                          <div class="table-responsive">
+                            <table id="example" class="table my_bank_table CPVRCU_table table-bordered mb-4">
+                              <thead>
+                                <tr>
+                                  <th class="sn_width_blk">S. No</th>
+                                  <th>Agency Name</th>
+                                  <th>Upload Doc.</th>
+                                  <th>Firing Date</th>
+                                  <th>Report Received Date</th>
+                                  <th>Report</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1</td>
+                                  <td>ABC</td>
+                                  <td><a class="underline_txt" href="javascript:void(0);">View</a>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                    <div class="action">	<a href="javascript:void(0)" class="btn btn-primary btn-xs my_short_btn">Send to Agency</a>
+                                      <a href="#Technical_Firing_report" class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>	
+                                      <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>ABC</td>
+                                  <td><a class="underline_txt" href="javascript:void(0);">View</a>
+                                  </td>
+                                  <td>10/05/2018</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                    <div class="action">	
+                                      <a (click)="open5(Technical_Firin)" class="popup-with-form btn btn-primary btn-xs my_short_btn">Status Update</a>
+                                      <a class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>	
+                                      <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>ABC</td>
+                                  <td><a class="underline_txt" href="javascript:void(0);">View</a>
+                                  </td>
+                                  <td>10/05/2018</td>
+                                  <td>10/06/2018</td>
+                                  <td><a href="#">View Report</a>
+                                  </td>
+                                  <td>
+                                    <div class="action">
+                                      <a href="javascript:void(0)" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                      </a>	<a href="javascript:void(0)" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                      <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- New Popup-->
+                    <ng-template #Technical_Firin let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">Technical Report</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form  [formGroup]="Technical_Firing_report" (ngSubmit)="onSubmit27()">
+                               
+                               
+                                <div class="form-row">
+                                  <div class="form-group col-6 col-md-6 col-xl-5">
+                                    <mat-form-field>
+                                      <input matInput [matDatepicker]="Te_Te_Agency_report" placeholder="Report Received Date" [ngClass]="{ 'is-invalid': submitted27 && Firing_report_control.Te_Te_Agency_report.errors }" formControlName="Te_Te_Agency_report" id="Te_Te_Agency_report" readonly>
+                                      <mat-datepicker-toggle matSuffix [for]="Te_Te_Agency_report"></mat-datepicker-toggle>
+                                      <mat-datepicker #Te_Te_Agency_report></mat-datepicker>
+                                    </mat-form-field>	<span *ngIf="submitted27 && Firing_report_control.Te_Te_Agency_report.errors" class="error">
+                                                <span *ngIf="Firing_report_control.Te_Te_Agency_report.errors.required">{{ requireerror }}</span> </span>
+                                  </div>
+                                  <div class="form-group col-6 col-md-6 col-xl-4">
+                                    <button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+                                    </button>
+                                    <label for="IDProof">Technical Report</label>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+                                    <button class="btn btn-rounded btn-primary">Save</button>
+                                  </div>
+                                </div>
+                              
+                            </form>
+
+											</div>
+											
+                      </ng-template>
+                      
+                    <!-- New Popup ended -->
+
+
+                     
+                    <!--- table list new start ended -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Create New Lead end-->
+          </div>
+          <!--Technical Firing End-->
+
+
+
+		 
+
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

@@ -1,0 +1,446 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+        
+
+          <!-- Document Checklist Start-->
+          <form [formGroup]="document_checklist" (ngSubmit)="onSubmit25()"> 
+				<div class="tab-pane first-tab active" id="document_checklist">				
+					<div class="my_inner_box_according">
+							<div class="first_blk_line form-element">
+                  
+								<div class="box">
+								<div class="box-header with-border">
+									<h4 class="inte-box-title"><strong>Documents Required (All documents to be self- attested)</strong></h4>
+								 </div>
+								 <div class="tab-content">
+                  
+								 <div class="box-body">
+										<div class="form-row">
+											<div class="col-md-12">											
+													<div class="table-responsive">
+													<table id="example" class="table my_bank_table table-bordered my-4 doc_che_table">
+														<thead>
+															<tr>
+															<th class="sn_width_blk">S. No</th>
+															<th class="doc_che_title_head" width="">Mandatory document to be taken at the time of login</th>
+															<th colspan="2" class="text-center doc_che_CoApp">
+																<table class="noboder_line">														
+																	<thead>
+																		<tr>
+																			<th colspan="3" class="text-center">Applicant</th>
+																		</tr>
+																		<tr>
+																			<th class="sn text-center">Document</th>
+																			<th class="sn text-center">L/RM</th>
+																			<th class="month text-center">CO</th>								
+																		</tr>
+																	
+																	</thead>
+																</table>																										
+															</th>
+															<th colspan="2" class="text-center doc_che_CoApp">
+																<table class="noboder_line">														
+																	<thead>
+																		<tr>
+																			<th colspan="3" class="text-center">Co-Applicant 1</th>
+																		</tr>
+																		<tr>
+																			<th class="sn text-center">Document</th>
+																			<th class="sn text-center">L/RM</th>
+																			<th class="month text-center">CO</th>								
+																		</tr>
+																	
+																	</thead>
+																</table>																										
+															</th>
+															<th colspan="2" class="text-center doc_che_CoApp">
+																<table class="noboder_line">														
+																	<thead>
+																		<tr>
+																			<th colspan="3" class="text-center">Co-Applicant 2</th>
+																		</tr>
+																		<tr>
+																				<th class="sn text-center">Document</th>
+																			<th class="sn text-center">L/RM</th>
+																			<th class="month text-center">CO</th>								
+																		</tr>
+																	
+																	</thead>
+																</table>																										
+															</th>																
+															<th class="doc_che_Remarks">Remarks</th>
+														</tr>												
+														</thead>													
+														<tbody>
+														<tr>
+															<td>1 </td>
+															<td class="doc_che_title_head">PF Cheque / DD (Properly filled & signed)</td> 
+															<td>
+																<mat-checkbox id="PF_Ch_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.PF_Ch_1.errors }" formControlName="PF_Ch_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="PF_Ch_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.PF_Ch_2.errors }" formControlName="PF_Ch_2"></mat-checkbox><a class="view-dic-chec">View</a>
+																 
+															</td> 				
+															<td>
+                                  <mat-checkbox id="PF_Ch_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.PF_Ch_3.errors }" formControlName="PF_Ch_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="PF_Ch_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.PF_Ch_4.errors }" formControlName="PF_Ch_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="PF_Ch_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.PF_Ch_5.errors }" formControlName="PF_Ch_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="PF_Ch_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.PF_Ch_6.errors }" formControlName="PF_Ch_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks1.errors }" formControlName="remarks1" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														
+														<tr>
+															<td>2 </td>
+															<td class="doc_che_title_head">Signed and Accepted Charge & Documents sheet</td> 
+															<td>
+                                  <mat-checkbox id="Signe_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signe_1.errors }" formControlName="Signe_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Signe_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signe_2.errors }" formControlName="Signe_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Signe_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signe_3.errors }" formControlName="Signe_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Signe_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signe_4.errors }" formControlName="Signe_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Signe_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signe_5.errors }" formControlName="Signe_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Signe_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signe_6.errors }" formControlName="Signe_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks2.errors }" formControlName="remarks2" ></textarea>
+                                      </mat-form-field>
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>3 </td>
+															<td class="doc_che_title_head">Completely filled & signed Application form along with signed across Photographs</td> 
+															<td>
+                                  <mat-checkbox id="Compl_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Compl_1.errors }" formControlName="Compl_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Compl_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Compl_2.errors }" formControlName="Compl_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Compl_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Compl_3.errors }" formControlName="Compl_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Compl_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Compl_4.errors }" formControlName="Compl_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Compl_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Compl_5.errors }" formControlName="Compl_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Compl_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Compl_6.errors }" formControlName="Compl_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks3.errors }" formControlName="remarks3" ></textarea>
+                                      </mat-form-field>
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>4 </td>
+															<td class="doc_che_title_head">Age Proof (as per documents sheet)</td> 
+															<td>
+                                  <mat-checkbox id="AgeP_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.AgeP_1.errors }" formControlName="AgeP_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="AgeP_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.AgeP_2.errors }" formControlName="AgeP_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="AgeP_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.AgeP_3.errors }" formControlName="AgeP_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="AgeP_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.AgeP_4.errors }" formControlName="AgeP_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="AgeP_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.AgeP_5.errors }" formControlName="AgeP_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="AgeP_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.AgeP_6.errors }" formControlName="AgeP_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks4.errors }" formControlName="remarks4" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>5 </td>
+															<td class="doc_che_title_head">Current Residence Address Proof (as per documents sheet)</td> 
+															<td>
+                                  <mat-checkbox id="Curre_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Curre_1.errors }" formControlName="Curre_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Curre_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Curre_2.errors }" formControlName="Curre_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Curre_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Curre_3.errors }" formControlName="Curre_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Curre_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Curre_4.errors }" formControlName="Curre_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Curre_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Curre_5.errors }" formControlName="Curre_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Curre_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Curre_6.errors }" formControlName="Curre_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks5.errors }" formControlName="remarks5" ></textarea>
+                                      </mat-form-field>															
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>6 </td>
+															<td class="doc_che_title_head">Identification Proof (as per documents sheet)</td> 
+															<td>
+                                  <mat-checkbox id="Ident_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Ident_1.errors }" formControlName="Ident_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Ident_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Ident_2.errors }" formControlName="Ident_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Ident_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Ident_3.errors }" formControlName="Ident_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Ident_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Ident_4.errors }" formControlName="Ident_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Ident_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Ident_5.errors }" formControlName="Ident_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Ident_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Ident_6.errors }" formControlName="Ident_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks6.errors }" formControlName="remarks6" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>7 </td>
+															<td class="doc_che_title_head">Signature Proof (as per documents sheet)</td> 
+															<td>
+                                  <mat-checkbox id="Signa_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signa_1.errors }" formControlName="Signa_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Signa_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signa_2.errors }" formControlName="Signa_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Signa_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signa_3.errors }" formControlName="Signa_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Signa_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signa_4.errors }" formControlName="Signa_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Signa_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signa_5.errors }" formControlName="Signa_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Signa_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Signa_6.errors }" formControlName="Signa_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks7" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks7.errors }" formControlName="remarks7" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>8 </td>
+															<td class="doc_che_title_head">Salaried : 6 months banking of Salary account</td> 
+															<td>
+                                  <mat-checkbox id="Prope_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Prope_1.errors }" formControlName="Prope_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Prope_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Prope_2.errors }" formControlName="Prope_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Prope_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Prope_3.errors }" formControlName="Prope_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Prope_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Prope_4.errors }" formControlName="Prope_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Prope_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Prope_5.errors }" formControlName="Prope_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Prope_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Prope_6.errors }" formControlName="Prope_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea specialIsAlphaNumeric matInput id="remarks8" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks8.errors }" formControlName="remarks8" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>9 </td>
+															<td class="doc_che_title_head">Salaried : 3 months salary slips / certificate <br />
+															SENP / SEP : 3 Yrs ITR with Computation of Income</td> 
+															<td>
+                                  <mat-checkbox id="Salar_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Salar_1.errors }" formControlName="Salar_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Salar_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Salar_2.errors }" formControlName="Salar_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Salar_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Salar_3.errors }" formControlName="Salar_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Salar_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Salar_4.errors }" formControlName="Salar_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Salar_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Salar_5.errors }" formControlName="Salar_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Salar_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Salar_6.errors }" formControlName="Salar_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput id="remarks9" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks9.errors }" formControlName="remarks9" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>10 </td>
+															<td class="doc_che_title_head">Form 16</td> 
+															<td>
+                                  <mat-checkbox id="SENP_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.SENP_1.errors }" formControlName="SENP_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="SENP_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.SENP_2.errors }" formControlName="SENP_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="SENP_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.SENP_3.errors }" formControlName="SENP_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="SENP_4 " [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.SENP_4.errors }" formControlName="SENP_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="SENP_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.SENP_5.errors }" formControlName="SENP_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="SENP_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.SENP_6.errors }" formControlName="SENP_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput id="remarks10" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks10.errors }" formControlName="remarks10"  ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														<tr>
+															<td>11 </td>
+															<td class="doc_che_title_head">Property Legal Docs & Map - If property selected / LAP, BT, Extension, Improvement, Construction etc.</td> 
+															<td>
+                                  <mat-checkbox id="Form_1" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Form_1.errors }" formControlName="Form_1"></mat-checkbox>
+															</td> 
+															<td>
+                                  <mat-checkbox id="Form_2" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Form_2.errors }" formControlName="Form_2"></mat-checkbox>
+															</td> 				
+															<td>
+                                  <mat-checkbox id="Form_3" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Form_3.errors }" formControlName="Form_3"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Form_4" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Form_4.errors }" formControlName="Form_4"></mat-checkbox>
+															</td>															
+															<td>
+                                  <mat-checkbox id="Form_5" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Form_5.errors }" formControlName="Form_5"></mat-checkbox>
+															</td>
+															<td>
+                                  <mat-checkbox id="Form_6" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.Form_6.errors }" formControlName="Form_6"></mat-checkbox>
+															</td>															
+															<td>
+																<div class="form-group col-12 col-md-12 col-xl-12">															
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput specialIsAlphaNumeric id="remarks11" [ngClass]="{ 'is-invalid': submitted25 && pf_cheque_control.remarks11.errors }" formControlName="remarks11" ></textarea>
+                                      </mat-form-field>																
+																</div>
+															</td>																											
+														</tr>
+														
+														</tbody>
+																
+													</table>
+												</div>	
+																							
+													
+											</div>
+										</div>
+								
+                  </div>
+ 
+                 </div>
+                </div>
+                 
+                 
+                
+
+             
+								
+								
+							</div>
+							 
+					</div>
+        </div>
+
+        <div class="tab-button text-center">
+            <button class=" btn btn-lg btn-primary mx-1" ><span>Save & Continue</span> <i class="ti-angle-double-right"></i></button>
+         </div>
+
+      </form>
+        <!-- Document Checklist end-->
+        
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

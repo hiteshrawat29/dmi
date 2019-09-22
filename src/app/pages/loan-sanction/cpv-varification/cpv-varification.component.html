@@ -1,0 +1,327 @@
+<app-senction-side-bar></app-senction-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+           <!--CPV/RCU Verification Start-->
+				<div class="tab-pane first-tab active disblock-1" >
+					<div class="box box-default my_inner_box">
+						<div class="box-body wizard-content">
+							<div class="tab-content">
+								<div class="first_blk_line form-element">
+									<h4 class="inte-box-title"><strong>CPV/RCU Verification</strong></h4>
+									<form [formGroup]="RCU_Verification" (ngSubmit)="onSubmit14()">
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<div class="">
+													<mat-form-field>
+														<mat-label>Type of verification <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_CP_Type_of_verification" id="LS_CP_Type_of_verification" [ngClass]="{ 'is-invalid': submitted14 && RCU_Ver_control.LS_CP_Type_of_verification.errors }" type="text" formControlName="LS_CP_Type_of_verification" value="" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Residence">Residence</mat-option>
+															<mat-option value="Office">Office</mat-option>
+															<mat-option value="Banking">Banking</mat-option>
+															<mat-option value="Salary slip">Salary slip</mat-option>
+															<mat-option value="ITR">ITR</mat-option>
+															<mat-option value="Form 16">Form 16 (Status Automatic from vendor)</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted14 && RCU_Ver_control.LS_CP_Type_of_verification.errors" class="error">
+                                    <span *ngIf="RCU_Ver_control.LS_CP_Type_of_verification.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<div class="select-wrapper inner_width_select">
+													<mat-form-field>
+														<mat-label>Agency Name <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_CP_Agency_Name" id="LS_CP_Agency_Name" [ngClass]="{ 'is-invalid': submitted14 && RCU_Ver_control.LS_CP_Agency_Name.errors }" type="text" formControlName="LS_CP_Agency_Name" value="" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Select">Select</mat-option>
+															<mat-option value="Select 1">Select 1</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted14 && RCU_Ver_control.LS_CP_Agency_Name.errors" class="error">
+                                  <span *ngIf="RCU_Ver_control.LS_CP_Agency_Name.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+												</button>
+												<label for="CPVRCU_FiringDoc">CPV/RCU Firing Doc.</label>
+											</div>
+										</div>
+										<div class="add_button_blk text-center">
+											<button class="btn btn-rounded btn-primary mb-4" id="CPVRCU_Verification_add">Add</button>
+										</div>
+									</form>
+									<!--- CPV/RCU Verification ended  -->
+									<!--- table list new start -->
+									<div class="form-row">
+										<div class="col-md-12">
+											<div class="tabl-screen1 bank-table show_CPVRCU_Verification box_effect">
+												<div class="col-md-12">
+													<div class="row">
+														<div class="form-group col-6 col-md-6 col-xl-2">
+															<div class="max-width-165 select-wrapper inner_width_select">
+																	<mat-form-field>
+																			<mat-label>Bulk Actions <span class="txt-red">*</span>
+																			</mat-label>
+																			<mat-select >
+																				<mat-option>None</mat-option>
+																				<mat-option value="Send to Agency">Send to Agency</mat-option>
+																				 
+																			</mat-select>
+																		</mat-form-field>
+ 
+															 
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-2 align-self-end">
+															<button type="button" class="btn btn-primary">Apply</button>
+														</div>
+													</div>
+												</div>
+												<div class="table-responsive">
+													<table id="example" class="table my_bank_table CPVRCU_table table-bordered mb-4">
+														<thead>
+															<tr>
+																<th class="sn_width_blk white-checks">
+																		<div class="form-group">
+																				<mat-checkbox></mat-checkbox>
+																		</div>
+																</th>
+																<th>Type of verification</th>
+																<th>Agency Name</th>
+																<th>CPV/RCU Firing Doc.</th>
+																<th>Firing Date</th>
+																<th>Status</th>
+																<th>Report Received Date</th>
+																<th>Authorise</th>
+																<th>Result</th>
+																<th>CPV/RCU Report</th>
+																<th width="190">Action</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																		<div class="form-group">
+																				<mat-checkbox></mat-checkbox>
+																		</div>
+																</td>
+																<td>ABC</td>
+																<td>ABC</td>
+																<td>ABC</td>
+																<td></td>
+																<td>Pending</td>
+																<td></td>
+																<td>No</td>
+																<td></td>
+																<td></td>
+																<td>
+																	<div class="action"> <a href="javascript:void(0)" class="btn btn-primary btn-xs my_short_btn">Send to Agency</a>
+																		<a  class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																		<div class="form-group">
+																				<mat-checkbox></mat-checkbox>
+																		</div>
+																</td>
+																<td>ABC</td>
+																<td>ABC</td>
+																<td>ABC</td>
+																<td>10/05/2018</td>
+																<td>Pending</td>
+																<td></td>
+																<td>No</td>
+																<td></td>
+																<td></td>
+																<td>
+																	<div class="action"> 
+																		<a (click)="open(content)" class=" btn btn-primary btn-xs my_short_btn">Status Update</a>
+																		<a href="javascript:void(0)" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																		<div class="form-group">
+																				<mat-checkbox></mat-checkbox>
+																		</div>
+																</td>
+																<td>ABC</td>
+																<td>ABC</td>
+																<td>ABC</td>
+																<td>10/05/2018</td>
+																<td>Success</td>
+																<td>10/06/2018</td>
+																<td>Yes</td>
+																<td>Accept</td>
+																<td><a href="#">View Report</a>
+																</td>
+																<td>
+																	<div class="action">
+																		<a href="javascript:void(0)" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																		</a> <a href="javascript:void(0)" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<form id="CPVRCU_Verification_report" class="mybasicform_blk my_popup_blk tab-content white-popup-block mfp-hide" [formGroup]="RCU_Verification_status" (ngSubmit)="onSubmit15()">
+										<div class="first_blk_line form-element">
+											<h4>CPV/RCU Verification</h4>
+											<div class="form-row">
+												<div class="form-group col-12 col-md-12 col-xl-6">
+													<mat-form-field>
+														<mat-label>CPV/RCU Results <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_CP_CPV_RCU_Results" id="LS_CP_CPV_RCU_Results" [ngClass]="{ 'is-invalid': submitted15 && RCU_status_control.LS_CP_CPV_RCU_Results.errors }" type="text" formControlName="LS_CP_CPV_RCU_Results" value="" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Accept">Accept</mat-option>
+															<mat-option value="Reject">Reject</mat-option>
+															<mat-option value="Deviation">Deviation</mat-option>
+															<mat-option value="Awaited">Awaited</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted15 && RCU_status_control.LS_CP_CPV_RCU_Results.errors" class="error">
+                                    <span *ngIf="RCU_status_control.LS_CP_CPV_RCU_Results.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-12 col-md-12 col-xl-12">
+													<mat-form-field>
+														<textarea matInput placeholder="CPV/RCU Remarks" id="LS_CP_CPV_RCU_Remarks" [ngClass]="{ 'is-invalid': submitted15 && RCU_status_control.LS_CP_CPV_RCU_Remarks.errors }" type="text" formControlName="LS_CP_CPV_RCU_Remarks" value="" autocomplete="off" required></textarea>
+													</mat-form-field> <span *ngIf="submitted15 && RCU_status_control.LS_CP_CPV_RCU_Remarks.errors" class="error">
+                                    <span *ngIf="RCU_status_control.LS_CP_CPV_RCU_Remarks.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field class="max-width-160">
+														<input matInput [matDatepicker]="picker" placeholder="Report Received Date" [ngClass]="{ 'is-invalid': submitted15 && RCU_status_control.LS_CP_Report_Received_Date.errors }" formControlName="LS_CP_Report_Received_Date" id="LS_CP_Report_Received_Date" readonly>
+														<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+														<mat-datepicker #picker></mat-datepicker>
+													</mat-form-field> <span *ngIf="submitted15 && RCU_status_control.LS_CP_Report_Received_Date.errors" class="error">
+                                  <span *ngIf="RCU_status_control.LS_CP_Report_Received_Date.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+													</button>
+													<label for="IDProof">CPV/RCU Report</label>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+													<button class="btn btn-rounded btn-primary">Authorise Save</button>
+													<button type="button" class="btn btn-rounded btn-primary">Save</button>
+												</div>
+											</div>
+										</div>
+									</form>
+									<!--- table list new start ended -->
+
+
+									<!--- new code popup -->
+									<ng-template #content let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">CPV/RCU Verification</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form   [formGroup]="RCU_Verification_status" (ngSubmit)="onSubmit15()">
+															 <div class="form-row">
+																	<div class="form-group col-12 col-md-12 col-xl-6">
+																		<mat-form-field>
+																			<mat-label>CPV/RCU Results <span class="txt-red">*</span> 
+																			</mat-label>
+																			<mat-select [(value)]="LS_CP_CPV_RCU_Results" id="LS_CP_CPV_RCU_Results" [ngClass]="{ 'is-invalid': submitted15 && RCU_status_control.LS_CP_CPV_RCU_Results.errors }" type="text" formControlName="LS_CP_CPV_RCU_Results" value="" autocomplete="off">
+																				<mat-option>None</mat-option>
+																				<mat-option value="Accept">Accept</mat-option>
+																				<mat-option value="Reject">Reject</mat-option>
+																				<mat-option value="Deviation">Deviation</mat-option>
+																				<mat-option value="Awaited">Awaited</mat-option>
+																			</mat-select>
+																		</mat-form-field> <span *ngIf="submitted15 && RCU_status_control.LS_CP_CPV_RCU_Results.errors" class="error">
+														<span *ngIf="RCU_status_control.LS_CP_CPV_RCU_Results.errors.required">{{ requireerror }}</span>
+																		</span>
+																	</div>
+																	<div class="form-group col-12 col-md-12 col-xl-12">
+																		<mat-form-field>
+																			<textarea matInput specialIsAlphaNumeric placeholder="CPV/RCU Remarks" id="LS_CP_CPV_RCU_Remarks" [ngClass]="{ 'is-invalid': submitted15 && RCU_status_control.LS_CP_CPV_RCU_Remarks.errors }" type="text" formControlName="LS_CP_CPV_RCU_Remarks" value="" autocomplete="off" required></textarea>
+																		</mat-form-field> <span *ngIf="submitted15 && RCU_status_control.LS_CP_CPV_RCU_Remarks.errors" class="error">
+														<span *ngIf="RCU_status_control.LS_CP_CPV_RCU_Remarks.errors.required">{{ requireerror }}</span>
+																		</span>
+																	</div>
+																	<div class="form-group col-6 col-md-6 col-xl-6">
+																		<mat-form-field class="max-width-160">
+																			<input matInput [matDatepicker]="picker" placeholder="Report Received Date" [ngClass]="{ 'is-invalid': submitted15 && RCU_status_control.LS_CP_Report_Received_Date.errors }" formControlName="LS_CP_Report_Received_Date" id="LS_CP_Report_Received_Date" readonly>
+																			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+																			<mat-datepicker #picker></mat-datepicker>
+																		</mat-form-field> <span *ngIf="submitted15 && RCU_status_control.LS_CP_Report_Received_Date.errors" class="error">
+													  <span *ngIf="RCU_status_control.LS_CP_Report_Received_Date.errors.required">{{ requireerror }}</span>
+																		</span>
+																	</div>
+																	<div class="form-group col-6 col-md-6 col-xl-4">
+																		<button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+																		</button>
+																		<label for="IDProof">CPV/RCU Report</label>
+																	</div>
+																</div>
+																<div class="form-row">
+																	<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+																		<button class="btn btn-rounded btn-primary">Authorise Save</button>
+																		 
+																	</div>
+																</div>
+															 
+														</form>
+											</div>
+											
+										  </ng-template>
+										  
+										   
+										  
+										<!-- new code popup ended -->
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--CPV/RCU Verification End-->
+					
+          
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

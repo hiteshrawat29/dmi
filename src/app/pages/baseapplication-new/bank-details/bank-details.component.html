@@ -1,0 +1,572 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+          <app-lead-inform-bar></app-lead-inform-bar>
+        
+
+			<!-- Bank Details section start-->
+      <div class="tab-pane first-tab active" id="bank_details">
+					<!--Tabs in-->
+					<div class="box py-0 px-0 my_tab_blk">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs nav-tabs-inverse-mode" role="tablist">
+							<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#bank_det_applicant" role="tab">Applicant</a>
+							</li>
+							<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bank_det_co_applicant" role="tab">Co-Applicant</a>
+							</li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="box-body tab-content">
+							<div class="tab-pane fade active show" id="bank_det_applicant">
+								<div class="first_blk_line form-element">
+									<h4 class="inte-box-title"><strong>Bank Details</strong><button class="add-bnk btn btn-rounded float-right" type="button"><i class="mdi mdi-plus"></i>Bank</button></h4>
+									<div class="bank-detailscorpy">
+										<form [formGroup]="Bank_Details" (ngSubmit)="onSubmit6()">
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<mat-form-field>
+														<mat-label>Bank Name <span class="txt-red">*</span>
+														</mat-label>
+														<mat-select [(value)]="Ba_Bank_Name" id="Ba_Bank_Name" [ngClass]="{ 'is-invalid': submitted6 && bank_control.Ba_Bank_Name.errors }" formControlName="Ba_Bank_Name">
+															<mat-option>None</mat-option>
+															<mat-option value="IDBI Bank">IDBI Bank</mat-option>
+															<mat-option value="SBI">SBI</mat-option>
+															<mat-option value="ICICI">ICICI</mat-option>
+															<mat-option value="HDFC">HDFC</mat-option>
+														</mat-select>
+													</mat-form-field>	<span *ngIf="submitted6 && bank_control.Ba_Bank_Name.errors" class="error">
+																<span *ngIf="bank_control.Ba_Bank_Name.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput numbersOnly placeholder="Account No" [ngClass]="{ 'is-invalid': submitted6 && bank_control.Ba_Account_No.errors }" formControlName="Ba_Account_No" autocomplete="off" required maxlength="14">
+													</mat-form-field>	<span *ngIf="submitted6 && bank_control.Ba_Account_No.errors" class="error">
+																	<span *ngIf="bank_control.Ba_Account_No.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Account Holder Name" [ngClass]="{ 'is-invalid': submitted6 && bank_control.Ba_Account_Holder_Name.errors }" formControlName="Ba_Account_Holder_Name" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted6 && bank_control.Ba_Account_Holder_Name.errors" class="error">
+																			<span *ngIf="bank_control.Ba_Account_Holder_Name.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-150">
+														<mat-form-field>
+															<mat-label>Account Type <span class="txt-red">*</span>
+															</mat-label>
+															<mat-select [(value)]="Ba_Account_Type" id="Ba_Account_Type" [ngClass]="{ 'is-invalid': submitted6 && bank_control.Ba_Account_Type.errors }" formControlName="Ba_Account_Type">
+																<mat-option value="Saving">Saving</mat-option>
+																<mat-option value="Current">Current</mat-option>
+																<mat-option value="OD">OD</mat-option>
+																<mat-option value="CC">CC</mat-option>
+															</mat-select>
+														</mat-form-field>	<span *ngIf="submitted6 && bank_control.Ba_Account_Type.errors" class="error">
+																			<span *ngIf="bank_control.Ba_Account_Type.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-120 select-wrapper inner_width_select">
+														<mat-form-field>
+															<mat-label>Salary Credit <span class="txt-red">*</span>
+															</mat-label>
+															<mat-select [(value)]="Ba_Salary_Credit" id="Ba_Salary_Credit" [ngClass]="{ 'is-invalid': submitted6 && bank_control.Ba_Salary_Credit.errors }" formControlName="Ba_Salary_Credit">
+																<mat-option value="Yes">Yes</mat-option>
+																<mat-option value="No">No</mat-option>
+															</mat-select>
+														</mat-form-field>	<span *ngIf="submitted6 && bank_control.Ba_Salary_Credit.errors" class="error">
+																		<span *ngIf="bank_control.Ba_Salary_Credit.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field class="max-width-80">
+																<input matInput numbersOnly placeholder="No. Of Salary credited in  past 6 monthes" [ngClass]="{ 'is-invalid': submitted6 && bank_control.No_Of_Salary_credited_in__past_6_monthes.errors }" formControlName="No_Of_Salary_credited_in__past_6_monthes" autocomplete="off" required>
+															</mat-form-field>	<span *ngIf="submitted6 && bank_control.No_Of_Salary_credited_in__past_6_monthes.errors" class="error">
+																			<span *ngIf="bank_control.No_Of_Salary_credited_in__past_6_monthes.errors.required">{{ requireerror }}</span>
+															</span>
+
+															
+														 
+													</div>
+
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="BD_Bankstatementuploaded" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+													</button>
+													<label for="BD_Bankstatementuploaded">Bank statement to be uploaded</label>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-12 col-md-12 col-xl-12 text-center">
+													<button class="btn btn-rounded btn-primary mb-4" id="bankadded">Add Bank</button>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="inner_box_color">
+										<form [formGroup]="transtion_Details" (ngSubmit)="onSubmit7()">
+											<div class="form-row">
+												<div class="col-xl-12">
+													<h5 class="sub_title"><strong>Transaction</strong><!--<button class="add-bnk btn btn-rounded float-right" type="button"><i class="mdi mdi-plus"></i>Add Transaction</button>--></h5>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-80 select-wrapper inner_width_select">
+														<mat-form-field>
+															<mat-label>Month <span class="txt-red">*</span>
+															</mat-label>
+															<mat-select [(value)]="Tr_Month" id="Tr_Month" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Month.errors }" formControlName="Tr_Month">
+																<mat-option value="APR 18">APR 18</mat-option>
+																<mat-option value="MAY 18">MAY 18</mat-option>
+																<mat-option value="JUL 18">JUL 18</mat-option>
+																<mat-option value="AUG 18">AUG 18</mat-option>
+																<mat-option value="SEP 18">SEP 18</mat-option>
+																<mat-option value="OCT 18">OCT 18</mat-option>
+																<mat-option value="NOV 18">NOV 18</mat-option>
+																<mat-option value="DEC 18">DEC 18</mat-option>
+																<mat-option value="JAN 18">JAN 18</mat-option>
+																<mat-option value="FAB 18">FAB 18</mat-option>
+																<mat-option value="FAB 18">FAB 18</mat-option>
+																<mat-option value="MAR 18">MAR 18</mat-option>
+															</mat-select>
+														</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_Month.errors" class="error">
+																		<span *ngIf="transtion_control.Tr_Month.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput numbersOnly placeholder="Average credit Balance" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Average_credit_Balance.errors }" formControlName="Tr_Average_credit_Balance" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_Average_credit_Balance.errors" class="error">
+																			<span *ngIf="transtion_control.Tr_Average_credit_Balance.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput numbersOnly placeholder="ATM Withdrawal" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_ATM_Withdrawal.errors }" formControlName="Tr_ATM_Withdrawal" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_ATM_Withdrawal.errors" class="error">
+																			<span *ngIf="transtion_control.Tr_ATM_Withdrawal.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput numbersOnly placeholder="Credit Card Payment" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Credit_Card_Payment.errors }" formControlName="Tr_Credit_Card_Payment" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_Credit_Card_Payment.errors" class="error">
+																			<span *ngIf="transtion_control.Tr_Credit_Card_Payment.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												 
+
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput numbersOnly placeholder="Bulk Entry (Amount)" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Bulk_Entry_Amount.errors }" formControlName="Tr_Bulk_Entry_Amount" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_Bulk_Entry_Amount.errors" class="error">
+																			<span *ngIf="transtion_control.Tr_Bulk_Entry_Amount.errors.required">{{ requireerror }}</span>
+													</span>
+												</div> 
+											</div>
+											 <div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput specialIsAlphaNumeric placeholder="Balances On 10th" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Balances_On_10th.errors }" formControlName="Tr_Balances_On_10th" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput specialIsAlphaNumeric placeholder="Balances On 20th" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Balances_On_20th.errors }" formControlName="Tr_Balances_On_20th" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput specialIsAlphaNumeric placeholder="Balances On 30th" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_Balances_On_30th.errors }" formControlName="Tr_Balances_On_30th" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput placeholder="I/W Cheque return" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_IW_Cheque_return.errors }" formControlName="Tr_IW_Cheque_return" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_IW_Cheque_return.errors" class="error">
+																			<span *ngIf="transtion_control.Tr_IW_Cheque_return.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+														<input matInput specialIsAlphaNumeric placeholder="O/W Cheque return" [ngClass]="{ 'is-invalid': submitted7 && transtion_control.Tr_OW_Cheque_return.errors }" formControlName="Tr_OW_Cheque_return" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted7 && transtion_control.Tr_OW_Cheque_return.errors" class="error">
+																			<span *ngIf="transtion_control.Tr_OW_Cheque_return.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div> 
+											<div class="form-row">
+												<div class="form-group col-12 col-md-12 col-xl-12 text-center">
+													<button class="btn btn-rounded btn-primary mb-4" id="bankadded">Add Transaction</button>
+												</div>
+											</div>
+										</form>
+									</div>
+									<!--- table list new start -->
+									<div class="bank_detail_table">
+										<div class="tabl-screen1 bank-table bank-listing box_effect">
+											<div>
+												<ul class="bank_det_sec">
+													<li><span>Bank Name :</span> HDFC</li>
+													<li><span>Account No :</span> 000000</li>
+													<li><span>Account Holder Name :</span> Abhieshek Thakral</li>
+													<li><span>Account Type :</span> Saving</li>
+													<li><span>Salary Credit :</span> Yes</li>
+													<li><span>View Statement :</span>  <a href="#">View</a>
+													</li>
+												</ul>
+											</div>
+											<div class="table-responsive">
+												<table id="example" class="table my_bank_table table-bordered">
+													<thead>
+														<tr>
+															<th class="sn_width_blk">S. No</th>
+															<th class="month">Month</th>
+															<th class="average_credit">Credit</th>
+															<th class="atmwithdrawal">ATM Withdrawal</th>
+															<th class="credit_card">Credit Card Payment</th>
+															<th colspan="3" class="text-center">
+																<table class="noboder_line">
+																	<thead>
+																		<tr>
+																			<th colspan="3" class="text-center">Balances On</th>
+																		</tr>
+																		<tr>
+																			<th class="sn text-center">10th</th>
+																			<th class="month text-center">20th</th>
+																			<th class="month text-center">30th</th>
+																		</tr>
+																	</thead>
+																</table>
+															</th>
+															<th class="iwcheque">I/W Cheque return</th>
+															<th class="owcheque">O/W Cheque return</th>
+															<th class="bulk_entry">Bulk Entry (Amount)</th>
+															<th class="average_bank">Average Bank Balance</th>
+															<th class="action">Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>APR 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>2</td>
+															<td>6</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>MAY 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>0</td>
+															<td>0</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>JUN 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>3</td>
+															<td>8</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>4</td>
+															<td>JUL 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>0</td>
+															<td>0</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+													<tfoot>
+														<tr>
+															<td colspan="2" class="total">Total</td>
+															<td>2,00,000</td>
+															<td>50000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td colspan="2"></td>
+															<td>2000</td>
+															<td>2000</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td colspan="2" class="average">Average</td>
+															<td>2,00,000</td>
+															<td>50000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td colspan="2"></td>
+															<td>2000</td>
+															<td>2000</td>
+															<td></td>
+														</tr>
+													</tfoot>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!--First end-->
+									<!--Second start-->
+									<div class="bank_detail_table">
+										<div class="tabl-screen1 bank-table bank-listing box_effect" style="display: none;">
+											<div>
+												<ul class="bank_det_sec">
+													<li><span>Bank Name :</span> ICICI</li>
+													<li><span>Account No :</span> 000058</li>
+													<li><span>Account Holder Name :</span> Abhieshek Thakral</li>
+													<li><span>Account Type :</span> Saving</li>
+													<li><span>Salary Credit :</span> Yes</li>
+													<li><span>View Statement :</span>  <a href="#">View</a>
+													</li>
+												</ul>
+											</div>
+											<div class="table-responsive">
+												<table id="example" class="table my_bank_table table-bordered">
+													<thead>
+														<tr>
+															<th class="sn_width_blk">S. No</th>
+															<th class="month">Month</th>
+															<th class="average_credit">Credit</th>
+															<th class="atmwithdrawal">ATM Withdrawal</th>
+															<th class="credit_card">Credit Card Payment</th>
+															<th colspan="3" class="text-center">
+																<table class="noboder_line">
+																	<thead>
+																		<tr>
+																			<th colspan="3" class="text-center">Balances On</th>
+																		</tr>
+																		<tr>
+																			<th class="sn text-center">10th</th>
+																			<th class="month text-center">20th</th>
+																			<th class="month text-center">30th</th>
+																		</tr>
+																	</thead>
+																</table>
+															</th>
+															<th class="iwcheque">I/W Cheque return</th>
+															<th class="owcheque">O/W Cheque return</th>
+															<th class="bulk_entry">Bulk Entry (Amount)</th>
+															<th class="average_bank">Average Bank Balance</th>
+															<th class="action">Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>APR 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>2</td>
+															<td>6</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>MAY 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>0</td>
+															<td>0</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>JUN 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>3</td>
+															<td>8</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>4</td>
+															<td>JUL 19</td>
+															<td>2,00,000</td>
+															<td>50,000</td>
+															<td>20,000</td>
+															<td>1,30,000</td>
+															<td>100,000</td>
+															<td>60,000</td>
+															<td>0</td>
+															<td>0</td>
+															<td>20,000</td>
+															<td>20,000</td>
+															<td>
+																<div class="action">
+																	<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																	</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+													<tfoot>
+														<tr>
+															<td colspan="2" class="total">Total</td>
+															<td>2,00,000</td>
+															<td>50000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td colspan="2"></td>
+															<td>2000</td>
+															<td>2000</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td colspan="2" class="average">Average</td>
+															<td>2,00,000</td>
+															<td>50000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td>2000</td>
+															<td colspan="2"></td>
+															<td>2000</td>
+															<td>2000</td>
+															<td></td>
+														</tr>
+													</tfoot>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!--Second end-->
+									<!--- table list new start ended -->
+								</div>
+							</div>
+							<!--Second tab start-->
+							<div class="tab-pane fade" id="bank_det_co_applicant">Co Applicant</div>
+							<!--Second tab start-->
+						</div>
+					</div>
+				</div>
+        <!-- Bank Details section end-->
+        
+
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

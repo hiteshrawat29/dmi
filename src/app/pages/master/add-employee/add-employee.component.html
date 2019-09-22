@@ -1,0 +1,344 @@
+<app-master-sidebar></app-master-sidebar>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!--- middle content ------>
+    <!-- Main content -->
+    <section class="content based-form">
+      <div id="myWizard" class="mybasicform_blk">
+        <!--- new add rolle -->
+        <div class="col-md-12">
+          <div class="content-header">
+            <div class="align-items-center">
+              <div class="mr-auto">
+                <h3 class="page-title">User Management</h3>
+                <div class="d-inline-block align-items-center">
+                  <nav>
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a>
+                      </li>
+                      <li class="breadcrumb-item" aria-current="page">User Management</li>
+                      <li class="breadcrumb-item active" aria-current="page">Add Employee</li>
+                    </ol>
+                  </nav>
+                </div>
+                <div class="pull-right"> 
+                  <button routerLink="/master/manage_employee"  class="btn btn-rounded btn-info mb-5 ncust-btn">Manage Employee </button> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-12 offset-md-2">
+            <!-- Basic Forms -->
+            <div class="box">
+              <h4 class="box-title">Add New Employee</h4> 
+              <!-- /.box-header -->
+              <form [formGroup]="add_employee" (ngSubmit)="onSubmituser()">
+                <div class="box-body">
+                  <div class="first_blk_line form-element">
+                    <div class="form-row">
+                      <!--<div class="form-group col-md-6">
+                                                      <input type="text" class="form-control effect-16" autocomplete="off" id="addUserid">
+                                                      <label for="addUserid">User Id <span class="txt-red">*</span></label>
+                                                  </div>-->
+                      <div class="form-group col-md-4">
+                          <mat-form-field>
+                              <input matInput specialIsAlphaNumeric placeholder="Employee Name" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.Employee_Name.errors }" formControlName="Employee_Name" autocomplete="off" required >
+                            </mat-form-field>	<span *ngIf="submitteduser && add_employee_control.Employee_Name.errors" class="error">
+                                    <span *ngIf="add_employee_control.Employee_Name.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                       
+                      </div>
+                      <div class="form-group col-md-4">
+                          <mat-form-field>
+                              <input matInput  placeholder="Email" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Email.errors }" formControlName="add_employee_Email" autocomplete="off" required >
+                            </mat-form-field>	<span *ngIf="submitteduser && add_employee_control.add_employee_Email.errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employee_Email.errors.required">{{ requireerror }}</span>
+                                    <span *ngIf="add_employee_control.add_employee_Email.errors.email">{{ emailerror }}</span>
+                            </span> 
+                       
+                      </div>
+                      <div class="form-group col-md-4">
+                          <mat-form-field >
+                              <input matInput numbersOnly  placeholder="Mobile Number" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeMobile_Number.errors }" formControlName="add_employeeMobile_Number" autocomplete="off" required maxlength="11" >
+                            </mat-form-field>	<span *ngIf="submitteduser && add_employee_control.add_employeeMobile_Number .errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employeeMobile_Number.errors.required">{{ requireerror }}</span>
+                                    <span *ngIf="add_employee_control.add_employeeMobile_Number.errors.minlength">{{ minerror }}</span>
+                            </span>
+
+                       
+                      </div>
+ 
+
+                      <div class="form-group col-md-4">
+                          <mat-form-field class="max-width-180">
+                              <input matInput specialIsAlphaNumeric placeholder="Employee Code" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeEmployee_Code.errors }" formControlName="add_employeeEmployee_Code" autocomplete="off" required  >
+                            </mat-form-field>	
+                            <span *ngIf="submitteduser && add_employee_control.add_employeeEmployee_Code .errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employeeEmployee_Code.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                       
+                      </div>
+
+                      <div class="form-group col-md-4">
+                          <div >
+                              <mat-form-field>
+                                  <mat-label>Reporting Manager</mat-label>
+                                  <mat-select #add_employeeAgency_Name value="Agency 1" id="add_employeeAgency_Name" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeAgency_Name.errors }" formControlName="add_employeeAgency_Name" autocomplete="off"  >
+                                    <mat-option value="Manager 1">Manager 1</mat-option>
+                                    <mat-option value="Manager 2">Manager 2</mat-option>
+                                   
+                                  </mat-select>
+                                </mat-form-field>
+  
+                                <span *ngIf="submitteduser && add_employee_control.add_employeeAgency_Name .errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employeeAgency_Name.errors.required">{{ requireerror }}</span>
+                            </span>
+  
+  
+  
+                            
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+
+                            <mat-form-field>
+                                <mat-label>Base Location</mat-label>
+                                <mat-select #add_employee_base_location value="L1" id="add_employee_base_location" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_base_location.errors }" formControlName="add_employee_base_location" autocomplete="off"  >
+                                  <mat-option value="Branch 1">Branch 1</mat-option>
+                                   
+                                </mat-select>
+                              </mat-form-field>
+  
+                              <span *ngIf="submitteduser && add_employee_control.add_employee_base_location .errors" class="error">
+                                  <span *ngIf="add_employee_control.add_employee_base_location.errors.required">{{ requireerror }}</span>
+                          </span>
+   
+                       
+                        </div>
+
+
+                      <div class="form-group col-md-4">
+                        <div >
+                            <mat-form-field>
+                                <mat-label>Agency Name</mat-label>
+                                <mat-select #add_employeeAgency_Name value="Agency 1" id="add_employeeAgency_Name" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeAgency_Name.errors }" formControlName="add_employeeAgency_Name" autocomplete="off"  >
+                                  <mat-option value="Agency 1">Agency 1</mat-option>
+                                  <mat-option value="Agency 2">Agency 2</mat-option>
+                                 
+                                </mat-select>
+                              </mat-form-field>
+
+                              <span *ngIf="submitteduser && add_employee_control.add_employeeAgency_Name .errors" class="error">
+                                  <span *ngIf="add_employee_control.add_employeeAgency_Name.errors.required">{{ requireerror }}</span>
+                          </span>
+
+
+
+                          
+                        </div>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <div >
+                            <mat-form-field>
+                                <mat-label>Deptartment</mat-label>
+                                <mat-select #add_employeeDeptartment value="Agency 1" id="add_employeeDeptartment" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeDeptartment.errors }" formControlName="add_employeeDeptartment" autocomplete="off"  >
+                                  <mat-option value="Deptartment 1">Deptartment 1</mat-option>
+                                  <mat-option value="Deptartment 2">Deptartment 2</mat-option>
+                                 
+                                </mat-select>
+                              </mat-form-field>
+
+                              <span *ngIf="submitteduser && add_employee_control.add_employeeDeptartment .errors" class="error">
+                                  <span *ngIf="add_employee_control.add_employeeDeptartment.errors.required">{{ requireerror }}</span>
+                          </span>
+
+
+ 
+                        </div>
+                      </div>
+                      <!--<div class="form-group col-md-4">
+                        <div>
+                            <mat-form-field>
+                                <mat-label>Branch</mat-label>
+                                <mat-select #add_employeeBranch value="Branch 1" id="add_employeeBranch" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeBranch.errors }" formControlName="add_employeeBranch" autocomplete="off" multiple  >
+                                  <mat-option value="Branch 1">Branch 1</mat-option>
+                                  <mat-option value="Branch 2">Branch 2</mat-option>
+                                 
+                                </mat-select>
+                              </mat-form-field>
+
+                              <span *ngIf="submitteduser && add_employee_control.add_employeeBranch .errors" class="error">
+                                  <span *ngIf="add_employee_control.add_employeeBranch.errors.required">{{ requireerror }}</span>
+                          </span>
+
+                         
+                        </div>
+                      </div>-->
+                      <div class="form-group col-md-4">
+                        <div>
+                            <mat-form-field>
+                                <mat-label>Designation Lavel</mat-label>
+                                <mat-select #add_employeeDesignation_Lavel value="L1" id="add_employeeDesignation_Lavel" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeDesignation_Lavel.errors }" formControlName="add_employeeDesignation_Lavel" autocomplete="off"  >
+                                  <mat-option value="Branch 1">L1</mat-option>
+                                  <mat-option value="Branch 2">L2</mat-option>
+                                 
+                                </mat-select>
+                              </mat-form-field>
+
+                              <span *ngIf="submitteduser && add_employee_control.add_employeeDesignation_Lavel .errors" class="error">
+                                  <span *ngIf="add_employee_control.add_employeeDesignation_Lavel.errors.required">{{ requireerror }}</span>
+                          </span>
+ 
+                          
+                        </div>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <div >
+                            <mat-form-field>
+                                <mat-label>Designation</mat-label>
+                                <mat-select #add_employeeDesignation value="Designation 1" id="add_employeeDesignation" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employeeDesignation.errors }" formControlName="add_employeeDesignation" autocomplete="off"  >
+                                  <mat-option value="Designation 1">Designation 1</mat-option>
+                                  <mat-option value="Designation 1">Designation 2</mat-option>
+                                 
+                                </mat-select>
+                              </mat-form-field>
+
+                              <span *ngIf="submitteduser && add_employee_control.add_employeeDesignation .errors" class="error">
+                                  <span *ngIf="add_employee_control.add_employeeDesignation.errors.required">{{ requireerror }}</span>
+                          </span>
+ 
+                        </div>
+                      </div>
+                      <div class="form-group col-md-4">
+                          <mat-form-field class="date-fields max-width-130">
+                              <input matInput [matDatepicker]="add_employee_Date_of_Joining" placeholder="Date of Joining" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Date_of_Joining.errors }" formControlName="add_employee_Date_of_Joining" id="add_employee_Date_of_Joining" readonly autocomplete="off" required>
+                              <mat-datepicker-toggle matSuffix [for]="add_employee_Date_of_Joining"></mat-datepicker-toggle>
+                              <mat-datepicker #add_employee_Date_of_Joining></mat-datepicker>
+                            </mat-form-field>	<span *ngIf="submitteduser && add_employee_control.add_employee_Date_of_Joining.errors" class="error">
+                                          <span *ngIf="add_employee_control.add_employee_Date_of_Joining.errors.required">{{ requireerror }}</span> </span>
+
+
+                         
+                      </div>
+
+                      <div class="form-group col-md-4">
+                          <mat-form-field class="date-fields">
+                              <input matInput [matDatepicker]="add_employee_Date_of_relieving" placeholder="Date of Relieving " [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Date_of_relieving.errors }" formControlName="add_employee_Date_of_relieving" id="add_employee_Date_of_relieving" readonly autocomplete="off" required>
+                              <mat-datepicker-toggle matSuffix [for]="add_employee_Date_of_relieving"></mat-datepicker-toggle>
+                              <mat-datepicker #add_employee_Date_of_relieving></mat-datepicker>
+                            </mat-form-field>	<span *ngIf="submitteduser && add_employee_control.add_employee_Date_of_relieving.errors" class="error">
+                                          <span *ngIf="add_employee_control.add_employee_Date_of_relieving.errors.required">{{ requireerror }}</span> </span>
+
+
+                         
+                      </div>
+
+                      <div class="form-group col-md-4">
+                          <mat-form-field class="date-fields max-width-130">
+                              <input matInput [matDatepicker]="add_employee_Date_of_Birth" placeholder="Date of Birth" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Date_of_Birth.errors }" formControlName="add_employee_Date_of_Birth" id="add_employee_Date_of_Birth" readonly autocomplete="off" required>
+                              <mat-datepicker-toggle matSuffix [for]="add_employee_Date_of_Birth"></mat-datepicker-toggle>
+                              <mat-datepicker #add_employee_Date_of_Birth></mat-datepicker>
+                            </mat-form-field>	<span *ngIf="submitteduser && add_employee_control.add_employee_Date_of_Birth.errors" class="error">
+                                          <span *ngIf="add_employee_control.add_employee_Date_of_Birth.errors.required">{{ requireerror }}</span> </span>
+ 
+                      </div>
+                      <div class="form-group col-md-4">
+                          <mat-form-field class="max-width-180">
+                              <input matInput specialIsAlphaNumeric placeholder="Pan No " [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Pan_No.errors }" formControlName="add_employee_Pan_No" autocomplete="off" required  >
+                            </mat-form-field>	
+                            <span *ngIf="submitteduser && add_employee_control.add_employee_Pan_No.errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employee_Pan_No.errors.required">{{ requireerror }}</span>
+                            </span> 
+                     
+                      </div>
+
+                      
+                      <div class="form-group col-md-4">
+
+                          <mat-form-field>
+                              <mat-label>Bank Name</mat-label>
+                              <mat-select #add_employee_Bank_Name value="L1" id="add_employee_Bank_Name" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Bank_Name.errors }" formControlName="add_employee_Bank_Name" autocomplete="off"  >
+                                <mat-option value="Branch 1">HDFC</mat-option>
+                                <mat-option value="Branch 2">SBI</mat-option>
+                               
+                              </mat-select>
+                            </mat-form-field>
+
+                            <span *ngIf="submitteduser && add_employee_control.add_employee_Bank_Name .errors" class="error">
+                                <span *ngIf="add_employee_control.add_employee_Bank_Name.errors.required">{{ requireerror }}</span>
+                        </span>
+ 
+                     
+                      </div>
+
+
+                      <div class="form-group col-md-4">
+                          <mat-form-field class="max-width-180">
+                              <input matInput specialIsAlphaNumeric placeholder="Account Number" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Bank_Name.errors }" formControlName="add_employee_Bank_Name" autocomplete="off" required  >
+                            </mat-form-field>	
+                            <span *ngIf="submitteduser && add_employee_control.add_employee_Bank_Name.errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employee_Bank_Name.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                     
+                      </div>
+                      <div class="form-group col-md-4">
+                          <mat-form-field>
+                              <input matInput specialIsAlphaNumeric  placeholder="IFSC Code" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_IFSC_Code.errors }" formControlName="add_employee_IFSC_Code" autocomplete="off" required  >
+                            </mat-form-field>	
+                            <span *ngIf="submitteduser && add_employee_control.add_employee_IFSC_Code.errors" class="error">
+                                    <span *ngIf="add_employee_control.add_employee_IFSC_Code.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                         
+                      </div>
+                      <div class="clear"></div>
+                       
+                      <div class="form-group col-md-6 ">
+                          <mat-form-field>
+                              <textarea matInput specialIsAlphaNumeric placeholder="Remark" id="add_employee_Remark" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Remark.errors }" formControlName="add_employee_Remark" autocomplete="off" ></textarea>
+                            </mat-form-field>
+
+                         
+                      </div>
+                      <hr>
+                      <!-- radio -->
+                     <!--<div class="form-group col-12 col-md-12 col-xl-12">
+                        <div class="form-group">
+                          <label>Status</label>
+
+                          <mat-radio-group aria-label="Select an option" id="add_employee_Status" [ngClass]="{ 'is-invalid': submitteduser && add_employee_control.add_employee_Status.errors }" formControlName="add_employee_Status" autocomplete="off" >
+                              <mat-radio-button value="Active" selected>Active</mat-radio-button><br/>
+                              <mat-radio-button value="In-Active">In-Active</mat-radio-button>
+                            </mat-radio-group>
+
+
+                            
+                        </div>
+                      </div>-->
+                    </div>
+                    <!-- form-row -->
+                  </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-danger">Cancel</button>
+                  <button id="kycadded" class="btn btn-success pull-right">Add Now</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box -->
+          </div>
+        </div>
+        <!---col-md-12 -->
+        <!--- new add rolle ended -->
+        </div>
+    </section>
+    <!-- /.content -->
+    
+  </div>
+  <!-- /.content-wrapper -->

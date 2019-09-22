@@ -1,0 +1,141 @@
+<app-master-sidebar></app-master-sidebar>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<!--- new add rolle -->
+			<div class="col-md-12">
+				<div class="content-header">
+					<div class="align-items-center">
+						<div class="mr-auto">
+							<h3 class="page-title">Product Management</h3>
+							<div class="d-inline-block align-items-center">
+								<nav>
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a>
+										</li>
+										<li class="breadcrumb-item" aria-current="page">Product Management</li>
+										<li class="breadcrumb-item active" aria-current="page">Add Product</li>
+									</ol>
+								</nav>
+              </div>
+              <div class="pull-right">
+									<button routerLink="/master/manage_product"  class="btn btn-rounded btn-info mb-5 ncust-btn">Manage Product </button>  
+							</div>
+							 
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8 col-12 offset-md-2">
+					<!-- Basic Forms -->
+					<div class="box">
+						<h4 class="box-title">Add New Product</h4> 
+						<!-- /.box-header -->
+						<form [formGroup]="add_Product" (ngSubmit)="onSubmitProduct()">
+							<div class="box-body">
+								<div class="first_blk_line form-element">
+									<div class="form-row">
+									 
+										<div class="form-group col-md-4">
+											<mat-form-field>
+												<input matInput specialIsAlphaNumeric placeholder="Product Name" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_Product_Name.errors }" formControlName="pro_Product_Name" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_Product_Name.errors" class="error">
+                                    <span *ngIf="add_Product_control.pro_Product_Name.errors.required">{{ requireerror }}</span>
+											</span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <mat-form-field>
+                          <input matInput numbersOnly specialIsAlphaNumeric placeholder="Min Amount" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_Min_Amount.errors }" formControlName="pro_Min_Amount" autocomplete="off" required>
+                        </mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_Min_Amount.errors" class="error">
+                                      <span *ngIf="add_Product_control.pro_Min_Amount.errors.required">{{ requireerror }}</span>
+                        </span>
+                      </div>
+
+                      <div class="form-group col-md-4">
+                          <mat-form-field>
+                            <input matInput numbersOnly specialIsAlphaNumeric placeholder="Min tenure" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_Min_tenure.errors }" formControlName="pro_Min_tenure" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_Min_tenure.errors" class="error">
+                                        <span *ngIf="add_Product_control.pro_Min_tenure.errors.required">{{ requireerror }}</span>
+                          </span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <mat-form-field>
+                              <input matInput numbersOnly specialIsAlphaNumeric placeholder="Max Amount" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_Max_Amount.errors }" formControlName="pro_Max_Amount" autocomplete="off" required>
+                            </mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_Max_Amount.errors" class="error">
+                                          <span *ngIf="add_Product_control.pro_Max_Amount.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+
+
+                          <div class="form-group col-md-4">
+                              <mat-form-field>
+                                <input matInput numbersOnly specialIsAlphaNumeric placeholder="Max Tenure" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_Max_Tenure.errors }" formControlName="pro_Max_Tenure" autocomplete="off" required>
+                              </mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_Max_Tenure.errors" class="error">
+                                            <span *ngIf="add_Product_control.pro_Max_Tenure.errors.required">{{ requireerror }}</span>
+                              </span>
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                <div class="input-group   max-width-150">
+                                    <mat-form-field class="date-fields">
+                                      <input matInput [matDatepicker]="pro_From_Date" placeholder="From Date" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_From_Date.errors }" formControlName="pro_From_Date" id="pro_From_Date" readonly>
+                                      <mat-datepicker-toggle matSuffix [for]="pro_From_Date"></mat-datepicker-toggle>
+                                      <mat-datepicker #pro_From_Date></mat-datepicker>
+                                    </mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_From_Date.errors" class="error">
+                                                  <span *ngIf="add_Product_control.pro_From_Date.errors.required">{{ requireerror }}</span> </span>
+                                  </div>
+
+                                
+                              </div>
+
+                              <div class="form-group col-md-4">
+                                  <div class="input-group   max-width-150">
+                                      <mat-form-field class="date-fields">
+                                        <input matInput [matDatepicker]="pro_To_Date" placeholder="From Date" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.pro_To_Date.errors }" formControlName="pro_To_Date" id="pro_To_Date" readonly>
+                                        <mat-datepicker-toggle matSuffix [for]="pro_To_Date"></mat-datepicker-toggle>
+                                        <mat-datepicker #pro_To_Date></mat-datepicker>
+                                      </mat-form-field>	<span *ngIf="submittedProduct && add_Product_control.pro_To_Date.errors" class="error">
+                                                    <span *ngIf="add_Product_control.pro_To_Date.errors.required">{{ requireerror }}</span> </span>
+                                    </div>
+
+
+                                   
+                                </div>
+
+  
+										<!-- radio -->
+										<div class="form-group col-12 col-md-12 col-xl-12">
+											<div class="form-group">
+												<label>Status</label>
+												<mat-radio-group aria-label="Select an option" id="add_Product_Status" [ngClass]="{ 'is-invalid': submittedProduct && add_Product_control.add_Product_Status.errors }" formControlName="add_Product_Status" autocomplete="off">
+													<mat-radio-button value="Active" selected>Active</mat-radio-button>
+													<br/>
+													<mat-radio-button value="In-Active">In-Active</mat-radio-button>
+												</mat-radio-group>
+											</div>
+										</div>
+									</div>
+									<!-- form-row -->
+								</div>
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-danger">Cancel</button>
+								<button id="kycadded" class="btn btn-success pull-right">Add Now</button>
+							</div>
+						</form>
+					</div>
+					<!-- /.box -->
+				</div>
+			</div>
+			<!---col-md-12 -->
+			<!--- new add rolle ended -->
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

@@ -1,0 +1,440 @@
+<app-senction-side-bar></app-senction-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+          <!--Guarantor Start-->
+				<div class="tab-pane first-tab active" id="guarantor">
+					<form [formGroup]="Guarantor_form" (ngSubmit)="onSubmit24()">
+						<div class="box box-default my_inner_box">
+							<div class="box-body wizard-content">
+								<div class="tab-content">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Guarantor</strong></h4>
+										<div class="form-row">
+											<div class="form-group col-md-4">
+												<mat-form-field>
+													<input matInput placeholder="First Name" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_First_Name.errors }" formControlName="LS_Gu_First_Name" id="LS_Gu_First_Name" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_First_Name.errors" class="error">
+															<span *ngIf="Guarantor_control.LS_Gu_First_Name.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-md-4">
+												<mat-form-field>
+													<input matInput placeholder="Middle Name" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Middle_Name.errors }" formControlName="LS_Gu_Middle_Name" id="LS_Gu_Middle_Name" autocomplete="off">
+												</mat-form-field>
+											</div>
+											<div class="form-group col-md-4">
+												<mat-form-field>
+													<input matInput placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Last_Name.errors }" formControlName="LS_Gu_Last_Name" id="LS_Gu_Last_Name" autocomplete="off">
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="row  my_address_blk">
+											<div class="col-md-6" style="flex: 0 0 49%;">
+												<div class="row">
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class=" max-width-150">
+															<mat-form-field>
+																<input matInput [matDatepicker]="LS_Gu_DOB" placeholder="DOB" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_DOB.errors }" formControlName="LS_Gu_DOB" id="LS_Gu_DOB" readonly>
+																<mat-datepicker-toggle matSuffix [for]="LS_Gu_DOB"></mat-datepicker-toggle>
+																<mat-datepicker #LS_Gu_DOB></mat-datepicker>
+															</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_DOB.errors" class="error">
+																		<span *ngIf="Guarantor_control.LS_Gu_DOB.errors.required">{{ requireerror }}</span> </span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field class="max-width-40">
+															<input matInput placeholder="Age" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Age.errors }" formControlName="LS_Gu_Age" id="LS_Gu_Age" autocomplete="off">
+														</mat-form-field>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class="max-width-150">
+															<mat-form-field>
+																<mat-label>DOB Proof <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_DOB_Proof" id="LS_Gu_DOB_Proof" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_DOB_Proof.errors }" type="text" formControlName="LS_Gu_DOB_Proof" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Residence">Residence</mat-option>
+																	<mat-option value="Office">Office</mat-option>
+																	<mat-option value="Banking">Banking</mat-option>
+																	<mat-option value="Salary slip">Salary slip</mat-option>
+																	<mat-option value="ITR">ITR</mat-option>
+																	<mat-option value="Form 16">Form 16 (Status Automatic from vendor)</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_DOB_Proof.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_DOB_Proof.errors.required">{{ requireerror }}</span>
+															</span>
+															<!--
+																<mat-form-field>
+																		<mat-label>DOB Proof <span class="txt-red">*</span> 
+																		</mat-label>
+																		<mat-select [(value)]="LS_Gu_DOB_proof" id="LS_Gu_DOB_proof" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_DOB_proof.errors }" type="text" formControlName="LS_Gu_DOB_proof" value="" autocomplete="off" >
+																		  <mat-option>None</mat-option>
+																		  <mat-option value="Pan">Pan</mat-option>
+																		  <mat-option value="Aadhar">Aadhar</mat-option>
+																		  <mat-option value="10th Marksheet">10th Marksheet</mat-option>
+																		  <mat-option value="Passport">Passport</mat-option>
+																		   
+																		</mat-select>
+																	  </mat-form-field>
+																	  
+																	  <span *ngIf="submitted24 && Guarantor_control.LS_Gu_DOB_proof.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_DOB_proof.errors.required">{{ requireerror }}</span>
+																	  </span> -->
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="Gua_DOBproof" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+														</button>
+														<label for="Gua_DOBproof">DOB proof</label>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field>
+															<input matInput numbersOnly placeholder="Contact No" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Contact_No.errors }" formControlName="LS_Gu_Contact_No" id="LS_Gu_Contact_No" autocomplete="off" required>
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_Contact_No.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_Contact_No.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field>
+															<input matInput placeholder="Email ID" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Email_ID.errors }" formControlName="LS_Gu_Email_ID" id="LS_Gu_Email_ID" autocomplete="off">
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_Email_ID.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_Email_ID.errors.email">{{ emailerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class="max-width-120">
+															<mat-form-field>
+																<mat-label>Gender <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_Gender" id="LS_Gu_Gender" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Gender.errors }" type="text" formControlName="LS_Gu_Gender" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Male">Male</mat-option>
+																	<mat-option value="Female">Female</mat-option>
+																	<mat-option value="Transgender">Transgender</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_Gender.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_Gender.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class="max-width-120 ">
+															<mat-form-field>
+																<mat-label>Nationality <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_Nationality" id="LS_Gu_Nationality" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Nationality.errors }" type="text" formControlName="LS_Gu_Nationality" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Indian">Indian</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_Nationality.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_Nationality.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class="max-width-120 ">
+															<mat-form-field>
+																<mat-label>Religion <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_Religion" id="LS_Gu_Religion" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Religion.errors }" type="text" formControlName="LS_Gu_Religion" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Hindu">Hindu</mat-option>
+																	<mat-option value="Muslim">Muslim</mat-option>
+																	<mat-option value="Sikh">Sikh</mat-option>
+																	<mat-option value="Christian">Christian</mat-option>
+																	<mat-option value="Buddhism">Buddhism</mat-option>
+																	<mat-option value="Jainism">Jainism</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_Religion.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_Religion.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-6">
+														<div class="">
+															<mat-form-field>
+																<mat-label>Qualification <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_Qualification" id="LS_Gu_Qualification" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Qualification.errors }" type="text" formControlName="LS_Gu_Qualification" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Graduate">Graduate</mat-option>
+																	<mat-option value="Post Graduate">Post Graduate</mat-option>
+																	<mat-option value="Professional Qualification">Professional Qualification</mat-option>
+																	<mat-option value="Illeterate">Illeterate</mat-option>
+																	<mat-option value="Higher Secondary (upto 12th)">Higher Secondary (upto 12th)</mat-option>
+																	<mat-option value="Secondary School (upto 10th)">Secondary School (upto 10th)</mat-option>
+																	<mat-option value="Middle School (upto 8th)">Middle School (upto 8th)</mat-option>
+																	<mat-option value="Primary School (upto 5th)">Primary School (upto 5th)</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_Qualification.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_Qualification.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field>
+															<input matInput specialIsAlphaNumeric placeholder="Relation with applicant" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Relation_with_applicant.errors }" formControlName="LS_Gu_Relation_with_applicant" id="LS_Gu_Relation_with_applicant" autocomplete="off">
+														</mat-form-field>
+													</div>
+												</div>
+											</div>
+											<div class="line" style="border-right:1px solid #aea6a6;;"></div>
+											<div class="col-md-6 pt-2 pr-1" style="flex: 0 0 49%;">
+												<div class="row">
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class="max-width-150 ">
+															<mat-form-field>
+																<mat-label>Residence Type <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_Residence_Type" id="LS_Gu_Residence_Type" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Residence_Type.errors }" type="text" formControlName="LS_Gu_Residence_Type" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Rented">Rented</mat-option>
+																	<mat-option value="Owned">Owned</mat-option>
+																	<mat-option value="Parental">Parental</mat-option>
+																	<mat-option value="Employer">Employer</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_Residence_Type.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_Residence_Type.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<div class="max-width-203">
+															<mat-form-field>
+																<mat-label>Address Proof <span class="txt-red">*</span> 
+																</mat-label>
+																<mat-select [(value)]="LS_Gu_Address_Proof" id="LS_Gu_Address_Proof" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Address_Proof.errors }" type="text" formControlName="LS_Gu_Address_Proof" autocomplete="off">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Aadhaar UID Card">Aadhaar UID Card</mat-option>
+																	<mat-option value="Bank Account Statement">Bank Account Statement</mat-option>
+																	<mat-option value="Pass Book 1st page">Pass Book 1st page</mat-option>
+																	<mat-option value="Driving Licence">Driving Licence</mat-option>
+																	<mat-option value="Electricity Bill">Electricity Bill</mat-option>
+																	<mat-option value="Gas Connection Bill">Gas Connection Bill</mat-option>
+																	<mat-option value="Post Paid Mobile Bill">Post Paid Mobile Bill</mat-option>
+																	<mat-option value="Property Tax Receipt">Property Tax Receipt</mat-option>
+																	<mat-option value="Ration Card">Ration Card</mat-option>
+																	<mat-option value="Rent Agreement">Rent Agreement</mat-option>
+																	<mat-option value="Telephone Bill">Telephone Bill</mat-option>
+																	<mat-option value="Valid Passport">Valid Passport</mat-option>
+																	<mat-option value="Voter's Identity Card">Voter's Identity Card</mat-option>
+																	<mat-option value="Water Bill">Water Bill</mat-option>
+																</mat-select>
+															</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_Address_Proof.errors" class="error">
+																		  <span *ngIf="Guarantor_control.LS_Gu_Address_Proof.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-6 col-md-12 col-xl-12">
+														<mat-form-field>
+															<textarea matInput specialIsAlphaNumeric placeholder="Address" id="LS_Gu_Address" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Address.errors }" formControlName="LS_Gu_Address" autocomplete="off" required></textarea>
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_Address.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_Address.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-8">
+														<mat-form-field>
+															<input matInput specialIsAlphaNumeric  placeholder="Landmark" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Landmark.errors }" formControlName="LS_Gu_Landmark" id="LS_Gu_Landmark" autocomplete="off">
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_Landmark.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_Landmark.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field>
+															<input matInput numbersOnly placeholder="Pin Code" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_Pin_Code.errors }" formControlName="LS_Gu_Pin_Code" id="LS_Gu_Pin_Code" autocomplete="off">
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_Pin_Code.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_Pin_Code.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field>
+															<input matInput specialIsAlphaNumeric placeholder="City" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_City.errors }" formControlName="LS_Gu_City" id="LS_Gu_City" autocomplete="off">
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_City.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_City.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4">
+														<mat-form-field>
+															<input matInput specialIsAlphaNumeric placeholder="District" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_District.errors }" formControlName="LS_Gu_District" id="LS_Gu_District" autocomplete="off">
+														</mat-form-field>	<span *ngIf="submitted24 && Guarantor_control.LS_Gu_District.errors" class="error">
+																	<span *ngIf="Guarantor_control.LS_Gu_District.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-4 ">
+														<mat-form-field>
+															<mat-label>State <span class="txt-red">*</span> 
+															</mat-label>
+															<mat-select [(value)]="LS_Gu_State" id="LS_Gu_State" [ngClass]="{ 'is-invalid': submitted24 && Guarantor_control.LS_Gu_State.errors }" type="text" formControlName="LS_Gu_State" value="" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Delhi">Delhi</mat-option>
+																<mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+															</mat-select>
+														</mat-form-field> <span *ngIf="submitted24 && Guarantor_control.LS_Gu_State.errors" class="error">
+																	  <span *ngIf="Guarantor_control.LS_Gu_State.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 col-md-12 col-xl-12 mt-4">
+											<div class="add_button_blk text-center">
+												<button class="btn btn-rounded btn-primary mb-4" id="Guarantor_add">Add Guarantor</button>
+											</div>
+										</div>
+										<!--- table list new start -->
+										<div class="form-row">
+											<div class="col-md-12">
+												<div class="tabl-screen1 bank-table show_Guarantor box_effect" style="display: none;">
+													<div class="table-responsive">
+														<table id="example" class="table my_bank_table table-bordered mb-4">
+															<thead>
+																<tr>
+																	<th class="sn_width_blk">S. No</th>
+																	<th>First Name</th>
+																	<th>Middle Name</th>
+																	<th>Last Name</th>
+																	<th>DOB</th>
+																	<th>Age</th>
+																	<th>DOB Proof</th>
+																	<th>Contact No</th>
+																	<th>Email ID</th>
+																	<th>Gender</th>
+																	<th>Nationality</th>
+																	<th>Religion</th>
+																	<th>Qualification</th>
+																	<th>Relation with applicant</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>1</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>Yes</td>
+																	<td>35</td>
+																	<td>Pan</td>
+																	<td>5689258248</td>
+																	<td>abc@gmail.com</td>
+																	<td>Male</td>
+																	<td>Indian</td>
+																	<td>Hindu</td>
+																	<td>Post Graduate</td>
+																	<td>Abc</td>
+																	<td>
+																		<div class="action">
+																			<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																			</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																			<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>2</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>Yes</td>
+																	<td>45</td>
+																	<td>Pan</td>
+																	<td>5897258248</td>
+																	<td>abc@gmail.com</td>
+																	<td>Male</td>
+																	<td>Indian</td>
+																	<td>Hindu</td>
+																	<td>Post Graduate</td>
+																	<td>Abc</td>
+																	<td>
+																		<div class="action">
+																			<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																			</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																			<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>3</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>Yes</td>
+																	<td>40</td>
+																	<td>Pan</td>
+																	<td>5689258248</td>
+																	<td>abc@gmail.com</td>
+																	<td>Male</td>
+																	<td>Indian</td>
+																	<td>Hindu</td>
+																	<td>Post Graduate</td>
+																	<td>Abc</td>
+																	<td>
+																		<div class="action">
+																			<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																			</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																			<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>4</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>ABC</td>
+																	<td>Yes</td>
+																	<td>38</td>
+																	<td>Pan</td>
+																	<td>5895258248</td>
+																	<td>abc@gmail.com</td>
+																	<td>Male</td>
+																	<td>Indian</td>
+																	<td>Hindu</td>
+																	<td>Post Graduate</td>
+																	<td>Abc</td>
+																	<td>
+																		<div class="action">
+																			<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																			</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																			<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--- table list new start ended -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--Guarantor End-->
+					
+          
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

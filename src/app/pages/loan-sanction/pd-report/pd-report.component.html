@@ -1,0 +1,850 @@
+<app-senction-side-bar></app-senction-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+          <!--Personal Discussion Report start-->
+				<div class="tab-pane first-tab active" id="personal_discussion_report">
+					<form [formGroup]="PD_report" (ngSubmit)="onSubmit16()">
+						<div class="my_inner_box_according">
+							<!--PD Report Start-->
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>Salaried</strong></h4>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<mat-form-field>
+														<input matInput placeholder="App-ID" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_App_ID.errors }" formControlName="LS_PD_App_ID" id="LS_PD_App_ID" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput placeholder="Applicant Name" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Applicant_Name.errors }" formControlName="LS_PD_Applicant_Name" id="LS_PD_Applicant_Name" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput [matDatepicker]="LS_PD_DOB" placeholder="DOB" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_DOB.errors }" formControlName="LS_PD_DOB" id="LS_PD_DOB" readonly>
+														<mat-datepicker-toggle matSuffix [for]="LS_PD_DOB"></mat-datepicker-toggle>
+														<mat-datepicker #LS_PD_DOB></mat-datepicker>
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-120">
+														<input matInput numbersOnly placeholder="Contact No." [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_SA_Contact_No.errors }" formControlName="LS_PD_SA_Contact_No" id="LS_PD_SA_Contact_No" autocomplete="off" maxlength="11">
+													</mat-form-field> 
+													<span *ngIf="submitted16 && pd_control.LS_PD_SA_Contact_No.errors" class="error">
+															 <span *ngIf="pd_control.LS_PD_SA_Contact_No.errors.minlength">{{ minerror }} </span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<mat-form-field>
+														<input matInput placeholder="Qualification" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Qualification.errors }" formControlName="LS_PD_Qualification" id="LS_PD_Qualification" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput placeholder="Co-app Name" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Co_app_Name.errors }" formControlName="LS_PD_Co_app_Name" id="LS_PD_Co_app_Name" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-120">
+														<input matInput numbersOnly placeholder="Loan Amt. Requested" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Loan_Amt_Requested.errors }" formControlName="LS_PD_Loan_Amt_Requested" id="LS_PD_Loan_Amt_Requested" autocomplete="off">
+													</mat-form-field>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<mat-label>Loan Purpose</mat-label>
+														<mat-select [(value)]="LS_PD_Loan_Purpose" id="LS_PD_Loan_Purpose" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Loan_Purpose.errors }" type="text" formControlName="LS_PD_Loan_Purpose" value="" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Flat Purchase">Flat Purchase</mat-option>
+															<mat-option value="House Purchase">House Purchase</mat-option>
+															<mat-option value="Plot+ Construction">Plot+ Construction</mat-option>
+															<mat-option value="Plot">Plot</mat-option>
+															<mat-option value="Refinance">Refinance</mat-option>
+															<mat-option value="Top-Up">Top-Up</mat-option>
+															<mat-option value="LAP">LAP</mat-option>
+															<mat-option value="LAP-BT">LAP-BT</mat-option>
+															<mat-option value="LAP BT+Top Up">LAP BT+Top Up</mat-option>
+															<mat-option value="Seller BT">Seller BT</mat-option>
+														</mat-select>
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<mat-form-field>
+														<input matInput placeholder="ROI" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_ROI.errors }" formControlName="LS_PD_ROI" id="LS_PD_ROI" autocomplete="off">
+													</mat-form-field>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<div class="first_blk_line form-element">
+								<div class="box">
+									<div class="box-header ">
+										<h4 class="inte-box-title"><strong>Detailed Address of Applicant</strong></h4>
+										<ul class="box-controls pull-right">
+											<li>
+												<a class="box-btn-slide" href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+											<div class="row  my_address_blk">
+												<div class="col-12 col-md-12 col-xl-6" style="flex: 0 0 49%;">
+													<div class="row">
+														<div class="col-md-12">
+															<h6 class="sub-title pb-1"><strong>Current Address</strong></h6>
+														</div>
+													</div>
+													<div class="row">
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<div class="max-width-180 select-wrapper inner_width_select">
+																<mat-form-field>
+																	<mat-label>Residence Type</mat-label>
+																	<mat-select [(value)]="LS_PD_CR_Residence_Type" id="LS_PD_CR_Residence_Type" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Residence_Type.errors }" type="text" formControlName="LS_PD_CR_Residence_Type" autocomplete="off">
+																		<mat-option>None</mat-option>
+																		<mat-option value="Rented">Rented</mat-option>
+																		<mat-option value="Owned">Owned</mat-option>
+																		<mat-option value="Parental">Parental</mat-option>
+																		<mat-option value="Employer">Employer</mat-option>
+																	</mat-select>
+																</mat-form-field>
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+															<div class="select-wrapper inner_width_select">
+																<mat-form-field>
+																	<mat-label>Address Proof</mat-label>
+																	<mat-select [(value)]="LS_PD_CR_Address_Proof" id="LS_PD_CR_Address_Proof" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Address_Proof.errors }" type="text" formControlName="LS_PD_CR_Address_Proof" autocomplete="off">
+																		<mat-option>None</mat-option>
+																		<mat-option value="Aadhaar UID Card">Aadhaar UID Card</mat-option>
+																		<mat-option value="Bank Account Statement">Bank Account Statement</mat-option>
+																		<mat-option value="Pass Book 1st page">Pass Book 1st page</mat-option>
+																		<mat-option value="Driving Licence">Driving Licence</mat-option>
+																		<mat-option value="Electricity Bill">Electricity Bill</mat-option>
+																		<mat-option value="Gas Connection Bill">Gas Connection Bill</mat-option>
+																		<mat-option value="Post Paid Mobile Bill">Post Paid Mobile Bill</mat-option>
+																		<mat-option value="Property Tax Receipt">Property Tax Receipt</mat-option>
+																		<mat-option value="Ration Card">Ration Card</mat-option>
+																		<mat-option value="Rent Agreement">Rent Agreement</mat-option>
+																		<mat-option value="Telephone Bill">Telephone Bill</mat-option>
+																		<mat-option value="Telephone Bill">Telephone Bill</mat-option>
+																		<mat-option value="Valid Passport">Valid Passport</mat-option>
+																		<mat-option value="Voter's Identity Card">Voter's Identity Card</mat-option>
+																		<mat-option value="Water Bill">Licence</mat-option>
+																	</mat-select>
+																</mat-form-field>
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput numbersOnly placeholder="Rent Amount" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Rent_Amount.errors }" formControlName="LS_PD_CR_Rent_Amount" id="LS_PD_CR_Rent_Amount" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-12 col-md-12 col-xl-12">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="Address" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Address.errors }" formControlName="LS_PD_CR_Address" id="LS_PD_CR_Address" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-5">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="Landmark" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Landmark.errors }" formControlName="LS_PD_CR_Landmark" id="LS_PD_CR_Landmark" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-3">
+															<mat-form-field>
+																<input matInput numbersOnly placeholder="Pin Code" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Pin_Code.errors }" formControlName="LS_PD_CR_Landmark" id="LS_PD_CR_Pin_Code" autocomplete="off" maxlength="8">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput placeholder="City" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_City.errors }" formControlName="LS_PD_CR_City" id="LS_PD_CR_City" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="District" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_District.errors }" formControlName="LS_PD_CR_District" id="LS_PD_CR_District" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<div class="max-width-160 select-wrapper inner_width_select">
+																<mat-form-field>
+																	<mat-label>State</mat-label>
+																	<mat-select [(value)]="LS_PD_CR_State" id="LS_PD_CR_State" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_State.errors }" type="text" formControlName="LS_PD_CR_State" autocomplete="off">
+																		<mat-option>None</mat-option>
+																		<mat-option value="Delhi">Delhi</mat-option>
+																	</mat-select>
+																</mat-form-field>
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput numbersOnly placeholder="Staying (In years)" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CR_Staying__In_years.errors }" formControlName="LS_PD_CR_Staying__In_years" id="LS_PD_CR_Staying__In_years" autocomplete="off" maxlength="4">
+															</mat-form-field>
+														</div>
+													</div>
+												</div>
+												<div class="line" style="border-right:1px solid #aea6a6;;"></div>
+												<div class="col-12 col-md-12 col-xl-6" style="flex: 0 0 49%;">
+													<div class="row">
+														<div class="col-md-12">
+															<h6 class="sub-title pb-1"><strong>Permanent Address </strong>
+																<mat-checkbox class="pull-right"> Same As Current Address</mat-checkbox>
+															</h6>
+														</div>
+													</div>
+													<div class="row">
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<div class="max-width-180 select-wrapper inner_width_select">
+																<mat-form-field>
+																	<mat-label>Residence Type</mat-label>
+																	<mat-select [(value)]="LS_PD_Residence_Type" id="LS_PD_Residence_Type" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Residence_Type.errors }" type="text" formControlName="LS_PD_Residence_Type" autocomplete="off">
+																		<mat-option>None</mat-option>
+																		<mat-option value="Rented">Rented</mat-option>
+																		<mat-option value="Owned">Owned</mat-option>
+																		<mat-option value="Parental">Parental</mat-option>
+																		<mat-option value="Employer">Employer</mat-option>
+																	</mat-select>
+																</mat-form-field>
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+															<div class="select-wrapper inner_width_select">
+																<mat-form-field>
+																	<mat-label>Address Proof</mat-label>
+																	<mat-select [(value)]="LS_PD_Address_Proof" id="LS_PD_Address_Proof" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Address_Proof.errors }" type="text" formControlName="LS_PD_Address_Proof" autocomplete="off">
+																		<mat-option>None</mat-option>
+																		<mat-option value="Aadhaar UID Card">Aadhaar UID Card</mat-option>
+																		<mat-option value="Bank Account Statement">Bank Account Statement</mat-option>
+																		<mat-option value="Pass Book 1st page">Pass Book 1st page</mat-option>
+																		<mat-option value="Driving Licence">Driving Licence</mat-option>
+																		<mat-option value="Electricity Bill">Electricity Bill</mat-option>
+																		<mat-option value="Gas Connection Bill">Gas Connection Bill</mat-option>
+																		<mat-option value="Post Paid Mobile Bill">Post Paid Mobile Bill</mat-option>
+																		<mat-option value="Property Tax Receipt">Property Tax Receipt</mat-option>
+																		<mat-option value="Ration Card">Ration Card</mat-option>
+																		<mat-option value="Rent Agreement">Rent Agreement</mat-option>
+																		<mat-option value="Telephone Bill">Telephone Bill</mat-option>
+																		<mat-option value="Telephone Bill">Telephone Bill</mat-option>
+																		<mat-option value="Valid Passport">Valid Passport</mat-option>
+																		<mat-option value="Voter's Identity Card">Voter's Identity Card</mat-option>
+																		<mat-option value="Water Bill">Licence</mat-option>
+																	</mat-select>
+																</mat-form-field>
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput numbersOnly placeholder="Rent Amount" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Rent_Amount.errors }" formControlName="LS_PD_Rent_Amount" id="LS_PD_Rent_Amount" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-12 col-md-12 col-xl-12">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="Address" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Address.errors }" formControlName="LS_PD_Address" id="LS_PD_CR_Address" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-5">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="Landmark" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Landmark.errors }" formControlName="LS_PD_Landmark" id="LS_PD_Landmark" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-3">
+															<mat-form-field>
+																<input matInput numbersOnly placeholder="Pin Code" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Pin_Code.errors }" formControlName="LS_PD_Pin_Code" id="LS_PD_Pin_Code" autocomplete="off" maxlength="8">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="City" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_City.errors }" formControlName="LS_PD_City" id="LS_PD_City" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput placeholder="District" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_District.errors }" formControlName="LS_PD_District" id="LS_PD_District" autocomplete="off">
+															</mat-form-field>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<div class="max-width-160 select-wrapper inner_width_select">
+																<mat-form-field>
+																	<mat-label>State</mat-label>
+																	<mat-select [(value)]="LS_PD_State" id="LS_PD_State" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_State.errors }" type="text" formControlName="LS_PD_State" autocomplete="off">
+																		<mat-option>None</mat-option>
+																		<mat-option value="Delhi">Delhi</mat-option>
+																	</mat-select>
+																</mat-form-field>
+															</div>
+														</div>
+														<div class="form-group col-6 col-md-6 col-xl-4">
+															<mat-form-field>
+																<input matInput specialIsAlphaNumeric placeholder="Staying (In years)" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Staying__In_years.errors }" formControlName="LS_PD_Staying__In_years" id="LS_PD_Staying__In_years" autocomplete="off" maxlength="4">
+															</mat-form-field>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>Current Employer’s Detail</strong></h4>
+										<ul class="box-controls pull-right">
+											<li>
+												<a class="box-btn-slide" href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Company Name" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CE_Company_Name.errors }" formControlName="LS_PD_CE_Company_Name" id="LS_PD_CE_Company_Name" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted16 && pd_control.LS_PD_CE_Company_Name.errors" class="error">
+														<span *ngIf="pd_control.LS_PD_CE_Company_Name.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Designation" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CE_Designation.errors }" formControlName="LS_PD_CE_Designation" id="LS_PD_CE_Designation" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted16 && pd_control.LS_PD_CE_Designation.errors" class="error">
+																<span *ngIf="pd_control.LS_PD_CE_Designation.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput [matDatepicker]="LS_PD_CE_Joining_Date" placeholder="Joining Date" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_CE_Joining_Date.errors }" formControlName="LS_PD_CE_Joining_Date" id="LS_PD_CE_Joining_Date" readonly required>
+														<mat-datepicker-toggle matSuffix [for]="LS_PD_CE_Joining_Date"></mat-datepicker-toggle>
+														<mat-datepicker #LS_PD_CE_Joining_Date></mat-datepicker>
+													</mat-form-field>	<span *ngIf="submitted16 && pd_control.LS_PD_CE_Joining_Date.errors" class="error">
+																<span *ngIf="pd_control.LS_PD_CE_Joining_Date.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-165 select-wrapper inner_width_select">
+														<mat-form-field>
+															<mat-label>Constitution <span class="txt-red">*</span> 
+															</mat-label>
+															<mat-select [(value)]="LS_PD_Constitution" id="LS_PD_Constitution" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Constitution.errors }" type="text" formControlName="LS_PD_Constitution" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Partnership">Partnership</mat-option>
+																<mat-option value="Proprietorship">Proprietorship</mat-option>
+																<mat-option value="Private Limited">Private Limited</mat-option>
+																<mat-option value="Limited">Limited</mat-option>
+																<mat-option value="LLP">LLP</mat-option>
+																<mat-option value="HUF">HUF</mat-option>
+															</mat-select>
+														</mat-form-field> <span *ngIf="submitted16 && pd_control.LS_PD_Constitution.errors" class="error">
+																		<span *ngIf="pd_control.LS_PD_Constitution.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-120">
+														<input matInput numbersOnly placeholder="Monthly Gross Income" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Monthly_Gross_Income.errors }" formControlName="LS_PD_Monthly_Gross_Income" id="LS_PD_Monthly_Gross_Income" autocomplete="off" maxlength="10" required>
+													</mat-form-field>	<span *ngIf="submitted16 && pd_control.LS_PD_Monthly_Gross_Income.errors" class="error">
+																<span *ngIf="pd_control.LS_PD_Monthly_Gross_Income.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>Previous Employment Detail</strong></h4>
+										<ul class="box-controls pull-right">
+											<li>
+												<a class="box-btn-slide" href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Company Name" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Company_Name.errors }" formControlName="LS_PD_Company_Name" id="LS_PD_Company_Name" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Designation" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Designation.errors }" formControlName="LS_PD_Designation" id="LS_PD_Designation" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-165">
+														<input matInput [matDatepicker]="LS_PD_Joining_Date" placeholder="Joining Date" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Joining_Date.errors }" formControlName="LS_PD_Joining_Date" id="LS_PD_Joining_Date" readonly>
+														<mat-datepicker-toggle matSuffix [for]="LS_PD_Joining_Date"></mat-datepicker-toggle>
+														<mat-datepicker #LS_PD_Joining_Date></mat-datepicker>
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-165">
+														<input matInput [matDatepicker]="LS_PD_Last_Date" placeholder="Last Date" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Last_Date.errors }" formControlName="LS_PD_Last_Date" id="LS_PD_Last_Date" readonly>
+														<mat-datepicker-toggle matSuffix [for]="LS_PD_Last_Date"></mat-datepicker-toggle>
+														<mat-datepicker #LS_PD_Last_Date></mat-datepicker>
+													</mat-form-field>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>Other Loan Detail</strong></h4>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+											<form [formGroup]="Other_Loan_Detail" (ngSubmit)="onSubmit28()" >
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-165 ">
+														<mat-form-field>
+															<mat-label>Loan Type <span class="txt-red">*</span> 
+															</mat-label>
+															<mat-select [(value)]="LS_PD_Loan_Type" id="LS_PD_Loan_Type" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Loan_Type.errors }" type="text" formControlName="LS_PD_Loan_Type" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Housing Loan">Housing Loan</mat-option>
+																<mat-option value="Auto Loan">Auto Loan</mat-option>
+																<mat-option value="Education Loan">Education Loan</mat-option>
+																<mat-option value="Business Loan">Business Loan</mat-option>
+																<mat-option value="Personal Loan">Personal Loan</mat-option>
+																<mat-option value="Consumer Loan">Consumer Loan</mat-option>
+																<mat-option value="Gold Loan">Gold Loan</mat-option>
+																<mat-option value="Two wheeler">Two wheeler</mat-option>
+																<mat-option value="CC/OD">CC/OD</mat-option>
+																<mat-option value="Employer Loan">Employer Loan</mat-option>
+																<mat-option value="KCC Loan">KCC Loan</mat-option>
+															</mat-select>
+														</mat-form-field> <span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Loan_Type.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Loan_Type.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Financier Name" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Financier_Name.errors }" formControlName="LS_PD_Financier_Name" id="LS_PD_Financier_Name" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Financier_Name.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Financier_Name.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput numbersOnly placeholder="Loan Amount" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Loan_Amount.errors }" formControlName="LS_PD_Loan_Amount" id="LS_PD_Loan_Amount" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Loan_Amount.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Loan_Amount.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-40">
+														<input matInput numbersOnly placeholder="Tenure" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Balance_Tenure.errors }" formControlName="LS_PD_Tenure" id="LS_PD_Tenure" autocomplete="off" required maxlength="4">
+													</mat-form-field>	<span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Balance_Tenure.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Balance_Tenure.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-40">
+														<input matInput specialIsAlphaNumeric placeholder="Balance Tenure" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Balance_Tenure.errors }" formControlName="LS_PD_Balance_Tenure" id="LS_PD_Balance_Tenure" autocomplete="off" required maxlength="10">
+													</mat-form-field>	<span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Balance_Tenure.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Balance_Tenure.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput numbersOnly placeholder="EMI Amount" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_EMI_Amount.errors }" formControlName="LS_PD_EMI_Amount" id="LS_PD_EMI_Amount" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted28 && pd_other_loan_control.LS_PD_EMI_Amount.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_EMI_Amount.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-120">
+														<input matInput specialIsAlphaNumeric placeholder="Repayment Bank" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Repayment_Bank.errors }" formControlName="LS_PD_Repayment_Bank" id="LS_PD_Repayment_Bank" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Repayment_Bank.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Repayment_Bank.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-150">
+														<mat-form-field>
+															<mat-label>Obligate (Y/N) <span class="txt-red">*</span> 
+															</mat-label>
+															<mat-select [(value)]="LS_PD_Obligate__Y_N" id="LS_PD_Obligate__Y_N" [ngClass]="{ 'is-invalid': submitted28 && pd_other_loan_control.LS_PD_Obligate__Y_N.errors }" type="text" formControlName="LS_PD_Obligate__Y_N" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Yes">Yes</mat-option>
+																<mat-option value="No">No</mat-option>
+															</mat-select>
+														</mat-form-field> <span *ngIf="submitted28 && pd_other_loan_control.LS_PD_Obligate__Y_N.errors" class="error">
+																<span *ngIf="pd_other_loan_control.LS_PD_Obligate__Y_N.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+											</div>
+										
+											<div class="add_button_blk text-center">
+												<button   class="btn btn-rounded btn-primary mb-4" id="PD_OtherLoanDetail_add">Add Other Loan Details</button>
+											</div>
+										</form>
+											<!--- table list new start -->
+											<div class="form-row">
+												<div class="col-md-12">
+													<div class="tabl-screen1 bank-table show_PD_OtherLoanDetail box_effect" style="display: none;">
+														<div class="table-responsive">
+															<table id="example" class="table my_bank_table table-bordered mb-4">
+																<thead>
+																	<tr>
+																		<th class="sn_width_blk">S. No</th>
+																		<th>Loan Type</th>
+																		<th>Financier Name</th>
+																		<th>Loan Amount</th>
+																		<th>Tenure</th>
+																		<th>Balance Tenure</th>
+																		<th>EMI Amount</th>
+																		<th>Repayment Bank</th>
+																		<th>Obligate (Y/N)</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>1</td>
+																		<td>Housing Loan</td>
+																		<td>ABC</td>
+																		<td>5,00,000</td>
+																		<td>5 Year</td>
+																		<td>2 Year</td>
+																		<td>8334</td>
+																		<td>--</td>
+																		<td>Yes</td>
+																		<td>
+																			<div class="action">
+																				<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																				</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																				<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!--- table list new start ended -->
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>Assets, Investment & Savings Detail</strong></h4>
+										<ul class="box-controls pull-right">
+											<li>
+												<a class="box-btn-slide" href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+												<form [formGroup]="pd_Asset_Detail" (ngSubmit)="onSubmit29()">
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div>
+														<mat-form-field>
+															<mat-label>Asset Detail</mat-label>
+															<mat-select [(value)]="LS_PD_Asset_Detail" id="LS_PD_Asset_Detail" [ngClass]="{ 'is-invalid': submitted16 && pd_asset_detail_control.LS_PD_Asset_Detail.errors }" type="text" formControlName="LS_PD_Asset_Detail" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="LIC">LIC</mat-option>
+																<mat-option value="FD/RD">FD/RD</mat-option>
+																<mat-option value="Machinery">Machinery</mat-option>
+																<mat-option value="Mutual Fund">Mutual Fund</mat-option>
+																<mat-option value="2/3/4 Wheeler">2/3/4 Wheeler</mat-option>
+																<mat-option value="Gold/Jwellery">Gold/Jwellery</mat-option>
+																<mat-option value="Bonds">Bonds</mat-option>
+																<mat-option value="Debentures">Debentures</mat-option>
+																<mat-option value="Shares">Shares</mat-option>
+																<mat-option value="Pension Schemes">Pension Schemes</mat-option>
+																<mat-option value="Vikas Patra">Vikas Patra</mat-option>
+															</mat-select>
+														</mat-form-field>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Ownership" [ngClass]="{ 'is-invalid': submitted16 && pd_asset_detail_control.LS_PD_Ownership.errors }" formControlName="LS_PD_Ownership" id="LS_PD_Ownership" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-120">
+														<input matInput numbersOnly placeholder="Value" [ngClass]="{ 'is-invalid': submitted16 && pd_asset_detail_control.LS_PD_Value.errors }" formControlName="LS_PD_Value" id="LS_PD_Value" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-160">
+														<mat-form-field>
+															<mat-label>Documented Proof</mat-label>
+															<mat-select [(value)]="LS_PD_Documented_Proof" id="LS_PD_Documented_Proof" [ngClass]="{ 'is-invalid': submitted16 && pd_asset_detail_control.LS_PD_Documented_Proof.errors }" type="text" formControlName="LS_PD_Documented_Proof" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Yes">Yes</mat-option>
+																<mat-option value="No">No</mat-option>
+															</mat-select>
+														</mat-form-field>
+													</div>
+												</div>
+											</div>
+											<div class="add_button_blk text-center">
+												<button class="btn btn-rounded btn-primary mb-4" id="PD_AssetsInvestment_add">Add Assets Detail</button>
+											</div>
+											</form>
+											<!--- table list new start -->
+											<div class="form-row">
+												<div class="col-md-12">
+													<div class="tabl-screen1 bank-table show_PD_AssetsInvestment box_effect" style="display: none;">
+														<div class="table-responsive">
+															<table id="example" class="table my_bank_table table-bordered mb-4">
+																<thead>
+																	<tr>
+																		<th class="sn_width_blk">S. No</th>
+																		<th>Asset Detail</th>
+																		<th>Ownership</th>
+																		<th>Value</th>
+																		<th>Documented Proof</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>1</td>
+																		<td>LIC</td>
+																		<td>ABC</td>
+																		<td>3,00,000</td>
+																		<td>Yes</td>
+																		<td>
+																			<div class="action">
+																				<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																				</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																				<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!--- table list new start ended -->
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>Personal Info (Family Member)</strong></h4>
+										<ul class="box-controls pull-right">
+											<li>
+												<a class="box-btn-slide" href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+										<form [formGroup]="PD_personal_info" (ngSubmit)="onSubmit30()">
+
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-4">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Dependent Name" [ngClass]="{ 'is-invalid': submitted30 && pd_personal_info_control.LS_PD_Dependent_Name.errors }" formControlName="LS_PD_Dependent_Name" id="LS_PD_Dependent_Name" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<mat-form-field>
+														<input matInput specialIsAlphaNumeric placeholder="Relation with Applicant" [ngClass]="{ 'is-invalid': submitted30 && pd_personal_info_control.LS_PD_Relation_with_Applicant.errors }" formControlName="LS_PD_Relation_with_Applicant" id="LS_PD_Relation_with_Applicant" autocomplete="off">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput numbersOnly placeholder="Contact No" [ngClass]="{ 'is-invalid': submitted30 && pd_personal_info_control.LS_PD_Contact_No.errors }" formControlName="LS_PD_Contact_No" id="LS_PD_Contact_No" autocomplete="off" maxlength="11">
+													</mat-form-field>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<div class="max-width-160">
+														<mat-form-field>
+															<mat-label>Staying with Applicant</mat-label>
+															<mat-select [(value)]="LS_PD_Staying_with_Applicant" id="LS_PD_Staying_with_Applicant" [ngClass]="{ 'is-invalid': submitted16 && pd_personal_info_control.LS_PD_Staying_with_Applicant.errors }" type="text" formControlName="LS_PD_Staying_with_Applicant" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Yes">Yes</mat-option>
+																<mat-option value="No">No</mat-option>
+															</mat-select>
+														</mat-form-field>
+													</div>
+												</div>
+											</div>
+											<div class="add_button_blk text-center">
+												<button   class="btn btn-rounded btn-primary mb-4" id="PD_PersonalInfo_add">Add Personal Info</button>
+											</div>
+										</form>
+
+											<!--- table list new start -->
+											<div class="form-row">
+												<div class="col-md-12">
+													<div class="tabl-screen1 bank-table show_PD_PersonalInfo box_effect" style="display: none;">
+														<div class="table-responsive">
+															<table id="example" class="table my_bank_table table-bordered mb-4">
+																<thead>
+																	<tr>
+																		<th class="sn_width_blk">S. No</th>
+																		<th>Dependent Name</th>
+																		<th>Relation with Applicant</th>
+																		<th>Contact No</th>
+																		<th>Staying with Applicant</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>1</td>
+																		<td>ABC</td>
+																		<td>ABC</td>
+																		<td>3542335462</td>
+																		<td>Yes</td>
+																		<td>
+																			<div class="action">
+																				<a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+																				</a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																				<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!--- table list new start ended -->
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<div class="first_blk_line form-element">
+								<!-- Collapse start 1-->
+								<div class="box">
+									<div class="box-header with-border">
+										<h4 class="inte-box-title"><strong>PD Done By</strong></h4>
+										<ul class="box-controls pull-right">
+											<li>
+												<a class="box-btn-slide" href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div class="box-body">
+											<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-3">
+													<div class="max-width-160 ">
+														<mat-form-field>
+															<mat-label>Officer Name <span class="txt-red">*</span> 
+															</mat-label>
+															<mat-select [(value)]="LS_PD_Officer_Name" id="LS_PD_Officer_Name" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_Officer_Name.errors }" type="text" formControlName="LS_PD_Officer_Name" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Yes">Name 1</mat-option>
+																<mat-option value="No">Name 2</mat-option>
+															</mat-select>
+														</mat-form-field> <span *ngIf="submitted16 && pd_control.LS_PD_Officer_Name.errors" class="error">
+																		<span *ngIf="pd_control.LS_PD_Officer_Name.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="max-width-160 select-wrapper inner_width_select">
+														<mat-form-field>
+															<mat-label>PD Status <span class="txt-red">*</span> 
+															</mat-label>
+															<mat-select [(value)]="LS_PD_PD_Status" id="LS_PD_PD_Status" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_PD_Status.errors }" type="text" formControlName="LS_PD_PD_Status" autocomplete="off">
+																<mat-option>None</mat-option>
+																<mat-option value="Positive">Positive</mat-option>
+																<mat-option value="Negative">Negative</mat-option>
+															</mat-select>
+														</mat-form-field> <span *ngIf="submitted16 && pd_control.LS_PD_PD_Status.errors" class="error">
+																		<span *ngIf="pd_control.LS_PD_PD_Status.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<div class="input-group" id="PD_by_PDDate">
+														<mat-form-field>
+															<input matInput [matDatepicker]="LS_PD_PD_Date" placeholder="PD Date" [ngClass]="{ 'is-invalid': submitted16 && pd_control.LS_PD_PD_Date.errors }" formControlName="LS_PD_PD_Date" id="LS_PD_PD_Date" readonly required>
+															<mat-datepicker-toggle matSuffix [for]="LS_PD_PD_Date"></mat-datepicker-toggle>
+															<mat-datepicker #LS_PD_PD_Date></mat-datepicker>
+														</mat-form-field> <span *ngIf="submitted16 && pd_control.LS_PD_PD_Date.errors" class="error">
+																		<span *ngIf="pd_control.LS_PD_PD_Date.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Collapse end 1-->
+							</div>
+							<!--PD Report Start-->
+						</div>
+						<div class="tab-button text-center">
+							<button class=" btn btn-lg btn-primary mx-1"><span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<!--Personal Discussion Report end-->
+					
+          
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

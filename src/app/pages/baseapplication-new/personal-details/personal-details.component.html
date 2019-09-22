@@ -1,0 +1,813 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+					
+		 <!--Personal Information -->
+		 <form [formGroup]="basic_information" (ngSubmit)="onSubmit()">
+			  
+				<div class="tab-pane first-tab active" id="step1">
+					 
+					<!------------------New Tab started----------------------------->
+					<div class="tabl-boxing">
+						<ul class="nav nav-tabs">
+							<li><a data-toggle="tab" href="#home" class="active">Applicant</a> 
+							</li>
+							<li><a data-toggle="tab" href="#home1">Co-Applicant</a> 
+							</li>
+							<li style="display: none;" class="discls"><a data-toggle="tab" href="#home2">Co-Applicant</a> 
+							</li>
+							<li><a href="#" id="clone-co-application1" class="add_button"><i class="fa fa-plus" aria-hidden="true"></i> Co-Applicant </a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div id="home" class="tab-pane fade in active show">
+								<div class="tabl-boxing-inner-tabl">
+									<div class="tab-content">
+										<div id="innner1" class="tab-pane fade in active show">
+											<div class="new-tab-personal-inform" id="apllicant1">
+												<!-- /.box-header -->
+												<div class=" ">
+													<div class="first_blk_line form-element">
+														<!-- Collapse start-->
+														<div class="box">
+															<div class="box-header with-border">
+																<h4 class="inte-box-title"><strong>KYC</strong></h4>
+																<ul class="box-controls pull-right">
+																	<li>
+																		<a class="box-btn-slide" href="#"></a>
+																	</li>
+																</ul>
+															</div>
+															<div class="box-body">
+																<form [formGroup]="Personal_form" (ngSubmit)="kycUpdate()">
+																	<div class="form-row">
+																		<div class="col-md-12">
+																			<h5 class="title-short-m"><strong>Identification Verification</strong></h5>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-3">
+																			<div class="max-width-150 select-wrapper inner_width_select">
+																				<mat-form-field>
+																					<mat-label>Identification Type <span class="txt-red">*</span> 
+																					</mat-label>
+																					<mat-select [ngClass]="{ 'is-invalid': submitted1 && a.LIIdentificationtype.errors }" formControlName="LIIdentificationtype">
+																						<mat-option>None</mat-option>
+																						<mat-option value=" PAN">PAN</mat-option>
+																						<mat-option value="UID ">UID</mat-option>
+																						<mat-option value="Passport ">Passport</mat-option>
+																						<mat-option value="Driving License ">Driving License</mat-option>
+																						<mat-option value="Voter ID">Voter ID</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted1 && a.LIIdentificationtype.errors" class="error">
+																																	<span *ngIf="a.LIIdentificationtype.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-3">
+																			<mat-form-field class="max-width-150">
+																				<input matInput specialIsAlphaNumeric placeholder="Identification Number" [ngClass]="{ 'is-invalid': submitted1 && a.LIIdentificationNumber.errors }" id="LIIdentificationNumber" formControlName="LIIdentificationNumber"  required>
+																			</mat-form-field>	<span *ngIf="submitted1 && a.LIIdentificationNumber.errors" class="error">
+																									<span *ngIf="a.LIIdentificationNumber.errors.required">{{ requireerror }}</span> </span>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-3">
+																			<div class="input-group   max-width-150">
+																				<mat-form-field class="date-fields">
+																					<input matInput [matDatepicker]="picker" placeholder="Issue Date" [ngClass]="{ 'is-invalid': submitted1 && a.LIIssuedate.errors }" formControlName="LIIssuedate" id="LIIssuedate" readonly>
+																					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+																					<mat-datepicker #picker></mat-datepicker>
+																				</mat-form-field>	<span *ngIf="submitted1 && a.LIIssuedate.errors" class="error">
+																										<span *ngIf="a.LIIssuedate.errors.required">{{ requireerror }}</span> </span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-3">
+																			<div class="input-group   max-width-150">
+																				<mat-form-field class="date-fields">
+																					<input matInput [matDatepicker]="Liexpirydate" placeholder="Expiry Date" [ngClass]="{ 'is-invalid': submitted1 && a.Liexpirydate.errors }" formControlName="Liexpirydate" id="Liexpirydate" readonly>
+																					<mat-datepicker-toggle matSuffix [for]="Liexpirydate"></mat-datepicker-toggle>
+																					<mat-datepicker #Liexpirydate></mat-datepicker>
+																				</mat-form-field>	<span *ngIf="submitted1 && a.Liexpirydate.errors" class="error">
+																											<span *ngIf="a.Liexpirydate.errors.required">{{ requireerror }}</span> </span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-3">
+																			<div class="max-width-120 select-wrapper inner_width_select">
+																				<mat-form-field>
+																					<mat-label>Verified status <span class="txt-red">*</span> 
+																					</mat-label>
+																					<mat-select [ngClass]="{ 'is-invalid': submitted1 && a.LIVerifiedstatus.errors }" formControlName="LIVerifiedstatus">
+																						<mat-option>None</mat-option>
+																						<mat-option value=" Positive">Positive</mat-option>
+																						<mat-option value="Positive ">Positive</mat-option>
+																						<mat-option value="CNV ">CNV</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted1 && a.LIVerifiedstatus.errors" class="error">
+																																					<span *ngIf="a.LIVerifiedstatus.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group max-width-80 col-6 col-md-6 col-xl-2">
+																			<button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+																			</button>
+																			<label for="IDProof">KYC Upload</label>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<button class="btn btn-primary btn-rounded">Add KYC</button>
+																		</div>
+																	</div>
+																</form>
+																<!-- personal Form-->
+																<div class="form-row">
+																	<div class="col-md-12">
+																		<div class="tabl-screen1   show-kyc-table">
+																			<table id="example" class="table table-bordered text-center" [hidden]="kycUpd==0">
+																				<thead>
+																					<tr >
+																						<th class="sn_width_blk">S. No</th>
+																						<th>Identification Type</th>
+																						<th>Identification Number</th>
+																						<th>Issue Date</th>
+																						<th>Expiry Date</th>
+																						<th>Verified Status</th>
+																						<th class="text-left">Action</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr *ngFor="let kyc of kycUpd;let i=index">
+																						<td>{{i+1}}</td>
+																						<td>{{kyc.LIIdentificationtype}}</td>
+																						<td>{{kyc.LIIdentificationNumber}}</td>
+																						<td>{{kyc.LIIssuedate}}</td>
+																						<td>{{kyc.Liexpirydate}}</td>
+																						<td> {{kyc.LIVerifiedstatus}}</td>
+																						<td class="text-left">
+																							<div class="action">
+																				             <a data-toggle="control-sidebar" class="view-document" title="View Statement"> <i class="fa fa-file-text-o" aria-hidden="true"></i>
+																								</a> <a class="edit-icon" title="Edit"><i (click)="editKyc(kyc)" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																								<a  class="delete-icon sa-warning" title="Delete"> <i (click)="deleteKyc(kyc)" class="fa fa-trash-o" aria-hidden="true"></i>
+																								</a>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</div>
+																  
+
+
+																<div class="form-row">
+																	<div class="col-md-12">
+																		<h5 class="title-short-m"><strong>Contact Verification</strong></h5>
+																	</div>
+																</div>
+																
+																<!--varified_view -->
+																<div class="varified_view"> 
+																	<div class="form-row">
+																	
+																	
+																		<div class="form-group col-sm-6 col-md-7 col-xl-3 otp_button_blk">
+																				 
+
+																			<div class="input-group mb-3">
+																				<mat-form-field class="mr-3 flex63">
+																					<input matInput numbersOnly id="MobileNoOTP" placeholder="Mobile No." aria-describedby="button-addon2" formControlName="Ba_Mobile">
+																				</mat-form-field>
+																				<span *ngIf="otpVerify && basicInform.Ba_Mobile.errors" class="error">
+																					<span *ngIf="basicInform.Ba_Mobile.errors.required">{{ requireerror }}</span>
+																</span>
+																				<div class="input-group-append">
+																						<!--<img src="assets/images/verified-icon.png" class="verfied-icon" alt="logo"> -->
+																						<button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="generateOtp()">Get OTP</button>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group col-sm-6 col-md-5 col-xl-4 otp_button_blk short_field">
+																			<div class="input-group mb-3">
+																				<div class="opt-entery1">
+																					<mat-form-field class="max-width-20">
+																							<input matInput placeholder="" numbersOnly maxlength="1" formControlName="Ba_Otp1">
+																						</mat-form-field>
+																						<mat-form-field class="max-width-20">
+																							<input matInput placeholder="" numbersOnly maxlength="1" formControlName="Ba_Otp2">
+																						</mat-form-field>
+																						<mat-form-field class="max-width-20">
+																							<input matInput placeholder="" numbersOnly maxlength="1" formControlName="Ba_Otp3">
+																						</mat-form-field>
+																						<mat-form-field class="max-width-20">
+																							<input matInput placeholder="" numbersOnly maxlength="1" formControlName="Ba_Otp4">
+																						</mat-form-field>
+																				</div>			  
+																				<div class="input-group-append">
+																					
+																					<button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="verifyOtp()">Verify</button>
+																				</div>
+																				<span *ngIf="otpVerify && otpMessage" class="error">
+																					<span *ngIf="otpMessage">{{ otpMessage }}</span>
+					</span>																		
+																				<label for="MobileNoOTPVerify"></label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+ 
+																 
+																<div class="form-row">
+																	<div class="form-group col-md-5 otp_button_blk">
+																		<div class="input-group mb-3">
+																			<mat-form-field class="mr-4">
+																				<input matInput placeholder="Email ID" id="EmailID" placeholder="Email ID" aria-label="Recipient's username" aria-describedby="button-addon2" fromControlName="Ba_Email">
+																			</mat-form-field>	
+																			 																		
+																		</div>
+																		 
+																	</div>
+																	<div class="form-group col-md-3 otp_button_blk">
+																		<div class="input-group-append">
+																			<button class="btn btn-outline-primary" type="button" id="button-addon2">Update</button>
+																		</div>
+																	</div>
+
+
+																	 
+																</div>
+															</div>
+														</div>
+														<!-- Collapse end-->
+													</div>
+													<!-- first_blk_line end-->
+													
+														<div class="first_blk_line form-element">
+															<!-- Collapse start-->
+															<div class="box">
+																<div class="box-header with-border">
+																	<h4 class="inte-box-title"><strong>Basic Details</strong></h4>
+																	<ul class="box-controls pull-right">
+																		<li>
+																			<a class="box-btn-slide" href="#"></a>
+																		</li>
+																	</ul>
+																</div>
+																<div class="box-body">
+																	<div class="form-row">
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="First Name" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_First_Name.errors }" formControlName="Ba_First_Name" id="Ba_First_Name" required>
+																			</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_First_Name.errors" class="error">
+																									<span *ngIf="basicInform.Ba_First_Name.errors.required">{{ requireerror }}</span>
+																			</span>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Middle Name" formControlName="Ba_Middle_Name" >
+																			</mat-form-field>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Last Name" formControlName="Ba_Last_Name"  >
+																			</mat-form-field>
+																		</div>
+																	</div>
+																	<div class="form-row">
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<div class="input-group max-width-150">
+																				<mat-form-field class="date-fields">
+																					<input matInput [matDatepicker]="Ba_DOB" placeholder="DOB"  [ngClass]="{ 'is-invalid': submitted1 && basicInform.Ba_DOB.errors }" formControlName="Ba_DOB" id="Ba_DOB" readonly  required>
+																					<mat-datepicker-toggle matSuffix [for]="Ba_DOB"></mat-datepicker-toggle>
+																					<mat-datepicker #Ba_DOB></mat-datepicker>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_DOB.errors" class="error">
+																											<span *ngIf="basicInform.Ba_DOB.errors.required">{{ requireerror }}</span> </span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<mat-form-field class="max-width-40">
+																				<input matInput specialIsAlphaNumeric placeholder="Age"  [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Age.errors }" formControlName="Ba_Age" id="Ba_Age" >
+																			</mat-form-field>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<div class="max-width-140">
+																				<mat-form-field>
+																					<mat-label>DOB Proof <span class="txt-red">*</span> 
+																					</mat-label>
+																					<mat-select [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_DOB_Proof.errors }" formControlName="Ba_DOB_Proof">
+																						<mat-option>None</mat-option>
+																						<mat-option value=" Pan">Pan</mat-option>
+																						<mat-option value="Aadhar ">Aadhar</mat-option>
+																						<mat-option value="10th Marksheet ">10th Marksheet</mat-option>
+																						<mat-option value="Passport">Passport</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_DOB_Proof.errors" class="error">
+																																				<span *ngIf="basicInform.Ba_DOB_Proof.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+																			</button>
+																			<label for="IDProof">DOB proof Image <span class="txt-red">*</span>
+																			</label>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<div class="max-width-120">
+																				<mat-form-field>
+																					<mat-label>Gender</mat-label>
+																					<mat-select [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Gender.errors }" formControlName="Ba_Gender">
+																						<mat-option>None</mat-option>
+																						<mat-option value=" Male">Male</mat-option>
+																						<mat-option value="Female ">Female</mat-option>
+																						<mat-option value="Transgender ">Transgender</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Gender.errors" class="error">
+																										<span *ngIf="basicInform.Ba_Gender.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<div class="max-width-120 ">
+																				<mat-form-field>
+																					<mat-label>Nationality <span class="txt-red">*</span>
+																					</mat-label>
+																					<mat-select [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Nationality.errors }" formControlName="Ba_Nationality">
+																						<mat-option>None</mat-option>
+																						<mat-option value="Indian">Indian</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Nationality.errors" class="error">
+																									<span *ngIf="basicInform.Ba_Nationality.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<div class="max-width-120">
+																				<mat-form-field>
+																					<mat-label>Religion</mat-label>
+																					<mat-select formControlName="Ba_Religion">
+																						<mat-option>None</mat-option>
+																						<mat-option value="Indian">Hindu</mat-option>
+																						<mat-option value="Indian">Muslim</mat-option>
+																						<mat-option value="Indian">Sikh</mat-option>
+																						<mat-option value="Indian">Christian</mat-option>
+																						<mat-option value="Indian">Buddhism</mat-option>
+																						<mat-option value="Indian">Jainism</mat-option>
+																					</mat-select>
+																				</mat-form-field>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-2">
+																			<div class="max-width-120 ">
+																				<mat-form-field>
+																					<mat-label>Caste</mat-label>
+																					<mat-select formControlName="Ba_Caste">
+																						<mat-option>None</mat-option>
+																						<mat-option value="General">General</mat-option>
+																						<mat-option value="SC">SC</mat-option>
+																						<mat-option value="ST">ST</mat-option>
+																						<mat-option value="OBC">OBC</mat-option>
+																					</mat-select>
+																				</mat-form-field>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field class="max-width-40">
+																				<input matInput numbersOnly  placeholder="No. of Earning Members" id="Ba_No_of_Earning_Members" formControlName="Ba_No_of_Earning_Members" >
+																			</mat-form-field>
+																		</div>
+																	</div>
+																	<div class="form-row">
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<div class="max-width-250">
+																				<mat-form-field>
+																					<mat-label>Qualification <span class="txt-red">*</span>
+																					</mat-label>
+																					<mat-select id="Ba_Qualification" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Qualification.errors }" formControlName="Ba_Qualification">
+																						<mat-option>None</mat-option>
+																						<mat-option value="Graduate">Graduate</mat-option>
+																						<mat-option value="Post Graduate">Post Graduate</mat-option>
+																						<mat-option value="Professional Qualification">Professional Qualification</mat-option>
+																						<mat-option value="Illeterate">Illeterate</mat-option>
+																						<mat-option value="Higher Secondary (upto 12th) ">Higher Secondary (upto 12th)</mat-option>
+																						<mat-option value=" Secondary School (upto 10th)">Secondary School (upto 10th)</mat-option>
+																						<mat-option value="Middle School (upto 8th) ">Middle School (upto 8th)</mat-option>
+																						<mat-option value="Primary School (upto 5th)">Primary School (upto 5th)</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Qualification.errors" class="error">
+																															<span *ngIf="basicInform.Ba_Qualification.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<div class="max-width-165 ">
+																				<mat-form-field>
+																					<mat-label>Detail Qualification <span class="txt-red">*</span>
+																					</mat-label>
+																					<mat-select id="Ba_Detail_Qualification" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Detail_Qualification.errors }" formControlName="Ba_Detail_Qualification">
+																						<mat-option>None</mat-option>
+																						<mat-option value="Science">Science</mat-option>
+																						<mat-option value="Arts">Arts</mat-option>
+																						<mat-option value="Commerce">Commerce</mat-option>
+																						<mat-option value="Higher Medicine">Higher Medicine</mat-option>
+																						<mat-option value="Engineering">Engineering</mat-option>
+																						<mat-option value="Management">Management</mat-option>
+																						<mat-option value="Design">Design</mat-option>
+																						<mat-option value="CA">CA</mat-option>
+																						<mat-option value="Others">Others</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Detail_Qualification.errors" class="error">
+																															<span *ngIf="basicInform.Ba_Detail_Qualification.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<div class="max-width-165">
+																				<mat-form-field>
+																					<mat-label>Marital Status <span class="txt-red">*</span>
+																					</mat-label>
+																					<mat-select id="Ba_Marital_Status" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Marital_Status.errors }" formControlName="Ba_Marital_Status">
+																						<mat-option>None</mat-option>
+																						<mat-option value="Single">Single</mat-option>
+																						<mat-option value="Married">Married</mat-option>
+																						<mat-option value="Divorced">Divorced</mat-option>
+																						<mat-option value="Widow">Widow</mat-option>
+																					</mat-select>
+																				</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Marital_Status.errors" class="error">
+																															<span *ngIf="basicInform.Ba_Marital_Status.errors.required">{{ requireerror }}</span>
+																				</span>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-row">
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Father First Name" id="Ba_Father_First_Name" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Father_First_Name.errors }" formControlName="Ba_Father_First_Name"  required>
+																			</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Father_First_Name.errors" class="error">
+																								<span *ngIf="basicInform.Ba_Father_First_Name.errors.required">{{ requireerror }}</span>
+																			</span>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Father Middle Name" id="Ba_Father_Middle_Name" formControlName="Ba_Father_Middle_Name" >
+																			</mat-form-field>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Father Last Name"  id="Ba_Father_Last_Name" formcontrolName="Ba_Father_Last_Name">
+																			</mat-form-field>
+																		</div>
+																	</div>
+																	<div class="form-row">
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Spouse First Name" id="Ba_Spouse_First_Name" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Spouse_First_Name.errors }" formControlName="Ba_Spouse_First_Name" required>
+																			</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Spouse_First_Name.errors" class="error">
+																									<span *ngIf="basicInform.Ba_Spouse_First_Name.errors.required">{{ requireerror }}</span>
+																			</span>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Spouse Middle Name" id="Ba_Spouse_Middle_Name" formControlName="Ba_Spouse_Middle_Name">
+																			</mat-form-field>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field>
+																				<input matInput specialIsAlphaNumeric placeholder="Spouse Last Name" id="Ba_Spouse_Last_Name" formControlName="Ba_Spouse_Last_Name">
+																			</mat-form-field>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field class="max-width-120">
+																				<input matInput placeholder="Alternate Contact" id="Ba_Alternate_Contact_No" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Ba_Alternate_Contact_No.errors }" formControlName="Ba_Alternate_Contact_No" maxlength="10" required>
+																			</mat-form-field> <span *ngIf="submitted2 && basicInform.Ba_Alternate_Contact_No.errors" class="error">
+																												<span *ngIf="basicInform.Ba_Alternate_Contact_No.errors.required">{{ requireerror }}</span>
+																			</span>
+																		</div>
+																		<div class="form-group col-6 col-md-6 col-xl-4">
+																			<mat-form-field class="max-width-40">
+																				<input matInput numbersOnly placeholder="No. of Dependents " id="Ba_No_of_Dependents" formControlName="Ba_No_of_Dependents" maxlength="2">
+																			</mat-form-field>	<span *ngIf="submitted2 && basicInform.Ba_Spouse_First_Name.errors" class="error">
+																									<span *ngIf="basicInform.Ba_Spouse_First_Name.errors.required">{{ requireerror }}</span>
+																			</span>
+																		</div>
+																	</div>
+																	<!-- basic Informaation form -->
+																</div>
+															</div>
+															<!-- Collapse end-->
+														</div>
+														<!-- first_blk_line end-->
+														<!--Address part start-->
+														<div class="first_blk_line form-element">
+															<div class="box">
+																<div class="box-header with-border">
+																	<h4 class="inte-box-title"><strong>Address</strong></h4>
+																	<ul class="box-controls pull-right">
+																		<li>
+																			<a class="box-btn-slide" href="#"></a>
+																		</li>
+																	</ul>
+																</div>
+																<div class="box-body">
+																	<div class="row  my_address_blk">
+																		<div class="col-md-6" style="flex: 0 0 49%;">
+																			<div class="row">
+																				<div class="col-md-12">
+																					<h6 class="sub-title pb-1"><strong>Current Address</strong></h6>
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="form-group col-md-4 ">
+																					<mat-form-field>
+																						<mat-label>Residence Type <span class="txt-red">*</span>
+																						</mat-label>
+																						<mat-select id="Cu_Residence_Type" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_Residence_Type.errors }" formControlName="Cu_Residence_Type">
+																							<mat-option>None</mat-option>
+																							<mat-option value="Rented">Rented</mat-option>
+																							<mat-option value="Owned">Owned</mat-option>
+																							<mat-option value="Parental">Parental</mat-option>
+																							<mat-option value="Employer">Employer</mat-option>
+																						</mat-select>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Cu_Residence_Type.errors" class="error">
+																												<span *ngIf="basicInform.Cu_Residence_Type.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4 select-wrapper">
+																					<mat-form-field>
+																						<mat-label>Address Proof <span class="txt-red">*</span>
+																						</mat-label>
+																						<mat-select  id="Cu_Address_Proof" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_Address_Proof.errors }" formControlName="Cu_Address_Proof">
+																							<mat-option>None</mat-option>
+																							<mat-option value="Aadhaar UID Card">Aadhaar UID Card</mat-option>
+																							<mat-option value="Bank Account Statement">Bank Account Statement</mat-option>
+																							<mat-option value="Pass Book 1st page">Pass Book 1st page</mat-option>
+																							<mat-option value="Driving Licence">Driving Licence</mat-option>
+																							<mat-option value="Electricity Bill ">Electricity Bill</mat-option>
+																							<mat-option value="Gas Connection Bill ">Gas Connection Bill</mat-option>
+																							<mat-option value=" Post Paid Mobile Bill">Post Paid Mobile Bill</mat-option>
+																							<mat-option value="Property Tax Receipt ">Property Tax Receipt</mat-option>
+																							<mat-option value=" Ration Card">Ration Card</mat-option>
+																							<mat-option value=" Rent Agreement">Rent Agreement</mat-option>
+																							<mat-option value="Telephone Bill ">Telephone Bill</mat-option>
+																							<mat-option value="Valid Passport ">Valid Passport</mat-option>
+																							<mat-option value=" Voter's Identity Card">Voter's Identity Card</mat-option>
+																							<mat-option value="Water Bill">Water Bill</mat-option>
+																						</mat-select>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Cu_Address_Proof.errors" class="error">
+																												<span *ngIf="basicInform.Cu_Address_Proof.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field>
+																						<input matInput numbersOnly placeholder="Rent Amount"  id="Cu_Rent_Amount" formControlName="Cu_Rent_Amount" maxlength="6">
+																					</mat-form-field>
+																				</div>
+																				<div class="form-group col-md-12">
+																					<mat-form-field>
+																						<textarea matInput specialIsAlphaNumeric placeholder="Address" id="Cu_Address" style="height:50px; resize:none; margin-top:8px;" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_Address.errors }" formControlName="Cu_Address" required></textarea>
+																					</mat-form-field> <span *ngIf="submitted2 && basicInform.Cu_Address.errors" class="error">
+																											<span *ngIf="basicInform.Cu_Address.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-5">
+																					<mat-form-field>
+																						<input matInput specialIsAlphaNumeric placeholder="Landmark" id="Cu_Landmark" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_Landmark.errors }" formControlName="Cu_Landmark" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Cu_Landmark.errors" class="error">
+																											<span *ngIf="basicInform.Cu_Landmark.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-3">
+																					<mat-form-field>
+																						<input matInput numbersOnly placeholder="Pin Code" id="Cu_Pin_Code"  [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_Pin_Code.errors }" formControlName="Cu_Pin_Code" maxlength="8" required>
+																					</mat-form-field> <span *ngIf="submitted2 && basicInform.Cu_Pin_Code.errors" class="error">
+																											<span *ngIf="basicInform.Cu_Pin_Code.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field>
+																						<input matInput specialIsAlphaNumeric placeholder="City" id="Cu_City" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_City.errors }" formControlName="Cu_City" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Cu_City.errors" class="error">
+																											<span *ngIf="basicInform.Cu_City.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field>
+																						<input matInput placeholder="District" id="Cu_District"  [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_District.errors }" formControlName="Cu_District" required>
+																					</mat-form-field> <span *ngIf="submitted2 && basicInform.Cu_District.errors" class="error">
+																											<span *ngIf="basicInform.Cu_District.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4 select-wrapper">
+																					<mat-form-field>
+																						<mat-label>State <span class="txt-red">*</span>
+																						</mat-label>
+																						<mat-select id="Cu_State"  [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_State.errors }" formControlName="Cu_State">
+																							<mat-option>None</mat-option>
+																							<mat-option value="Delhi">Delhi</mat-option>
+																							<mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+																						</mat-select>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Cu_State.errors" class="error">
+																												<span *ngIf="basicInform.Cu_State.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field class="max-width-40">
+																						<input matInput numbersOnly placeholder="Staying (In years)"  id="Cu_Staying_In_years" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Cu_Staying_In_years.errors }" formControlName="Cu_Staying_In_years" maxlength="3" required>
+																					</mat-form-field> <span *ngIf="submitted2 && basicInform.Cu_Staying_In_years.errors" class="error">
+																											<span *ngIf="basicInform.Cu_Staying_In_years.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="line" style="border-right:1px solid #aea6a6;;"></div>
+																		<div class="col-md-6" style="flex: 0 0 49%;">
+																			<div class="row">
+																				<div class="col-md-12">
+																					<h6 class="sub-title pb-1"><strong>Permanent Address </strong>
+													<div class="float-right">
+															<mat-checkbox formControlName="isChecked" (change)="checkValue()"> Same As Current Address</mat-checkbox>
+													    
+													</div>
+												  </h6>
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="form-group col-md-4 ">
+																					<mat-form-field>
+																						<mat-label>Residence Type <span class="txt-red">*</span>
+																						</mat-label>
+																						<mat-select id="Pe_Residence_Type" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Residence_Type.errors }" formControlName="Pe_Residence_Type">
+																							<mat-option>None</mat-option>
+																							<mat-option value="Rented">Rented</mat-option>
+																							<mat-option value="Owned">Owned</mat-option>
+																							<mat-option value="Parental">Parental</mat-option>
+																							<mat-option value="Employer">Employer</mat-option>
+																						</mat-select>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_Residence_Type.errors" class="error">
+																													<span *ngIf="basicInform.Pe_Residence_Type.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4 select-wrapper">
+																					<mat-form-field>
+																						<mat-label>Address Proof <span class="txt-red">*</span>
+																						</mat-label>
+																						<mat-select id="Pe_Address_Proof" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Address_Proof.errors }" formControlName="Pe_Address_Proof">
+																							<mat-option>None</mat-option>
+																							<mat-option value="Aadhaar UID Card">Aadhaar UID Card</mat-option>
+																							<mat-option value="Bank Account Statement">Bank Account Statement</mat-option>
+																							<mat-option value="Pass Book 1st page">Pass Book 1st page</mat-option>
+																							<mat-option value="Driving Licence">Driving Licence</mat-option>
+																							<mat-option value="Electricity Bill ">Electricity Bill</mat-option>
+																							<mat-option value="Gas Connection Bill ">Gas Connection Bill</mat-option>
+																							<mat-option value=" Post Paid Mobile Bill">Post Paid Mobile Bill</mat-option>
+																							<mat-option value="Property Tax Receipt ">Property Tax Receipt</mat-option>
+																							<mat-option value=" Ration Card">Ration Card</mat-option>
+																							<mat-option value=" Rent Agreement">Rent Agreement</mat-option>
+																							<mat-option value="Telephone Bill ">Telephone Bill</mat-option>
+																							<mat-option value="Valid Passport ">Valid Passport</mat-option>
+																							<mat-option value=" Voter's Identity Card">Voter's Identity Card</mat-option>
+																							<mat-option value="Water Bill">Water Bill</mat-option>
+																						</mat-select>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_Address_Proof.errors" class="error">
+																													<span *ngIf="basicInform.Pe_Address_Proof.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field>
+																						<input matInput numbersOnly placeholder="Rent Amount" id="Pe_Rent_Amount" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Rent_Amount.errors }" formControlName="Pe_Rent_Amount" maxlength="6">
+																					</mat-form-field>
+																				</div>
+																				<div class="form-group col-md-12">
+																					<mat-form-field class="example-full-width">
+																						<textarea specialIsAlphaNumeric matInput placeholder="Address"  id="Pe_Address" style="height:50px; resize:none; margin-top:8px;" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Address.errors }" formControlName="Pe_Address" required></textarea>
+																					</mat-form-field> <span *ngIf="submitted2 && basicInform.Pe_Address.errors" class="error">
+																												<span *ngIf="basicInform.Pe_Address.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-5">
+																					<mat-form-field>
+																						<input matInput specialIsAlphaNumeric placeholder="Landmark"  id="Pe_Landmark" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Landmark.errors }" formControlName="Pe_Landmark" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_Landmark.errors" class="error">
+																												<span *ngIf="basicInform.Pe_Landmark.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-3">
+																					<mat-form-field>
+																						<input matInput numbersOnly placeholder="Pin Code" id="Pe_Pin_Code"  [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Pin_Code.errors }" formControlName="Pe_Pin_Code" maxlength="8" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_Pin_Code.errors" class="error">
+																												<span *ngIf="basicInform.Pe_Pin_Code.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field>
+																						<input matInput specialIsAlphaNumeric placeholder="City" id="Pe_City" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_City.errors }" formControlName="Pe_City" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_City.errors" class="error">
+																												<span *ngIf="basicInform.Pe_City.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field>
+																						<input matInput specialIsAlphaNumeric placeholder="District" id="Pe_District"  [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_District.errors }" formControlName="Pe_District" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_District.errors" class="error">
+																											<span *ngIf="basicInform.Pe_District.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4 select-wrapper">
+																					<mat-form-field>
+																						<mat-label>State <span class="txt-red">*</span>
+																						</mat-label>
+																						<mat-select id="Pe_State" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_State.errors }" formControlName="Pe_State">
+																							<mat-option>None</mat-option>
+																							<mat-option value="Delhi">Delhi</mat-option>
+																							<mat-option value="Utter Pradesh">Uttar Pradesh</mat-option>
+																						</mat-select>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_State.errors" class="error">
+																													<span *ngIf="basicInform.Pe_State.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																				<div class="form-group col-md-4">
+																					<mat-form-field class="max-width-40">
+																						<input matInput  numbersOnly placeholder="Staying (In years)"  id="Pe_Staying_In_years" [ngClass]="{ 'is-invalid': submitted2 && basicInform.Pe_Staying_In_years.errors }" formControlName="Pe_Staying_In_years" maxlength="3" required>
+																					</mat-form-field>	<span *ngIf="submitted2 && basicInform.Pe_Staying_In_years.errors" class="error">
+																												<span *ngIf="basicInform.Pe_Staying_In_years.errors.required">{{ requireerror }}</span>
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- first_blk_line end-->
+														<!--Address part end-->
+														<!-- Inner part end-->
+														
+												</div>
+											</div>
+										</div>
+										<!--- innner1 1 ended -->
+									</div>
+									<!--- innner tab-content ended -->
+								</div>
+								<!--- l-boxing-inner-tabl -->
+							</div>
+							<!--- tab 1 ended -->
+							<!--- tab 2 start -->
+							<div id="home1" class="tab-pane fade in show">
+								<div class="tabl-boxing-inner-tabl">
+									<div class="tab-content">
+										<div id="innner1" class="tab-pane fade in active show">
+											<div class="new-tab-personal-inform" id="apllicant1">
+												<!-- /.box-header -->
+												<div class=" ">
+													<div class="first_blk_line form-element">
+														<!-- Collapse start-->
+														<div class="box">
+															<div class="box-header with-border">
+																<h4 class="inte-box-title"><strong>Same as Applicant</strong></h4>
+																<ul class="box-controls pull-right">
+																	<li>
+																		<a class="box-btn-slide" href="#"></a>
+																	</li>
+																</ul>
+															</div>
+															<div class="box-body">
+																<div class="form-row"></div>
+															</div>
+														</div>
+														<!-- Collapse end-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--- innner tab-content ended -->
+								</div>
+							</div>
+							<!--- tab 1 ended -->
+							<!--- tab 2 end -->
+						</div>
+					</div>
+					<!------------------New Tab eneded----------------------------->
+				</div>
+
+				<div class="tab-button text-center">
+						<button class=" btn btn-lg btn-primary mx-1" id="next"> <span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+						</button>
+					</div>
+				</form>
+        
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

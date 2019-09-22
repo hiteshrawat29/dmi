@@ -1,0 +1,539 @@
+<app-loan-side-bar></app-loan-side-bar>
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+        
+        <app-lead-inform-bar></app-lead-inform-bar>
+
+        <!--Income Start-->
+				<div class="tab-pane first-tab active" id="income">
+            <!--Tabs in box - 3!-->
+            <div class="box py-0 px-0 my_tab_blk">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs nav-tabs-inverse-mode" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#applicant_Income" role="tab">Applicant</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#co-applicant_Income" role="tab">Co-Applicant</a>
+                </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="box-body tab-content">
+                <div class="tab-pane fade active show" id="applicant_Income">
+                  <div class="first_blk_line">
+                    <!--<h4 class="inte-box-title"><strong>Income</strong></h4>-->
+                    <div class="form-row my-4">
+                      <!--- new code for income form-->
+                      <div class="icomnew-n-new">
+                        <div class="row">
+                          <form [formGroup]="income_information" (ngSubmit)="onSubmit5()">
+                            <!--<div class="col-md-12 Cash_salary" *ngIf="Sub_Profile == 'Cash_salary' || Sub_Profile == 'Bank_salary'">-->
+                            <div class="col-md-12 Cash_salary" >
+                              <table class="income_tab form-element" style="table-layout: fixed; width:77%;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" colspan="2">Income</th>
+                                    <th scope="col" colspan="2">Deduction</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Basic</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Basic" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Basic.errors }" formControlName="Ca_Basic" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>Provident Fund</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Provident_Fund" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Provident_Fund.errors }" formControlName="Ca_Provident_Fund" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>HRA</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_HRA" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_HRA.errors }" formControlName="Ca_HRA" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>GPF</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput  numbersOnly placeholder="" id="Ca_GPF" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_GPF.errors }" formControlName="Ca_GPF" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>DA</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_DA" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_DA.errors }" formControlName="Ca_DA" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>VPF</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_VPF" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_VPF.errors }" formControlName="Ca_VPF" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Conveyance</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Conveyance" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Conveyance.errors }" formControlName="Ca_Conveyance" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>Income Tax</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Income_Tax" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Income_Tax.errors }" formControlName="Ca_Income_Tax" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Medical Allowance</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput  numbersOnly placeholder="" id="Ca_Medical_Allowance" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Medical_Allowance.errors }" formControlName="Ca_Medical_Allowance" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>Professional Tax</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Professional_Tax" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Professional_Tax.errors }" formControlName="Ca_Professional_Tax" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Special Allowance</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Special_Allowance" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Special_Allowance.errors }" formControlName="Ca_Special_Allowance" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>Employer Loan/Adance</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Employer_Loan_Adance" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Employer_Loan_Adance.errors }" formControlName="Ca_Employer_Loan_Adance" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Travelling Allowance</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Travelling_Allowance" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Travelling_Allowance.errors }" formControlName="Ca_Travelling_Allowance" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td>Other Deduction 4</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput  numbersOnly placeholder="" id="Ca_In_Other_Deduction" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_In_Other_Deduction.errors }" formControlName="Ca_In_Other_Deduction" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Other Deduction 2</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_De_Other_Deduction" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_De_Other_Deduction.errors }" formControlName="Ca_De_Other_Deduction" autocomplete="off" >
+                                      </mat-form-field>
+                                    </td>
+                                    <td>Total Deduction <span class="txt-red">*</span>
+                                    </td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Total_Deduction" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Total_Deduction.errors }" formControlName="Ca_Total_Deduction" required autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Other Allowance</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Other_Allowance" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Other_Allowance.errors }" formControlName="Ca_Other_Allowance" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td colspan="2"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>LTA</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_LTA" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_LTA.errors }" formControlName="Ca_LTA">
+                                      </mat-form-field>
+                                    </td>
+                                    <td colspan="2"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>(Additional/Variable Income/Overtime)</td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Additional" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Additional.errors }" formControlName="Ca_Additional" >
+                                      </mat-form-field>
+                                    </td>
+                                    <td colspan="2"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Gross Monthly Income <span class="txt-red">*</span>
+                                    </td>
+                                    <td>Rs.
+                                      <mat-form-field class="max-width-120">
+                                        <input matInput numbersOnly placeholder="" id="Ca_Gross_Monthly_Income" [ngClass]="{ 'is-invalid': submitted5 && income_control.Ca_Gross_Monthly_Income.errors }" formControlName="Ca_Gross_Monthly_Income" autocomplete="off">
+                                      </mat-form-field>
+                                    </td>
+                                    <td colspan="2"></td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                      <td colspan="2" class="intialiconc">Initial Net Income: <strong>Rs. 1000</strong>
+                                      </td>
+                                    <td>Net Income <span class="txt-red">*</span>
+                                    </td>
+                                    <td>Rs.500000</td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                            </div>
+                            <!-- <div class="col-md-12 Bank_salary" *ngIf="Sub_Profile == 'Assessed_Income' || Sub_Profile == 'Regular_ITR'"> -->
+                            <div class="col-md-12 Assessed_Income"  >
+                              <!-- new design for itr ---->
+                              <div class="table-responsive">
+                                <table class="income_tab table_txt_senp form-element" style="table-layout: fixed; width:77%;">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="4">Financial Year (ITR)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Financial Year <span class="required">*</span>
+                                      </td>
+                                      <td>
+                                        <div class="form-group">
+                                          <div class="max-width-105">
+                                            <mat-form-field class="hidde-labled">
+                                              <mat-label>Year <span class="txt-red">*</span>
+                                              </mat-label>
+                                              <mat-select id="la_Financial_Year" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_Financial_Year.errors }" formControlName="la_Financial_Year" >
+                                                <mat-option value="2017-18">2017-18</mat-option>
+                                                <mat-option value="2016-17">2016-17</mat-option>
+                                              </mat-select>
+                                            </mat-form-field>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div class="form-group">
+                                          <div class="max-width-105">
+                                            <mat-form-field class="hidde-labled">
+                                              <mat-label>Year <span class="txt-red">*</span>
+                                              </mat-label>
+                                              <mat-select  id="Se_Financial_Year" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_Financial_Year.errors }" formControlName="Se_Financial_Year" >
+                                                <mat-option>None</mat-option>
+                                                <mat-option value="2018-19">2018-19</mat-option>
+                                                <mat-option value="2019-2020">2019-2020</mat-option>
+                                              </mat-select>
+                                            </mat-form-field>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <div class="form-group">
+                                          <div class=" max-width-105">
+                                            <mat-form-field class="hidde-labled">
+                                              <mat-label>Year <span class="txt-red">*</span>
+                                              </mat-label>
+                                              <mat-select id="th_Financial_Year" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_Financial_Year.errors }" formControlName="th_Financial_Year" >
+                                                <mat-option>None</mat-option>
+                                                <mat-option value="2017-18">2017-18</mat-option>
+                                                <mat-option value="2016-17">2016-17</mat-option>
+                                              </mat-select>
+                                            </mat-form-field>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Turnover</td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="la_Turnover" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_Turnover.errors }" formControlName="la_Turnover" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="Se_Turnover" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_Turnover.errors }" formControlName="Se_Turnover" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="th_Turnover" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_Turnover.errors }" formControlName="th_Turnover" >
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Net Profit/ Annual income <span class="required">*</span>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="la_Net_Profit_Annual_income" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_Net_Profit_Annual_income.errors }" formControlName="la_Net_Profit_Annual_income" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="Se_Net_Profit_Annual_income" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_Net_Profit_Annual_income.errors }" formControlName="Se_Net_Profit_Annual_income" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="th_Net_Profit_Annual_income" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_Net_Profit_Annual_income.errors }" formControlName="th_Net_Profit_Annual_income" >
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Date of ITR Filling <span class="required">*</span>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly  placeholder="" id="la_Date_of_ITR_Filling" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_Date_of_ITR_Filling.errors }" formControlName="la_Date_of_ITR_Filling">
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="Se_Date_of_ITR_Filling" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_Date_of_ITR_Filling.errors }" formControlName="Se_Date_of_ITR_Filling" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="th_Date_of_ITR_Filling" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_Date_of_ITR_Filling.errors }" formControlName="th_Date_of_ITR_Filling" >
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Depreciation</td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="la_Depreciation" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_Depreciation.errors }" formControlName="la_Depreciation" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="Se_Depreciation" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_Depreciation.errors }" formControlName="Se_Depreciation" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="th_Depreciation" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_Depreciation.errors }" formControlName="th_Depreciation" >
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>other Income</td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="la_other_Income" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_other_Income.errors }" formControlName="la_other_Income">
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="Se_other_Income" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_other_Income.errors }" formControlName="Se_other_Income" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="th_other_Income" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_other_Income.errors }" formControlName="th_other_Income" >
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Household Expense</td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="la_Household_Expense" [ngClass]="{ 'is-invalid': submitted5 && income_control.la_Household_Expense.errors }" formControlName="la_Household_Expense" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="Se_Household_Expense" [ngClass]="{ 'is-invalid': submitted5 && income_control.Se_Household_Expense.errors }" formControlName="Se_Household_Expense" >
+                                        </mat-form-field>
+                                      </td>
+                                      <td>Rs.
+                                        <mat-form-field>
+                                          <input matInput numbersOnly placeholder="" id="th_Household_Expense" [ngClass]="{ 'is-invalid': submitted5 && income_control.th_Household_Expense.errors }" formControlName="th_Household_Expense" >
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                  <tfoot>
+                                    <tr>
+                                    <td colspan="2" class="intialiconc">Initial Net Income: <strong>Rs. 1000</strong>
+                                    </td>
+                                                   <td >Net Income <span class="txt-red">*</span>
+                                      </td>
+                                      <td>Rs.500000</td>
+                                    </tr>
+                                  </tfoot>
+                                </table>
+                              </div>
+ 
+                              
+                            </div>
+
+                            <!-- Secondry Income Section Started-->
+                            <div class="col-md-12 Secondry_Income" >
+                            <div class="form-row">
+                                <div class="col-md-9">
+                                    <div class="form-row">
+                                        <div class="form-group  col-md-6">
+                                            <mat-checkbox #big  (change)="0"   >Do you have Secondery Income?</mat-checkbox>
+                                            
+                                        </div>
+                                         
+                                      </div>  
+                                      <div *ngIf="big.checked" >
+                                      <form [formGroup]="secondry_information" (ngSubmit)="onSubmit33()" >
+
+                                    <div class="form-row">
+                                        <div class="form-group col-6 col-md-6 col-xl-3">
+                                            <mat-form-field>
+                                                <mat-label>Income Type  <span class="txt-red">*</span></mat-label>
+                                                <mat-select [(value)]="sd_Income_Type" id="sd_Income_Type" [ngClass]="{ 'is-invalid': submitted33 && income_secondry_control.sd_Income_Type.errors }" type="text" formControlName="sd_Income_Type" >
+                                                  <mat-option>None</mat-option>
+                                                  <mat-option value="Income">Income 1</mat-option>
+                                                  <mat-option value="Income">Income 2</mat-option>
+                                                </mat-select>
+                                              </mat-form-field>
+                                              <span *ngIf="submitted33 && income_secondry_control.sd_Income_Type.errors" class="error">
+                                                  <span *ngIf="income_secondry_control.sd_Income_Type.errors.required">{{ requireerror }}</span>
+                                            </span>
+
+                                           
+                                        </div>
+                                        <div class="form-group col-6 col-md-6 col-xl-2">
+                                           
+                                              <mat-form-field>
+                                                  <mat-label>Frequency  <span class="txt-red">*</span></mat-label>
+                                                  <mat-select [(value)]="sd_Frequency" id="sd_Frequency" [ngClass]="{ 'is-invalid': submitted33 && income_secondry_control.sd_Frequency.errors }" type="text" formControlName="sd_Frequency" >
+                                                    <mat-option>None</mat-option>
+                                                    <mat-option value="Weekly">Weekly</mat-option>
+                                                    <mat-option value="Monthly">Monthly</mat-option>
+                                                    <mat-option value="Quarterly">Quarterly </mat-option>
+                                                    <mat-option value="Yearly">Yearly </mat-option>
+                                                  </mat-select>
+                                                </mat-form-field>
+                                                <span *ngIf="submitted33 && income_secondry_control.sd_Frequency.errors" class="error">
+                                                    <span *ngIf="income_secondry_control.sd_Frequency.errors.required">{{ requireerror }}</span>
+                                              </span>
+
+                                        </div>
+                                        
+                                        <div class="form-group col-6 col-md-6 col-xl-2">
+                                          <mat-form-field>
+                                            <input matInput numbersOnly placeholder="Amount" [ngClass]="{ 'is-invalid': submitted33 && income_secondry_control.sd_Amount.errors }" formControlName="sd_Amount" id="sd_Amount"  required>
+                                          </mat-form-field>	<span *ngIf="submitted33 && income_secondry_control.sd_Amount.errors" class="error">
+                                                          <span *ngIf="income_secondry_control.sd_Amount.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+
+                                        <div class="form-group col-6 col-md-6 col-xl-2">
+                                            <mat-form-field>
+                                              <input matInput placeholder="% Considered" [ngClass]="{ 'is-invalid': submitted33 && income_secondry_control.sd_Considered.errors }" formControlName="sd_Considered" id="sd_Considered"  required>
+                                            </mat-form-field>	<span *ngIf="submitted33 && income_secondry_control.sd_Considered.errors" class="error">
+                                                            <span *ngIf="income_secondry_control.sd_Considered.errors.required">{{ requireerror }}</span>
+                                            </span>
+                                          </div>
+                                           
+
+                                          <div class="form-group col-6 col-md-6 col-xl-3">
+                                              <mat-form-field>
+                                                <input matInput placeholder="Amount Consider" [ngClass]="{ 'is-invalid': submitted33 && income_secondry_control.sd_Amount_Consider.errors }" formControlName="sd_Amount_Consider" id="sd_Amount_Consider" autocomplete="off" required>
+                                              </mat-form-field>	<span *ngIf="submitted33 && income_secondry_control.sd_Amount_Consider.errors" class="error">
+                                                              <span *ngIf="income_secondry_control.sd_Amount_Consider.errors.required">{{ requireerror }}</span>
+                                              </span>
+                                            </div>
+                                            <div class="form-group col-6 col-md-6 col-xl-12 text-center">
+                                                <button class="btn btn-rounded btn-primary mb-4" >+ Secondery Income</button>
+                                              </div>
+
+
+                                      </div>
+                                    </form>
+                                    <br>
+                                      
+                                              <div class="tabl-screen1 bank-table showObligation box_effect">
+                                                <div class="table-responsive">
+                                                <table id="example" class="table my_bank_table table-bordered">
+                                                  <thead>
+                                                    <tr>
+                                                      <th class="sn_width_blk">S. No</th>
+                                                      
+                                                      <th>Income Type </th>
+                                                      <th>Frequency </th>
+                                                      <th>Amount </th>
+                                                      <th>% Considered</th>
+                                                      <th>Amount Consider</th>
+                                                      
+            
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+            
+                                                    <tr>
+                                                      <td>1 </td> 
+                                                      
+                                                      <td> House Rent</td>
+                                                      <td>Monthly</td> 
+                                                      <td>Rs. 10,000</td>
+                                                      <td>10% </td>
+                                                      <td>1000</td>
+                                                       
+            
+                                                       
+                                                    </tr>
+            
+                                                     
+                                                    
+                                                </tbody></table>
+                                                </div>
+                                                </div>
+                                              </div>
+                                          
+                                      
+
+                                </div>
+                            </div>
+                          </div>
+                            <!-- Secondry Income Section Ended-->
+
+
+                            <div class="tab-button text-center">
+                              <button class=" btn btn-lg btn-primary mx-1" id="next"> <span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="co-applicant_Income">2</div>
+              </div>
+            </div>
+          </div>
+          <!--Income End-->
+
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

@@ -1,0 +1,115 @@
+<app-master-sidebar></app-master-sidebar>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<!--- new add rolle -->
+			<div class="col-md-12">
+				<div class="content-header">
+					<div class="align-items-center">
+						<div class="mr-auto">
+							<h3 class="page-title">Product Management</h3>
+							<div class="d-inline-block align-items-center">
+								<nav>
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a>
+										</li>
+										<li class="breadcrumb-item active" aria-current="page">Product Management</li>
+									</ol>
+								</nav>
+							</div>
+							<div class="pull-right">
+									<button routerLink="/master/add_product"  class="btn btn-rounded btn-info mb-5 ncust-btn">Add Product </button>  
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Basic Forms -->
+				<div class="box">
+					<h4 class="box-title">Search Product</h4> 
+					<!-- /.box-header -->
+					<form>
+						<div class="box-body">
+							<div class="first_blk_line form-element">
+								<div class="form-row">
+									<div class="form-group col-2 col-md-2">
+                      <mat-form-field>
+                          <input matInput placeholder="Product Name"  autocomplete="off" >
+                        </mat-form-field>
+
+									 
+									</div>
+								 
+									<div class="form-group col-2 col-md-2">
+										<button type="button" id="kycadded" class="btn btn-success pull-right">Search Now</button>
+									</div>
+								</div>
+								<!-- form-row -->
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- /.box -->
+				<div class="box box-default box-role-mgn">
+					<h4 class="box-title">Products List  </h4>
+					<!-- /.box-header -->
+					<div class="box-body ">
+						<!-- Nav tabs -->
+						<div class="tabl-screen1">
+							<table id="example" class="table table-striped " style="width:100%">
+								<thead>
+									<tr>
+										<th width="100">S. No</th>
+										<th>Product Name</th>
+										<th>Min Amount</th>
+										<th>Min tenure</th>
+                    <th>Max Amount</th>
+                    <th>Max Tenure</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Home loan</td>
+										<td>20,000</td>
+										<td>46</td>
+                    <td>1,23,000</td>
+                    <td>86</td>
+                    <td>12/01/2019</td>
+                    <td>12/04/2019</td>
+										<td> <span class="label label-warning">in-Active</span>
+										</td>
+										<td>
+											<div class="action">
+												<a href="" class="view-icon"> <i class="fa fa-eye" aria-hidden="true"></i>
+												</a> <a href="" class="edit-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+												<a href="" class="delete-icon"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									 
+								</tbody>
+							</table>
+						</div>
+						<!-- first tab -->
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<!-- /.col-md-8 -->
+			<!--- new add rolle ended -->
+			</div>
+	</section>
+	<!-- /.content -->
+	
+</div>
+<!-- /.content-wrapper -->

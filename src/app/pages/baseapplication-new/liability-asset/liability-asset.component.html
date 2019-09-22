@@ -1,0 +1,558 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+          <app-lead-inform-bar></app-lead-inform-bar>
+        
+
+			<!--Existing Obligation Start-->
+      <div class="tab-pane first-tab active" id="existing_obligation">
+					<!--Tabs in box-->
+					<div class="box py-0 px-0 my_tab_blk">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs nav-tabs-inverse-mode" role="tablist">
+							<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#lia_ass_applicant" role="tab">Applicant</a>
+							</li>
+							<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#lia_ass_co-applicant" role="tab">Co-Applicant</a>
+							</li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="box-body tab-content">
+							<div class="tab-content">
+								<div class="tab-pane fade active show" id="lia_ass_applicant">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Existing Obligation</strong></h4>
+										<form [formGroup]="Existing_Obligation" (ngSubmit)="onObligate()">
+										<div class="form-row">
+											<div class="form-group col-md-2">
+												<div class="max-width-150">
+													 <mat-form-field>
+															<mat-label>Loan Ownership <span class="txt-red">*</span></mat-label>
+															<mat-select id="Ex_Loan_Ownership" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Loan_Ownership.errors }" formControlName="Ex_Loan_Ownership">
+																<mat-option value="Individual">Individual</mat-option>
+																<mat-option value="Joint">Joint</mat-option>
+																<mat-option value="Guarantor">Guarantor</mat-option>
+																 
+															</mat-select>
+														</mat-form-field>	
+														<span *ngIf="submitted8 && Obligation_control.Ex_Loan_Ownership.errors" class="error">
+															<span *ngIf="Obligation_control.Ex_Loan_Ownership.errors.required">{{ requireerror }}</span>
+														</span>
+
+
+												</div>
+											</div>
+											<div class="form-group col-md-2">
+												<div class="max-width-120 ">
+														<mat-form-field>
+																<mat-label>Obligate <span class="txt-red">*</span></mat-label>
+																<mat-select  id="Ex_Obligate" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Obligate.errors }" formControlName="Ex_Obligate">
+																	<mat-option value="Yes">Yes</mat-option>																
+																	<mat-option value="No">No</mat-option>
+																	 
+																</mat-select>
+															</mat-form-field>	
+															<span *ngIf="submitted8 && Obligation_control.Ex_Obligate.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_Obligate.errors.required">{{ requireerror }}</span>
+															</span>
+
+													 
+												</div>
+											</div>
+
+											<div class="form-group col-md-2">
+												<div class="max-width-150 select-wrapper inner_width_select">
+														<mat-form-field>
+																<mat-label>Loan Type <span class="txt-red">*</span></mat-label>
+																<mat-select id="Ex_Loan_Type" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Loan_Type.errors }" formControlName="Ex_Loan_Type">
+															        <mat-option value="None">None</mat-option>
+																	<mat-option value="Auto Loan">Auto Loan</mat-option>
+																	<mat-option value=" Education Loan">Education Loan </mat-option>
+																	<mat-option value="Business Loan ">Business Loan </mat-option>
+																	<mat-option value="Personal Loan">Personal Loan </mat-option>
+																	<mat-option value="Consumer Loan ">Consumer Loan </mat-option>
+																	<mat-option value="Gold Loan ">Gold Loan </mat-option>
+																	<mat-option value="Two wheeler ">Two wheeler </mat-option>
+																	<mat-option value="CC/OD ">CC/OD </mat-option>
+																	<mat-option value="Employer Loan ">Employer Loan </mat-option>
+																	<mat-option value="KCC Loan">KCC Loan </mat-option>
+																	 
+																</mat-select>
+															</mat-form-field>	
+															<span *ngIf="submitted8 && Obligation_control.Ex_Obligate.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_Obligate.errors.required">{{ requireerror }}</span>
+															</span> 
+													 
+												</div>
+											</div>
+										 
+											<div class="form-group col-md-2">
+													<mat-form-field>
+															<input matInput specialIsAlphaNumeric placeholder="Financer Name"  id="Ex_Financer_Name" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Financer_Name.errors }" formControlName="Ex_Financer_Name" autocomplete="off" required >
+														</mat-form-field>
+														<span *ngIf="submitted8 && Obligation_control.Ex_Financer_Name.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_Financer_Name.errors.required">{{ requireerror }}</span>
+															</span> 
+
+
+											</div>
+											<div class="form-group col-md-2">
+													<mat-form-field>
+															<input matInput numbersOnly placeholder="Loan A/c No."  id="Ex_Loan_Ac_No" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Loan_Ac_No.errors }" formControlName="Ex_Loan_Ac_No" autocomplete="off" required >
+														</mat-form-field>
+											 
+											</div>
+											<div class="form-group col-md-2">
+													<mat-form-field>
+															<input matInput numbersOnly placeholder="Loan Amont"  id="Ex_Loan_Amont" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Loan_Amont.errors }" formControlName="Ex_Loan_Amont" autocomplete="off" required >
+														</mat-form-field>
+														<span *ngIf="submitted8 && Obligation_control.Ex_Loan_Amont.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_Loan_Amont.errors.required">{{ requireerror }}</span>
+															</span> 
+
+												 
+											</div>
+										</div>
+
+									
+
+										<div class="form-row">
+											<div class="form-group col-md-2">
+												 
+												<mat-form-field class="max-width-120">
+														<input matInput specialIsAlphaNumeric placeholder="Tenure"  id="Ex_Tenure" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Tenure.errors }" formControlName="Ex_Tenure" autocomplete="off" required >
+													</mat-form-field>
+													<span *ngIf="submitted8 && Obligation_control.Ex_Tenure.errors" class="error">
+															<span *ngIf="Obligation_control.Ex_Tenure.errors.required">{{ requireerror }}</span>
+														</span> 
+
+
+											</div>
+											<div class="form-group col-md-2">
+												 
+												<mat-form-field class="max-width-120">
+														<input matInput specialIsAlphaNumeric placeholder="Balance Tenure"  id="Ex_Balance_Tenure" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Balance_Tenure.errors }" formControlName="Ex_Balance_Tenure" autocomplete="off" required >
+													</mat-form-field>
+													<span *ngIf="submitted8 && Obligation_control.Ex_Balance_Tenure.errors" class="error">
+															<span *ngIf="Obligation_control.Ex_Balance_Tenure.errors.required">{{ requireerror }}</span>
+														</span> 
+
+														
+											</div>
+											<div class="form-group col-md-2">
+
+													<mat-form-field class="max-width-120">
+															<input matInput numbersOnly placeholder="EMI Amount"  id="Ex_EMI_Amount" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_EMI_Amount.errors }" formControlName="Ex_EMI_Amount" autocomplete="off" required >
+														</mat-form-field>
+														<span *ngIf="submitted8 && Obligation_control.Ex_EMI_Amount.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_EMI_Amount.errors.required">{{ requireerror }}</span>
+															</span> 
+
+															
+												 
+											</div>
+											<div class="form-group col-md-2">
+												<div class="max-width-150">
+
+														<mat-form-field>
+																<mat-label>Repayment Bank <span class="txt-red">*</span></mat-label>
+																<mat-select id="Ex_Repayment_Bank" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_Repayment_Bank.errors }" formControlName="Ex_Repayment_Bank">
+																	<mat-option value="HDFC Bank">HDFC Bank</mat-option>
+																	<mat-option value="ICIC Bank">ICIC Bank</mat-option>
+																	<mat-option value=" SBI Bank">SBI Bank </mat-option>
+																	<mat-option value="Bank of India ">Bank of India </mat-option>
+																	<mat-option value="Yes Bank">Yes Bank </mat-option>
+                                                           	</mat-select>
+															</mat-form-field>	
+															<span *ngIf="submitted8 && Obligation_control.Ex_Repayment_Bank.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_Repayment_Bank.errors.required">{{ requireerror }}</span>
+															</span>  
+													 
+												</div>
+											</div>
+											<div class="form-group col-md-4">
+													<mat-form-field class="max-width-40">
+															<input matInput numbersOnly  placeholder="No of bounces in last 6 month"  id="Ex_No_of_bounces_in_last_6_month" [ngClass]="{ 'is-invalid': submitted8 && Obligation_control.Ex_No_of_bounces_in_last_6_month.errors }" formControlName="Ex_No_of_bounces_in_last_6_month" autocomplete="off" required >
+														</mat-form-field>
+														<span *ngIf="submitted8 && Obligation_control.Ex_No_of_bounces_in_last_6_month.errors" class="error">
+																<span *ngIf="Obligation_control.Ex_No_of_bounces_in_last_6_month.errors.required">{{ requireerror }}</span>
+															</span>
+
+												 
+											</div>
+										</div>
+										<div class="add_button_blk text-center">
+											<button class="btn btn-rounded btn-primary mb-4" id="bankObligation">Add Obligation</button>
+										</div>
+										</form>
+										<!--- table list new start -->
+										<div class="form-row">
+											<div class="col-md-12">
+												<div class="tabl-screen1 bank-table showObligation box_effect">
+													<div class="table-responsive">
+														<table id="example" class="table my_bank_table table-bordered" [hidden]="oblig==0">
+															<thead>
+																<tr>
+																	<th class="sn_width_blk">S. No</th>
+																	<th>Loan ownership</th>
+																	<th>Obligate</th>
+																	<th>Financer Name</th>
+																	<th>Loan Type</th>
+																	<th>Loan A/c No</th>
+																	<th>Loan Amont (Rs.)</th>
+																	<th>Tenure</th>
+																	<th>B. Tenure</th>
+																	<th>EMI Amount</th>
+																	<th>Repayment Bank</th>
+																	<th>No of bounces</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr *ngFor="let obligate of oblig;let i = index">
+																	<td>{{i+1}}</td>
+																	<td>{{obligate.Ex_Loan_Ownership}}</td>
+																	<td>{{obligate.Ex_Obligate}}</td>
+																	<td>{{obligate.Ex_Financer_Name}}</td>
+																	<td>{{obligate.Ex_Loan_Type}}</td>
+																	<td>{{obligate.Ex_Loan_Ac_No}}</td>
+																	<td>{{obligate.Ex_Loan_Amont}}</td>
+																	<td>{{obligate.Ex_Tenure}}</td>
+																	<td>{{obligate.Ex_Balance_Tenure}}</td>
+																	<td>{{obligate.Ex_EMI_Amount}}</td>
+																	<td>{{obligate.Ex_Repayment_Bank}}</td>
+																	<td>{{obligate.Ex_No_of_bounces_in_last_6_month}}</td>
+																	<td>
+																		<div class="action">
+																			 <a  class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" (click)="editObligate(obligate)"  aria-hidden="true"></i></a>
+																			<a  class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" (click)="deleteObligate(obligate)" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--- table list new start ended -->
+									</div>
+									<!--Credit Card Details Start-->
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Credit Card Details</strong></h4>
+
+										<form [formGroup]="Credit_Card_Details" (ngSubmit)="onCredit()"> 
+
+											<div class="form-row">
+												<div class="form-group col-md-2">
+													<div class="max-width-150">
+															<mat-form-field>
+																	<mat-label>Bank Name<span class="txt-red">*</span></mat-label>
+																	<mat-select id="Cr_Bank_Name" [ngClass]="{ 'is-invalid': submitted9 && cc_control.Cr_Bank_Name.errors }" formControlName="Cr_Bank_Name">			
+																			<mat-option value="HDFC Bank">HDFC Bank</mat-option>
+																		<mat-option value="ICIC Bank">ICIC Bank</mat-option>
+																		<mat-option value="SBI Bank">SBI Bank</mat-option>
+																		<mat-option value="Yes Bank">Yes Bank</mat-option>
+																	</mat-select>
+																</mat-form-field>	
+																<span *ngIf="submitted9 && cc_control.Cr_Bank_Name.errors" class="error">
+																	<span *ngIf="cc_control.Cr_Bank_Name.errors.required">{{ requireerror }}</span>
+																</span> 
+													</div>
+												</div>
+
+												<div class="form-group col-md-2">
+														<mat-form-field>
+																<input matInput numbersOnly placeholder="Card Limit" [ngClass]="{ 'is-invalid': submitted9 && cc_control.Cr_Card_Limit.errors }" formControlName="Cr_Card_Limit" autocomplete="off" required >
+															</mat-form-field>
+															<span *ngIf="submitted9 && cc_control.Cr_Card_Limit.errors" class="error">
+																	<span *ngIf="cc_control.Cr_Card_Limit.errors.required">{{ requireerror }}</span>
+																</span> 
+													</div>
+													<div class="form-group col-md-2">
+															<mat-form-field>
+																	<input matInput numbersOnly placeholder="Current Utilization" [ngClass]="{ 'is-invalid': submitted9 && cc_control.Cr_Current_Utilization.errors }" formControlName="Cr_Current_Utilization" autocomplete="off" required >
+																</mat-form-field>
+																<span *ngIf="submitted9 && cc_control.Cr_Current_Utilization.errors" class="error">
+																		<span *ngIf="cc_control.Cr_Current_Utilization.errors.required">{{ requireerror }}</span>
+																	</span> 
+
+
+														 
+													</div>
+													<div class="form-group col-md-2">
+
+															<mat-form-field class="date-fields">
+																	<input matInput [matDatepicker]="Cr_Last_payment_Date" placeholder="Last payment Date " [ngClass]="{ 'is-invalid': submitted9 && cc_control.Cr_Last_payment_Date.errors }" formControlName="Cr_Last_payment_Date" id="Cr_Last_payment_Date" readonly autocomplete="off" required>
+																	<mat-datepicker-toggle matSuffix [for]="Cr_Last_payment_Date"></mat-datepicker-toggle>
+																	<mat-datepicker #Cr_Last_payment_Date></mat-datepicker>
+																  </mat-form-field>	<span *ngIf="submitted9 && cc_control.Cr_Last_payment_Date.errors" class="error">
+																				<span *ngIf="cc_control.Cr_Last_payment_Date.errors.required">{{ requireerror }}</span> </span>
+									  
+ 
+														
+														 
+													</div>
+													<div class="form-group col-md-2">
+														<div class="max-width-120">
+																<mat-form-field>
+																		<mat-label>Obligate<span class="txt-red">*</span></mat-label>
+																		<mat-select  id="Cr_Obligate" [ngClass]="{ 'is-invalid': submitted9 && cc_control.Cr_Obligate.errors }" formControlName="Cr_Obligate">
+																			<mat-option value="Yes">Yes</mat-option>
+																			<mat-option value="No">No</mat-option>
+																			</mat-select>
+																	</mat-form-field>	
+																	<span *ngIf="submitted9 && cc_control.Cr_Obligate.errors" class="error">
+																		<span *ngIf="cc_control.Cr_Obligate.errors.required">{{ requireerror }}</span>
+																	</span>  
+														</div>
+													</div>
+
+
+
+											</div>
+
+											<div class="add_button_blk text-center">
+													<button  class="btn btn-rounded btn-primary mb-4" id="ccadded">Add Credit Card</button>
+												</div>
+
+
+										</form>
+
+										<div class="form-row">
+
+											
+										</div>
+										
+										<!--- table list new start -->
+										<div class="form-row">
+											<div class="col-md-12">
+												<div class="tabl-screen1 bank-table show-card-list box_effect" >
+													<div class="table-responsive">
+														<table id="example" class="table my_bank_table table-bordered" [hidden]="creditCard==0">
+															<thead>
+																<tr>
+																	<th class="sn_width_blk">S. No</th>
+																	<th>Bank Name</th>
+																	<th>Card Limit</th>
+																	<th>Current Utilization</th>
+																	<th>Last payment Date</th>
+																	<th>Obligate</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr *ngFor="let credit of creditCard;let i=index">
+																	<td>{{i+1}}</td>
+																	<td>{{credit.Cr_Bank_Name}}</td>
+																	<td>{{credit.Cr_Card_Limit}}</td>
+																	<td>{{credit.Cr_Current_Utilization}}</td>
+																	<td>{{credit.Cr_Last_payment_Date}}</td>
+																	<td>{{credit.Cr_Obligate}}</td>
+																	<td>
+																		<div class="action">
+																		 <a  title="Edit"><i class="fa fa-pencil-square-o" (click)="editCredit(credit)" aria-hidden="true"></i></a>
+																			<a class="delete-icon sa-warning" title="Delete"> <i (click)="deleteCredit(credit)" class="fa fa-trash-o" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--- table list new start ended -->
+									</div>
+									<!--Credit Card Details End-->
+									<!--Asset Details Start-->
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Asset Details</strong></h4>
+
+										<form [formGroup]="Asset_Detail" (ngSubmit)="onAsset()">
+
+										<div class="form-row">
+											<div class="form-group col-md-2">
+												<div class="max-width-160">
+
+														<mat-form-field>
+																<mat-label>Asset Detail <span class="txt-red">*</span></mat-label>
+																<mat-select id="As_Asset_Detail" [ngClass]="{ 'is-invalid': submitted10 && asset_control.As_Asset_Detail.errors }" formControlName="As_Asset_Detail">
+																	<mat-option value="Liquid Assets">Liquid Assets</mat-option>
+																	<mat-option value="Movable assets">Movable assets</mat-option>
+																	<mat-option value="Widow">Widow</mat-option>
+																</mat-select>
+															</mat-form-field>	
+															<span *ngIf="submitted10 && asset_control.As_Asset_Detail.errors" class="error">
+																<span *ngIf="asset_control.As_Asset_Detail.errors.required">{{ requireerror }}</span>
+															</span> 
+													 
+												 
+												</div>
+											</div>
+
+											<div class="form-group col-md-2">
+													<div class="max-width-150 ">
+
+															<mat-form-field>
+																	<mat-label>Sub-Type of Asset <span class="txt-red">*</span></mat-label>
+																	<mat-select  id="As_Sub_Type_of_Asset" [ngClass]="{ 'is-invalid': submitted10 && asset_control.As_Sub_Type_of_Asset.errors }" formControlName="As_Sub_Type_of_Asset">
+																       <mat-option value="LIC">LIC</mat-option>
+																		<mat-option value="FD/RD">FD/RD</mat-option>
+																		<mat-option value="Land">Land</mat-option>
+																		<mat-option value="Machinery">Machinery</mat-option>
+																		<mat-option value="Mutual Fund">Mutual Fund</mat-option>
+																		<mat-option value="2/3/4 Wheeler">2/3/4 Wheeler</mat-option>
+																		<mat-option value="Gold/Jwellery">Gold/Jwellery</mat-option>
+																		<mat-option value="Bonds">Bonds</mat-option>
+																		<mat-option value="Shares">Shares</mat-option>
+																		<mat-option value="PPF">PPF</mat-option>
+																		<mat-option value="Pension Schemes">Pension Schemes</mat-option>
+																		<mat-option value="Vikas Patra">Vikas Patra</mat-option>
+																	 
+																	</mat-select>
+																</mat-form-field>	
+																<span *ngIf="submitted10 && asset_control.As_Sub_Type_of_Asset.errors" class="error">
+																	<span *ngIf="asset_control.As_Sub_Type_of_Asset.errors.required">{{ requireerror }}</span>
+																</span> 
+
+
+													</div>
+												</div>
+												<div class="form-group col-md-2">
+													<div class="">
+
+															<mat-form-field>
+																	<mat-label>Ownership <span class="txt-red">*</span></mat-label>
+																	<mat-select  id="As_Ownership" [ngClass]="{ 'is-invalid': submitted10 && asset_control.As_Ownership.errors }" formControlName="As_Ownership">
+                                                                    <mat-option value="Applicant">Applicant</mat-option>
+																		<mat-option value="Co-Applicant">Co-Applicant</mat-option>
+																	 
+																	 
+																	</mat-select>
+																</mat-form-field>	
+																<span *ngIf="submitted10 && asset_control.As_Ownership.errors" class="error">
+																	<span *ngIf="asset_control.As_Ownership.errors.required">{{ requireerror }}</span>
+																</span>  
+													</div>
+												</div>
+												<div class="form-group col-md-2">
+
+														<mat-form-field>
+																<input matInput numbersOnly placeholder="Value" [ngClass]="{ 'is-invalid': submitted10 && asset_control.As_Value.errors }" formControlName="As_Value" autocomplete="off" required >
+															</mat-form-field>
+															<span *ngIf="submitted10 && asset_control.As_Value.errors" class="error">
+																	<span *ngIf="asset_control.As_Value.errors.required">{{ requireerror }}</span>
+																</span> 
+
+												</div>
+												<div class="form-group effect-16 col-md-3 px-1">
+													<div class="max-width-165 select-wrapper inner_width_select">
+
+															<mat-form-field>
+																	<mat-label>Documented Proof <span class="txt-red">*</span></mat-label>
+																	<mat-select id="As_Documented_Proof" [ngClass]="{ 'is-invalid': submitted10 && asset_control.As_Documented_Proof.errors }" formControlName="As_Documented_Proof">
+																		<mat-option value="Asset-proofe-no">No</mat-option>
+																		<mat-option value="Asset-proofe-yes">Yes</mat-option>
+																	</mat-select>
+																</mat-form-field>	
+																<span *ngIf="submitted10 && asset_control.As_Documented_Proof.errors" class="error">
+																	<span *ngIf="asset_control.As_Documented_Proof.errors.required">{{ requireerror }}</span>
+																</span> 
+
+													</div>
+												</div>
+												<div class="form-group width-auto pl-1 Asset-proofe Asset-proofe-yes" style="display: none;">
+													<label for="IDProof">&nbsp;</label>
+													<button class="btn btn-brown mb-5 uploadn-btn-news" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+													</button>
+												</div>
+												<div class="clear"></div>
+												<div class="add_button_blk text-center">
+														<button  class="btn btn-rounded btn-primary mb-4" id="ccadded">Add Asset</button>
+													</div>
+
+
+
+										</div>
+									</form>
+
+										 
+										<!--- table list new start -->
+										<div class="form-row">
+											<div class="col-md-12">
+												<div class="tabl-screen1 bank-table show-card-Asset box_effect" >
+													<div class="table-responsive">
+														<table id="example" class="table my_bank_table table-bordered mb-4" [hidden]="asset==0" >
+															<thead>
+																<tr>
+																	<th class="sn_width_blk">S. No</th>
+																	<th>Asset Detail</th>
+																	<th>Sub-Type of Asset</th>
+																	<th>Ownership</th>
+																	<th>Value</th>
+																	<th>Documented Proof</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr *ngFor="let asst of asset;let i=index">
+																	<td>{{i+1}}</td>
+																	<td>{{asst.As_Asset_Detail}}</td>
+																	<td>{{asst.As_Sub_Type_of_Asset}}</td>
+																	<td>{{asst.As_Ownership}}</td>
+																	<td>{{asst.As_Value}}</td>
+																	<td>{{asst.As_Documented_Proof}}</td>
+																	<td>
+																		<div class="action">
+																			 <a class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" (click)="editAsset(asst)" aria-hidden="true"></i></a>
+																			<a  class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" (click)="deleteAsset(asst)" aria-hidden="true"></i>
+																			</a>
+																		</div>
+																	</td>
+																</tr>
+									
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--- table list new start ended -->
+									</div>
+									<!--Asset Details End-->
+								</div>
+								<!--Second tab start-->
+								<div class="tab-pane fade" id="lia_ass_co-applicant">Co-Applicant</div>
+								<!--Second tab end-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Existing Obligation End-->
+
+
+				<div class="tab-button text-center">
+						<button class=" btn btn-lg btn-primary mx-1" id="next" (click)="save()" > <span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+						</button>
+					</div>
+
+					
+        
+
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

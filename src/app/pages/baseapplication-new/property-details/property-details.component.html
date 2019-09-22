@@ -1,0 +1,312 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+					
+        <!--Property Details and Verification Detail Start-->
+				<div class="tab-pane first-tab active" id="property_details_verification">
+
+            <form [formGroup]="property_Details" (ngSubmit)="onSubmit12()">
+    
+              <div class="box box-default my_inner_box">
+                <div class="box-body wizard-content">
+                  <div class="tab-content">
+                    <div class="first_blk_line form-element">
+                      <h4 class="inte-box-title"><strong>Property Details</strong></h4>
+    
+                      
+                        
+                      <div class="row  my_address_blk">
+                        <div class="col-12 col-md-12 col-xl-5" style="flex: 0 0 49%;">
+                          <div class="row">
+                            <div class="form-group col-6 col-md-6 col-xl-6">
+                              <div class="max-width-165 ">
+                                  <mat-form-field>
+                                      <mat-label>Property Selected <span class="txt-red">*</span></mat-label>
+                                      <mat-select [(value)]="Pr_Property_Selected" id="Pr_Property_Selected" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Property_Selected.errors }" formControlName="Pr_Property_Selected">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Yes">Yes</mat-option>
+                                        <mat-option value="No">No</mat-option>
+                                         
+                                      </mat-select>
+                                    </mat-form-field>	
+                                    <span *ngIf="submitted12 && property_control.Pr_Property_Selected.errors" class="error">
+                                      <span *ngIf="property_control.Pr_Property_Selected.errors.required">{{ requireerror }}</span>
+                                    </span>
+    
+    
+                               
+                              </div>
+                            </div>
+                            <div class="form-group col-6 col-md-6 col-xl-4">
+                              <div class="max-width-120 select-wrapper inner_width_select">
+    
+                                  <mat-form-field>
+                                      <mat-label>Unit Type <span class="txt-red">*</span></mat-label>
+                                      <mat-select [(value)]="Pr_Unit_Type" id="Pr_Unit_Type" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Unit_Type.errors }" formControlName="Pr_Unit_Type">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Flat">Flat</mat-option>
+                                        <mat-option value="Row House">Row House</mat-option>
+                                        <mat-option value="Plot">Plot</mat-option>
+                                         
+                                      </mat-select>
+                                    </mat-form-field>	
+                                    <span *ngIf="submitted12 && property_control.Pr_Unit_Type.errors" class="error">
+                                      <span *ngIf="property_control.Pr_Unit_Type.errors.required">{{ requireerror }}</span>
+                                    </span>
+    
+    
+                                 
+                              </div>
+                            </div>
+                            <div class="form-group col-12 col-md-12 col-xl-12">
+                                <mat-form-field>
+                                  <textarea matInput specialIsAlphaNumeric placeholder="Property Address" id="Pr_Property_Address" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Property_Address.errors }" formControlName="Pr_Property_Address" required ></textarea>
+                                </mat-form-field> 
+                                <span *ngIf="submitted12 && property_control.Pr_Property_Address.errors" class="error">
+                                    <span *ngIf="property_control.Pr_Property_Address.errors.required">{{ requireerror }}</span>
+                                </span>
+                               
+                            </div>
+                            <div class="form-group col-6 col-md-6 col-xl-8">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Landmark" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Landmark.errors }" formControlName="Pr_Landmark" autocomplete="off" required >
+                                </mat-form-field>
+                                <span *ngIf="submitted12 && property_control.Pr_Landmark.errors" class="error">
+                                  <span *ngIf="property_control.Pr_Landmark.errors.required">{{ requireerror }}</span>
+                                </span> 
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                    <input matInput numbersOnly placeholder="Pin Code" id="Pr_Pin_Code" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Pin_Code.errors }" formControlName="Pr_Pin_Code" autocomplete="off" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_Pin_Code.errors" class="error">
+                                    <span *ngIf="property_control.Pr_Pin_Code.errors.required">{{ requireerror }}</span>
+                                  </span> 
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+    
+                                <mat-form-field>
+                                    <input matInput specialIsAlphaNumeric placeholder="City" id="Pr_City" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_City.errors }" formControlName="Pr_City" autocomplete="off" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_City.errors" class="error">
+                                    <span *ngIf="property_control.Pr_City.errors.required">{{ requireerror }}</span>
+                                  </span> 
+    
+                             
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                    <input matInput specialIsAlphaNumeric placeholder="District" id="Pr_District" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_District.errors }" formControlName="Pr_District" autocomplete="off" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_District.errors" class="error">
+                                    <span *ngIf="property_control.Pr_District.errors.required">{{ requireerror }}</span>
+                                  </span> 
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                              <div class="max-width-180 ">
+                                  <mat-form-field>
+                                      <mat-label>State <span class="txt-red">*</span></mat-label>
+                                      <mat-select [(value)]="Pr_State" id="Pr_State" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_State.errors }" formControlName="Pr_State">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Delhi">Delhi</mat-option>
+                                        <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                          
+                                      </mat-select>
+                                    </mat-form-field>	
+                                    <span *ngIf="submitted12 && property_control.Pr_State.errors" class="error">
+                                      <span *ngIf="property_control.Pr_State.errors.required">{{ requireerror }}</span>
+                                    </span>  
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="line" style="border-right:1px solid #aea6a6;;"></div>
+                        <div class="col-12 col-md-12 col-xl-7 my_right_blk" style="flex: 0 0 58%;">
+                          <div class="row">
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                              <div class="max-width-120 select-wrapper inner_width_select">
+                                  <mat-form-field>
+                                      <mat-label>Ownership <span class="txt-red">*</span></mat-label>
+                                      <mat-select [(value)]="Pr_Ownership" id="Pr_Ownership" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Ownership.errors }" formControlName="Pr_Ownership">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Single">Single</mat-option>
+                                        <mat-option value="Joint">Joint</mat-option>
+                                        
+                                          
+                                      </mat-select>
+                                    </mat-form-field>	
+                                    <span *ngIf="submitted12 && property_control.Pr_Ownership.errors" class="error">
+                                      <span *ngIf="property_control.Pr_Ownership.errors.required">{{ requireerror }}</span>
+                                    </span> 
+                                 
+                              </div>
+                            </div>
+
+                            <div class="form-group form-group col-6 col-md-6 col-xl-6">
+                                <div class="max-width-160">
+      
+                                    <mat-form-field>
+                                        <mat-label>Property Nature of Transaction Category <span class="txt-red">*</span></mat-label>
+                                        <mat-select [(value)]="Pr_Already_Owned_Property" id="Pr_Already_Owned_Property" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Already_Owned_Property.errors }" formControlName="Pr_Already_Owned_Property">
+                                          <mat-option>None</mat-option>
+                                          <mat-option value="Owned">Owned</mat-option>
+                                          <mat-option value="Proposed">Proposed</mat-option>
+                                          
+                                            
+                                        </mat-select>
+                                      </mat-form-field>	
+                                      <span *ngIf="submitted12 && property_control.Pr_Already_Owned_Property.errors" class="error">
+                                        <span *ngIf="property_control.Pr_Already_Owned_Property.errors.required">{{ requireerror }}</span>
+                                      </span>
+      
+      
+                                   
+                                </div>
+                              </div>
+
+
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                              <div class="max-width-160">
+    
+                                  <mat-form-field>
+                                      <mat-label>Already Owned Property <span class="txt-red">*</span></mat-label>
+                                      <mat-select [(value)]="Pr_Already_Owned_Property" id="Pr_Already_Owned_Property" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Already_Owned_Property.errors }" formControlName="Pr_Already_Owned_Property">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Owned">Owned</mat-option>
+                                        <mat-option value="Proposed">Proposed</mat-option>
+                                        
+                                          
+                                      </mat-select>
+                                    </mat-form-field>	
+                                    <span *ngIf="submitted12 && property_control.Pr_Already_Owned_Property.errors" class="error">
+                                      <span *ngIf="property_control.Pr_Already_Owned_Property.errors.required">{{ requireerror }}</span>
+                                    </span>
+    
+    
+                                 
+                              </div>
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                              <div class="max-width-150 select-wrapper inner_width_select">
+    
+                                  <mat-form-field>
+                                      <mat-label>Is First Property <span class="txt-red">*</span></mat-label>
+                                      <mat-select [(value)]="Pr_Is_First_Property" id="Pr_Is_First_Property" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Is_First_Property.errors }" formControlName="Pr_Is_First_Property">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Yes">Yes</mat-option>
+                                        <mat-option value="No">No</mat-option>
+                                        
+                                          
+                                      </mat-select>
+                                    </mat-form-field>	
+                                    <span *ngIf="submitted12 && property_control.Pr_Is_First_Property.errors" class="error">
+                                      <span *ngIf="property_control.Pr_Is_First_Property.errors.required">{{ requireerror }}</span>
+                                    </span> 
+                                 
+                              </div>
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput numbersOnly placeholder="Property Area (Sq ft)" id="Pr_Property_Area" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Property_Area.errors }" formControlName="Pr_Property_Area" required >
+                                </mat-form-field>
+                                <span *ngIf="submitted12 && property_control.Pr_Property_Area.errors" class="error">
+                                  <span *ngIf="property_control.Pr_Property_Area.errors.required">{{ requireerror }}</span>
+                                </span> 
+    
+    
+    
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                    <input matInput specialIsAlphaNumeric placeholder="MV of Property" id="Pr_MV_of_Property" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_MV_of_Property.errors }" formControlName="Pr_MV_of_Property" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_MV_of_Property.errors" class="error">
+                                    <span *ngIf="property_control.Pr_MV_of_Property.errors.required">{{ requireerror }}</span>
+                                  </span>
+    
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+    
+                                <mat-form-field>
+                                    <input matInput numbersOnly placeholder="Agreement Value" id="Pr_Agreement_Value" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Agreement_Value.errors }" formControlName="Pr_Agreement_Value" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_Agreement_Value.errors" class="error">
+                                    <span *ngIf="property_control.Pr_Agreement_Value.errors.required">{{ requireerror }}</span>
+                                </span> 
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                    <input matInput numbersOnly placeholder="OCR Value" id="Pr_OCR_Value" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_OCR_Value.errors }" formControlName="Pr_OCR_Value" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_OCR_Value.errors" class="error">
+                                    <span *ngIf="property_control.Pr_OCR_Value.errors.required">{{ requireerror }}</span>
+                                </span>
+    
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-4">
+    
+                                <mat-form-field class="max-width-80">
+                                    <input matInput specialIsAlphaNumeric placeholder="Distance From Branch" id="Pr_Distance_From_Branch" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Distance_From_Branch.errors }" formControlName="Pr_Distance_From_Branch" required >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted12 && property_control.Pr_Distance_From_Branch.errors" class="error">
+                                    <span *ngIf="property_control.Pr_Distance_From_Branch.errors.required">{{ requireerror }}</span>
+                                </span> 
+                               
+                            </div>
+                            <div class="form-group form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field class="max-width-80">
+                                    <input matInput specialIsAlphaNumeric placeholder="Distance From Existing Residence" id="Pr_Distance_From_Existing_Residence" [ngClass]="{ 'is-invalid': submitted12 && property_control.Pr_Distance_From_Existing_Residence.errors }" formControlName="Pr_Distance_From_Existing_Residence" required >
+                                </mat-form-field>
+                                <span *ngIf="submitted12 && property_control.Pr_Distance_From_Existing_Residence.errors" class="error">
+                                  <span *ngIf="property_control.Pr_Distance_From_Existing_Residence.errors.required">{{ requireerror }}</span>
+                                </span>
+    
+    
+                               
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                      
+                      
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+    
+              <div class="tab-button text-center" >
+                  <button class=" btn btn-lg btn-primary mx-1" id="next" ><span>Save &amp; Continue</span><i class="ti-angle-double-right"></i></button>
+                   </div>
+                   
+            </form>
+            </div>
+            <!--Property Details and Verification Detail End-->
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

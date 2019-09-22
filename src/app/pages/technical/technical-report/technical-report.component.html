@@ -1,0 +1,1385 @@
+<app-technical-side-bar></app-technical-side-bar>
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+          <app-lead-inform-bar></app-lead-inform-bar>
+          
+
+           <!--Technical Report Start-->
+           <div class="tab-pane first-tab active" id="technical_report">
+            <form [formGroup]="Technical_Report" (ngSubmit)="onSubmit28()">
+              <div class="my_inner_box_according">
+                <div class="first_blk_line form-element">
+                  <!-- Collapse start 1-->
+                  <div class="box">
+                    <div class="box-header with-border">
+                      <h4 class="inte-box-title"><strong>Technical Report</strong></h4>
+                      <ul class="box-controls pull-right">
+                        <li>
+                          <a class="box-btn-slide" href="#"></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-content">
+                      <div class="box-body">
+                        <div class="form-row">
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                            <mat-form-field>
+                              <input matInput placeholder="Applicant Name" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Te_Applicant_Name.errors }" formControlName="Te_Te_Applicant_Name" id="Te_Te_Applicant_Name" autocomplete="off" required>
+                            </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Te_Applicant_Name.errors" class="error">
+                                        <span *ngIf="Technical_Report_control.Te_Te_Applicant_Name.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                            <mat-form-field>
+                              <input matInput placeholder="Property Type" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Te_Property_Type.errors }" formControlName="Te_Te_Property_Type" id="Te_Te_Property_Type" autocomplete="off" required>
+                            </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Te_Property_Type.errors" class="error">
+                                        <span *ngIf="Technical_Report_control.Te_Te_Property_Type.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                            <mat-form-field>
+                              <input matInput placeholder="Visited By" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Te_Visited_By.errors }" formControlName="Te_Te_Visited_By" id="Te_Te_Visited_By" autocomplete="off" required>
+                            </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Te_Visited_By.errors" class="error">
+                                        <span *ngIf="Technical_Report_control.Te_Te_Visited_By.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                            <mat-form-field>
+                              <input matInput placeholder="Product" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Te_Product.errors }" formControlName="Te_Te_Product" id="Te_Te_Product" autocomplete="off" required>
+                            </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Te_Product.errors" class="error">
+                                        <span *ngIf="Technical_Report_control.Te_Te_Product.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                            <mat-form-field class="max-width-120 date-fields">
+                              <input matInput [matDatepicker]="Te_Te_Report_Date" placeholder="Report Date" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Te_Report_Date.errors }" formControlName="Te_Te_Report_Date" id="Te_Te_Report_Date" readonly required>
+                              <mat-datepicker-toggle matSuffix [for]="Te_Te_Report_Date"></mat-datepicker-toggle>
+                              <mat-datepicker #Te_Te_Report_Date></mat-datepicker>
+                            </mat-form-field>	<span *ngIf="submitted28 && Technical_Report_control.Te_Te_Report_Date.errors" class="error">
+                                        <span *ngIf="Technical_Report_control.Te_Te_Report_Date.errors.required">{{ requireerror }}</span> </span>
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                            <mat-form-field class="max-width-120 date-fields">
+                              <input matInput [matDatepicker]="Te_Te_Date_of_Visit" placeholder="Date of Visit" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Te_Date_of_Visit.errors }" formControlName="Te_Te_Date_of_Visit" id="Te_Te_Date_of_Visit" readonly required>
+                              <mat-datepicker-toggle matSuffix [for]="Te_Te_Date_of_Visit"></mat-datepicker-toggle>
+                              <mat-datepicker #Te_Te_Date_of_Visit></mat-datepicker>
+                            </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Te_Date_of_Visit.errors" class="error">
+                                        <span *ngIf="Technical_Report_control.Te_Te_Date_of_Visit.errors.required">{{ requireerror }}</span> </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Collapse end 1-->
+                </div>
+                <div class="first_blk_line form-element">
+                  <!-- Collapse start 1-->
+                  <div class="box">
+                    <div class="box-header with-border">
+                      <h4 class="inte-box-title"><strong>Property & Surrounding Details</strong></h4>
+                      <ul class="box-controls pull-right">
+                        <li>
+                          <a class="box-btn-slide" href="#"></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-content">
+                      <div class="box-body">
+                        <div class="form-row">
+                          <!--New start-->
+                          <div class="col-12 col-md-12 col-xl-12">
+                            <table class="table table-bordered my-4 table_cell_equel">
+                              <thead>
+                                <tr>
+                                  <th colspan="6">Property Address as per Site</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_HouseFlat">House/Flat/Premises No.</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_House_Flat_Premises_No.errors }" formControlName="Te_Pr_House_Flat_Premises_No" id="Te_Pr_House_Flat_Premises_No" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_WingName">Wing Name/No</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-140">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Wing_Name_No.errors }" formControlName="Te_Pr_Wing_Name_No" id="Te_Pr_Wing_Name_No" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_ColonyProject">Colony /Project Name <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-140">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Colony__Project_Name.errors }" formControlName="Te_Pr_Colony__Project_Name" id="Te_Pr_Colony__Project_Name" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Colony__Project_Name.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_Colony__Project_Name.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_PlotProperty">Plot/Property/Dag No <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-203">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Plot_Property_Dag_NO.errors }" formControlName="Te_Pr_Plot_Property_Dag_NO" id="Te_Pr_Plot_Property_Dag_NO" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Plot_Property_Dag_NO.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_Plot_Property_Dag_NO.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Khasra">Khasra/Survey No</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-140">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Khasra_Survey_No.errors }" formControlName="Te_Pr_Khasra_Survey_No" id="Te_Pr_Khasra_Survey_No" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_GaliNo">Gali No/Road Name <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-140">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Gali_No_Road_Name.errors }" formControlName="Te_Pr_Gali_No_Road_Name" id="Te_Pr_Gali_No_Road_Name" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Gali_No_Road_Name.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_Gali_No_Road_Name.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_SectorPhase">Sector/Phase/Ward</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-140">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Sector_Phase_Ward.errors }" formControlName="Te_Pr_Sector_Phase_Ward" id="Te_Pr_Sector_Phase_Ward" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_DistanceLandmark">Distance from Landmark <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Distance_from_Landmark.errors }" formControlName="Te_Pr_Distance_from_Landmark" id="Te_Pr_Distance_from_Landmark" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Distance_from_Landmark.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_Distance_from_Landmark.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_VillageLocation">Village/Location <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <textarea matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Village_Location.errors }" formControlName="Te_Pr_Village_Location" id="Te_Pr_Village_Location" autocomplete="off" required></textarea>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Village_Location.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_Village_Location.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Mauzzapolice">Mauzza/police Station <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <textarea matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Mauzza_police_Station.errors }" formControlName="Te_Pr_Mauzza_police_Station" id="Te_Pr_Mauzza_police_Station" autocomplete="off" required></textarea>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Mauzza_police_Station.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_Mauzza_police_Station.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Landmark">Landmark</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <textarea matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Landmark.errors }" formControlName="Te_Pr_Landmark" id="Te_Pr_Landmark" autocomplete="off"></textarea>
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_CityTehsil">City/Tehsil/Taluka/Town <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_City_Tehsil_Taluka_Town.errors }" formControlName="Te_Pr_City_Tehsil_Taluka_Town" id="Te_Pr_City_Tehsil_Taluka_Town" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_City_Tehsil_Taluka_Town.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_City_Tehsil_Taluka_Town.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_District">District <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_District.errors }" formControlName="Te_Pr_District" id="Te_Pr_District" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_District.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Pr_District.errors.required">{{ requireerror }}</span> </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_State">State <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <div class="form-group select-wrapper">
+                                      <mat-form-field class="max-width-165 ">
+                                        <mat-select [(value)]="Te_Pr_State" id="Te_Pr_State" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_State.errors }" type="text" formControlName="Te_Pr_State" value="" autocomplete="off">
+                                          <mat-option>None</mat-option>
+                                          <mat-option value="Delhi">Delhi</mat-option>
+                                        </mat-select>
+                                      </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_State.errors" class="error">
+                                                    <span *ngIf="Technical_Report_control.Te_Pr_State.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_ProPinCode">Pin Code</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Pin_Code.errors }" formControlName="Te_Pr_Pin_Code" id="Te_Pr_Pin_Code" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="table table-bordered my-4 table_cell_equel">
+                              <thead>
+                                <tr>
+                                  <th colspan="6">&nbsp;</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Location">Location Categorization <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <div class="form-group select-wrapper">
+                                      <div class="max-width-120 ">
+                                        <mat-form-field>
+                                          <mat-select [(value)]="Te_Pr_Location_Categorization" id="Te_Pr_Location_Categorization" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Location_Categorization.errors }" type="text" formControlName="Te_Pr_Location_Categorization" value="" autocomplete="off">
+                                            <mat-option>None</mat-option>
+                                            <mat-option value="Rural">Rural</mat-option>
+                                            <mat-option value="Urban">Urban</mat-option>
+                                          </mat-select>
+                                        </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Location_Categorization.errors" class="error">
+                                                      <span *ngIf="Technical_Report_control.Te_Pr_Location_Categorization.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_DistanceDMIbranch">Distance from Nearest DMI branch <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Distance_from_Nearest_DMI_branch.errors }" formControlName="Te_Pr_Distance_from_Nearest_DMI_branch" id="Te_Pr_Distance_from_Nearest_DMI_branch" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Distance_from_Nearest_DMI_branch.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Distance_from_Nearest_DMI_branch.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Distancecitycentre">Distance from Nearest city centre <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Distance_from_Nearest_city_centre.errors }" formControlName="Te_Pr_Distance_from_Nearest_city_centre" id="Te_Pr_Distance_from_Nearest_city_centre" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Distance_from_Nearest_city_centre.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Distance_from_Nearest_city_centre.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Distance_Landmark">Distance from Landmark <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class="max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Distance_from_Landmark2.errors }" formControlName="Te_Pr_Distance_from_Landmark2" id="Te_Pr_Distance_from_Landmark2" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Distance_from_Landmark2.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Distance_from_Landmark2.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_List_of_Documents">List of Documents submitted <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_List_of_Documents_submitted.errors }" formControlName="Te_Pr_List_of_Documents_submitted" id="Te_Pr_List_of_Documents_submitted" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_List_of_Documents_submitted.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_List_of_Documents_submitted.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Property_owner">Property owner as per documents <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Property_owner_as_per_documents.errors }" formControlName="Te_Pr_Property_owner_as_per_documents" id="Te_Pr_Property_owner_as_per_documents" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Property_owner_as_per_documents.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Property_owner_as_per_documents.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Is_it_selfoccupied">Is it selfoccupied property by Applicant <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Is_it_selfoccupied_property_by_Applicant.errors }" formControlName="Te_Pr_Is_it_selfoccupied_property_by_Applicant" id="Te_Pr_Is_it_selfoccupied_property_by_Applicant" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Is_it_selfoccupied_property_by_Applicant.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Is_it_selfoccupied_property_by_Applicant.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_If_No_who_owns">If No, who owns the property <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_If_No_who_owns_the_property.errors }" formControlName="Te_Pr_If_No_who_owns_the_property" id="Te_Pr_If_No_who_owns_the_property" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_If_No_who_owns_the_property.errors" class="error">
+                                                    <span *ngIf="Technical_Report_control.Te_Pr_If_No_who_owns_the_property.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Name_person_met">Name of person met <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Name_of_person_met.errors }" formControlName="Te_Pr_Name_of_person_met" id="Te_Pr_Name_of_person_met" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Name_of_person_met.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Name_of_person_met.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Contact_person_met">Contact no. of person met <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Contact_no_of_person_met.errors }" formControlName="Te_Pr_Contact_no_of_person_met" id="Te_Pr_Contact_no_of_person_met" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Contact_no_of_person_met.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Contact_no_of_person_met.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Relation_with_applicant">Relation with applicant <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Relation_with_applicant.errors }" formControlName="Te_Pr_Relation_with_applicant" id="Te_Pr_Relation_with_applicant" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Relation_with_applicant.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Relation_with_applicant.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Contact_Applicant">Contact no. of Applicant <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Pr_Contact_no_of_Applicant.errors }" formControlName="Te_Pr_Contact_no_of_Applicant" id="Te_Pr_Contact_no_of_Applicant" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Pr_Contact_no_of_Applicant.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Pr_Contact_no_of_Applicant.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!--New end-->
+                          <div class="col-12 col-md-12 col-xl-12">
+                            <table class="table table-bordered table_cell_equel mb-4">
+                              <thead>
+                                <tr>
+                                  <th colspan="5">Four Boundaries</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td></td>
+                                  <td class="text-center">East</td>
+                                  <td class="text-center">West</td>
+                                  <td class="text-center">North</td>
+                                  <td class="text-center">South</td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label>As per Site</label>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_East_As_per_Site.errors }" formControlName="Te_Fo_East_As_per_Site" id="Te_Fo_East_As_per_Site" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_West_As_per_Site.errors }" formControlName="Te_Fo_West_As_per_Site" id="Te_Fo_West_As_per_Site" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_North_As_per_Site.errors }" formControlName="Te_Fo_North_As_per_Site" id="Te_Fo_North_As_per_Site" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_South_As_per_Site.errors }" formControlName="Te_Fo_South_As_per_Site" id="Te_Fo_South_As_per_Site" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label>As per Sale deed</label>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_East_As_per_Sale_deed.errors }" formControlName="Te_Fo_East_As_per_Sale_deed" id="Te_Fo_East_As_per_Sale_deed" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_WestAs_per_Sale_deed.errors }" formControlName="Te_Fo_WestAs_per_Sale_deed" id="Te_Fo_WestAs_per_Sale_deed" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_NorthAs_per_Sale_deed.errors }" formControlName="Te_Fo_NorthAs_per_Sale_deed" id="Te_Fo_NorthAs_per_Sale_deed" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td>
+                                    <mat-form-field>
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_South_As_per_Sale_deed.errors }" formControlName="Te_Fo_South_As_per_Sale_deed" id="Te_Fo_South_As_per_Sale_deed" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label>Geo Cordinates</label>
+                                  </td>
+                                  <td>
+                                    <div class="form-group">
+                                      <mat-form-field>
+                                        <input matInput placeholder="Latitude" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_East_Geo_Cordinates.errors }" formControlName="Te_Fo_East_Geo_Cordinates" id="Te_Fo_East_Geo_Cordinates" autocomplete="off" required>
+                                      </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Fo_East_Geo_Cordinates.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Fo_East_Geo_Cordinates.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="form-group">
+                                      <mat-form-field>
+                                        <input matInput placeholder="Longitude" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Fo_West_Geo_Cordinates.errors }" formControlName="Te_Fo_West_Geo_Cordinates" id="Te_Fo_West_Geo_Cordinates" autocomplete="off" required>
+                                      </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Fo_West_Geo_Cordinates.errors" class="error">
+                                                  <span *ngIf="Technical_Report_control.Te_Fo_West_Geo_Cordinates.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!---New-->
+                            <table class="table table-bordered table_cell_equel my-4">
+                              <thead>
+                                <tr>
+                                  <th colspan="6">Description of the existing property - Details of different rooms</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Kitchen">No. of Kitchen</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_No_of_Kitchen.errors }" formControlName="Te_De_No_of_Kitchen" id="Te_De_No_of_Kitchen" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_NoRooms">No. of Rooms</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_No_of_Rooms.errors }" formControlName="Te_De_No_of_Rooms" id="Te_De_No_of_Rooms" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Rooftype">Roof type</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-180">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_Roof_type.errors }" formControlName="Te_De_Roof_type" id="Te_De_Roof_type" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_Hall">Hall</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <div class="form-group select-wrapper">
+                                      <mat-form-field class="max-width-120">
+                                        <mat-select [(value)]="Te_De_Hall" id="Te_De_Hall" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_Hall.errors }" type="text" formControlName="Te_De_Hall" autocomplete="off">
+                                          <mat-option>None</mat-option>
+                                          <mat-option value="Yes">Yes</mat-option>
+                                          <mat-option value="No">No</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                    </div>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_NoToilets">No. of Toilets</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-180">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_No_of_Toilets.errors }" formControlName="Te_De_No_of_Toilets" id="Te_De_No_of_Toilets" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Structuresoundness">Structure soundness/Quality</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-180">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_Structure_soundness_Quality.errors }" formControlName="Te_De_Structure_soundness_Quality" id="Te_De_Structure_soundness_Quality" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_PropertyDemarcated">Is Property Demarcated <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <div class="form-group select-wrapper">
+                                      <div class="max-width-120">
+                                        <mat-form-field>
+                                          <mat-select [(value)]="Te_De_Is_Property_Demarcated" id="Te_De_Is_Property_Demarcated" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_Is_Property_Demarcated.errors }" type="text" formControlName="Te_De_Is_Property_Demarcated" autocomplete="off">
+                                            <mat-option>None</mat-option>
+                                            <mat-option value="Yes">Yes</mat-option>
+                                            <mat-option value="No">No</mat-option>
+                                          </mat-select>
+                                        </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_De_Is_Property_Demarcated.errors" class="error">
+                                              <span *ngIf="Technical_Report_control.Te_De_Is_Property_Demarcated.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Pro_NoToilets">Front Road Width</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_Front_Road_Width.errors }" formControlName="Te_De_Front_Road_Width" id="Te_De_Front_Road_Width" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_NoFlateachFloor">No of Flat on each Floor</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_No_of_Flat_on_each_Floor.errors }" formControlName="Te_De_No_of_Flat_on_each_Floor" id="Te_De_No_of_Flat_on_each_Floor" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_HeightBuilding">Height of Building</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_De_Height_of_Building.errors }" formControlName="Te_De_Height_of_Building" id="Te_De_Height_of_Building" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!---New-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Collapse end 2-->
+                </div>
+                <div class="first_blk_line form-element">
+                  <!-- Collapse start 1-->
+                  <div class="box">
+                    <div class="box-header with-border">
+                      <h4 class="inte-box-title"><strong>Due Dellignce</strong></h4>
+                      <ul class="box-controls pull-right">
+                        <li>
+                          <a class="box-btn-slide" href="#"></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-content">
+                      <div class="box-body">
+                        <div class="form-row">
+                          <div class="col-12 col-md-12 col-xl-12">
+                            <table class="table table-bordered table_cell_equel my-4">
+                              <thead>
+                                <tr>
+                                  <th colspan="6">Due Dellignce</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_AuthorityLimit">Authority Limit <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Authority_Limit.errors }" formControlName="Te_Du_Authority_Limit" id="Te_Du_Authority_Limit" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Authority_Limit.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Authority_Limit.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_AgeProperty">Age of Property <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Age_of_Property.errors }" formControlName="Te_Du_Age_of_Property" id="Te_Du_Age_of_Property" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Age_of_Property.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Age_of_Property.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_Residualage">Residual age of the Property <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Residual_age_of_the_Property.errors }" formControlName="Te_Du_Residual_age_of_the_Property" id="Te_Du_Residual_age_of_the_Property" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Residual_age_of_the_Property.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Residual_age_of_the_Property.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_DemolitionRisk">Demolition Risk <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Demolition_Risk.errors }" formControlName="Te_Du_Demolition_Risk" id="Te_Du_Demolition_Risk" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Demolition_Risk.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Demolition_Risk.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_FloodAffected">Flood Affected Area <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Flood_Affected_Area.errors }" formControlName="Te_Du_Flood_Affected_Area" id="Te_Du_Flood_Affected_Area" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Flood_Affected_Area.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Flood_Affected_Area.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_LandSlideAffected">Land Slide Affected Area <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Land_Slide_Affected_Area.errors }" formControlName="Te_Du_Land_Slide_Affected_Area" id="Te_Du_Land_Slide_Affected_Area" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Land_Slide_Affected_Area.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Land_Slide_Affected_Area.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Due_DevelopmentRadius">Development within 500 Mtr Radius <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Du_Development_within_500_Mtr_Radius.errors }" formControlName="Te_Du_Development_within_500_Mtr_Radius" id="Te_Du_Development_within_500_Mtr_Radius" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Du_Development_within_500_Mtr_Radius.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Du_Development_within_500_Mtr_Radius.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Collapse end 3-->
+                </div>
+                <div class="first_blk_line form-element">
+                  <!-- Collapse start 1-->
+                  <div class="box">
+                    <div class="box-header with-border">
+                      <h4 class="inte-box-title"><strong>Valuation</strong></h4>
+                      <ul class="box-controls pull-right">
+                        <li>
+                          <a class="box-btn-slide" href="#"></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-content">
+                      <div class="box-body">
+                        <div class="form-row">
+                          <div class="col-12 col-md-12 col-xl-12">
+                            <table class="table table-bordered table_cell_equel my-4">
+                              <thead>
+                                <tr>
+                                  <th colspan="6">Valuation</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Val_Areasq">Area(In sq.ft) <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Area_In_sqft.errors }" formControlName="Te_Va_Area_In_sqft" id="Te_Va_Area_In_sqft" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Area_In_sqft.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Va_Area_In_sqft.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Val_RateArea">Rate(Per sq.ft) for Exisiting Area <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Rate_Per_sq_ft__for_Exisiting_Area.errors }" formControlName="Te_Va_Rate_Per_sq_ft__for_Exisiting_Area" id="Te_Va_Rate_Per_sq_ft__for_Exisiting_Area" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Rate_Per_sq_ft__for_Exisiting_Area.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Va_Rate_Per_sq_ft__for_Exisiting_Area.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Val_RateproposedArea">Rate(Per sq.ft) for proposed Area</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Rate_Per_sq_ft__for_proposed_Area.errors }" formControlName="Te_Va_Rate_Per_sq_ft__for_proposed_Area" id="Te_Va_Rate_Per_sq_ft__for_proposed_Area" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Total_Value">Total Value</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Total_Value.errors }" formControlName="Te_Va_Total_Value" id="Te_Va_Total_Value" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Land_Area">Land Area <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Land_Area.errors }" formControlName="Te_Va_Land_Area" id="Te_Va_Land_Area" autocomplete="off">
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Land_Area.errors" class="error">
+                                          <span *ngIf="Technical_Report_control.Te_Va_Land_Area.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Carpet_Area">Carpet Area</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Carpet_Area.errors }" formControlName="Te_Va_Carpet_Area" id="Te_Va_Carpet_Area" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Built_Area">Built up Area (Existing)</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Built_up_Area__Existing.errors }" formControlName="Te_Va_Built_up_Area__Existing" id="Te_Va_Built_up_Area__Existing" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Built_Area_proposed">Built up Area (proposed)</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Built_up_Area__proposed.errors }" formControlName="Te_Va_Built_up_Area__proposed" id="Te_Va_Built_up_Area__proposed" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Super_Built">Super Built up Area</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Super_Built_up_Area.errors }" formControlName="Te_Va_Super_Built_up_Area" id="Te_Va_Super_Built_up_Area" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Amenities_Value">Amenities Value</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Amenities_Value.errors }" formControlName="Te_Va_Amenities_Value" id="Te_Va_Amenities_Value" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Total_Fair_Market">Total Fair Market Value</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Total_Fair_Market_Value.errors }" formControlName="Te_Va_Total_Fair_Market_Value" id="Te_Va_Total_Fair_Market_Value" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Property_Value_rate">Property Value As per Circle Rate <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Property_Value_As_per_Circle_Rate.errors }" formControlName="Te_Va_Property_Value_As_per_Circle_Rate" id="Te_Va_Property_Value_As_per_Circle_Rate" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Property_Value_As_per_Circle_Rate.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Va_Property_Value_As_per_Circle_Rate.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_DistressSale">Distress Sale Value</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Distress_Sale_Value.errors }" formControlName="Te_Va_Distress_Sale_Value" id="Te_Va_Distress_Sale_Value" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_InsurableValue">Insurable Value</label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Insurable_Value.errors }" formControlName="Te_Va_Insurable_Value" id="Te_Va_Insurable_Value" autocomplete="off">
+                                    </mat-form-field>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_StageConstruction">Stage of Construction <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Stage_of_Construction.errors }" formControlName="Te_Va_Stage_of_Construction" id="Te_Va_Stage_of_Construction" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Stage_of_Construction.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Va_Stage_of_Construction.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Building">Building <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Building.errors }" formControlName="Te_Va_Building" id="Te_Va_Building" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Building.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Va_Building.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_BeingFunded">Unit Being Funded <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Unit_Being_Funded.errors }" formControlName="Te_Va_Unit_Being_Funded" id="Te_Va_Unit_Being_Funded" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Unit_Being_Funded.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Va_Unit_Being_Funded.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_SpecialRemarks">Special Remarks <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field class=" max-width-120">
+                                      <input matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Special_Remarks.errors }" formControlName="Te_Va_Special_Remarks" id="Te_Va_Special_Remarks" autocomplete="off" required>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Special_Remarks.errors" class="error">
+                                                <span *ngIf="Technical_Report_control.Te_Va_Special_Remarks.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="label_blk">
+                                    <label for="technical_rep_Reportstatus">Report status <span class="txt-red">*</span>
+                                    </label>
+                                  </td>
+                                  <td class="fiedd_blk">
+                                    <mat-form-field>
+                                      <textarea matInput [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Te_Va_Report_status.errors }" formControlName="Te_Va_Report_status" id="Te_Va_Report_status" autocomplete="off" required></textarea>
+                                    </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Te_Va_Report_status.errors" class="error">
+                                                  <span *ngIf="Technical_Report_control.Te_Va_Report_status.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Collapse end 4-->
+                  </div>
+                  <div class="first_blk_line form-element">
+                    <!-- Collapse start 1-->
+                    <div class="box">
+                      <div class="box-header with-border">
+                        <h4 class="inte-box-title"><strong>Subsequent Report</strong></h4>
+                        <ul class="box-controls pull-right">
+                          <li>
+                            <a class="box-btn-slide" href="#"></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="tab-content">
+                        <div class="box-body">
+                          <form [formGroup]="Subsequent_Report" (ngSubmit)="onSubmit29()">
+                            <div class="form-row">
+                              <div class="col-12 col-md-12 col-xl-12">
+                                <table class="table table-bordered my-4 table_cell_equel">
+                                  <tbody>
+                                    <tr>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_SanctionedLoan">Sanctioned Loan for construction <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field class=" max-width-120">
+                                          <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Sanctioned_Loan_for_construction.errors }" formControlName="Te_Su_Sanctioned_Loan_for_construction" id="Te_Su_Sanctioned_Loan_for_construction" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_Sanctioned_Loan_for_construction.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_Sanctioned_Loan_for_construction.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_PriorDisbursemnet">Prior Disbursemnet amount <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field class=" max-width-120">
+                                          <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Prior_Disbursemnet_amount.errors }" formControlName="Te_Su_Prior_Disbursemnet_amount" id="Te_Su_Prior_Disbursemnet_amount" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_Prior_Disbursemnet_amount.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_Prior_Disbursemnet_amount.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_Constructionmaterial">Construction material and activity on site <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field class=" max-width-120">
+                                          <input matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Construction_material.errors }" formControlName="Te_Su_Construction_material" id="Te_Su_Construction_material" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_Construction_material.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_Construction_material.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_Nofloors">No of floors being constructed <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field class=" max-width-120">
+                                          <input matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_No_of_floors_being_constructed.errors }" formControlName="Te_Su_No_of_floors_being_constructed" id="Te_Su_No_of_floors_being_constructed" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_No_of_floors_being_constructed.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_No_of_floors_being_constructed.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_earlierdisbursemnet">Has the earlier disbursemnet been fully utilized <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <input matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Has_the_earlier_disbursemnet.errors }" formControlName="Te_Su_Has_the_earlier_disbursemnet" id="Te_Su_Has_the_earlier_disbursemnet" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_Has_the_earlier_disbursemnet.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_Has_the_earlier_disbursemnet.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_Briefdescription">Brief description of work already done <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <input matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Brief_description_of_work_already_done.errors }" formControlName="Te_Su_Brief_description_of_work_already_done" id="Te_Su_Brief_description_of_work_already_done" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_Brief_description_of_work_already_done.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_Brief_description_of_work_already_done.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_Recommendednext">Recommended next disbursemnet? <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <input matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Recommended_next_disbursemnet.errors }" formControlName="Te_Su_Recommended_next_disbursemnet" id="Te_Su_Recommended_next_disbursemnet" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_Recommended_next_disbursemnet.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_Recommended_next_disbursemnet.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_currentstageconstruction">What is current stage of construction in % <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <input matInput numbersOnly [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_What_is_current_stage_of_construction_in.errors }" formControlName="Te_Su_What_is_current_stage_of_construction_in" id="Te_Su_What_is_current_stage_of_construction_in" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_What_is_current_stage_of_construction_in.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_What_is_current_stage_of_construction_in.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_AnyConstruction">Any Construction on Govt.Land or common use(do not consider value)</label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <textarea matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Any_Construction_on.errors }" formControlName="Te_Su_Any_Construction_on" id="Te_Su_Any_Construction_on" autocomplete="off"></textarea>
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_Whatworkcompleted">What work should be completed with the above mentioned amount being disbursed? <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <input matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_What_work_should_be.errors }" formControlName="Te_Su_What_work_should_be" id="Te_Su_What_work_should_be" autocomplete="off">
+                                        </mat-form-field> <span *ngIf="submitted29 && Subsequent_Report_control.Te_Su_What_work_should_be.errors" class="error">
+                                                        <span *ngIf="Subsequent_Report_control.Te_Su_What_work_should_be.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </td>
+                                      <td class="label_blk">
+                                        <label for="technical_Sub_Remarks">Remarks <span class="txt-red">*</span>
+                                        </label>
+                                      </td>
+                                      <td class="fiedd_blk">
+                                        <mat-form-field>
+                                          <textarea matInput [ngClass]="{ 'is-invalid': submitted29 && Subsequent_Report_control.Te_Su_Remarks.errors }" formControlName="Te_Su_Remarks" id="Te_Su_Remarks" autocomplete="off"></textarea>
+                                        </mat-form-field>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+                                <button class="btn btn-rounded btn-primary mb-4" id="#">Add Subsequent Report</button>
+                                <!-- <button type="button" class="btn btn-rounded btn-primary mb-4 ml-2" id="report_vetting_add">Submit</button> -->
+                              </div>
+                            </div>
+                          </form>
+                          <!--- table list new start -->
+                          <div class="form-row mb-4">
+                            <div class="col-md-12">
+                              <div class="tabl-screen1 bank-table show_subsequent_report">
+                                <div class="table-responsive">
+                                  <table id="example" class="table subsequent_table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th class="sn_width_blk">S. No</th>
+                                        <th class="sanctioned_blk">Sanctioned Loan for construction</th>
+                                        <th class="sanctioned_blk">Prior Disbursemnet amount</th>
+                                        <th class="sanctioned_blk">Construction material and activity on site</th>
+                                        <th class="sanctioned_blk">No of floors being constructed</th>
+                                        <th class="sanctioned_blk">Has the earlier disbursemnet been fully utilized</th>
+                                        <th class="sanctioned_blk">Brief description of work already done</th>
+                                        <th class="sanctioned_blk">Recommended next disbursemnet?</th>
+                                        <th class="sanctioned_blk">What is current stage of construction in %</th>
+                                        <th class="sanctioned_blk">Any Construction on Govt.Land or common use</th>
+                                        <th class="sanctioned_blk">What work should be completed with the above mentioned amount being disbursed?</th>
+                                        <th class="sanctioned_blk">Remarks</th>
+                                        <th class="sanctioned_blk">Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td class="sanctioned_blk">--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>
+                                          <div class="action">
+                                            <a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </a>	<a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--- table list new start ended -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Collapse end 5-->
+                  </div>
+                  <div class="first_blk_line form-element show_report_vetting">
+                    <!-- Collapse start 1-->
+                    <div class="box">
+                      <div class="box-header with-border">
+                        <h4 class="inte-box-title"><strong>Report Vetting</strong></h4>
+                        <ul class="box-controls pull-right">
+                          <li>
+                            <a class="box-btn-slide" href="#"></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="tab-content">
+                        <div class="box-body">
+                          <div class="form-row">
+                            <div class="col-12 col-md-12 col-xl-12">
+                              <table class="table table-bordered my-4 table_cell_equel">
+                                <tbody>
+                                  <tr>
+                                    <td class="label_blk">
+                                      <label for="technical_rep_Pro_CityTehsil">Address and Area are Matching with ATSS/Previous Documents <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <div class=" select-wrapper inner_width_select">
+                                          <mat-form-field>
+                                            <mat-select [(value)]="Address_and_Area" id="Address_and_Area" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Address_and_Area.errors }" type="text" formControlName="Address_and_Area" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Yes">Yes</mat-option>
+                                              <mat-option value="No">No</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Address_and_Area.errors" class="error">
+                                                            <span *ngIf="Technical_Report_control.Address_and_Area.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_Valuation_Collateral">Valuation of Collateral is Correct as per the Review <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <mat-form-field>
+                                          <mat-select [(value)]="Valuation_of_Collateral" id="Valuation_of_Collateral" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Valuation_of_Collateral.errors }" type="text" formControlName="Valuation_of_Collateral" autocomplete="off">
+                                            <mat-option>None</mat-option>
+                                            <mat-option value="Yes">Yes</mat-option>
+                                            <mat-option value="No">No</mat-option>
+                                          </mat-select>
+                                        </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Valuation_of_Collateral.errors" class="error">
+                                                          <span *ngIf="Technical_Report_control.Valuation_of_Collateral.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </div>
+                                    </td>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_identified">Property is identified <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <div class=" ">
+                                          <mat-form-field>
+                                            <mat-select [(value)]="Property_is_identified" id="Property_is_identified" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Property_is_identified.errors }" type="text" formControlName="Property_is_identified" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Yes">Yes</mat-option>
+                                              <mat-option value="No">No</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Property_is_identified.errors" class="error">
+                                                            <span *ngIf="Technical_Report_control.Property_is_identified.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_Stage_Construction">Stage of Construction is Matching as per Construction Matrix <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <div class=" ">
+                                          <mat-form-field>
+                                            <mat-select [(value)]="Stage_of_1" id="Stage_of_1" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Stage_of_1.errors }" type="text" formControlName="Stage_of_1" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Yes">Yes</mat-option>
+                                              <mat-option value="No">No</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Stage_of_1.errors" class="error">
+                                                            <span *ngIf="Technical_Report_control.Stage_of_1.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_AdverseComment">Any Adverse Comment in Technical Report <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <div class=" ">
+                                          <mat-form-field>
+                                            <mat-select  id="Any_Adverse" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Any_Adverse.errors }" type="text" formControlName="Any_Adverse" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Yes">Yes</mat-option>
+                                              <mat-option value="No">No</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Any_Adverse.errors" class="error">
+                                                            <span *ngIf="Technical_Report_control.Any_Adverse.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_Classification">Property Classification <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <div class="">
+                                          <mat-form-field>
+                                            <mat-select [(value)]="Property_Classification" id="Property_Classification" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Property_Classification.errors }" type="text" formControlName="Property_Classification" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Agriculture Land /R Zone- Rajasthan">Agriculture Land /R Zone- Rajasthan</mat-option>
+                                              <mat-option value="Approved Colony/Building- Plan approved by Govt Bodies">Approved Colony/Building- Plan approved by Govt Bodies</mat-option>
+                                              <mat-option value="Ecological Zone">Ecological Zone</mat-option>
+                                              <mat-option value="Gram Panchayat Approval">Gram Panchayat Approval</mat-option>
+                                              <mat-option value="Lal Dora">Lal Dora</mat-option>
+                                              <mat-option value="Diverted but Layout not approved">Diverted but Layout not approved</mat-option>
+                                              <mat-option value="Pvt Colony/Free Hold-Without approval from Govt Bodies">Pvt Colony/Free Hold-Without approval from Govt Bodies</mat-option>
+                                              <mat-option value="Regularized Colony/MC properties">Regularized Colony/MC properties</mat-option>
+                                              <mat-option value="Shaberi">Shaberi</mat-option>
+                                              <mat-option value="Stilt Floor">Stilt Floor</mat-option>
+                                              <mat-option value="DA allotted Properties">DA allotted Properties</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Property_Classification.errors" class="error">
+                                                            <span *ngIf="Technical_Report_control.Property_Classification.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_Status">Status <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <div class="form-group select-wrapper">
+                                        <div class=" ">
+                                          <mat-form-field>
+                                            <mat-select [(value)]="Status_final" id="Status_final" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Status_final.errors }" type="text" formControlName="Status_final" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Yes">Yes</mat-option>
+                                              <mat-option value="No">No</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> <span *ngIf="submitted28 && Technical_Report_control.Status_final.errors" class="error">
+                                                            <span *ngIf="Technical_Report_control.Status_final.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="label_blk">
+                                      <label for="technical_Vet_StatusRemarks">Status Remarks <span class="txt-red">*</span>
+                                      </label>
+                                    </td>
+                                    <td class="fiedd_blk">
+                                      <mat-form-field class="example-full-width">
+                                        <textarea matInput id="Status_Remarks_01" [ngClass]="{ 'is-invalid': submitted28 && Technical_Report_control.Status_Remarks_01.errors }" type="text" formControlName="Status_Remarks_01" autocomplete="off" required></textarea>
+                                      </mat-form-field>
+                                    </td>
+                                    <td class="label_blk"></td>
+                                    <td class="fiedd_blk"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Collapse end 6-->
+                  </div>
+                </div>
+              </div>
+              <div class="tab-button text-center">
+                <button class=" btn btn-lg btn-primary mx-1"><span>Save & Continue</span>  <i class="ti-angle-double-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          
+
+          
+
+		 
+
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

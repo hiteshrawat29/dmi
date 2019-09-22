@@ -1,0 +1,380 @@
+<app-loan-side-bar></app-loan-side-bar>
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+        
+        <app-lead-inform-bar></app-lead-inform-bar>
+
+				<!--Loan Information Start-->
+				<div class="tab-pane first-tab active" id="loan_information" >
+					<!-- NEW CODE -->
+					<!--Create New Lead start-->
+					<!-- main app container -->
+					<form [formGroup]="leadInformation" (ngSubmit)="onSubmit()">
+						<div class="box box-default my_inner_box">
+							<div class="box-body wizard-content">
+								<div class="tab-content">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Lead Information</strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2 select-wrapper">
+												<mat-form-field>
+													<mat-label>Branch <span class="txt-red">*</span> 
+													</mat-label>
+													<mat-select  [ngClass]="{ 'is-invalid': submitted && f.leadBranch.errors }" formControlName="leadBranch">
+														<mat-option *ngFor="let Branch of branch" [value]="Branch.typeDetailID">{{Branch.typeDetailCode}}</mat-option>
+													</mat-select>
+												</mat-form-field>	<span *ngIf="submitted && f.leadBranch.errors" class="error">
+																			<span *ngIf="f.leadBranch.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<mat-form-field class="example-full-width">
+													<input matInput specialIsAlphaNumeric placeholder="Applicant First Name" id="LINameFirstName" [ngClass]="{ 'is-invalid': submitted && f.LINameFirstName.errors }" type="text" formControlName="LINameFirstName" value="" autocomplete="off" required>
+												</mat-form-field> <span *ngIf="submitted && f.LINameFirstName.errors" class="error">
+														<span *ngIf="f.LINameFirstName.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<mat-form-field>
+													<input matInput specialIsAlphaNumeric placeholder="Applicant Middle Name" id="LINameMidleName" type="text" formControlName="LINameMidleName" value="" autocomplete="off">
+												</mat-form-field>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<mat-form-field>
+													<input matInput specialIsAlphaNumeric placeholder="Applicant Last Name" id="LILastName" type="text" formControlName="LILastName" value="" autocomplete="off">
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class="max-width-130">
+													<input matInput numbersOnly placeholder="Contact No." [ngClass]="{ 'is-invalid': submitted && f.LIcontactnumber.errors }" id="LIcontactnumber" type="text" value="" formControlName="LIcontactnumber" autocomplete="off" maxlength="10" required>
+												</mat-form-field> <span *ngIf="submitted && f.LIcontactnumber.errors" class="error">
+														<span *ngIf="f.LIcontactnumber.errors.required">{{ requireerror }}</span>
+												<span *ngIf="f.LIcontactnumber.errors.minlength">{{ minerror }} </span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div class="select-wrapper inner_width_select">
+													
+													<mat-form-field>
+														<mat-label>Type of Loan <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [ngClass]="{ 'is-invalid': submitted && f.LITypeofLoan.errors }" formControlName="LITypeofLoan">
+															<mat-option *ngFor="let type of loanType" [value]="type.typeDetailID">{{type.typeDetailCode}}</mat-option>
+														</mat-select>
+													</mat-form-field>	<span *ngIf="submitted && f.LITypeofLoan.errors" class="error">
+																		<span *ngIf="f.LITypeofLoan.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div class="max-width-165 ">
+														<mat-form-field class="max-width-130">
+																<input matInput numbersOnly placeholder="Location" [ngClass]="{ 'is-invalid': submitted && f.LILocation.errors }" id="LILocation" type="text" value="" formControlName="LILocation" autocomplete="off" maxlength="10" required>
+															</mat-form-field>
+															<span *ngIf="submitted && f.LILocation.errors" class="error">
+																	<span *ngIf="f.LILocation.errors.required">{{ requireerror }}</span>
+																<span *ngIf="f.LILocation.errors.minlength">{{ minerror }} </span>
+															</span>
+
+													 	 
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<mat-form-field>
+													<input matInput placeholder="Email" id="LIEmail" type="email" [ngClass]="{ 'is-invalid': submitted && f.LIEmail.errors }" formControlName="LIEmail" autocomplete="off">
+												</mat-form-field>	<span *ngIf="submitted && f.LIEmail.errors" class="error">
+																		 <span *ngIf="f.LIEmail.errors.pattern">{{ emailerror }}</span> </span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Create New Lead end-->
+						<div class="box box-default my_inner_box">
+							<div class="box-body wizard-content">
+								<div class="tab-content">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Loan Information</strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div class="max-width-120 select-wrapper inner_width_select">
+													<mat-form-field>
+														<mat-label>Loan Product <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [ngClass]="{ 'is-invalid': submitted && f.LILoanProduct.errors }" formControlName="LILoanProduct">
+															<mat-option *ngFor="let prod of product" [value]="prod.typeDetailID">{{prod.typeDetailCode}}</mat-option>
+														
+														</mat-select>
+													</mat-form-field>	<span *ngIf="submitted && f.LILoanProduct.errors" class="error">
+																						<span *ngIf="f.LILoanProduct.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+												<mat-form-field>
+													<mat-label>Loan Purpose <span class="txt-red">*</span> 
+													</mat-label>
+													<mat-select [ngClass]="{ 'is-invalid': submitted && f.LILoanPurpose.errors }" formControlName="LILoanPurpose">
+														<mat-option *ngFor="let purp of purpose" [value]="purp.typeDetailID">{{purp.typeDetailCode}}</mat-option>
+
+													</mat-select>
+												</mat-form-field>	<span *ngIf="submitted && f.LILoanPurpose.errors" class="error">
+																					<span *ngIf="f.LILoanPurpose.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-3">
+												<div class="max-width-250 select-wrapper inner_width_select">
+													<mat-form-field>
+														<mat-label>Loan Scheme <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select  [ngClass]="{ 'is-invalid': submitted && f.LILoanScheme.errors }" formControlName="LILoanScheme">
+															<mat-option *ngFor="let sch of scheme" [value]="sch.typeDetailID">{{sch.typeDetailCode}}</mat-option>
+
+														</mat-select>
+													</mat-form-field>	<span *ngIf="submitted && f.LILoanScheme.errors" class="error">
+																						<span *ngIf="f.LILoanScheme.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-3">
+												<mat-form-field class="max-width-80">
+													<input matInput numbersOnly placeholder="Loan Amount Request" id="LILoanAmountRequest" [ngClass]="{ 'is-invalid': submitted && f.LILoanAmountRequest.errors }" type="text" formControlName="LILoanAmountRequest"  maxlength="6" >
+												</mat-form-field>	<span *ngIf="submitted && f.LILoanAmountRequest.errors" class="error">
+																<span *ngIf="f.LILoanAmountRequest.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class="max-width-80">
+													<input matInput numbersOnly placeholder="Tenor" id="LITenor" type="text" [ngClass]="{ 'is-invalid': submitted && f.LITenor.errors }" formControlName="LITenor"  maxlength="6" required>
+												</mat-form-field>	<span *ngIf="submitted && f.LITenor.errors" class="error">
+																			<span *ngIf="f.LITenor.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div>
+													<mat-form-field>
+														<mat-label>Interest Type <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [ngClass]="{ 'is-invalid': submitted && f.LIInterestType.errors }" formControlName="LIInterestType">
+															<mat-option *ngFor="let int of interest" [value]="int.typeDetailID">{{int.typeDetailCode}}</mat-option>
+														</mat-select>
+													</mat-form-field>	<span *ngIf="submitted && f.LIInterestType.errors" class="error">
+																						<span *ngIf="f.LIInterestType.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field>
+													<input matInput numbersOnly placeholder="Affordable EMI" id="LIaffordable_EMI" type="text" formControlName="LIaffordable_EMI" [ngClass]="{ 'is-invalid': submitted && f.LIaffordable_EMI.errors }" autocomplete="off" maxlength="6" required>
+												</mat-form-field>	<span *ngIf="submitted && f.LIaffordable_EMI.errors" class="error">
+																		<span *ngIf="f.LIaffordable_EMI.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-3">
+												<div class="max-width-203 select-wrapper inner_width_select">
+													<mat-form-field>
+														<mat-label>Sourcing Channel Partner <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select  [ngClass]="{ 'is-invalid': submitted && f.LISourcingChannelPartner.errors }" (selectionChange)= onChange($event.value) formControlName="LISourcingChannelPartner">
+															<mat-option *ngFor="let source of sourcingChannel" [value]="source.typeDetailID">{{source.typeDetailCode}}</mat-option>
+															
+														</mat-select>
+													</mat-form-field>	<span *ngIf="submitted && f.LISourcingChannelPartner.errors" class="error">
+																						<span *ngIf="f.LISourcingChannelPartner.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+												<mat-form-field>
+													<mat-label>Channel Partner Name <span class="txt-red">*</span> 
+													</mat-label>
+													<mat-select [ngClass]="{ 'is-invalid': submitted && f.LIChannelPartnerName.errors }" formControlName="LIChannelPartnerName">
+														<mat-option *ngFor="let partner of channelPartner" [value]="partner.typeDetailID">{{partner.typeDetailCode}}</mat-option>
+													
+													</mat-select>
+												</mat-form-field>	<span *ngIf="submitted && f.LIChannelPartnerName.errors" class="error">
+																					<span *ngIf="f.LIChannelPartnerName.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class="max-width-80">
+															<mat-label>Sales Officer Emp ID </mat-label>
+															<mat-select [ngClass]="{ 'is-invalid': submitted && f.LISalesOfficerEmpID.errors }" formControlName="LISalesOfficerEmpID">
+																<mat-option *ngFor="let partner of channelPartner" [value]="partner.typeDetailID">{{partner.typeDetailCode}}</mat-option>
+															
+															</mat-select>
+														</mat-form-field>	
+														<span *ngIf="submitted && f.LISalesOfficerEmpID.errors" class="error">
+																							<span *ngIf="f.LISalesOfficerEmpID.errors.required">{{ requireerror }}</span>
+														</span>
+ 
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<mat-form-field>
+													<input matInput specialIsAlphaNumeric placeholder="Sales Officer Emp Name" id="LISalesOfficerEmpName" [ngClass]="{ 'is-invalid': submitted && f.LISalesOfficerEmpName.errors }" formControlName="LISalesOfficerEmpName" type="text">
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+															<mat-label>Credit Officer Empid </mat-label>
+															<mat-select [ngClass]="{ 'is-invalid': submitted && f.LICreditOfficerEmpid.errors }" formControlName="LICreditOfficerEmpid">
+																<mat-option *ngFor="let partner of channelPartner" [value]="partner.typeDetailID">{{partner.typeDetailCode}}</mat-option>
+															
+															</mat-select>
+														</mat-form-field>	
+														<span *ngIf="submitted && f.LICreditOfficerEmpid.errors" class="error">
+																							<span *ngIf="f.LICreditOfficerEmpid.errors.required">{{ requireerror }}</span>
+														</span>
+
+											 </div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<mat-form-field>
+													<input matInput specialIsAlphaNumeric placeholder="Credit Officer Name" id="LICreditOfficerName" [ngClass]="{ 'is-invalid': submitted && f.LICreditOfficerName.errors }" formControlName="LICreditOfficerName" >
+												</mat-form-field>	<span *ngIf="submitted && f.LICreditOfficerName.errors" class="error">
+																		<span *ngIf="f.LICreditOfficerName.errors.required">{{ requireerror }}</span> </span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2 offset-xl-3">
+												<button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+												</button>
+												<label for="IDProof">Application Form Upload</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!--Create New Lead end-->
+						<div class="box box-default my_inner_box">
+							<div class="box-body wizard-content">
+								<div class="tab-content">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Rules Based Preliminary Output</strong></h4>
+										 <p>Status : <span class="label label-success">Pre-Approved </span>  </p>
+										 	<div class="form-row mrt-20">
+													<div class="col-md-12">
+													<h4>Rejection </h4>
+													<div class="table-responsive">
+														<table id="example" class="table table-bordered text-left scrollTable">
+															<thead>
+																<tr>
+																	<th>S. No</th>
+																	<th>Applicant Type</th>
+																	<th>Applicant Name</th>
+																	<th>Reason</th>														
+																														  
+																	 
+																</tr>
+															</thead>
+															<tbody>
+			
+																<tr>
+																	<td>01</td> 														
+																	<td>Applicant</td>
+																	<td>Rajat Kumar </td>													
+																	<td> this is  Reason </td>														
+																	 
+																														  
+																</tr>
+																 
+																													 
+																
+														</tbody>
+													</table>
+														</div>
+		
+													</div>
+		
+												</div>
+
+												
+										<div class="form-row mrt-20">
+											<div class="col-md-12">
+											<h4>Deviation </h4>
+											<div class="table-responsive">
+												<table id="example" class="table table-bordered text-left scrollTable">
+													<thead>
+														<tr>
+															<th>S. No</th>
+															<th>Deviation Head</th>
+															<th>Deviation</th>
+															<th>Approval Authority</th>														
+															<th>Mitigating Factor</th>
+															<th>Action</th>
+															 													
+															 
+														</tr>
+													</thead>
+													<tbody>
+	
+														<tr>
+															<td>01</td> 														
+															<td>Policy Norms</td>
+															<td>Form 16 not provider above 3 Lacs</td>
+															<td>L2</td>														
+															<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>														
+															<td>
+																	<div class="action">
+																			<a href="#Underwriting_Deviation_popup" class="popup-with-form btn btn-primary btn-xs my_short_btn">Status Update</a>											
+ 
+																			</div>
+															</td>	
+															 													 
+														</tr>
+														 
+														 													
+														
+												</tbody>
+											</table>
+												</div>
+
+
+
+										</div>
+									</div>
+
+										
+											
+
+
+
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					
+
+
+						<div class="tab-button text-center">
+							<button class=" btn btn-lg btn-primary mx-1" id="next"> <span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<!--Loan Information End-->
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

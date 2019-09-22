@@ -1,0 +1,604 @@
+<app-senction-side-bar></app-senction-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+         <!-- Loan Appraisal start-->
+				<div class="tab-pane first-tab active" id="loan_appraisal">
+					<form [formGroup]="insurance" (ngSubmit)="onSubmit31()">
+						<div class="box box-default my_inner_box">
+							<div class="box-body wizard-content">
+								<div class="tab-content">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>General Insurance</strong></h4>
+										<div class="form-row">
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                            <div class="max-width-150 ">
+                              <mat-form-field>
+                                <mat-label>Agency Name   </mat-label>
+                                <mat-select [(value)]="General_Agency_Name" id="General_Agency_Name" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.General_Agency_Name.errors }" type="text" formControlName="General_Agency_Name" autocomplete="off">
+                                  <mat-option>None</mat-option>
+                                  <mat-option value="Yes">Agency 1</mat-option>
+                                  <mat-option value="No">Agency 2</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              <span *ngIf="submitted31 && insurance_control.General_Agency_Name.errors" class="error">
+                                  <span *ngIf="insurance_control.General_Agency_Name.errors.required">{{ requireerror }}</span>
+                            </span>
+                            </div>
+                          </div>
+
+
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field  class="max-width-40">
+													<input matInput numbersOnly placeholder="Tenor" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.General_Tanor.errors }" formControlName="General_Tanor" id="General_Tanor" autocomplete="off"  >
+												</mat-form-field>	<span *ngIf="submitted31 && insurance_control.General_Tanor.errors" class="error">
+															<span *ngIf="insurance_control.General_Tanor.errors.required">{{ requireerror }}</span>
+												</span>
+                      </div>
+                      
+                      <div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field >
+													<input matInput numbersOnly placeholder="Premium" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.General_Premium.errors }" formControlName="General_Premium" id="General_Premium" autocomplete="off"  >
+												</mat-form-field>	<span *ngIf="submitted31 && insurance_control.General_Premium.errors" class="error">
+															<span *ngIf="insurance_control.General_Premium.errors.required">{{ requireerror }}</span>
+												</span>
+                      </div>
+
+                      
+                      <div class="form-group col-6 col-md-6 col-xl-2">
+                          <mat-form-field >
+                            <input matInput numbersOnly placeholder="Sum Assured" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.General_Sum_Assured.errors }" formControlName="General_Sum_Assured" id="General_Sum_Assured" autocomplete="off"  >
+                          </mat-form-field>	<span *ngIf="submitted31 && insurance_control.General_Sum_Assured.errors" class="error">
+                                <span *ngIf="insurance_control.General_Sum_Assured.errors.required">{{ requireerror }}</span>
+                          </span>
+                        </div>
+
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                             <button   type="button" class="btn btn-primary btn-xs my_short_btn">Fatch Insurance </button>
+                        </div>
+                      
+
+										 
+										</div><!-- form-row --->
+                  </div>
+                  
+                  <div class="first_blk_line form-element">
+                      <h4 class="inte-box-title"><strong>Health Insurance</strong></h4>
+                      <div class="form-row">
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                              <div class="max-width-150 ">
+                                <mat-form-field>
+                                  <mat-label>Agency Name  </mat-label>
+                                  <mat-select [(value)]="health_Agency_Name" id="health_Agency_Name" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.health_Agency_Name.errors }" type="text" formControlName="health_Agency_Name" autocomplete="off">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Yes">Agency 1</mat-option>
+                                    <mat-option value="No">Agency 2</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                                <span *ngIf="submitted31 && insurance_control.health_Agency_Name.errors" class="error">
+                                    <span *ngIf="insurance_control.health_Agency_Name.errors.required">{{ requireerror }}</span>
+                              </span>
+                              </div>
+                            </div>
+  
+  
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                          <mat-form-field  class="max-width-40">
+                            <input matInput numbersOnly placeholder="Tenor" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.health_Tanor.errors }" formControlName="health_Tanor" id="health_Tanor" autocomplete="off"  >
+                          </mat-form-field>	<span *ngIf="submitted31 && insurance_control.health_Tanor.errors" class="error">
+                                <span *ngIf="insurance_control.health_Tanor.errors.required">{{ requireerror }}</span>
+                          </span>
+                        </div>
+                        
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                          <mat-form-field >
+                            <input matInput numbersOnly placeholder="Premium" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.health_Premium.errors }" formControlName="health_Premium" id="health_Premium" autocomplete="off"  >
+                          </mat-form-field>	<span *ngIf="submitted31 && insurance_control.health_Premium.errors" class="error">
+                                <span *ngIf="insurance_control.health_Premium.errors.required">{{ requireerror }}</span>
+                          </span>
+                        </div>
+  
+                        
+                        <div class="form-group col-6 col-md-6 col-xl-2">
+                            <mat-form-field >
+                              <input matInput numbersOnly placeholder="Sum Assured" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.health_Sum_Assured.errors }" formControlName="health_Sum_Assured" id="health_Sum_Assured" autocomplete="off" >
+                            </mat-form-field>	<span *ngIf="submitted31 && insurance_control.health_Sum_Assured.errors" class="error">
+                                  <span *ngIf="insurance_control.health_Sum_Assured.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+  
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                               <button type="button"  class="btn btn-primary btn-xs my_short_btn">Fatch Insurance </button>
+                          </div>
+                        
+  
+                       
+                      </div><!-- form-row --->
+                    </div>
+
+
+
+                    <div class="first_blk_line form-element">
+                        <h4 class="inte-box-title"><strong>Life Insurance</strong></h4>
+                        <div class="form-row">
+                            <div class="form-group col-6 col-md-6 col-xl-2">
+                                <div class="max-width-150 ">
+                                  <mat-form-field>
+                                    <mat-label>Agency Name </mat-label>
+                                    <mat-select [(value)]="life_Agency_Name" id="life_Agency_Name" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.life_Agency_Name.errors }" type="text" formControlName="life_Agency_Name" autocomplete="off">
+                                      <mat-option>None</mat-option>
+                                      <mat-option value="Yes">Agency 1</mat-option>
+                                      <mat-option value="No">Agency 2</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                  <span *ngIf="submitted31 && insurance_control.life_Agency_Name.errors" class="error">
+                                      <span *ngIf="insurance_control.life_Agency_Name.errors.required">{{ requireerror }}</span>
+                                </span>
+                                </div>
+                              </div>
+    
+    
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                            <mat-form-field  class="max-width-40">
+                              <input matInput numbersOnly placeholder="Tenor" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.life_Tanor.errors }" formControlName="life_Tanor" id="life_Tanor" autocomplete="off"  >
+                            </mat-form-field>	<span *ngIf="submitted31 && insurance_control.life_Tanor.errors" class="error">
+                                  <span *ngIf="insurance_control.life_Tanor.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                          
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                            <mat-form-field >
+                              <input matInput numbersOnly placeholder="Premium" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.life_Premium.errors }" formControlName="life_Premium" id="life_Premium" autocomplete="off"  >
+                            </mat-form-field>	<span *ngIf="submitted31 && insurance_control.life_Premium.errors" class="error">
+                                  <span *ngIf="insurance_control.life_Premium.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+    
+                          
+                          <div class="form-group col-6 col-md-6 col-xl-2">
+                              <mat-form-field >
+                                <input matInput numbersOnly placeholder="Sum Assured" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.life_Sum_Assured.errors }" formControlName="life_Sum_Assured" id="life_Sum_Assured" autocomplete="off"  >
+                              </mat-form-field>	<span *ngIf="submitted31 && insurance_control.life_Sum_Assured.errors" class="error">
+                                    <span *ngIf="insurance_control.life_Sum_Assured.errors.required">{{ requireerror }}</span>
+                              </span>
+                            </div>
+
+                            <div class="form-group col-6 col-md-6 col-xl-3">
+                                <div class="">
+                                  <mat-form-field>
+                                    <mat-label>Policy Delivery Address <span class="txt-red">*</span> </mat-label>
+                                    <mat-select [(value)]="Policy_Address" id="Policy_Address" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.Policy_Address.errors }" type="text" formControlName="Policy_Address" autocomplete="off">
+                                      <mat-option>None</mat-option>
+                                      <mat-option value="Current Address">Current Address</mat-option>
+                                      <mat-option value="Permanent Address">Permanent Address</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                  <span *ngIf="submitted31 && insurance_control.Policy_Address.errors" class="error">
+                                      <span *ngIf="insurance_control.Policy_Address.errors.required">{{ requireerror }}</span>
+                                </span>
+                                </div>
+                              </div>
+
+                              <div class="form-group col-6 col-md-6 col-xl-3">
+                                  <div class="max-width-250 ">
+                                    <mat-form-field>
+                                      <mat-label>Insurance in the name of <span class="txt-red">*</span> </mat-label>
+                                      <mat-select [(value)]="Insurance_in_the_name_of" id="Insurance_in_the_name_of" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.Insurance_in_the_name_of.errors }" type="text" formControlName="Insurance_in_the_name_of" autocomplete="off">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="Applicant">Applicant</mat-option>
+                                        <mat-option value="Co-Applicant 1">Co-Applicant 1</mat-option>
+                                       
+                                      </mat-select>
+                                    </mat-form-field>
+                                    <span *ngIf="submitted31 && insurance_control.Insurance_in_the_name_of.errors" class="error">
+                                        <span *ngIf="insurance_control.Insurance_in_the_name_of.errors.required">{{ requireerror }}</span>
+                                  </span>
+                                  </div>
+                                </div>
+
+                                 
+                                  <div class="form-group col-6 col-md-6 col-xl-2">
+                                      <div class="max-width-150 ">
+                                        <mat-form-field>
+                                          <mat-label>Nominee <span class="txt-red">*</span> </mat-label>
+                                          <mat-select [(value)]="Insurance_Nominee" id="Insurance_Nominee" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.Insurance_Nominee.errors }" type="text" formControlName="Insurance_Nominee" autocomplete="off">
+                                            <mat-option>None</mat-option>
+                                            <mat-option value="Applicant">Applicant</mat-option>
+                                            <mat-option value="Co-Applicant 1">Co-Applicant 1</mat-option>
+                                            <mat-option value="Co-Applicant 1">Other</mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
+                                        <span *ngIf="submitted31 && insurance_control.Insurance_Nominee.errors" class="error">
+                                            <span *ngIf="insurance_control.Insurance_Nominee.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                      </div>
+                                    </div>
+ 
+    
+                         
+                        </div><!-- form-row --->
+
+                        <div class="nomeeni-deitals">
+                          <div class="form-row">
+                              <div class="col-12">
+                                  <h4 class="insuracne-title">  Nominee Details</h4>
+                                </div>  
+
+                                <div class="col-6">
+                                    <div class="form-row">
+                                       
+
+                                <div class="form-group col-6 col-md-6 col-xl-4">
+                                    <mat-form-field >
+                                      <input matInput specialIsAlphaNumeric   placeholder="Name" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Name.errors }" formControlName="nominee_Name" id="nominee_Name" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_Name.errors" class="error">
+                                          <span *ngIf="insurance_control.nominee_Name.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                  </div>
+
+
+                                  <div class="form-group col-6 col-md-6 col-xl-4">
+                                      <mat-form-field >
+                                        <input matInput specialIsAlphaNumeric  placeholder="surname" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Fathers_name.errors }" formControlName="nominee_Fathers_name" id="nominee_Fathers_name" autocomplete="off" required>
+                                      </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_Fathers_name.errors" class="error">
+                                            <span *ngIf="insurance_control.nominee_Fathers_name.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                    </div>
+
+
+                                    <div class="form-group col-6 col-md-6 col-xl-4">
+                                      <div class="max-width-150 ">
+                                        <mat-form-field>
+                                          <mat-label>Gender <span class="txt-red">*</span> </mat-label>
+                                          <mat-select [(value)]="nominee_Gender" id="nominee_Gender" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Gender.errors }" type="text" formControlName="nominee_Gender" autocomplete="off">
+                                            <mat-option>None</mat-option>
+                                            <mat-option value="Male">Male</mat-option>
+                                            <mat-option value="Female">Female</mat-option>
+                                            <mat-option value="Transgender">Transgender</mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
+                                        <span *ngIf="submitted31 && insurance_control.nominee_Gender.errors" class="error">
+                                            <span *ngIf="insurance_control.nominee_Gender.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group col-6 col-md-6 col-xl-4">
+                                        
+                                    <div>
+                                      <!----- if  Nominee age is less than 18, Appointee section will be visible--->
+
+                                        <mat-form-field>
+                                          <input matInput [matDatepicker]="nominee_DOB" placeholder="DOB" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_DOB.errors }" formControlName="nominee_DOB" id="nominee_DOB" readonly>
+                                          <mat-datepicker-toggle matSuffix [for]="nominee_DOB"></mat-datepicker-toggle>
+                                          <mat-datepicker #nominee_DOB></mat-datepicker>
+                                        </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_DOB.errors" class="error">
+                                              <span *ngIf="insurance_control.nominee_DOB.errors.required">{{ requireerror }}</span> </span>
+                                      </div>
+                                      </div>
+
+
+                                      <div class="form-group col-6 col-md-6 col-xl-4">
+                                          <mat-form-field  class=" max-width-80" >
+                                            <input matInput specialIsAlphaNumeric  placeholder="Age" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Age.errors }" formControlName="nominee_Age" id="nominee_Age" autocomplete="off" required>
+                                          </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_Age.errors" class="error">
+                                                <span *ngIf="insurance_control.nominee_Age.errors.required">{{ requireerror }}</span>
+                                          </span>
+                                        </div>
+
+
+                                        <div class="form-group col-6 col-md-6 col-xl-4">
+                                            <div class="max-width-150 ">
+                                              <mat-form-field>
+                                                <mat-label>Martial Status <span class="txt-red">*</span> </mat-label>
+                                                <mat-select [(value)]="nominee_Martial_Status" id="nominee_Martial_Status" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Martial_Status.errors }" type="text" formControlName="nominee_Martial_Status" autocomplete="off">
+                                                  <mat-option>None</mat-option>
+                                                  <mat-option value="Single">Single</mat-option>
+                                                  <mat-option value="Married">Married</mat-option>
+                                                  
+                                                </mat-select>
+                                              </mat-form-field>
+                                              <span *ngIf="submitted31 && insurance_control.nominee_Martial_Status.errors" class="error">
+                                                  <span *ngIf="insurance_control.nominee_Martial_Status.errors.required">{{ requireerror }}</span>
+                                            </span>
+                                            </div>
+                                          </div>
+
+                                          <div class="form-group col-6 col-md-6 col-xl-5">
+                                              <div>
+                                                <mat-form-field>
+                                                  <mat-label>Relation with Nominee <span class="txt-red">*</span> </mat-label>
+                                                  <mat-select [(value)]="nominee_Relation_with_Nominee" id="nominee_Relation_with_Nominee" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Relation_with_Nominee.errors }" type="text" formControlName="nominee_Relation_with_Nominee" autocomplete="off">
+                                                    <mat-option>None</mat-option>
+                                                    <mat-option value="Father">Father</mat-option>
+                                                    <mat-option value="Mother">Mother</mat-option>
+                                                    <mat-option value="Wife">Wife</mat-option>
+                                                    <mat-option value="Husband">Husband</mat-option>
+                                                    
+                                                  </mat-select>
+                                                </mat-form-field>
+                                                <span *ngIf="submitted31 && insurance_control.nominee_Relation_with_Nominee.errors" class="error">
+                                                    <span *ngIf="insurance_control.nominee_Relation_with_Nominee.errors.required">{{ requireerror }}</span>
+                                              </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                            <div class="col-6">
+                                                <div class="form-row">
+
+
+                                            <div class="form-group col-6 col-md-12 col-xl-12">
+                                                <mat-form-field>
+                                                  <textarea matInput specialIsAlphaNumeric placeholder="Address" id="nominee_Address" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Address.errors }" formControlName="nominee_Address" autocomplete="off" required></textarea>
+                                                </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_Address.errors" class="error">
+                                                      <span *ngIf="insurance_control.nominee_Address.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                              </div>
+                                              <div class="form-group col-6 col-md-6 col-xl-8">
+                                                <mat-form-field>
+                                                  <input matInput specialIsAlphaNumeric placeholder="Landmark" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Landmark.errors }" formControlName="nominee_Landmark" id="nominee_Landmark" autocomplete="off">
+                                                </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_Landmark.errors" class="error">
+                                                      <span *ngIf="insurance_control.nominee_Landmark.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                              </div>
+                                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                                <mat-form-field>
+                                                  <input matInput numbersOnly placeholder="Pin Code" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_Pin_Code.errors }" formControlName="nominee_Pin_Code" id="nominee_Pin_Code" autocomplete="off" maxlength="7">
+                                                </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_Pin_Code.errors" class="error">
+                                                      <span *ngIf="insurance_control.nominee_Pin_Code.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                              </div>
+                                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                                <mat-form-field>
+                                                  <input matInput specialIsAlphaNumeric placeholder="City" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_City.errors }" formControlName="nominee_City" id="nominee_City" autocomplete="off">
+                                                </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_City.errors" class="error">
+                                                      <span *ngIf="insurance_control.nominee_City.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                              </div>
+                                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                                <mat-form-field>
+                                                  <input matInput specialIsAlphaNumeric placeholder="District" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_District.errors }" formControlName="nominee_District" id="nominee_District" autocomplete="off">
+                                                </mat-form-field>	<span *ngIf="submitted31 && insurance_control.nominee_District.errors" class="error">
+                                                      <span *ngIf="insurance_control.nominee_District.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                              </div>
+                                              <div class="form-group col-6 col-md-6 col-xl-4 ">
+                                                <mat-form-field>
+                                                  <mat-label>State <span class="txt-red">*</span> 
+                                                  </mat-label>
+                                                  <mat-select [(value)]="nominee_State" id="nominee_State" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.nominee_State.errors }" type="text" formControlName="nominee_State" value="" autocomplete="off">
+                                                    <mat-option>None</mat-option>
+                                                    <mat-option value="Delhi">Delhi</mat-option>
+                                                    <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                                  </mat-select>
+                                                </mat-form-field> <span *ngIf="submitted31 && insurance_control.nominee_State.errors" class="error">
+                                                        <span *ngIf="insurance_control.nominee_State.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+
+                                      
+
+
+
+
+                          </div><!-- form-row --->
+
+
+
+                        </div>
+
+
+                        <div class="appointee-deitals">
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <h4 class="insuracne-title">  Appointee Details (Dev Note: This section will be display only if Nomiee as is > 18 )</h4>
+                                  </div>  
+  
+                                  <div class="col-6">
+                                      <div class="form-row">
+                                         
+  
+                                  <div class="form-group col-6 col-md-6 col-xl-4">
+                                      <mat-form-field >
+                                        <input matInput   placeholder="Name" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Name.errors }" formControlName="appointee_Name" id="appointee_Name" autocomplete="off" required>
+                                      </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_Name.errors" class="error">
+                                            <span *ngIf="insurance_control.appointee_Name.errors.required">{{ requireerror }}</span>
+                                      </span>
+                                    </div>
+  
+  
+                                    <div class="form-group col-6 col-md-6 col-xl-4">
+                                        <mat-form-field >
+                                          <input matInput   placeholder="surname" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Fathers_name.errors }" formControlName="appointee_Fathers_name" id="appointee_Fathers_name" autocomplete="off" required>
+                                        </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_Fathers_name.errors" class="error">
+                                              <span *ngIf="insurance_control.appointee_Fathers_name.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                      </div>
+  
+  
+                                      <div class="form-group col-6 col-md-6 col-xl-4">
+                                        <div class="max-width-150 ">
+                                          <mat-form-field>
+                                            <mat-label>Gender <span class="txt-red">*</span> </mat-label>
+                                            <mat-select [(value)]="appointee_Gender" id="appointee_Gender" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Gender.errors }" type="text" formControlName="appointee_Gender" autocomplete="off">
+                                              <mat-option>None</mat-option>
+                                              <mat-option value="Male">Male</mat-option>
+                                              <mat-option value="Female">Female</mat-option>
+                                              <mat-option value="Transgender">Transgender</mat-option>
+                                            </mat-select>
+                                          </mat-form-field>
+                                          <span *ngIf="submitted31 && insurance_control.appointee_Gender.errors" class="error">
+                                              <span *ngIf="insurance_control.appointee_Gender.errors.required">{{ requireerror }}</span>
+                                        </span>
+                                        </div>
+                                      </div>
+  
+                                      <div class="form-group col-6 col-md-6 col-xl-4">
+                                          
+                                      <div >
+                                        <!----- if  appointee age is less than 18, Appointee section will be visible--->
+  
+                                          <mat-form-field>
+                                            <input matInput [matDatepicker]="appointee_DOB" placeholder="DOB" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_DOB.errors }" formControlName="appointee_DOB" id="appointee_DOB" readonly>
+                                            <mat-datepicker-toggle matSuffix [for]="appointee_DOB"></mat-datepicker-toggle>
+                                            <mat-datepicker #appointee_DOB></mat-datepicker>
+                                          </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_DOB.errors" class="error">
+                                                <span *ngIf="insurance_control.appointee_DOB.errors.required">{{ requireerror }}</span> </span>
+                                        </div>
+                                        </div>
+  
+  
+                                        <div class="form-group col-6 col-md-6 col-xl-4">
+                                            <mat-form-field  class=" max-width-80" >
+                                              <input matInput   placeholder="Age" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Age.errors }" formControlName="appointee_Age" id="appointee_Age" autocomplete="off" required>
+                                            </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_Age.errors" class="error">
+                                                  <span *ngIf="insurance_control.appointee_Age.errors.required">{{ requireerror }}</span>
+                                            </span>
+                                          </div>
+  
+  
+                                          <div class="form-group col-6 col-md-6 col-xl-4">
+                                              <div class="max-width-150 ">
+                                                <mat-form-field>
+                                                  <mat-label>Martial Status <span class="txt-red">*</span> </mat-label>
+                                                  <mat-select [(value)]="appointee_Martial_Status" id="appointee_Martial_Status" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Martial_Status.errors }" type="text" formControlName="appointee_Martial_Status" autocomplete="off">
+                                                    <mat-option>None</mat-option>
+                                                    <mat-option value="Single">Single</mat-option>
+                                                    <mat-option value="Married">Married</mat-option>
+                                                    
+                                                  </mat-select>
+                                                </mat-form-field>
+                                                <span *ngIf="submitted31 && insurance_control.appointee_Martial_Status.errors" class="error">
+                                                    <span *ngIf="insurance_control.appointee_Martial_Status.errors.required">{{ requireerror }}</span>
+                                              </span>
+                                              </div>
+                                            </div>
+  
+                                            <div class="form-group col-6 col-md-6 col-xl-5">
+                                                <div>
+                                                  <mat-form-field>
+                                                    <mat-label>Relation with appointee <span class="txt-red">*</span> </mat-label>
+                                                    <mat-select [(value)]="appointee_Relation_with_appointee" id="appointee_Relation_with_appointee" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Relation_with_appointee.errors }" type="text" formControlName="appointee_Relation_with_appointee" autocomplete="off">
+                                                      <mat-option>None</mat-option>
+                                                      <mat-option value="Father">Father</mat-option>
+                                                      <mat-option value="Mother">Mother</mat-option>
+                                                      <mat-option value="Wife">Wife</mat-option>
+                                                      <mat-option value="Husband">Husband</mat-option>
+                                                      
+                                                    </mat-select>
+                                                  </mat-form-field>
+                                                  <span *ngIf="submitted31 && insurance_control.appointee_Relation_with_appointee.errors" class="error">
+                                                      <span *ngIf="insurance_control.appointee_Relation_with_appointee.errors.required">{{ requireerror }}</span>
+                                                </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                              <div class="col-6">
+                                                  <div class="form-row">
+  
+  
+                                              <div class="form-group col-6 col-md-12 col-xl-12">
+                                                  <mat-form-field>
+                                                    <textarea matInput placeholder="Address" id="appointee_Address" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Address.errors }" formControlName="appointee_Address" autocomplete="off" required></textarea>
+                                                  </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_Address.errors" class="error">
+                                                        <span *ngIf="insurance_control.appointee_Address.errors.required">{{ requireerror }}</span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-group col-6 col-md-6 col-xl-8">
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="Landmark" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Landmark.errors }" formControlName="appointee_Landmark" id="appointee_Landmark" autocomplete="off">
+                                                  </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_Landmark.errors" class="error">
+                                                        <span *ngIf="insurance_control.appointee_Landmark.errors.required">{{ requireerror }}</span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-group col-6 col-md-6 col-xl-4">
+                                                  <mat-form-field>
+                                                    <input matInput numbersOnly placeholder="Pin Code" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_Pin_Code.errors }" formControlName="appointee_Pin_Code" id="appointee_Pin_Code" autocomplete="off" maxlength="7">
+                                                  </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_Pin_Code.errors" class="error">
+                                                        <span *ngIf="insurance_control.appointee_Pin_Code.errors.required">{{ requireerror }}</span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-group col-6 col-md-6 col-xl-4">
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="City" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_City.errors }" formControlName="appointee_City" id="appointee_City" autocomplete="off">
+                                                  </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_City.errors" class="error">
+                                                        <span *ngIf="insurance_control.appointee_City.errors.required">{{ requireerror }}</span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-group col-6 col-md-6 col-xl-4">
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="District" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_District.errors }" formControlName="appointee_District" id="appointee_District" autocomplete="off">
+                                                  </mat-form-field>	<span *ngIf="submitted31 && insurance_control.appointee_District.errors" class="error">
+                                                        <span *ngIf="insurance_control.appointee_District.errors.required">{{ requireerror }}</span>
+                                                  </span>
+                                                </div>
+                                                <div class="form-group col-6 col-md-6 col-xl-4 ">
+                                                  <mat-form-field>
+                                                    <mat-label>State <span class="txt-red">*</span> 
+                                                    </mat-label>
+                                                    <mat-select [(value)]="appointee_State" id="appointee_State" [ngClass]="{ 'is-invalid': submitted31 && insurance_control.appointee_State.errors }" type="text" formControlName="appointee_State" value="" autocomplete="off">
+                                                      <mat-option>None</mat-option>
+                                                      <mat-option value="Delhi">Delhi</mat-option>
+                                                      <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                                    </mat-select>
+                                                  </mat-form-field> <span *ngIf="submitted31 && insurance_control.appointee_State.errors" class="error">
+                                                          <span *ngIf="insurance_control.appointee_State.errors.required">{{ requireerror }}</span>
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </div>
+  
+  
+  
+                                        
+  
+  
+  
+  
+                            </div><!-- form-row --->
+  
+  
+  
+                          </div>
+
+
+                      
+                      </div>
+
+
+								</div>
+							</div>
+						</div>
+						<div class="tab-button text-center">
+							<button class=" btn btn-lg btn-primary mx-1"><span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<!-- Loan Appraisal end-->
+					
+          
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

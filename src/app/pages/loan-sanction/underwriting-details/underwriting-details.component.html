@@ -1,0 +1,504 @@
+<app-senction-side-bar></app-senction-side-bar>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+         <!--Underwriting deviation start-->
+				<div class="tab-pane first-tab active" id="underwriting">
+					<div class="box box-default my_inner_box">
+						<div class="box-body wizard-content">
+							<div class="tab-content">
+								<div class="first_blk_line form-element">
+									<h4 class="inte-box-title"><strong>Underwriting </strong></h4>
+									<form [formGroup]="Underwriting" (ngSubmit)="onSubmit18()">
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div class="max-width-165 ">
+													<mat-form-field>
+														<mat-label>Deviation Head <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_Un_Deviation_Head" id="LS_Un_Deviation_Head" [ngClass]="{ 'is-invalid': submitted18 && underwriting_control.LS_Un_Deviation_Head.errors }" type="text" formControlName="LS_Un_Deviation_Head" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Policy Norms">Policy Norms</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted18 && underwriting_control.LS_Un_Deviation_Head.errors" class="error">
+																  <span *ngIf="underwriting_control.LS_Un_Deviation_Head.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div class="max-width-165  ">
+													<mat-form-field>
+														<mat-label>Deviation <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_Un_Deviation" id="LS_Un_Deviation" [ngClass]="{ 'is-invalid': submitted18 && underwriting_control.LS_Un_Deviation.errors }" type="text" formControlName="LS_Un_Deviation" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Form 16 not provider above 3 Lacs">Form 16 not provider above 3 Lacs</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted18 && underwriting_control.LS_Un_Deviation.errors" class="error">
+																  <span *ngIf="underwriting_control.LS_Un_Deviation.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<div class="max-width-165  ">
+													<mat-form-field>
+														<mat-label>Approval Authority <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_Un_Approval_Authority" id="LS_Un_Approval_Authority" [ngClass]="{ 'is-invalid': submitted18 && underwriting_control.LS_Un_Approval_Authority.errors }" type="text" formControlName="LS_Un_Approval_Authority" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="L2">L2</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted18 && underwriting_control.LS_Un_Approval_Authority.errors" class="error">
+																  <span *ngIf="underwriting_control.LS_Un_Approval_Authority.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-4">
+												<div class="select-wrapper inner_width_select">
+													<mat-form-field>
+														<mat-label>Mitigating Factor <span class="txt-red">*</span> 
+														</mat-label>
+														<mat-select [(value)]="LS_Un_Mitigating_Factor" id="LS_Un_Mitigating_Factor" [ngClass]="{ 'is-invalid': submitted18 && underwriting_control.LS_Un_Mitigating_Factor.errors }" type="text" formControlName="LS_Un_Mitigating_Factor" autocomplete="off">
+															<mat-option>None</mat-option>
+															<mat-option value="Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected.">Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected.</mat-option>
+														</mat-select>
+													</mat-form-field> <span *ngIf="submitted18 && underwriting_control.LS_Un_Mitigating_Factor.errors" class="error">
+																  <span *ngIf="underwriting_control.LS_Un_Mitigating_Factor.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<button class="btn btn-rounded btn-primary mb-4" id="deviation-added">Add Deviation</button>
+											</div>
+										</div>
+									</form>
+									<!--- table list new start -->
+									<div class="form-row">
+										<div class="col-md-12">
+											<div class="tabl-screen1 show-card-Deviation Underwriting_tab box_effect">
+												<div class="table-responsive">
+													<table id="example" class="table table-bordered text-left underwri_table">
+														<thead>
+															<tr>
+																<th class="sn_width_blk">S. No</th>
+																<th>Deviation Head</th>
+																<th>Deviation</th>
+																<th>Approval Authority</th>
+																<th>Mitigating Factor</th>
+																<th>Status</th>
+																<th>Justifcation</th>
+																<th>View Report</th>
+																<th class="action_width">Action</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>01</td>
+																<td>Policy Norms</td>
+																<td>Form 16 not provider above 3 Lacs</td>
+																<td>L2</td>
+																<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>
+																<td>Success</td>
+																<td>Applicant is not getting Form 16 form his company. Salary credit in his bank on regular basis. We have receiver letter from employer on which his DOJ 05/05/1995 is mentioned.</td>
+																<td><a href="javascript:void(0);">View Report</a>
+																</td>
+																<td>
+																	<div class="action"> <a   class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>02</td>
+																<td>Policy Norms</td>
+																<td>Form 16 not provider above 3 Lacs</td>
+																<td>L3</td>
+																<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td>
+																	<div class="action"> <a   (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn">Status Update</a>  <a href="#Underwriting_Deviation_popup" class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>03</td>
+																<td>Policy Norms</td>
+																<td>Form 16 not provider above 3 Lacs</td>
+																<td>L3</td>
+																<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td>
+																	<div class="action"> <a   (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn">Status Update</a>  <a href="#Underwriting_Deviation_popup" class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>04</td>
+																<td>Policy Norms</td>
+																<td>Form 16 not provider above 3 Lacs</td>
+																<td>L3</td>
+																<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td>
+																	<div class="action"> <a  (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn">Status Update</a>  <a href="#Underwriting_Deviation_popup" class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>05</td>
+																<td>Policy Norms</td>
+																<td>Form 16 not provider above 3 Lacs</td>
+																<td>L3</td>
+																<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td>
+																	<div class="action"> <a   (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn">Status Update</a>  <a href="#Underwriting_Deviation_popup" class="edit-icon popup-with-form" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="col-md-12">
+											<div class="tabl-screen1 show-card-Deviation box_effect">
+												<div class="table-responsive">
+													<table id="example" class="table table-bordered text-left underwri_table">
+														<thead>
+															<tr>
+																<th class="sn_width_blk">S. No</th>
+																<th>State</th>
+																<th>Forwarded By</th>
+																<th>Forwarded To</th>
+																<th>Remarks</th>
+																<th>Status</th>
+																<th>Forward Date</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>01</td>
+																<td>Underwriter</td>
+																<td>ABC</td>
+																<td>XYZ</td>
+																<td>Appointment letter / Confirmation letter / Salery slip mentioning DOJ to be collected</td>
+																<td>Recommend</td>
+																<td>10/07/19</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--Popup design start-->
+
+									<!--- new code popup -->
+									<ng-template #content let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">Underwriting Deviation</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form [formGroup]="Underwriting_status" (ngSubmit)="onSubmit19()">
+															<div class="form-row">
+																	<div class="form-group col-12 col-md-12 col-xl-4">
+																		<div class="select-wrapper inner_width_select">
+																			<mat-form-field>
+																				<mat-label>Status <span class="txt-red">*</span> 
+																				</mat-label>
+																				<mat-select [(value)]="LS_Un_Status" id="LS_Un_Status" [ngClass]="{ 'is-invalid': submitted19 && underwriting_sts_control.LS_Un_Status.errors }" type="text" formControlName="LS_Un_Status" autocomplete="off">
+																					<mat-option>None</mat-option>
+																					<mat-option value="Accept">Accept</mat-option>
+																					<mat-option value="Reject">Reject</mat-option>
+																				</mat-select>
+																			</mat-form-field> <span *ngIf="submitted19 && underwriting_sts_control.LS_Un_Status.errors" class="error">
+																							  <span *ngIf="underwriting_sts_control.LS_Un_Status.errors.required">{{ requireerror }}</span>
+																			</span>
+																		</div>
+																	</div>
+																	<div class="form-group col-6 col-md-6 col-xl-4">
+																		<button class="btn blue_btn uploadn-btn-news effect-16 has-content" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+																		</button>
+																		<label for="Un_DocUpload">Doc Upload</label>
+																	</div>
+																	<div class="form-group col-12 col-md-12 col-xl-12">
+																		<mat-form-field>
+																			<textarea matInput specialIsAlphaNumeric placeholder="Justifcation" id="LS_Un_Justifcation" [ngClass]="{ 'is-invalid': submitted19 && underwriting_sts_control.LS_Un_Justifcation.errors }" type="text" formControlName="LS_Un_Justifcation" autocomplete="off" required></textarea>
+																		</mat-form-field>	<span *ngIf="submitted19 && underwriting_sts_control.LS_Un_Justifcation.errors" class="error">
+																						<span *ngIf="underwriting_sts_control.LS_Un_Justifcation.errors.required">{{ requireerror }}</span>
+																		<span *ngIf="underwriting_sts_control.LS_Un_Justifcation.errors.minLength">{{ min100error }}</span>
+																		</span>
+																	</div>
+																</div>
+																<div class="form-row">
+																	<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+																		<button class="btn btn-rounded btn-primary">Save</button>
+																	</div>
+																</div>
+															 
+														</form>
+											</div>
+											
+										  </ng-template>
+
+
+
+									<!--Popup design start ended -->
+
+								 
+									<div class="form-row">
+										<div class="col-12 col-md-12 col-xl-12">
+											<label class="full_width">Underwriting Status <span class="txt-red">*</span>
+											</label>
+										</div>
+										<div class="form-group col-auto mt-0"> <a (click)="open1(Recommend)" class="btn btn-primary popup-with-form">Recommend</a>
+										</div>
+										<div class="form-group col-auto mt-0"> <a (click)="open2(Review)" class="btn btn-warning popup-with-form">Review</a>
+										</div>
+										<div class="form-group col-auto mt-0"> <a  (click)="open3(Approve)" class="btn btn-success popup-with-form">Approve</a>
+										</div>
+										<div class="form-group col-auto mt-0"> <a (click)="open4(Decline)"  class="btn btn-danger popup-with-form">Decline</a> 
+										</div>
+									</div>
+
+									<!--Underwriting Status Recommend new w start-->
+									<ng-template #Recommend let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">Underwriting Status Recommend</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form  [formGroup]="Underwriting_recommend" (ngSubmit)="onSubmit20()">
+														 
+															 
+																<div class="form-row">
+																	<div class="form-group col-12 col-md-12 col-xl-8 mb-6">
+																		<mat-form-field>
+																			<mat-label>Asign To <span class="txt-red">*</span> 
+																			</mat-label>
+																			<mat-select [(value)]="un_recnd_assigned" id="un_recnd_assigned" [ngClass]="{ 'is-invalid': submitted20 && underwriting_rcd_control.un_recnd_assigned.errors }" formControlName="un_recnd_assigned" value="" autocomplete="off">
+																				<mat-option>None</mat-option>
+																				<mat-option value="Employee Name ( DMI001535 ) - L3">Employee Name ( DMI001535 ) - L3</mat-option>
+																			</mat-select>
+																		</mat-form-field> <span *ngIf="submitted20 && underwriting_rcd_control.un_recnd_assigned.errors" class="error">
+																						  <span *ngIf="underwriting_rcd_control.un_recnd_assigned.errors.required">{{ requireerror }}</span>
+																		</span>
+																	</div>
+																	<div class="form-group col-12 col-md-12 col-xl-12">
+																		<mat-form-field>
+																			<textarea matInput specialIsAlphaNumeric placeholder="Remark" id="un_recnd_remark" [ngClass]="{ 'is-invalid': submitted20 && underwriting_rcd_control.un_recnd_remark.errors }" formControlName="un_recnd_remark" value="" autocomplete="off" required></textarea>
+																		</mat-form-field>	
+																		 
+
+																		<span *ngIf="submitted20 && underwriting_rcd_control.un_recnd_remark.errors" class="error">
+																			<span *ngIf="underwriting_rcd_control.un_recnd_remark.errors.required">{{ requireerror }}</span>
+																	<span *ngIf="underwriting_rcd_control.un_recnd_remark.errors.minlength">{{ min100error }} </span>
+																	</span>
+
+
+																	</div>
+																</div>
+																<div class="form-row">
+																	<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+																		<button class="btn btn-rounded btn-primary">Save</button>
+																	</div>
+																</div>
+															 
+														</form>
+											</div>
+											
+										  </ng-template>
+
+
+									<!--Underwriting Status Recommend new wended-->
+									 
+									<!--Underwriting Status Review start-->
+
+									<!--Underwriting Status Review start-->
+									<ng-template #Review let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">Underwriting Status Review</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form [formGroup]="Underwriting_review" (ngSubmit)="onSubmit21()">
+															 
+																 
+																<div class="form-row">
+																	<div class="form-group col-12 col-md-12 col-xl-8 mb-6">
+																		<mat-form-field>
+																			<mat-label>Asign To <span class="txt-red">*</span> 
+																			</mat-label>
+																			<mat-select [(value)]="Underwriting_review_align_top" id="Underwriting_review_align_top" [ngClass]="{ 'is-invalid': submitted21 && underwriting_rview_control.Underwriting_review_align_top.errors }" formControlName="Underwriting_review_align_top" autocomplete="off">
+																				<mat-option>None</mat-option>
+																				<mat-option value="Employee Name ( DMI001535 ) - L3">Employee Name ( DMI001535 ) - L3</mat-option>
+																			</mat-select>
+																		</mat-form-field>
+																		<span *ngIf="submitted21 && underwriting_rview_control.Underwriting_review_align_top.errors" class="error">
+																			<span *ngIf="underwriting_rview_control.Underwriting_review_align_top.errors.required">{{ requireerror }}</span>
+																		 
+																		</span>
+																	 
+																	</div>
+																	<div class="form-group col-12 col-md-12 col-xl-12">
+																		<!-- <mat-form-field >
+																						<textarea matInput placeholder="Remark" id="Underwriting_review_review" [ngClass]="{ 'is-invalid': submitted21 && underwriting_rview_control.Underwriting_review_review.errors }"  formControlName="Underwriting_review_review"  autocomplete="off" required></textarea>
+																					</mat-form-field>
+																					<span *ngIf="submitted21 && underwriting_rcd_control.Underwriting_review_review.errors" class="error">
+																							<span *ngIf="underwriting_rview_control.Underwriting_review_review.errors.required">{{ requireerror }}</span>
+																							 
+																						</span> -->
+																		<mat-form-field>
+																			<textarea matInput specialIsAlphaNumeric placeholder="Remark" id="Underwriting_review_review" [ngClass]="{ 'is-invalid': submitted21 && underwriting_rview_control.Underwriting_review_review.errors }" formControlName="Underwriting_review_review" autocomplete="off" required></textarea>
+																		</mat-form-field>
+																		<span *ngIf="submitted21 && underwriting_rview_control.Underwriting_review_review.errors" class="error">
+																			<span *ngIf="underwriting_rview_control.Underwriting_review_review.errors.required">{{ requireerror }}</span>
+																			<span *ngIf="underwriting_rview_control.Underwriting_review_review.errors.minlength">{{ min100error }} </span>
+																		</span>
+
+																		 
+																	</div>
+																</div>
+																<div class="form-row">
+																	<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+																		<button class="btn btn-rounded btn-primary">Save</button>
+																	</div>
+																</div>
+														 
+														</form>
+											</div>
+											
+										  </ng-template>
+
+									
+									<!--Underwriting Status Review end-->
+									<!--Underwriting Status Approve start-->
+									<ng-template #Approve let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">Underwriting Status Approve</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form   [formGroup]="Underwriting_approve" (ngSubmit)="onSubmit22()">
+															<div class="first_blk_line form-element">
+															 
+																<div class="form-row">
+																	<div class="form-group col-12 col-md-12 col-xl-12">
+																		<mat-form-field>
+																			<textarea matInput placeholder="Remark" id="Underwriting_apprv_review" [ngClass]="{ 'is-invalid': submitted22 && underwriting_approv_control.Underwriting_apprv_review.errors }" formControlName="Underwriting_apprv_review" autocomplete="off" required></textarea>
+																		</mat-form-field>
+																		<span *ngIf="submitted22 && underwriting_approv_control.Underwriting_apprv_review.errors" class="error">
+																			<span *ngIf="underwriting_approv_control.Underwriting_apprv_review.errors.required">{{ requireerror }}</span>
+																			<span *ngIf="underwriting_approv_control.Underwriting_apprv_review.errors.minlength">{{ min100error }} </span>
+																		</span>
+
+																		 
+																	</div>
+																</div>
+																<div class="form-row">
+																	<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+																		<button class="btn btn-rounded btn-primary">Save</button>
+																	</div>
+																</div>
+															</div>
+														</form>
+											</div>
+											
+										  </ng-template>
+
+
+
+									
+									<!--Underwriting Status Approve end-->
+									<!--Underwriting Status Decline start-->
+									<ng-template #Decline let-modal class="first_blk_line form-element my_popup_blk">
+											<div class="modal-header">
+											  <h4 class="modal-title" id="modal-basic-title">Underwriting Status Decline</h4>
+											  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+													<form [formGroup]="Underwriting_secline" (ngSubmit)="onSubmit23()">
+															<div class="first_blk_line form-element">
+																 
+																<div class="form-row">
+																	<div class="form-group col-12 col-md-12 col-xl-12">
+																		<mat-form-field>
+																			<textarea matInput specialIsAlphaNumeric placeholder="Remark" id="Underwriting_secline_remark" [ngClass]="{ 'is-invalid': submitted23 && underwriting_decline_control.Underwriting_secline_remark.errors }" formControlName="Underwriting_secline_remark" autocomplete="off" required></textarea>
+																		</mat-form-field>
+																		<span *ngIf="submitted23 && underwriting_decline_control.Underwriting_secline_remark.errors" class="error">
+																			<span *ngIf="underwriting_decline_control.Underwriting_secline_remark.errors.required">{{ requireerror }}</span>
+																			<span *ngIf="underwriting_decline_control.Underwriting_secline_remark.errors.minlength">{{ min100error }} </span>
+																		</span> 
+																		 
+																	</div>
+																</div>
+																<div class="form-row">
+																	<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+																		<button class="btn btn-rounded btn-primary">Save</button>
+																	</div>
+																</div>
+															</div>
+														</form>
+											</div>
+											
+										  </ng-template>
+
+
+									
+									<!--Underwriting Status Decline end-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Underwriting deviation end-->
+					
+          
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

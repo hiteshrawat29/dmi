@@ -1,0 +1,172 @@
+<div class="b  padding-box custom-details-amt">
+  <div class=" wizard-content main-tabl-title-fileds">
+    <div class="tab-content">
+      <div class="form-row">										
+        <div class="col col-lg-12">
+        <ul class="top_header_ser_blk">
+          <li>
+            <form class="form-inline search_form_top">
+              <label class="mr-2 application_number_blk" for="inlineFormCustomSelectPref">Application Number :</label>										  
+              <mat-form-field class="mr-sm-2 max-width-160a ">
+                <mat-select>
+                  <mat-option value="00000000001">00000000001</mat-option>
+                  <mat-option value="0000000011">0000000011</mat-option>
+                  
+                </mat-select>
+              </mat-form-field> 
+            </form>
+          </li>
+          <li>
+            <h5 style="margin:0;" class="">Branch Name: <span class="badge badge-info">Delhi 1</span></h5> 
+          </li>
+          <li>
+            <h5 style="margin:0;" class="">Product: <span class="badge badge-info">Home Loan</span></h5> 
+          </li>
+          <li>
+            <h5 style="margin:0;" class="text-right">Lead Number : <span class="badge badge-info">05259</span></h5> 
+          </li>
+          <li>
+            <h5 style="margin:0;" class="">Applicant Name: <span class="badge badge-info">Applicant 1</span></h5> 
+          </li>
+          
+        </ul>									
+        
+        </div>
+        
+                          
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-light   custom-upload-side-bar">
+
+    <div class="rpanel-title"><span class="btn pull-right"><i class="ion ion-close" data-toggle="control-sidebar"></i></span> </div>  
+    <!-- Create the tabs -->
+  
+    <!-- Tab panes -->
+    <div >
+      <!-- Home tab content -->
+      <div  id="control-sidebar-home-tab ">
+        <h3 class="control-sidebar-heading">Upload Documents</h3>
+        <br>
+        <div class="col-md-12 upload-imput-tyle">
+          <div class="row">
+            <div class="col-md-4 pl">
+              <div class="form-group">
+                <label>Document Type</label>
+                <select class="form-control">
+                  <option>PAN </option>
+                  <option>DOB Proof</option>
+                  <option>Aadhar </option>
+                  <option>Photo </option>
+                  <option>Bank Statement </option>
+                  <option>Latest ITR </option>
+                  <option>CoI Proof </option>
+                  <option>FI Report </option>
+                  <option>Cancelled Cheque </option>
+                  <option>Agreement Copy </option>
+                  <option>ANNEXURE - B </option>
+                  <option>Other </option>
+  
+                </select>
+              </div>
+  
+            </div>
+  
+  
+            <div class="col-md-4 pl">
+              <div class="form-group">
+                <label>Document Name</label>
+                <input type="text" class="form-control" name="">
+              </div>
+            </div>
+  
+  
+            <div class="col-md-4 pl">
+              <div class="form-group">
+                <label>Upload Document</label> 
+  
+                <div class="input-group mb-3 upload-docment-grouop">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa fa-upload" aria-hidden="true"></i></span>
+                    </div>
+                    <label for="upload-docment" class="choose-files2">Choose File</label>
+                    <input #file type="file" id="upload-docment" class="form-control" accept='image/*' (change)="preview(file.files)" aria-label="Username" aria-describedby="basic-addon1" />
+
+                      
+                  </div>
+
+             </div>
+  
+           </div>
+         </div>
+       </div>
+  
+       
+       <!---Upload code -->
+       <div id="thumb-output" class="text-center ">
+        <span style="color:red;" *ngIf="message">{{message}}</span>
+         
+        <img [src]="imgURL"  class="thumb" *ngIf="imgURL">
+        <!-- Upload Code ended -->
+      </div>
+       <br>
+
+       <div class="text-center"> 
+          
+          <button class="btn btn-rounded btn-primary mb-5" type="button">Upload Now</button>
+    
+        </div>
+
+       <div class="table-responsive table-listing-new">
+        <table id="invoice-list" class="table table-hover no-wrap" data-page-size="10">
+          <thead>
+            <tr>
+              <th class="sn_width_blk">S. No</th>
+              <th width="150px">Document Type</th>
+              <th> Document Name</th>
+  
+              <th>Action</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1  </td>
+              <td>PAN  </td>
+              <td>PAN  Copy</td>
+  
+              <td><a href="images/aadhar_card.jpg" class="view-btn" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>  <a href="" class="edit-btn" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>  <a href="" class="delete-btn" ><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            </tr>
+  
+  
+            <tr>
+              <td>1  </td>
+              <td>AADHAR  </td>
+              <td>PAN  Copy</td>
+  
+              <td><a href="images/aadhar_card.jpg" class="view-btn"  target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="" class="edit-btn" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><a href="" class="delete-btn" ><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+      
+
+      <div class="save-doucment-btn"> 
+          <button class="btn btn-rounded btn-light mb-5" type="button" data-toggle="control-sidebar">Close</button>
+         
+        </div>
+
+  
+      
+    </div>
+  
+    <!-- /.tab-pane -->
+  </div>
+  </aside>
+  <!-- /.control-sidebar -->

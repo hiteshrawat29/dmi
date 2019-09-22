@@ -1,0 +1,1003 @@
+<app-master-sidebar></app-master-sidebar>
+
+<div class="content-wrapper">
+    <!--- middle content ------>
+    <!-- Main content -->
+    <section class="content based-form">
+      <div id="myWizard" class="mybasicform_blk tab-pane">
+        <div class=" tabl-form-controll">
+          <!--my rodkahes started -->
+          <form [formGroup]="add_dsa" (ngSubmit)="onSubmitdsa()">
+
+         
+          <div class="box box-default my_inner_box">
+            <div class="box-body wizard-content">
+              <div class="tab-content">
+                <div class="first_blk_line form-element">
+                  <h4 class="box-title">DSA Application Form</h4>
+                  <h4 class="inte-box-title"><strong>General Information</strong></h4>
+                  <div class="form-row">
+                    <div class="form-group col-4 col-md-4 col-xl-2">
+                      <div >
+                          <mat-form-field class="max-width-180">
+                              <mat-label>Channel Type</mat-label>
+                              <mat-select #dsa_Channel_Type id="dsa_Channel_Type" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Channel_Type.errors }" formControlName="dsa_Channel_Type" autocomplete="off">
+                                <mat-option value="DSA">DSA</mat-option>
+                                <mat-option value="RP">RP</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa && add_dsa_control.dsa_Channel_Type.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_Channel_Type.errors.required">{{ requireerror }}</span>
+                            </span>
+ 
+                      </div>
+                    </div>
+
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                        <mat-form-field>
+                            <input matInput specialIsAlphaNumeric placeholder="Company / Firm Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Company__Firm_Name.errors }" formControlName="dsa_Company__Firm_Name" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Company__Firm_Name.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_Company__Firm_Name.errors.required">{{ requireerror }}</span>
+                          </span> 
+                       
+                    </div>
+
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                        <mat-form-field>
+                            <mat-label>Branch Covered</mat-label>
+                            <mat-select id="dsa_Channel_Type" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Channel_Type.errors }" formControlName="dsa_Channel_Type" autocomplete="off" multiple>
+                                <mat-option value="South Delhi">South Delhi</mat-option>
+                                <mat-option value="New Delhi">New Delhi</mat-option>
+
+                            </mat-select>
+                          </mat-form-field>
+                          <span *ngIf="submitteddsa && add_dsa_control.dsa_Channel_Type.errors" class="error">
+                              <span *ngIf="add_dsa_control.dsa_Channel_Type.errors.required">{{ requireerror }}</span>
+                            </span>
+ 
+                      
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-250">
+                          <mat-form-field>
+                              <mat-label>Base Location <span class="txt-red">*</span></mat-label>
+                              <mat-select #dsa_Base_Location id="dsa_Base_Location" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Base_Location.errors }" formControlName="dsa_Base_Location" autocomplete="off">
+                                <mat-option value=" Delhi"> Delhi</mat-option>
+                                <mat-option value=" Delhi"> Delhi</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <span *ngIf="submitteddsa && add_dsa_control.dsa_Base_Location.errors" class="error">
+                              <span *ngIf="add_dsa_control.dsa_Base_Location.errors.required">{{ requireerror }}</span>
+                            </span>
+
+
+                         
+                      </div>
+                    </div>
+                    <div class="form-group col-6 col-md-6 col-xl-2">
+                        <mat-form-field>
+                            <mat-label>Refered By <span class="txt-red">*</span></mat-label>
+                            <mat-select #dsa_Refered_By id="dsa_Refered_By" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Refered_By.errors }" formControlName="dsa_Refered_By" autocomplete="off">
+                              <mat-option value=" RBH"> RBH</mat-option>
+                              <mat-option value=" BM"> BM</mat-option>
+                              <mat-option value=" LO/RM"> LO/RM</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <span *ngIf="submitteddsa && add_dsa_control.dsa_Refered_By.errors" class="error">
+                            <span *ngIf="add_dsa_control.dsa_Refered_By.errors.required">{{ requireerror }}</span>
+                          </span> 
+
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                        <mat-form-field>
+                            <mat-label>Refered Resource Emp ID<span class="txt-red">*</span></mat-label>
+                            <mat-select #dsa_Refered_By id="dsa_Refered_By" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Refered_By.errors }" formControlName="dsa_Refered_By" autocomplete="off">
+                              <mat-option value=" Emp 1"> Emp 1</mat-option>
+                              <mat-option value=" Emp 2"> Emp 2</mat-option>
+                              <mat-option value=" LO/RM"> LO/RM</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <span *ngIf="submitteddsa && add_dsa_control.dsa_Refered_By.errors" class="error">
+                            <span *ngIf="add_dsa_control.dsa_Refered_By.errors.required">{{ requireerror }}</span>
+                          </span>
+                       
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                        <div class="input-group ">
+                            <mat-form-field class="date-fields">
+                              <input matInput [matDatepicker]="dsa_Contract_Start_Date" placeholder="Contract Start Date" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Contract_Start_Date.errors }" formControlName="dsa_Contract_Start_Date" id="dsa_Contract_Start_Date" readonly required>
+                              <mat-datepicker-toggle matSuffix [for]="dsa_Contract_Start_Date"></mat-datepicker-toggle>
+                              <mat-datepicker #dsa_Contract_Start_Date></mat-datepicker>
+                            </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Contract_Start_Date.errors" class="error">
+                                                                              <span *ngIf="add_dsa_control.dsa_Contract_Start_Date.errors.required">{{ requireerror }}</span> </span>
+                          </div>
+ 
+                    </div>
+                    
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                        <div class="input-group ">
+                            <mat-form-field class="date-fields">
+                              <input matInput [matDatepicker]="dsa_Contract_End_Date" placeholder="Contract End Date" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Contract_End_Date.errors }" formControlName="dsa_Contract_End_Date" id="dsa_Contract_End_Date" readonly required>
+                              <mat-datepicker-toggle matSuffix [for]="dsa_Contract_End_Date"></mat-datepicker-toggle>
+                              <mat-datepicker #dsa_Contract_End_Date></mat-datepicker>
+                            </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Contract_End_Date.errors" class="error">
+                                                                              <span *ngIf="add_dsa_control.dsa_Contract_End_Date.errors.required">{{ requireerror }}</span> </span>
+                          </div>
+ 
+                    </div>
+
+                    
+                    <div class="form-group col-md-4">
+
+                      <mat-form-field>
+                            <mat-label>Type of Organisation <span class="txt-red">*</span></mat-label>
+                            <mat-select #dsa_Type_of_Organisation id="dsa_Type_of_Organisation" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Type_of_Organisation.errors }" formControlName="dsa_Type_of_Organisation" autocomplete="off">
+                              <mat-option value=" Proprietorship"> Proprietorship</mat-option>
+                              <mat-option value=" Partnership"> Partnership</mat-option>
+                              <mat-option value=" Private Limited"> Private Limited</mat-option>
+                              <mat-option value=" Public Limited"> Public Limited</mat-option>
+                              <mat-option value=" Individual"> Individual</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <span *ngIf="submitteddsa && add_dsa_control.dsa_Type_of_Organisation.errors" class="error">
+                            <span *ngIf="add_dsa_control.dsa_Type_of_Organisation.errors.required">{{ requireerror }}</span>
+                          </span> 
+
+ 
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                        <mat-form-field>
+                            <input matInput specialIsAlphaNumeric placeholder="Website" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Company__Website.errors }" formControlName="dsa_Company__Website" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Company__Website.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_Company__Website.errors.required">{{ requireerror }}</span>
+                          </span>
+
+                       
+                    </div>
+
+                    <!--Address part start-->
+                    <div class="my_address_blk">
+                      <div class="col-md-12">
+                        <div class="form-row">
+                          <div class="col-md-6 flex49">
+                            <div class="row">
+                              <div class="form-group col-md-12">
+                                  <mat-form-field>
+                                      <textarea matInput placeholder="Address" id="dsa_Address" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Address.errors }" formControlName="dsa_Address" autocomplete="off" required></textarea>
+                                    </mat-form-field> 
+                              </div>
+                              <div class="form-group col-md-8">
+                                  <mat-form-field>
+                                      <input matInput specialIsAlphaNumeric placeholder="Landmark" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Landmark.errors }" formControlName="dsa_Landmark" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Landmark.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_Landmark.errors.required">{{ requireerror }}</span>
+                                    </span> 
+                                
+                              </div>
+                              <div class="form-group col-md-4">
+                                  <mat-form-field class=" max-width-130">
+                                      <input matInput numbersOnly specialIsAlphaNumeric placeholder="Pin Code" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Pin_Code.errors }" formControlName="dsa_Pin_Code" autocomplete="off" required maxlength="7">
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Pin_Code.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_Pin_Code.errors.required">{{ requireerror }}</span>
+                                    </span>
+
+ 
+                              </div>
+                              <div class="form-group col-md-4">
+                                  <mat-form-field class=" max-width-130">
+                                      <input matInput specialIsAlphaNumeric placeholder="City" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_City.errors }" formControlName="dsa_City" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_City.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_City.errors.required">{{ requireerror }}</span>
+                                    </span>
+
+                                 
+                              </div>
+                              <div class="form-group col-md-4">
+                                  <mat-form-field class=" max-width-130">
+                                      <input matInput specialIsAlphaNumeric placeholder="District" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_District.errors }" formControlName="dsa_District" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_District.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_District.errors.required">{{ requireerror }}</span>
+                                    </span>
+
+                               
+                              </div>
+                              <div class="form-group col-md-4">
+                                  <mat-form-field>
+                                      <mat-label>State</mat-label>
+                                      <mat-select #dsa_State id="dsa_State" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_State.errors }" formControlName="dsa_State" autocomplete="off">
+                                        <mat-option value="Delhi">Delhi</mat-option>
+                                        <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                      </mat-select>
+                                    </mat-form-field> <span *ngIf="submitteddsa && add_dsa_control.dsa_State.errors" class="error">
+                                                                      <span *ngIf="add_dsa_control.dsa_State.errors.required">{{ requireerror }}</span>
+                                    </span>
+
+                                 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="line"></div>
+                          <div class="col-md-6 flex49">
+                            <br/>
+                            <div class="row">
+                              <div class="form-group col-4 col-md-6">
+                                  <mat-form-field>
+                                      <input matInput specialIsAlphaNumeric placeholder="Key Person Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Key_Person_Name.errors }" formControlName="dsa_Key_Person_Name" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Key_Person_Name.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_Key_Person_Name.errors.required">{{ requireerror }}</span>
+                                    </span>
+ 
+                              </div>
+                              <div class="form-group col-4 col-md-6">
+                                  <mat-form-field>
+                                      <input matInput numbersOnly specialIsAlphaNumeric placeholder="Key Person Mobile no" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Key_Person_Mobile_no.errors }" formControlName="dsa_Key_Person_Mobile_no" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Key_Person_Mobile_no.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_Key_Person_Mobile_no.errors.required">{{ requireerror }}</span>
+                                    </span> 
+                              
+                              </div>
+                              <div class="form-group col-4 col-md-6">
+                                  <mat-form-field>
+                                      <input matInput numbersOnly specialIsAlphaNumeric placeholder="Telephone no. with Std Code" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Telephone_no_with_Std_Code.errors }" formControlName="dsa_Telephone_no_with_Std_Code" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Telephone_no_with_Std_Code.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_Telephone_no_with_Std_Code.errors.required">{{ requireerror }}</span>
+                                    </span>
+
+                             
+                              </div>
+                              <div class="form-group col-4 col-md-6">
+                                  <mat-form-field>
+                                      <input matInput specialIsAlphaNumeric placeholder="Email ID " [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Email_ID.errors }" formControlName="dsa_Email_ID" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Email_ID.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_Email_ID.errors.required">{{ requireerror }}</span>
+                                                                        <span *ngIf="add_dsa_control.dsa_Email_ID.errors.pattern">{{ emailerror }}</span>
+                                    </span>
+
+
+                                
+                              </div>
+                              <div class="form-group col-4 col-md-6">
+                                  <mat-form-field>
+                                      <mat-label>Office Type</mat-label>
+                                      <mat-select #dsa_State id="dsa_Office_Type" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Office_Type.errors }" formControlName="dsa_Office_Type" autocomplete="off">
+                                        <mat-option value="Owned">Owned</mat-option>
+                                        <mat-option value="Rented">Rented</mat-option>
+                                      </mat-select>
+                                    </mat-form-field> <span *ngIf="submitteddsa && add_dsa_control.dsa_Office_Type.errors" class="error">
+                                                                      <span *ngIf="add_dsa_control.dsa_State.errors.required">{{ requireerror }}</span>
+                                    </span> 
+
+                              </div>
+                              <div class="form-group col-4 col-md-6">
+                                  <mat-form-field>
+                                      <input matInput numbersOnly specialIsAlphaNumeric placeholder="No of Employee" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_No_of_Employee.errors }" formControlName="dsa_No_of_Employee" autocomplete="off" required>
+                                    </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_No_of_Employee.errors" class="error">
+                                                                        <span *ngIf="add_dsa_control.dsa_No_of_Employee.errors.required">{{ requireerror }}</span>
+                                    </span>
+                                    
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- first_blk_line end-->
+                  </div>
+                  <!-- form-row--->
+                  <h4 class="inte-box-title"><strong>References (Two References)</strong></h4>
+                  <div class="form-row">
+                    <div class="col-6 col-md-6 flex49">
+                      <h4> References 1 </h4>
+                      <div class="form-row">
+                        <div class="form-group col-6 col-md-6">
+                            <mat-form-field>
+                                <input matInput specialIsAlphaNumeric placeholder="Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref1Name.errors }" formControlName="dsa_Ref1Name" autocomplete="off" required>
+                              </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref1Name.errors" class="error">
+                                                                  <span *ngIf="add_dsa_control.dsa_Ref1Name.errors.required">{{ requireerror }}</span>
+                              </span>
+ 
+                           
+                        </div>
+                        <div class="form-group col-6 col-md-6">
+                            <mat-form-field>
+                                <input matInput specialIsAlphaNumeric placeholder="Organisation Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref1Organisation_Name.errors }" formControlName="dsa_Ref1Organisation_Name" autocomplete="off" required>
+                              </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref1Organisation_Name.errors" class="error">
+                                                                  <span *ngIf="add_dsa_control.dsa_Ref1Organisation_Name.errors.required">{{ requireerror }}</span>
+                              </span>
+
+                          
+                        </div>
+                        <div class="form-group col-6 col-md-6">
+                            <mat-form-field>
+                                <input matInput specialIsAlphaNumeric placeholder="Designation" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref1Designation.errors }" formControlName="dsa_Ref1Designation" autocomplete="off" required>
+                              </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref1Designation.errors" class="error">
+                                                                  <span *ngIf="add_dsa_control.dsa_Ref1Designation.errors.required">{{ requireerror }}</span>
+                              </span>
+
+                        
+                        </div>
+                        <div class="form-group col-6 col-md-6">
+                            <mat-form-field class=" max-width-180">
+                                <input matInput numbersOnly specialIsAlphaNumeric placeholder="Contact Number" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref1Contact_Number.errors }" formControlName="dsa_Ref1Contact_Number" autocomplete="off" required>
+                              </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref1Contact_Number.errors" class="error">
+                                                                  <span *ngIf="add_dsa_control.dsa_Ref1Contact_Number.errors.required">{{ requireerror }}</span>
+                              </span>
+
+                          
+                        </div>
+                        <div class="form-group col-md-4">
+                            <mat-form-field>
+                                <mat-label>Relationship</mat-label>
+                                <mat-select #dsa_Ref1Relationship id="dsa_Ref1Relationship" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref1Relationship.errors }" formControlName="dsa_Ref1Relationship" autocomplete="off">
+                                  <mat-option value="Colleague">Colleague</mat-option>
+                                  <mat-option value="Friend">Friend</mat-option>
+                                  <mat-option value="Associate">Associate</mat-option>
+                                </mat-select>
+                              </mat-form-field> <span *ngIf="submitteddsa && add_dsa_control.dsa_Ref1Relationship.errors" class="error">
+                                                                <span *ngIf="add_dsa_control.dsa_Ref1Relationship.errors.required">{{ requireerror }}</span>
+                              </span>
+ 
+                        </div>
+                      </div>
+                    </div>
+                    <!--col-6 col-md-6--->
+                    <div class="line"></div>
+                    <div class="col-6 col-md-6 flex49">
+                      <h4> References 2 </h4>
+                      <div class="form-row">
+                          <div class="form-group col-6 col-md-6">
+                              <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref2Name.errors }" formControlName="dsa_Ref2Name" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref2Name.errors" class="error">
+                                                                    <span *ngIf="add_dsa_control.dsa_Ref2Name.errors.required">{{ requireerror }}</span>
+                                </span>
+   
+                             
+                          </div>
+                          <div class="form-group col-6 col-md-6">
+                              <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Organisation Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref2Organisation_Name.errors }" formControlName="dsa_Ref2Organisation_Name" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref2Organisation_Name.errors" class="error">
+                                                                    <span *ngIf="add_dsa_control.dsa_Ref2Organisation_Name.errors.required">{{ requireerror }}</span>
+                                </span>
+  
+                            
+                          </div>
+                          <div class="form-group col-6 col-md-6">
+                              <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Designation" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref2Designation.errors }" formControlName="dsa_Ref2Designation" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref2Designation.errors" class="error">
+                                                                    <span *ngIf="add_dsa_control.dsa_Ref2Designation.errors.required">{{ requireerror }}</span>
+                                </span>
+  
+                          
+                          </div>
+                          <div class="form-group col-6 col-md-6">
+                              <mat-form-field class=" max-width-180">
+                                  <input matInput numbersOnly specialIsAlphaNumeric placeholder="Contact Number" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref2Contact_Number.errors }" formControlName="dsa_Ref2Contact_Number" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Ref2Contact_Number.errors" class="error">
+                                                                    <span *ngIf="add_dsa_control.dsa_Ref2Contact_Number.errors.required">{{ requireerror }}</span>
+                                </span>
+  
+                            
+                          </div>
+                          <div class="form-group col-md-4">
+                              <mat-form-field>
+                                  <mat-label>Relationship</mat-label>
+                                  <mat-select #dsa_Ref2Relationship id="dsa_Ref2Relationship" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Ref2Relationship.errors }" formControlName="dsa_Ref2Relationship" autocomplete="off">
+                                    <mat-option value="Colleague">Colleague</mat-option>
+                                    <mat-option value="Friend">Friend</mat-option>
+                                    <mat-option value="Associate">Associate</mat-option>
+                                  </mat-select>
+                                </mat-form-field> <span *ngIf="submitteddsa && add_dsa_control.dsa_Ref2Relationship.errors" class="error">
+                                                                  <span *ngIf="add_dsa_control.dsa_Ref2Relationship.errors.required">{{ requireerror }}</span>
+                                </span>
+   
+                          </div>
+                        </div>
+                    </div>
+                    <!--col-6 col-md-6--->
+                  </div>
+                  <!--formrow--->
+                  <h4 class="inte-box-title"><strong>Bank Detail</strong></h4>
+                  <div class="form-row">
+                     
+
+                    <div class="form-group col-6 col-md-3">
+
+                        <mat-form-field>
+                            <input matInput specialIsAlphaNumeric placeholder="Account  Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Account_Number.errors }" formControlName="dsa_Account_Number" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Account_Number.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_Account_Number.errors.required">{{ requireerror }}</span>
+                          </span>
+                          
+                      
+                    </div>
+
+                    <!--<div class="form-group col-6 col-md-3">
+                                                  <input class="form-control effect-16" id="BankName" autocomplete="off" type="text">
+                                                  <label for="BankName">Bank Name<span class="required">*</span>
+                                                  </label>
+                                              </div>-->
+                    <div class="form-group col-md-3 select-wrapper">
+                        <mat-form-field>
+                            <mat-label>Bank Name <span class="txt-red">*</span></mat-label>
+                            <mat-select #dsa_Bank_Name id="dsa_Bank_Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Bank_Name.errors }" formControlName="dsa_Bank_Name" autocomplete="off">
+                              <mat-option value="HDFC">HDFC</mat-option>
+                              <mat-option value="SBI">SBI</mat-option>
+                              <mat-option value="Other">Other</mat-option>
+                            </mat-select>
+                          </mat-form-field> <span *ngIf="submitteddsa && add_dsa_control.dsa_Bank_Name.errors" class="error">
+                                                            <span *ngIf="add_dsa_control.dsa_Bank_Name.errors.required">{{ requireerror }}</span>
+                          </span>
+
+
+                    </div>
+                    <div class="form-group col-6 col-md-3" id="other-bank">
+                        <mat-form-field>
+                            <input matInput specialIsAlphaNumeric placeholder="Other Bank Name" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_name_other.errors }" formControlName="dsa_name_other" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_name_other.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_name_other.errors.required">{{ requireerror }}</span>
+                          </span>
+
+                    
+                    </div>
+                    <div class="form-group col-6 col-md-3">
+                        <mat-form-field>
+                            <input matInput numbersOnly specialIsAlphaNumeric placeholder="Account Number" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Account_Number.errors }" formControlName="dsa_Account_Number" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Account_Number.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_Account_Number.errors.required">{{ requireerror }}</span>
+                          </span>
+ 
+                    </div>
+                    <div class="form-group col-6 col-md-3">
+                        <mat-form-field>
+                            <input matInput specialIsAlphaNumeric placeholder="IFSC Code" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_IFSC_Code.errors }" formControlName="dsa_IFSC_Code" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_IFSC_Code.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_IFSC_Code.errors.required">{{ requireerror }}</span>
+                          </span>
+
+                   
+                    </div>
+                    <div class="form-group col-6 col-md-3">
+                        <mat-form-field>
+                            <input matInput specialIsAlphaNumeric placeholder="Branch Address" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_Branch_Address.errors }" formControlName="dsa_Branch_Address" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_Branch_Address.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_Branch_Address.errors.required">{{ requireerror }}</span>
+                          </span> 
+
+                    
+                    </div>
+                    <div class="form-group col-6 col-md-3">
+                        <mat-form-field class="max-width-180">
+                            <input matInput specialIsAlphaNumeric placeholder="GSTIN ID" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_GSTIN_ID.errors }" formControlName="dsa_GSTIN_ID" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_GSTIN_ID.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_GSTIN_ID.errors.required">{{ requireerror }}</span>
+                          </span>
+
+                       
+                    </div>
+
+                    <div class="form-group col-6 col-md-3">
+                        <mat-form-field class="max-width-180">
+                            <input matInput specialIsAlphaNumeric placeholder="Pan No" [ngClass]="{ 'is-invalid': submitteddsa && add_dsa_control.dsa_PanNo.errors }" formControlName="dsa_PanNo" autocomplete="off" required>
+                          </mat-form-field>	<span *ngIf="submitteddsa && add_dsa_control.dsa_PanNo.errors" class="error">
+                                                              <span *ngIf="add_dsa_control.dsa_PanNo.errors.required">{{ requireerror }}</span>
+                          </span>
+
+                       
+                    </div>
+
+
+                  </div>
+                  <!--formrow--->
+                  <h4 class="inte-box-title"><strong>Upload Document</strong></h4>
+                  <div class="form-row uplaon-doument-dsa">
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable">PAN </span><span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile012" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile012">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="upload-dsa-documents">
+                          <div class="thum-pic-hms">
+                            <img src="src/assets/images/income_document.jpg" />
+                          </div>
+                          <div class="upload-down-thum-btn">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Address Proof </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile021" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Aadhar </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile022" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile022">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Photo </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile023" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile023">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Bank Statement </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile024" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile024">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Latest ITR </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile025" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile025">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> CoI Proof </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile026" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile026">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> FI Report </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile027" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile027">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Cancelled Cheque </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile028" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile028">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> Agreement Copy </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile029" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile029">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6  form-group ">
+                      <div class="form-row">
+                        <div class="col-sm-3"><span class="input-file-lable"> ANNEXURE - B </span>  <span class="required">*</span>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="input-group my-3">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-input1" id="inputGroupFile030" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile030">Choose file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="upload-dsa-documents">
+                                <div class="thum-pic-hms">
+                                  <img src="src/assets/images/income_document.jpg" />
+                                </div>
+                                <div class="upload-down-thum-btn">
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                  <a><i class="fa fa-download" aria-hidden="true" title="Donwload"></i></a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-12 col-md-12 col-xl-12">
+                      <div class="tab-button text-center">
+                        <button class="btn btn-light btn-lg  mx-1" id="draft-save"> <span>Clear</span>
+                        </button>
+                        <button class=" btn btn-lg btn-primary mx-1" id="next"><i class="ti-save-alt"></i><span>Submit</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--formrow--->
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+          <!-- </div> -->
+          <!--my rodkahes ended -->
+          <!--my rodkahes started -->
+          <div class="box box-default my_inner_box">
+            <div class="box-body wizard-content">
+              <div class="tab-content">
+                <div class="first_blk_line form-element">
+                  <h4 class="box-title">DSA Application Checklist</h4>
+                  <form [formGroup]="add_dsa_approval" (ngSubmit)="onSubmitdsa_apv()">
+                  <div class="form-row">
+
+                  <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>KYC Detail Verified</mat-label>
+                              <mat-select #dsa_apv_kyc_detail_verified id="dsa_apv_kyc_detail_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_kyc_detail_verified.errors }" formControlName="dsa_apv_kyc_detail_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_kyc_detail_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_kyc_detail_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+              
+                            
+                      
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>Reports Verified</mat-label>
+                              <mat-select #dsa_apv_reports_verified id="dsa_apv_reports_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_reports_verified.errors }" formControlName="dsa_apv_reports_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_reports_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_reports_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                       
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>FI Verified</mat-label>
+                              <mat-select #dsa_apv_fi_verified id="dsa_apv_fi_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_fi_verified.errors }" formControlName="dsa_apv_fi_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_fi_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_fi_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                        
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>CIBIL Verified</mat-label>
+                              <mat-select #dsa_apv_cibil_verified id="dsa_apv_cibil_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_cibil_verified.errors }" formControlName="dsa_apv_cibil_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_cibil_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_cibil_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                         
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180 ">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>FCU Verified</mat-label>
+                              <mat-select #dsa_apv_fcu_verified id="dsa_apv_fcu_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_fcu_verified.errors }" formControlName="dsa_apv_fcu_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_fcu_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_fcu_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                       
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180 ">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>Agreemnent Verified</mat-label>
+                              <mat-select #dsa_apv_agreemnent_verified id="dsa_apv_agreemnent_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_agreemnent_verified.errors }" formControlName="dsa_apv_agreemnent_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_agreemnent_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_agreemnent_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                         
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-210">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>Payout Annexure Verified</mat-label>
+                              <mat-select #dsa_apv_payout_annexure_verified id="dsa_apv_payout_annexure_verified" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_payout_annexure_verified.errors }" formControlName="dsa_apv_payout_annexure_verified" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_payout_annexure_verified.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_payout_annexure_verified.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                      
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <div class="max-width-180">
+                          <mat-form-field>
+                              <input matInput specialIsAlphaNumeric placeholder="DSA Code" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_dsa_code.errors }" formControlName="dsa_apv_dsa_code" autocomplete="off" required>
+                            </mat-form-field>	<span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_dsa_code.errors" class="error">
+                                                                <span *ngIf="dsa_approval_control.dsa_apv_dsa_code.errors.required">{{ requireerror }}</span>
+                            </span>
+
+                       
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3">
+                      <br/>
+                      <div class="max-width-180">
+                          <mat-form-field class="max-width-180">
+                              <mat-label>Refer Back</mat-label>
+                              <mat-select #dsa_apv_approval_status id="dsa_apv_approval_status" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_approval_status.errors }" formControlName="dsa_apv_approval_status" autocomplete="off">
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_approval_status.errors" class="error">
+                                                              <span *ngIf="dsa_approval_control.dsa_apv_approval_status.errors.required">{{ requireerror }}</span>
+                            </span>
+ 
+                      </div>
+                    </div>
+                    <div class="form-group col-4 col-md-4 col-xl-3 has-select" id="dsaford-to" style="display: none;">
+                      <br/>
+                      <div class="max-width-210 select-wrapper inner_width_select">
+                         
+
+                        <mat-form-field class="max-width-180">
+                            <mat-label>Approval Status</mat-label>
+                            <mat-select #dsa_apv_approval_status id="dsa_apv_approval_status" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_approval_status.errors }" formControlName="dsa_apv_approval_status" autocomplete="off">
+                              <mat-option value="Reason 1">Reason 1</mat-option>
+                              <mat-option value="Reason 2">Reason 2</mat-option>
+                            </mat-select>
+                          </mat-form-field> 
+                          <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_approval_status.errors" class="error">
+                                                            <span *ngIf="dsa_approval_control.dsa_apv_approval_status.errors.required">{{ requireerror }}</span>
+                          </span>
+
+
+                      </div>
+                    </div>
+                    <div class="form-group col-6 col-md-4 col-xl-4">
+                      <div class="select-wrapper inner_width_select">
+                          <mat-form-field> 
+                              <textarea matInput placeholder="Remark (For all checklist Items)" id="dsa_apv_remark" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_remark.errors }" formControlName="dsa_apv_remark" autocomplete="off"></textarea>
+                            </mat-form-field>
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_remark.errors" class="error">
+                                <span *ngIf="dsa_approval_control.dsa_apv_remark.errors.required">{{ requireerror }}</span>
+</span>
+
+                      
+                      </div>
+                    </div>
+                    <div class="form-group col-6 col-md-4 col-xl-4">
+                      <div class="select-wrapper inner_width_select">
+                          <mat-form-field> 
+                              <textarea matInput placeholder="Final Remark" id="dsa_apv_final_remark" [ngClass]="{ 'is-invalid': submitteddsa_apv && dsa_approval_control.dsa_apv_final_remark.errors }" formControlName="dsa_apv_final_remark" autocomplete="off"></textarea>
+                            </mat-form-field>
+                            <span *ngIf="submitteddsa_apv && dsa_approval_control.dsa_apv_final_remark.errors" class="error">
+                                <span *ngIf="dsa_approval_control.dsa_apv_final_remark.errors.required">{{ requireerror }}</span>
+</span>
+
+                        
+                      </div>
+                    </div>
+                    <div class="form-group col-12 col-md-12 col-xl-12">
+                      <div class="tab-button text-center">
+                        <button type="button" class="btn btn-light btn-lg  mx-1" id="draft-save"> <span>Cancel</span>
+                        </button>
+                        <button class=" btn btn-lg btn-primary mx-1" id="next"><i class="ti-save-alt"></i><span>Submit</span>
+                        </button>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </form>
+                  <!-- form-row--->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--my rodkahes-->
+      </div>
+    </section>
+    <!-- /.content -->
+  </div> 
+  <!-- /.content-wrapper -->

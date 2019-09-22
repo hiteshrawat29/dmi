@@ -1,0 +1,227 @@
+ .btn-rounded{    border-radius: 4px;}
+        div.dataTables_wrapper div.dataTables_filter input{
+
+    padding: 1px 0;
+    height: 19px;
+    min-height: 27px;
+        }
+        div.dataTables_wrapper div.dataTables_filter{padding-top: 2px;}
+        table.table  thead th {
+    background-color: #1665b2 !important; 
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+
+        .action{}
+        .action a{    display: inline-block;
+    /* margin: 0 5px; */
+    
+    padding: 1px 4px;
+    color: #868686;
+    background: #2962FF;
+    border-radius: 3px;
+    margin: 0 1px;
+    text-align: center;
+    width: 22px;
+    color: #fff;}
+        .action a.view-icon{}
+        .action a.view-document{    background-color: #515d70; }
+        .action a.edit-icon{    background: #4fd2e0;}
+        .action a.delete-icon{    background: #bd0000;}
+        .action a{}
+
+            .content-header {
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        
+        #roles_manager_wrapper .col-sm-12.col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        
+        #roles_manager_wrapper #roles_manager_filter {
+            text-align: left;
+            float: left;
+        }
+        
+        #roles_manager_wrapper #roles_manager_filter label {
+            font-size: 0px;
+        }
+        
+        #roles_manager_wrapper #roles_manager_filter label input {
+            font-size: 12px;
+        }
+        
+        #roles_manager_wrapper {}
+        
+        #roles_manager_filter {}
+        
+        #roles_manager_filter {}
+        
+        #roles_manager_filter {}
+        
+        .based-form .box-title {}
+        
+        .box-role-mgn .box-title {
+            border: none;
+        }
+        
+        .box-role-mgn .box-body {
+            border-top: 1px solid #f1f1f1;
+        }
+        
+        .box-role-mgn {}
+        
+        .box-role-mgn .box-body {
+            padding: 6px 0;
+        }
+        
+        .box-role-mgn .vtabs {
+            width: 100%;
+        }
+        
+        .box-role-mgn {}
+        
+        .icheckbox_minimal-blue.disabled {
+            background-position: 0px 0;
+        }
+        
+        .inline-box1 {
+            margin: 0;
+        }
+        
+        .inline-box1 label {
+            width: initial !important;
+        }
+        
+        .inline-box1 label .icheckbox {}
+        
+        .inline-box1 label .icheckbox {}
+        
+        .inline-box1 label {}
+        
+        .inline-box1 label {}
+        
+        .inline-box1 label {}
+        
+        .icheckbox_minimal-blue,
+        .iradio_minimal-blue {
+            margin-right: 7px !important;
+            margin-left: 14px !important;
+            margin-top: -1px !important;
+        }
+        
+        .cuto-alert {
+            border-left: 6px solid #F04748 !important;
+            background-color: #ffcd75 !important;
+            padding: 10px;
+            position: relative;
+            border: none;
+            border-radius: 0;
+            color: #2f2f2f !important;
+            line-height: 150%;
+            font-size: 15px;
+            padding: 12px;
+        }
+        
+        .cuto-alert a {}
+        
+        .rol-manager-box {}
+        
+        .rol-manager-box {}
+        
+        .rol-manager-box .box-body {
+            padding: 10px 0;}
+            .ncust-btn{    margin: 5px 0px;}
+
+             .popup-roles{       height:74vh;
+    overflow: auto;
+    
+    box-sizing: border-box;
+    overflow-x: hidden;}
+.tabl-screen1{width: 100%;}
+.icom-new table{width: 100%}
+.icom-new table tr{width: 100%;border-bottom: 1px solid #ccc;}
+.icom-new table tr:last-child {/*border-bottom: none; */}
+.icom-new table tr td{       padding: 2px 20px;
+    border-right: 1px solid #ccc;}
+.icom-new table tr td:first-child{text-align: right; width: 250px; padding-right: 20px;}
+
+.icom-new table tr td:last-child{    text-align: left;
+    border-left: 1px solid #ccc;
+    border-right: none;
+    padding-left: 20px;}
+.icom-new table tr td input[type="text"], .icom-new table tr td input[type="date"], .icom-new table tr td select{border: none;
+    width: 80%;
+    padding: 6px 9px;
+    margin: 4px;}
+.icom-new{}
+
+.icom-new ::-webkit-input-placeholder { /* Edge */
+  color: #d4d4d4;
+}
+
+.icom-new :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #d4d4d4;
+}
+
+.icom-new ::placeholder {
+  color: #d4d4d4;
+}
+.icom-new tr th{    text-align: center;
+    background:#1f5386;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 14px;}
+.icomnew-n-new{    padding: 10px;
+    width: 100%;
+    padding-bottom: 21px;}
+.icomnew-n-new .col-md-6, .icomnew-n-new .col-md-12{padding-right: 20px !important;
+    padding-left: 20px !important;}
+.icome-new-tab{}
+.icome-new-tab{}
+.icome-new-tab td{    background: #f1f1f1;    border: 1px solid #ccc;     font-weight: bold;    font-size: 16px;}
+.icome-new-tab td:first-child{    text-align: left !important;
+    padding-left: 20px;
+}
+.icome-new-tab td:last-child{    text-align: right !important;
+    padding-right: 20px;
+}
+.icome-new-tab td input[type="text"]{}
+.icome-new-tab{}
+.Sub-Profile1{display: none;}
+.new-width-3{}
+.new-width-3{}
+
+
+ 
+
+ .select-wrapper {
+    position: relative; 
+}
+
+.select-wrapper:after {
+        font-family: FontAwesome;
+    content: '\f107';
+    font-size: 17px;
+    position: absolute;
+    top: 9px;
+    right: 20px;
+    color: #ccc;
+    pointer-events: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.varified-color {
+    font-size: 19px;
+    color: #2dbb01;
+}
+
+.tabl-boxing .nav-tabs li a.add_button{    background: none;
+    color: #3789d7;}

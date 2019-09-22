@@ -1,0 +1,181 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+          <app-lead-inform-bar></app-lead-inform-bar>
+        
+
+				<!--De Dupe Start-->
+        <div class="tab-pane first-tab active" id="De_Dupe_Verification">
+					<div class="box box-default my_inner_box">
+						<div class="box-body wizard-content">
+							<div class="tab-content">
+								<div class="first_blk_line form-element">
+									<h4 class="inte-box-title"><strong>De-Dupe Verification</strong></h4>
+									<!--- table list new start -->
+									<div class="form-row my-4">
+										<div class="col-md-12">
+											<div class="table-responsive box_effect">
+												<table id="example" class="table table-bordered text-left De_Dupe_ver underwri_table">
+													<thead>
+														<tr>
+															<th class="sn_width_blk">S. No</th>
+															<th>Matching Type</th>
+															<th>Matching Detail</th>
+															<th>Matching with Applicant No</th>
+															<th>Branch</th>
+															<th>Loan Status</th>
+															<th>Matching with</th>
+															<th>Matching Applicant / Co-Applicant Name</th>
+															<th>Source</th>
+															<th>Result</th>
+															<th>Remark</th>
+															<th class="action_width">Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>01</td>
+															<td>Mobile No</td>
+															<td>9845785468</td>
+															<td>GG101010</td>
+															<td>Delhi 1</td>
+															<td>Rejected</td>
+															<td>Applicant</td>
+															<th>Angil</th>
+															<th>DMI HFC/DMI</th>
+															<th></th>
+															<th></th>
+															<td>
+																<div class="action"> <a (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn ">Verify</a>
+																	<a href="javascript:void(0);" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>02</td>
+															<td>PAN Card</td>
+															<td>APYKG2345A</td>
+															<td>GG1013</td>
+															<td>Delhi 3</td>
+															<td>Current</td>
+															<td>Co-Applicant</td>
+															<th>Rajeev</th>
+															<th>DMI HFC/DMI</th>
+															<th></th>
+															<th></th>
+															<td>
+																<div class="action"> <a (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn ">Verify</a>
+																	<a href="javascript:void(0);" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>03</td>
+															<td>Aadhar Card</td>
+															<td>123456789123</td>
+															<td>GG1015</td>
+															<td>Indore 1</td>
+															<td>Approved</td>
+															<td>Co-Applicant</td>
+															<th>Ranjeet</th>
+															<th>DMI HFC/DMI</th>
+															<th>Success</th>
+															<th><a href="#">View Report</a>
+															</th>
+															<td>
+																<div class="action"> <a  (click)="open(content)" class="popup-with-form btn btn-primary btn-xs my_short_btn ">Verify</a>
+																	<a href="javascript:void(0);" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																	<a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									  
+
+									<!--- new code popup -->
+									<ng-template #content let-modal class="first_blk_line form-element my_popup_blk">
+										<div class="modal-header">
+										  <h4 class="modal-title" id="modal-basic-title">De-Dupe Verification</h4>
+										  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+											<span aria-hidden="true">&times;</span>
+										  </button>
+										</div>
+										<div class="modal-body">
+											<form [formGroup]="De_Dupe_Verification" (ngSubmit)="onSubmit3()">
+												<div class="form-row">
+													<div class="form-group col-12 col-md-12 col-xl-6">
+														<div class="select-wrapper inner_width_select max-width-165">
+															<mat-form-field>
+																<mat-label>Result <span class="txt-red">*</span>
+																</mat-label>
+																<mat-select [(value)]="Ve_Result" id="Ve_Result" [ngClass]="{ 'is-invalid': submitted3 && dedup_contact.Ve_Result.errors }" formControlName="Ve_Result">
+																	<mat-option>None</mat-option>
+																	<mat-option value="Accept">Accept</mat-option>
+																	<mat-option value="Reject">Reject</mat-option>
+																</mat-select>
+															</mat-form-field>	<span *ngIf="submitted3 && dedup_contact.Ve_Result.errors" class="error">
+																						<span *ngIf="dedup_contact.Ve_Result.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+													</div>
+													<div class="form-group col-12 col-md-12 col-xl-12">
+															<mat-form-field class="example-full-width">
+																	<textarea specialIsAlphaNumeric matInput rows="3" placeholder="Remark" id="Ve_Remark"  [ngClass]="{ 'is-invalid': submitted3 && dedup_contact.Ve_Remark.errors }" formControlName="Ve_Remark" required></textarea>
+																  </mat-form-field>
+																  <span *ngIf="submitted3 && dedup_contact.Ve_Remark.errors" class="error">
+																				<span *ngIf="dedup_contact.Ve_Remark.errors.required">{{ requireerror }}</span>
+																	<span *ngIf="dedup_contact.Ve_Remark.errors.minlength">{{ min100error }}</span>
+														</span>
+													</div>
+													<div *ngIf="showMsg" class="w100">
+														<div class="col-12 col-md-12 col-xl-12">
+															<div class="text-center">
+																<p class="bg-success-gradient-animet rounded p-10">	<strong> Success!</strong> De-Dupe Verification Status has been updated</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-row">
+													<div class="col-12 col-md-12 col-xl-12 add_button_blk text-center">
+															<button class="btn btn-rounded btn-primary">Update</button>
+														<!--<button class="btn btn-rounded btn-primary" (click)="modal.close('Save click')">Update</button> -->
+													</div>
+												</div>
+											</form>
+										</div>
+										
+									  </ng-template>
+									  
+									   
+									  
+									<!-- new code popup ended -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--De Dupe End-->
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

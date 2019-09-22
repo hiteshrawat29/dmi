@@ -1,0 +1,287 @@
+<app-loan-side-bar></app-loan-side-bar>
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+					<app-lead-inform-bar></app-lead-inform-bar>
+
+					
+         <!--Reference Details Start-->
+				<div class="tab-pane first-tab active" id="reference_details">
+            <div class="box box-default my_inner_box">
+              <div class="box-body wizard-content">
+                <div class="tab-content">
+                  <div class="first_blk_line form-element">
+                    <h4 class="inte-box-title"><strong>Reference Details</strong></h4>
+                    <form [formGroup]="Reference_Details" (ngSubmit)="onSubmit11()">
+  
+                         
+  
+                      
+                    <div class="row  my_address_blk">
+                      
+                      <div class="col-md-6" style="flex: 0 0 49%;">
+                        <div class="row">
+                          <div class="form-group col-12 col-md-12 col-xl-8">
+                              <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Name" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Name.errors }" formControlName="Re_Name" autocomplete="off" required >
+                                </mat-form-field>
+                                <span *ngIf="submitted11 && reference_control.Re_Name.errors" class="error">
+                                    <span *ngIf="reference_control.Re_Name.errors.required">{{ requireerror }}</span>
+                                  </span>
+  
+  
+                             
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                              <mat-form-field class="max-width-120">
+                                  <input matInput numbersOnly placeholder="Contact No" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Contact_No.errors }" formControlName="Re_Contact_No" autocomplete="off" required maxlength="11">
+                                </mat-form-field>
+                                <span *ngIf="submitted11 && reference_control.Re_Contact_No.errors" class="error">
+                                    <span *ngIf="reference_control.Re_Contact_No.errors.required">{{ requireerror }}</span>
+                                    <span *ngIf="reference_control.Re_Contact_No.errors.minlength">{{ minerror }}</span>
+                                  </span>
+  
+                             
+                          </div>
+                          <div class="form-group col-12 col-md-12 col-xl-8 select-wrapper">
+                            <div class="">
+                                <mat-form-field>
+                                    <mat-label>Relation <span class="txt-red">*</span></mat-label>
+                                    <mat-select [(value)]="Re_Relation" id="Re_Relation" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Relation.errors }" formControlName="Re_Relation">
+                                      <mat-option>None</mat-option>
+                                      <mat-option value="Single">Neighbour</mat-option>
+                                      <mat-option value="Married">Relative (other than immediate family members)</mat-option>
+                                       
+                                    </mat-select>
+                                  </mat-form-field>	
+                                  <span *ngIf="submitted11 && reference_control.Re_Relation.errors" class="error">
+                                    <span *ngIf="reference_control.Re_Relation.errors.required">{{ requireerror }}</span>
+                                  </span>
+  
+  
+                               
+                            </div>
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                              <mat-form-field class="max-width-40">
+                                  <input matInput specialIsAlphaNumeric placeholder="Known Since (in Yrs)" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Known_Since.errors }" formControlName="Re_Known_Since" autocomplete="off" required maxlength="4" >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted11 && reference_control.Re_Known_Since.errors" class="error">
+                                      <span *ngIf="reference_control.Re_Known_Since.errors.required">{{ requireerror }}</span>
+                                    </span>
+  
+                             
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Occupation <span class="txt-red">*</span></mat-label>
+                                    <mat-select [(value)]="Re_Occupation" id="Re_Occupation" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Occupation.errors }" formControlName="Re_Occupation">
+                                      <mat-option>None</mat-option>
+                                      <mat-option value="Salaried">Salaried</mat-option>
+                                      <mat-option value="SENP">SENP</mat-option>
+                                       
+                                    </mat-select>
+                                  </mat-form-field>	
+                                  <span *ngIf="submitted11 && reference_control.Re_Relation.errors" class="error">
+                                    <span *ngIf="reference_control.Re_Relation.errors.required">{{ requireerror }}</span>
+                                  </span> 
+                               
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="line" style="border-right:1px solid #aea6a6;;"></div>
+                      <div class="col-md-6 pr-1">
+                        <div class="row">
+                          <div class="form-group col-12 col-md-12 col-xl-12">
+                              <mat-form-field >
+                                  <textarea matInput specialIsAlphaNumeric placeholder="Address"  id="Re_Address" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Address.errors }" formControlName="Re_Address"  autocomplete="off" required></textarea>
+                              </mat-form-field>
+                              <span *ngIf="submitted11 && reference_control.Re_Address.errors" class="error">
+                                  <span *ngIf="reference_control.Re_Address.errors.required">{{ requireerror }}</span>
+                                </span>
+                              
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-8">
+                              <mat-form-field  >
+                                  <input matInput specialIsAlphaNumeric placeholder="Landmark" id="Re_Landmark"  [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Landmark.errors }" formControlName="Re_Landmark" autocomplete="off"  required>
+                                  </mat-form-field>
+                              <span *ngIf="submitted11 && reference_control.Re_Landmark.errors" class="error">
+                                  <span *ngIf="reference_control.Re_Landmark.errors.required">{{ requireerror }}</span>
+                              </span>
+                                   
+  
+                           
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                              <mat-form-field>
+                                  <input matInput numbersOnly placeholder="Pin Code" id="Re_Pin_Code" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Pin_Code.errors }" formControlName="Re_Pin_Code" autocomplete="off" maxlength="8" required>
+                                  </mat-form-field>
+                                  <span *ngIf="submitted11 && reference_control.Re_Pin_Code.errors" class="error">
+                                      <span *ngIf="reference_control.Re_Pin_Code.errors.required">{{ requireerror }}</span>
+                                    </span>
+  
+                             
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                              <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="City"  id="Re_City" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_City.errors }" formControlName="Re_City" autocomplete="off"  required>
+                                  </mat-form-field>
+                                  <span *ngIf="submitted11 && reference_control.Re_City.errors" class="error">
+                                      <span *ngIf="reference_control.Re_City.errors.required">{{ requireerror }}</span>
+                                    </span>
+  
+                           
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4">
+                              <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="District"  id="Re_District" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_District.errors }" formControlName="Re_District" autocomplete="off" required>
+                                  </mat-form-field>
+                                  <span *ngIf="submitted11 && reference_control.Re_District.errors" class="error">
+                                      <span *ngIf="reference_control.Re_District.errors.required">{{ requireerror }}</span>
+                                    </span>
+                           
+                          </div>
+                          <div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+                            <div class="max-width-160">
+  
+                                <mat-form-field>
+                                    <mat-label>State </mat-label>
+                                    <mat-select [(value)]="Re_State" id="Re_State" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_State.errors }" formControlName="Re_State">
+                                      <mat-option>None</mat-option>
+                                      <mat-option value="Delhi">Delhi</mat-option>
+                                      <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                       
+                                    </mat-select>
+                                  </mat-form-field>
+                                  <span *ngIf="submitted11 && reference_control.Re_State.errors" class="error">
+                                      <span *ngIf="reference_control.Re_State.errors.required">{{ requireerror }}</span>
+                                    </span>	
+                                 
+  
+  
+                             
+                            </div>
+                          </div>
+                         <!-- <div class="form-group col-6 col-md-6 col-xl-4">
+                              <mat-form-field>
+                                  <input matInput numbersOnly placeholder="Landline No"   id="Re_Landline_No" [ngClass]="{ 'is-invalid': submitted11 && reference_control.Re_Landline_No.errors }" formControlName="Re_Landline_No" autocomplete="off" maxlength="11" >
+                                  </mat-form-field>
+                                  <span *ngIf="submitted11 && reference_control.Re_Landline_No.errors" class="error">
+                                      <span *ngIf="reference_control.Re_Landline_No.errors.minlength">{{ minerror }}</span>
+                                    </span>
+  
+  
+                             
+                          </div>-->
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-12 col-xl-12 mt-4">
+                        <div class="add_button_blk text-center">
+                          <button  class="btn btn-rounded btn-primary mb-4" id="ReferenceDetails_add">Add Reference</button>
+                        </div>
+                      </div>
+  
+                    </div>
+                  </form>
+                    <!--- table list new start -->
+                    <div class="form-row">
+                      <div class="col-md-12">
+                        <div class="tabl-screen1 bank-table show_Reference box_effect" >
+                          <div class="table-responsive">
+                            <table id="example" class="table my_bank_table table-bordered mb-4">
+                              <thead>
+                                <tr>
+                                  <th class="sn_width_blk">S. No</th>
+                                  <th>Name</th>
+                                  <th>Contact No</th>
+                                  <th>Relation</th>
+                                  <th>Known Since (in Yrs)</th>
+                                  <th>Occupation</th>
+                                  <th>Address</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1</td>
+                                  <td>--</td>
+                                  <td>--</td>
+                                  <td>--</td>
+                                  <td>10</td>
+                                  <td>Business</td>
+                                  <td>--</td>
+                                  <td>
+                                    <div class="action">
+                                      <a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                      </a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                      <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>--</td>
+                                  <td>--</td>
+                                  <td>--</td>
+                                  <td>15</td>
+                                  <td>Business</td>
+                                  <td>--</td>
+                                  <td>
+                                    <div class="action">
+                                      <a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                      </a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                      <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>--</td>
+                                  <td>--</td>
+                                  <td>--</td>
+                                  <td>5</td>
+                                  <td>Business</td>
+                                  <td>--</td>
+                                  <td>
+                                    <div class="action">
+                                      <a href="" class="view-icon" title="View"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                      </a> <a href="" class="edit-icon" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                      <a href="javascript:void(0);" class="delete-icon sa-warning" title="Delete"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--- table list new start ended -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Reference Details End-->
+        
+         
+
+			 
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

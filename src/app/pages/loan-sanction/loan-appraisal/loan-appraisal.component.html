@@ -1,0 +1,406 @@
+<app-senction-side-bar></app-senction-side-bar>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+				<app-lead-inform-bar></app-lead-inform-bar>
+				<!-- Loan Appraisal start-->
+				<div class="tab-pane first-tab active" id="loan_appraisal">
+					<form [formGroup]="Loan_Appraisal" (ngSubmit)="onSubmit17()">
+						<div class="box box-default my_inner_box">
+							<div class="box-body wizard-content">
+								<div class="tab-content">
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>Loan Appraisal</strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Eligibile Loan Amount" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.LS_Lo_Eligibile_Loan_Amount.errors }" formControlName="LS_Lo_Eligibile_Loan_Amount" id="LS_Lo_Eligibile_Loan_Amount" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.LS_Lo_Eligibile_Loan_Amount.errors" class="error">
+															<span *ngIf="Loan_App_control.LS_Lo_Eligibile_Loan_Amount.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											 
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-40">
+													<input matInput numbersOnly specialIsAlphaNumeric placeholder="Tenor (in Months)" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.LS_Lo_Tenure__in_Months_.errors }" formControlName="LS_Lo_Tenure__in_Months_" id="LS_Lo_Tenure__in_Months_" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.LS_Lo_Tenure__in_Months_.errors" class="error">
+															<span *ngIf="Loan_App_control.LS_Lo_Tenure__in_Months_.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Sanction  Amount" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.LS_Lo_Sanction_Loan_Amount.errors }" formControlName="LS_Lo_Sanction_Loan_Amount" id="LS_Lo_Sanction_Loan_Amount" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.LS_Lo_Sanction_Loan_Amount.errors" class="error">
+															<span *ngIf="Loan_App_control.LS_Lo_Sanction_Loan_Amount.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-3">
+													<mat-form-field class=" max-width-120">
+														<input matInput numbersOnly placeholder="Sanction  Amount (with Insurance)" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.LS_Lo_Sanction_Loan_Amount_insu.errors }" formControlName="LS_Lo_Sanction_Loan_Amount_insu" id="LS_Lo_Sanction_Loan_Amount_insu" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.LS_Lo_Sanction_Loan_Amount_insu.errors" class="error">
+																<span *ngIf="Loan_App_control.LS_Lo_Sanction_Loan_Amount_insu.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+
+												<div class="form-group col-6 col-md-6 col-xl-3">
+														<mat-form-field class=" max-width-120">
+															<input matInput numbersOnly placeholder="Balance Fee" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.LS_Lo_Sanction_Loan_balance_fee.errors }" formControlName="LS_Lo_Sanction_Loan_balance_fee" id="LS_Lo_Sanction_Loan_balance_fee" autocomplete="off" required>
+														</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.LS_Lo_Sanction_Loan_balance_fee.errors" class="error">
+																	<span *ngIf="Loan_App_control.LS_Lo_Sanction_Loan_balance_fee.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+
+										</div>
+									</div>
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>ROI</strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly specialIsAlphaNumeric placeholder="Base Rate" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Base_Rate.errors }" formControlName="ls_RO_Base_Rate" id="ls_RO_Base_Rate" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Base_Rate.errors" class="error">
+																		<span *ngIf="Loan_App_control.ls_RO_Base_Rate.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Product Spread" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Product_Spread.errors }" formControlName="ls_RO_Product_Spread" id="ls_RO_Product_Spread" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Product_Spread.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_RO_Product_Spread.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field  >
+													<input matInput placeholder="Profile Spread" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Profile_Spread.errors }" formControlName="ls_RO_Profile_Spread" id="ls_RO_Profile_Spread" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Profile_Spread.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_RO_Profile_Spread.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Profile Segment Speed" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Profile_Segment_Speed.errors }" formControlName="ls_RO_Profile_Segment_Speed" id="ls_RO_Profile_Segment_Speed" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Profile_Segment_Speed.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_RO_Profile_Segment_Speed.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Property Type Spread" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Property_Type_Spread.errors }" formControlName="ls_RO_Property_Type_Spread" id="ls_RO_Property_Type_Spread" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Property_Type_Spread.errors" class="error">
+																	<span *ngIf="Loan_App_control.ls_RO_Property_Type_Spread.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-3">
+												<mat-form-field class=" max-width-120">
+													<input matInput placeholder="Property Transaction Spread" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Property_Transaction_Spread.errors }" formControlName="ls_RO_Property_Transaction_Spread" id="ls_RO_Property_Transaction_Spread" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Property_Transaction_Spread.errors" class="error">
+																		<span *ngIf="Loan_App_control.ls_RO_Property_Transaction_Spread.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Scheme Spread" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Scheme_Spread.errors }" formControlName="ls_RO_Scheme_Spread" id="ls_RO_Scheme_Spread" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Scheme_Spread.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_RO_Scheme_Spread.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput placeholder="Deviation Spread" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Deviation_Spread.errors }" formControlName="ls_RO_Deviation_Spread" id="ls_RO_Deviation_Spread" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Deviation_Spread.errors" class="error">
+																	<span *ngIf="Loan_App_control.ls_RO_Deviation_Spread.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+
+											<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+															<mat-label>Devitation Give By</mat-label>
+															<mat-select #ls_RO_Deviation_given value="Emp 1" id="ls_RO_Deviation_given" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Deviation_given.errors }" formControlName="ls_RO_Deviation_given" autocomplete="off"  >
+															  <mat-option value="Emp 1">Emp 1</mat-option>
+															  <mat-option value="Emp 1">Emp 2</mat-option>
+															 
+															</mat-select>
+														  </mat-form-field>
+							
+														  <span *ngIf="submitted17 && Loan_App_control.ls_RO_Deviation_given .errors" class="error">
+															  <span *ngIf="Loan_App_control.ls_RO_Deviation_given.errors.required">{{ requireerror }}</span>
+													  </span> 
+											</div>
+
+
+
+
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Remarks" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Remarks.errors }" formControlName="ls_RO_Remarks" id="ls_RO_Remarks" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Remarks.errors" class="error">
+															<span *ngIf="Loan_App_control.ls_RO_Remarks.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="Final ROI" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_RO_Final_ROI.errors }" formControlName="ls_RO_Final_ROI" id="ls_RO_Final_ROI" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_RO_Final_ROI.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_RO_Final_ROI.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-1">
+												<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+												</button>
+												<label for="CPVRCU_FiringDoc">ROI Upload</label>
+											</div>
+										</div>
+									</div>
+									
+
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>INSR </strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput specialIsAlphaNumeric placeholder="INSR as per Norms" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_IN_INSR_as_per_Norms.errors }" formControlName="ls_IN_INSR_as_per_Norms" id="ls_IN_INSR_as_per_Norms" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_IN_INSR_as_per_Norms.errors" class="error">
+																			<span *ngIf="Loan_App_control.ls_IN_INSR_as_per_Norms.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="INSR Waiver" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_IN_INSR_Waiver.errors }" formControlName="ls_IN_INSR_Waiver" id="ls_IN_INSR_Waiver" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_IN_INSR_Waiver.errors" class="error">
+																	<span *ngIf="Loan_App_control.ls_IN_INSR_Waiver.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											
+												<div class="form-group col-6 col-md-6 col-xl-2">
+														<mat-form-field>
+															<input matInput numbersOnly specialIsAlphaNumeric placeholder="INSR " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_IN_INSR.errors }" formControlName="ls_IN_INSR" id="ls_IN_INSR" autocomplete="off" required>
+														</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_IN_INSR.errors" class="error">
+																			<span *ngIf="Loan_App_control.ls_IN_INSR.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+													<div class="form-group col-6 col-md-6 col-xl-2">
+															<mat-form-field class=" max-width-120">
+																<input matInput numbersOnly numbersOnly placeholder="INSR with Insurance" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_IN_INSR_with_Insurance.errors }" formControlName="ls_IN_INSR_with_Insurance" id="ls_IN_INSR_with_Insurance" autocomplete="off" required>
+															</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_IN_INSR_with_Insurance.errors" class="error">
+																				<span *ngIf="Loan_App_control.ls_IN_INSR_with_Insurance.errors.required">{{ requireerror }}</span>
+															</span>
+														</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field>
+													<input matInput placeholder="Remark " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_IN_Remark.errors }" formControlName="ls_IN_Remark" id="ls_IN_Remark" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_IN_Remark.errors" class="error">
+																	<span *ngIf="Loan_App_control.ls_IN_Remark.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-1">
+												<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+												</button>
+												<label for="CPVRCU_FiringDoc">INSR Upload</label>
+											</div>
+											
+												
+											
+										</div>
+									</div>
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>FOIR </strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput specialIsAlphaNumeric placeholder="FOIR as per Norms" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_FO_FOIR_as_per_Norms.errors }" formControlName="ls_FO_FOIR_as_per_Norms" id="ls_FO_FOIR_as_per_Norms" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_FO_FOIR_as_per_Norms.errors" class="error">
+																				<span *ngIf="Loan_App_control.ls_FO_FOIR_as_per_Norms.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="FOIR Waiver" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_FO_FOIR_Waiver.errors }" formControlName="ls_FO_FOIR_Waiver" id="ls_FO_FOIR_Waiver" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_FO_FOIR_Waiver.errors" class="error">
+																		<span *ngIf="Loan_App_control.ls_FO_FOIR_Waiver.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class=" max-width-120">
+														<input matInput numbersOnly numbersOnly placeholder="FOIR" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_FO_FOIR.errors }" formControlName="ls_FO_FOIR" id="ls_FO_FOIR" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_FO_FOIR.errors" class="error">
+																			<span *ngIf="Loan_App_control.ls_FO_FOIR.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+														<mat-form-field class=" max-width-120">
+															<input matInput numbersOnly placeholder="FOIR with Insurance" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_FO_FOIR_with_Insurance.errors }" formControlName="ls_FO_FOIR_with_Insurance" id="ls_FO_FOIR_with_Insurance" autocomplete="off" required>
+														</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_FO_FOIR_with_Insurance.errors" class="error">
+																				<span *ngIf="Loan_App_control.ls_FO_FOIR_with_Insurance.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field>
+													<input matInput specialIsAlphaNumeric placeholder="Remark " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_FO_Remark.errors }" formControlName="ls_FO_Remark" id="ls_FO_Remark" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_FO_Remark.errors" class="error">
+																		<span *ngIf="Loan_App_control.ls_FO_Remark.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-1">
+												<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+												</button>
+												<label for="CPVRCU_FiringDoc">FOIR Upload</label>
+											</div>
+											
+										</div>
+									</div>
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>LTV</strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput specialIsAlphaNumeric placeholder="LTV as per Norms" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LT_LTV_as_per_Norms.errors }" formControlName="ls_LT_LTV_as_per_Norms" id="ls_LT_LTV_as_per_Norms" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LT_LTV_as_per_Norms.errors" class="error">
+																					<span *ngIf="Loan_App_control.ls_LT_LTV_as_per_Norms.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="LTV Waiver" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LT_LTV_Waiver.errors }" formControlName="ls_LT_LTV_Waiver" id="ls_LT_LTV_Waiver" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LT_LTV_Waiver.errors" class="error">
+																			<span *ngIf="Loan_App_control.ls_LT_LTV_Waiver.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="LTV " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LT_LTV.errors }" formControlName="ls_LT_LTV" id="ls_LT_LTV" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LT_LTV.errors" class="error">
+																				<span *ngIf="Loan_App_control.ls_LT_LTV.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class=" max-width-120">
+														<input matInput numbersOnly placeholder="LTV with Insurance" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LT_LTV_with_Insurance.errors }" formControlName="ls_LT_LTV_with_Insurance" id="ls_LT_LTV_with_Insurance" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LT_LTV_with_Insurance.errors" class="error">
+																				<span *ngIf="Loan_App_control.ls_LT_LTV_with_Insurance.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+											<div class="form-group col-6 col-md-6 col-xl-3">
+												<mat-form-field>
+													<input matInput specialIsAlphaNumeric placeholder="Combined LTV Link Loan " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LT_Combined_LTV_Link_Loan.errors }" formControlName="ls_LT_Combined_LTV_Link_Loan" id="ls_LT_Combined_LTV_Link_Loan" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LT_Combined_LTV_Link_Loan.errors" class="error">
+																					<span *ngIf="Loan_App_control.ls_LT_Combined_LTV_Link_Loan.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											
+											
+											
+											
+										</div>
+										<div class="form-row">
+												<div class="form-group col-6 col-md-6 col-xl-2">
+														<mat-form-field>
+															<input matInput specialIsAlphaNumeric placeholder="Remark " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LT_Remark.errors }" formControlName="ls_LT_Remark" id="ls_LT_Remark" autocomplete="off" required>
+														</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LT_Remark.errors" class="error">
+																						<span *ngIf="Loan_App_control.ls_LT_Remark.errors.required">{{ requireerror }}</span>
+														</span>
+													</div>
+
+												<div class="form-group col-6 col-md-6 col-xl-1">
+														<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+														</button>
+														<label for="CPVRCU_FiringDoc">INSR Upload</label>
+													</div>
+										</div>
+
+										
+									</div>
+									<div class="first_blk_line form-element">
+										<h4 class="inte-box-title"><strong>LCR </strong></h4>
+										<div class="form-row">
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput placeholder="LCR as per Norms" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LC_LCR_as_per_Norms.errors }" formControlName="ls_LC_LCR_as_per_Norms" id="ls_LC_LCR_as_per_Norms" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LC_LCR_as_per_Norms.errors" class="error">
+																						<span *ngIf="Loan_App_control.ls_LC_LCR_as_per_Norms.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											<div class="form-group col-6 col-md-6 col-xl-2">
+												<mat-form-field class=" max-width-120">
+													<input matInput numbersOnly placeholder="LCR" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LC_LCR.errors }" formControlName="ls_LC_LCR" id="ls_LC_LCR" autocomplete="off" required>
+												</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LC_LCR.errors" class="error">
+																				<span *ngIf="Loan_App_control.ls_LC_LCR.errors.required">{{ requireerror }}</span>
+												</span>
+											</div>
+											
+											
+											<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field class=" max-width-120">
+														<input matInput numbersOnly placeholder="LCR with Insurance" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LC_LCR_with_Insurance.errors }" formControlName="ls_LC_LCR_with_Insurance" id="ls_LC_LCR_with_Insurance" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LC_LCR_with_Insurance.errors" class="error">
+																						<span *ngIf="Loan_App_control.ls_LC_LCR_with_Insurance.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+												<div class="form-group col-6 col-md-6 col-xl-2">
+													<mat-form-field>
+														<input matInput placeholder="Remark " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_LC_Remark.errors }" formControlName="ls_LC_Remark" id="ls_LC_Remark" autocomplete="off" required>
+													</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_LC_Remark.errors" class="error">
+																					<span *ngIf="Loan_App_control.ls_LC_Remark.errors.required">{{ requireerror }}</span>
+													</span>
+												</div>
+
+												<div class="form-group col-6 col-md-6 col-xl-1">
+														<button class="btn blue_btn uploadn-btn-news effect-16 has-content" id="CPVRCU_FiringDoc" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+														</button>
+														<label for="CPVRCU_FiringDoc">INSR Upload</label>
+													</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="first_blk_line form-element">
+									<h4 class="inte-box-title"><strong>EMI</strong></h4>
+									<div class="form-row">
+										<div class="form-group col-6 col-md-6 col-xl-2">
+											<mat-form-field class=" max-width-120">
+												<input matInput numbersOnly specialIsAlphaNumeric placeholder="EMI" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_EM_EMI.errors }" formControlName="ls_EM_EMI" id="ls_EM_EMI" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_EM_EMI.errors" class="error">
+																		<span *ngIf="Loan_App_control.ls_EM_EMI.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-6 col-md-6 col-xl-2">
+											<mat-form-field class=" max-width-120">
+												<input matInput numbersOnly placeholder="EMI with Insurance" [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_EM_EMI_with_Insurance.errors }" formControlName="ls_EM_EMI_with_Insurance" id="ls_EM_EMI_with_Insurance" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_EM_EMI_with_Insurance.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_EM_EMI_with_Insurance.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										<div class="form-group col-6 col-md-6 col-xl-2">
+											<mat-form-field>
+												<input matInput specialIsAlphaNumeric placeholder="Remark " [ngClass]="{ 'is-invalid': submitted17 && Loan_App_control.ls_EM_Remark.errors }" formControlName="ls_EM_Remark" id="ls_EM_Remark" autocomplete="off" required>
+											</mat-form-field>	<span *ngIf="submitted17 && Loan_App_control.ls_EM_Remark.errors" class="error">
+																<span *ngIf="Loan_App_control.ls_EM_Remark.errors.required">{{ requireerror }}</span>
+											</span>
+										</div>
+										 
+										 
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-button text-center">
+							<button class=" btn btn-lg btn-primary mx-1"><span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<!-- Loan Appraisal end-->
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

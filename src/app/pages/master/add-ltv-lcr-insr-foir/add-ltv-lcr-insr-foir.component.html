@@ -1,0 +1,221 @@
+<app-master-sidebar></app-master-sidebar>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<!--- new add rolle -->
+			<div class="col-md-12">
+				<div class="content-header">
+					<div class="align-items-center">
+						<div class="mr-auto">
+							<h3 class="page-title">LTV/LCR/INSR/FOIR Management</h3>
+							<div class="d-inline-block align-items-center">
+								<nav>
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a>
+										</li>
+										<li class="breadcrumb-item" aria-current="page">LTV/LCR/INSR/FOIR Management</li>
+										<li class="breadcrumb-item active" aria-current="page">Add LTV/LCR/INSR/FOIR</li>
+									</ol>
+								</nav>
+              </div>
+              <div class="pull-right">
+									<button routerLink="/master/manage_ltv_lcr_insr_foir"  class="btn btn-rounded btn-info mb-5 ncust-btn">Manage LTV/LCR/INSR/FOIR </button>  
+							</div>
+							 
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8 col-12 offset-md-2">
+					<!-- Basic Forms -->
+					<div class="box">
+						<h4 class="box-title">Add New LTV/LCR/INSR/FOIR</h4> 
+						<!-- /.box-header -->
+						<form [formGroup]="add_ltv_lcr_insr_foir" (ngSubmit)="onSubmitltv_lcr_insr_foir()">
+							<div class="box-body">
+								<div class="first_blk_line form-element">
+									<div class="form-row">
+
+                      <div class="form-group col-4 col-md-4 col-xl-3">
+                          <div >
+                              <mat-form-field class="max-width-180">
+                                  <mat-label>Norms Type</mat-label>
+                                  <mat-select #ltv_lcr_insr_foir_Norms_Type id="ltv_lcr_insr_foir_Norms_Type" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Norms_Type.errors }" formControlName="ltv_lcr_insr_foir_Norms_Type" autocomplete="off">
+                                    <mat-option value="FOIR">FOIR</mat-option>
+                                    <mat-option value="LTV">LTV</mat-option>
+                                    <mat-option value="LTV">LTV</mat-option>
+                                    <mat-option value="LCR">LCR</mat-option>
+                                    <mat-option value="INSR">INSR</mat-option>
+                                  </mat-select>
+                                </mat-form-field> 
+                                <span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Norms_Type.errors" class="error">
+                                                                  <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Norms_Type.errors.required">{{ requireerror }}</span>
+                                </span>
+     
+                          </div>
+                        </div>
+
+									  
+
+                            <div class="form-group col-md-4">
+                                <div class="input-group   max-width-150">
+                                    <mat-form-field class="date-fields">
+                                      <input matInput [matDatepicker]="ltv_lcr_insr_foir_From_Date" placeholder="From Date" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_From_Date.errors }" formControlName="ltv_lcr_insr_foir_From_Date" id="ltv_lcr_insr_foir_From_Date" readonly>
+                                      <mat-datepicker-toggle matSuffix [for]="ltv_lcr_insr_foir_From_Date"></mat-datepicker-toggle>
+                                      <mat-datepicker #ltv_lcr_insr_foir_From_Date></mat-datepicker>
+                                    </mat-form-field>	<span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_From_Date.errors" class="error">
+                                                  <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_From_Date.errors.required">{{ requireerror }}</span> </span>
+                                  </div>
+
+                                
+							  </div>
+							  
+							  <div class="form-group col-md-4">
+									<div class="input-group   max-width-150">
+										<mat-form-field class="date-fields">
+										  <input matInput [matDatepicker]="ltv_lcr_insr_foir_To_Date" placeholder="To Date" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_To_Date.errors }" formControlName="ltv_lcr_insr_foir_To_Date" id="ltv_lcr_insr_foir_To_Date" readonly>
+										  <mat-datepicker-toggle matSuffix [for]="ltv_lcr_insr_foir_To_Date"></mat-datepicker-toggle>
+										  <mat-datepicker #ltv_lcr_insr_foir_To_Date></mat-datepicker>
+										</mat-form-field>	<span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_To_Date.errors" class="error">
+													  <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_To_Date.errors.required">{{ requireerror }}</span> </span>
+									  </div>
+	
+									
+                  </div>
+                  
+
+
+ 
+								
+								<div class="form-group col-md-4">
+										<mat-form-field>
+										  <input matInput numbersOnly specialIsAlphaNumeric placeholder="Minimum Amount" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Minimum_Amount.errors }" formControlName="ltv_lcr_insr_foir_Minimum_Amount" autocomplete="off" required>
+										</mat-form-field>	<span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Minimum_Amount.errors" class="error">
+													  <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Minimum_Amount.errors.required">{{ requireerror }}</span>
+										</span>
+									  </div>
+
+
+                    <div class="form-group col-md-4">
+                        <mat-form-field>
+                          <input matInput numbersOnly specialIsAlphaNumeric placeholder="Maximum Amount" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Maximum_Amount.errors }" formControlName="ltv_lcr_insr_foir_Maximum_Amount" autocomplete="off" required>
+                        </mat-form-field>	<span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Maximum_Amount.errors" class="error">
+                                <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Maximum_Amount.errors.required">{{ requireerror }}</span>
+                        </span>
+                        </div>
+
+                        <div class="form-group col-4 col-md-4 col-xl-3">
+                            <div >
+                                <mat-form-field class="max-width-180">
+                                    <mat-label>Product name</mat-label>
+                                    <mat-select #ltv_lcr_insr_foir_Product_name id="ltv_lcr_insr_foir_Product_name" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Product_name.errors }" formControlName="ltv_lcr_insr_foir_Product_name" autocomplete="off">
+                                      <mat-option value="DSA">Home Loan</mat-option>
+                                      <mat-option value="RP">LAP</mat-option>
+                                    </mat-select>
+                                  </mat-form-field> 
+                                  <span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Product_name.errors" class="error">
+                                                                    <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Product_name.errors.required">{{ requireerror }}</span>
+                                  </span>
+       
+                            </div>
+                          </div>
+
+
+
+                        
+
+                            <div class="form-group col-md-4">
+                                <mat-form-field>
+                                  <input matInput numbersOnly  specialIsAlphaNumeric placeholder="Percentage" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Percentage.errors }" formControlName="ltv_lcr_insr_foir_Percentage" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Percentage.errors" class="error">
+                                        <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Percentage.errors.required">{{ requireerror }}</span>
+                                </span>
+                                </div>
+
+                                <div class="form-group col-4 col-md-4 col-xl-4">
+                                    <div >
+                                        <mat-form-field>
+                                            <mat-label>Profile  </mat-label>
+                                            <mat-select #ltv_lcr_insr_foir_Profile id="ltv_lcr_insr_foir_Profile" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Profile.errors }" formControlName="ltv_lcr_insr_foir_Profile" autocomplete="off">
+                                              <mat-option value="Informal">Informal</mat-option>
+                                              <mat-option value="Formal">Formal</mat-option>
+                                            </mat-select>
+                                          </mat-form-field> 
+                                          <span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Profile.errors" class="error">
+                                                                            <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Profile.errors.required">{{ requireerror }}</span>
+                                          </span>
+               
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group col-4 col-md-4 col-xl-3">
+                                      <div >
+                                          <mat-form-field>
+                                              <mat-label>Profile segment   </mat-label>
+                                              <mat-select #ltv_lcr_insr_foir_Profile_segment id="ltv_lcr_insr_foir_Profile_segment" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Profile_segment.errors }" formControlName="ltv_lcr_insr_foir_Profile_segment" autocomplete="off">
+                                                <mat-option value="Informal">Informal</mat-option>
+                                                <mat-option value="Formal">Formal</mat-option>
+                                              </mat-select>
+                                            </mat-form-field> 
+                                            <span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Profile_segment.errors" class="error">
+                                                                              <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Profile_segment.errors.required">{{ requireerror }}</span>
+                                            </span>
+                 
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group col-4 col-md-4 col-xl-3">
+                                        <div >
+                                            <mat-form-field>
+                                                <mat-label>Branch         </mat-label>
+                                                <mat-select #ltv_lcr_insr_foir_Branch id="ltv_lcr_insr_foir_Branch" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Branch.errors }" formControlName="ltv_lcr_insr_foir_Branch" autocomplete="off">
+                                                  <mat-option value="Branch">Branch</mat-option>
+                                                  <mat-option value="Branch">Branch 2</mat-option>
+                                                </mat-select>
+                                              </mat-form-field> 
+                                              <span *ngIf="submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Branch.errors" class="error">
+                                                                                <span *ngIf="add_ltv_lcr_insr_foir_control.ltv_lcr_insr_foir_Branch.errors.required">{{ requireerror }}</span>
+                                              </span>
+                   
+                                        </div>
+                                      </div>
+
+
+
+
+
+  
+										<!-- radio -->
+										<div class="form-group col-12 col-md-12 col-xl-12">
+											<div class="form-group">
+												<label>Status</label>
+												<mat-radio-group aria-label="Select an option" id="add_ltv_lcr_insr_foir_Status" [ngClass]="{ 'is-invalid': submittedltv_lcr_insr_foir && add_ltv_lcr_insr_foir_control.add_ltv_lcr_insr_foir_Status.errors }" formControlName="add_ltv_lcr_insr_foir_Status" autocomplete="off">
+													<mat-radio-button value="Active" selected>Active</mat-radio-button>
+													<br/>
+													<mat-radio-button value="In-Active">In-Active</mat-radio-button>
+												</mat-radio-group>
+											</div>
+										</div>
+									</div>
+									<!-- form-row -->
+								</div>
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-danger">Cancel</button>
+								<button id="kycadded" class="btn btn-success pull-right">Add Now</button>
+							</div>
+						</form>
+					</div>
+					<!-- /.box -->
+				</div>
+			</div>
+			<!---col-md-12 -->
+			<!--- new add rolle ended -->
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

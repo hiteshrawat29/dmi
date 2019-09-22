@@ -1,0 +1,414 @@
+<app-loan-side-bar></app-loan-side-bar>
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!--- middle content ------>
+	<!-- Main content -->
+	<section class="content based-form">
+		<div id="myWizard" class="mybasicform_blk">
+			<div class=" tabl-form-controll">
+         
+        
+        <app-lead-inform-bar></app-lead-inform-bar>
+
+				<!--Employment Info start-->
+				<div class="tab-pane first-tab active" id="employment_info">
+            <div class="box py-0 px-0 my_tab_blk">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs nav-tabs-inverse-mode" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#applicant1" role="tab">Applicant</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#co-applicant" role="tab">Co-Applicant</a>
+                </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="box-body tab-content">
+                <div class="tab-pane fade active show" id="applicant1">
+                  <div class="first_blk_line form-element">
+                    <h4 class="inte-box-title"><strong>Employment Info</strong></h4>
+                    <form [formGroup]="Employment_information" (ngSubmit)="onSubmit4()">
+                      <div class="form-row">
+                        <div class="form-group col-md-2">
+                          <div class="max-width-165">
+                            <mat-form-field>
+                              <mat-label>Profile Segment <span class="txt-red">*</span>
+                              </mat-label>
+                              <mat-select [(value)]="Ca_Profile_Segment" id="Ca_Profile_Segment" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Profile_Segment.errors }" formControlName="Ca_Profile_Segment" >
+                                <mat-option>None</mat-option>
+                                <mat-option value="Infomal">Infomal</mat-option>
+                                <mat-option value="Formal">Formal</mat-option>
+                              </mat-select>
+                            </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Profile_Segment.errors" class="error">
+                                    <span *ngIf="Employment_control.Ca_Profile_Segment.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <div class="max-width-165">
+                            <mat-form-field>
+                              <mat-label>Sub-Profile <span class="txt-red">*</span>
+                              </mat-label>
+                              <mat-select [(value)]="Ca_Sub_Profile " id="Ca_Sub_Profile " [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Sub_Profile.errors }" formControlName="Ca_Sub_Profile">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Cash_salary" >Cash salary</mat-option>
+                                <mat-option value="Assessed_Income" >Assessed Income</mat-option>
+                                <mat-option value="Bank_salary">Bank salary</mat-option>
+                                <mat-option value="Regular_ITR">Regular ITR</mat-option>
+                              </mat-select>
+                            </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Sub_Profile.errors" class="error">
+                                      <span *ngIf="Employment_control.Ca_Sub_Profile.errors.required">{{ requireerror }}</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!--<div class="Cash_salary" *ngIf="Sub_Profile == 'Cash_salary' || Sub_Profile == 'Bank_salary'">-->
+                      <div class="Cash_salary" >
+                        <div class="form-row">
+                          <div class="col-md-12">
+                            <h5 class="sub-title"><strong>Salaried</strong></h5>
+                          </div>
+                        </div>
+                        <div class="row  my_address_blk">
+                          <div class="col-md-6" style="flex: 0 0 49%;">
+                            <div class="row">
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Company Name" id="Ca_Company_Name" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Company_Name.errors }" formControlName="Ca_Company_Name" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Company_Name.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_Company_Name.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <mat-label>Sector <span class="txt-red">*</span>
+                                  </mat-label>
+                                  <mat-select [(value)]="Ca_Sector " id="Ca_Sector " [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Sector.errors }" formControlName="Ca_Sector">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Central Government">Central Government</mat-option>
+                                    <mat-option value="State Government">State Government</mat-option>
+                                    <mat-option value="Proprietorship">Proprietorship</mat-option>
+                                    <mat-option value="Partnership">Partnership</mat-option>
+                                    <mat-option value="Private Limited">Private Limited</mat-option>
+                                    <mat-option value="LLP">LLP</mat-option>
+                                    <mat-option value="Limited">Limited</mat-option>
+                                  </mat-select>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Sector.errors" class="error">
+                                                                            <span *ngIf="Employment_control.Ca_Sector.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <mat-label>Industry <span class="txt-red">*</span>
+                                  </mat-label>
+                                  <mat-select [(value)]="Ca_Industry " id="Ca_Industry " [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Industry.errors }" formControlName="Ca_Industry">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Agriculture">Agriculture</mat-option>
+                                    <mat-option value="Minning">Minning</mat-option>
+                                    <mat-option value="Manufacturing">Manufacturing</mat-option>
+                                    <mat-option value="Service">Service</mat-option>
+                                    <mat-option value="IT">IT</mat-option>
+                                    <mat-option value="Processing">Processing</mat-option>
+                                    <mat-option value="Retail">Retail</mat-option>
+                                    <mat-option value="Other">Other</mat-option>
+                                  </mat-select>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Industry.errors" class="error">
+                                                                          <span *ngIf="Employment_control.Ca_Industry.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <input matInput placeholder="Designation" id="Ca_Designation" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Designation.errors }" formControlName="Ca_Designation" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Designation.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_Designation.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput placeholder="Employee ID" id="Ca_Employee_ID" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Employee_ID.errors }" formControlName="Ca_Employee_ID" autocomplete="off">
+                                </mat-form-field>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput [matDatepicker]="Ca_Date_of_Joining" placeholder="Date of Joining" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Date_of_Joining.errors }" formControlName="Ca_Date_of_Joining" id="Ca_Date_of_Joining" readonly autocomplete="off" required>
+                                  <mat-datepicker-toggle matSuffix [for]="Ca_Date_of_Joining"></mat-datepicker-toggle>
+                                  <mat-datepicker #Ca_Date_of_Joining></mat-datepicker>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Date_of_Joining.errors" class="error">
+                                                                          <span *ngIf="Employment_control.Ca_Date_of_Joining.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field class="max-width-40">
+                                  <input matInput numbersOnly placeholder="Total Experience" id="Total Experience (in Yrs)" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Total_Experience.errors }" formControlName="Ca_Total_Experience" autocomplete="off" maxlength="3" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Total_Experience.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_Total_Experience.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field class="max-width-40">
+                                  <input matInput numbersOnly placeholder="Retirement Age" id="Ca_Retirement_Age" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Retirement_Age.errors }" formControlName="Ca_Retirement_Age" autocomplete="off" maxlength="3" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Retirement_Age.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_Retirement_Age.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-8 col-md-8 col-xl-8">
+                                <mat-form-field>
+                                  <input matInput placeholder="Official mail ID" id="Ca_Official_mail_ID" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Official_mail_ID.errors }" formControlName="Ca_Official_mail_ID" autocomplete="off">
+                                </mat-form-field> 
+                                <span *ngIf="submitted4 && Employment_control.Ca_Official_mail_ID.errors" class="error">
+                                       <span *ngIf="Employment_control.Ca_Official_mail_ID.errors.email">{{ emailerror }}</span>
+                                       <span *ngIf="Employment_control.Ca_Official_mail_ID.errors.pattern">{{ emailerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-md-12 upload_min_height">
+                                <button class="btn blue_btn mb-5 uploadn-btn-news has-content effect-16" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+                                </button>
+                                <label for="IDProof">Document Upload</label>
+                              </div>
+                              <div class="col-md-12 mb-4">
+                                <p>Income documents: Salary slip/ salary certificate, Form 16, ITR, Business registration documents</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="line" style="border-right:1px solid #aea6a6;;"></div>
+                          <div class="col-md-6 mar_top_neg_textarea" style="flex: 0 0 49%;">
+                            <div class="row">
+                              <div class="form-group col-md-12">
+                                  <mat-form-field>
+                                      <textarea matInput placeholder="Office Address" id="Ca_Office_Address" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Office_Address.errors }" formControlName="Ca_Office_Address" autocomplete="off" required></textarea>
+                                    </mat-form-field>
+                                    <span *ngIf="submitted4 && Employment_control.Ca_Office_Address.errors" class="error">
+                                        <span *ngIf="Employment_control.Ca_Office_Address.errors.required">{{ requireerror }}</span>
+</span>
+
+
+                                
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <input matInput placeholder="Landmark" id="Ca_Landmark" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Landmark.errors }" formControlName="Ca_Landmark" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Landmark.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_Landmark.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput numbersOnly placeholder="Pin Code" id="Ca_Pin_Code" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Pin_Code.errors }" formControlName="Ca_Pin_Code" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_Pin_Code.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_Pin_Code.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="City" id="Ca_City" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_City.errors }" formControlName="Ca_City" autocomplete="off">
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_City.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_City.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="District" id="Ca_District" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_District.errors }" formControlName="Ca_District" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_District.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_District.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+                                <mat-form-field>
+                                  <mat-label>State <span class="txt-red">*</span>
+                                  </mat-label>
+                                  <mat-select [(value)]="Ca_State " id="Ca_State " [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_State.errors }" formControlName="Ca_State">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Delhi">Delhi</mat-option>
+                                    <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                  </mat-select>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.Ca_State.errors" class="error">
+                                                                        <span *ngIf="Employment_control.Ca_State.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput numbersOnly placeholder="Landline No" id="Ca_Landline_No" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.Ca_Landline_No.errors }" formControlName="Ca_Landline_No" autocomplete="off">
+                                </mat-form-field>
+                                <span *ngIf="submitted4 && Employment_control.Ca_Landline_No.errors" class="error">
+                                   <span *ngIf="Employment_control.Ca_Landline_No.errors.minlength">{{ minerror }} </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Employment (SENP) Start-->
+                      <div class="Bank_salary" >
+                        <div class="form-row">
+                          <div class="col-md-12">
+                            <h5 class="sub-title"><strong>SENP</strong></h5>
+                          </div>
+                        </div>
+                        <div class="row  my_address_blk">
+                          <div class="col-md-6" style="flex: 0 0 49%;">
+                            <div class="row">
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Business Name" id="As_Business_Name" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Business_Name.errors }" formControlName="As_Business_Name" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Business_Name.errors" class="error">
+                                            <span *ngIf="Employment_control.As_Business_Name.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <mat-label>Constitution <span class="txt-red">*</span>
+                                  </mat-label>
+                                  <mat-select [(value)]="As_Constitution" id="Ca_Profile_Segment" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Constitution.errors }" formControlName="As_Constitution">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Partnership">Partnership</mat-option>
+                                    <mat-option value="Proprietorship">Proprietorship</mat-option>
+                                    <mat-option value="Proprietorship">Proprietorship</mat-option>
+                                    <mat-option value="Private Limited">Private Limited</mat-option>
+                                    <mat-option value="Limited">Limited</mat-option>
+                                    <mat-option value="LLP">LLP</mat-option>
+                                    <mat-option value="HUF">HUF</mat-option>
+                                  </mat-select>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Constitution.errors" class="error">
+                                            <span *ngIf="Employment_control.As_Constitution.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <mat-label>Industry <span class="txt-red">*</span>
+                                  </mat-label>
+                                  <mat-select [(value)]="As_Industry" id="As_Industry" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Industry.errors }" formControlName="As_Industry">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Manufacturing Unit">Manufacturing Unit</mat-option>
+                                    <mat-option value="Retail Shop">Retail Shop</mat-option>
+                                    <mat-option value="Service Shop/Center">Service Shop/Center</mat-option>
+                                    <mat-option value="Asset (Vehicle etc) on Rent">Asset (Vehicle etc) on Rent</mat-option>
+                                    <mat-option value="Contractor">Contractor</mat-option>
+                                    <mat-option value="Commision Agent">Commision Agent</mat-option>
+                                  </mat-select>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Industry.errors" class="error">
+                                            <span *ngIf="Employment_control.As_Industry.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <div class="input-group">
+                                  <mat-form-field>
+                                    <input matInput [matDatepicker]="As_Date_of_Incorporation" placeholder="Date of Incorporation *" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Date_of_Incorporation.errors }" formControlName="As_Date_of_Incorporation" id="As_Date_of_Incorporation" readonly autocomplete="off">
+                                    <mat-datepicker-toggle matSuffix [for]="As_Date_of_Incorporation"></mat-datepicker-toggle>
+                                    <mat-datepicker #As_Date_of_Incorporation></mat-datepicker>
+                                  </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Date_of_Incorporation.errors" class="error">
+                                              <span *ngIf="Employment_control.As_Date_of_Incorporation.errors.required">{{ requireerror }}</span>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="GST/VAT Registration" id="As_GST_VAT_Registration" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_GST_VAT_Registration.errors }" formControlName="As_GST_VAT_Registration" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_GST_VAT_Registration.errors" class="error">
+                                          <span *ngIf="Employment_control.As_GST_VAT_Registration.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput specialIsAlphaNumeric placeholder="Business Vinatge in Year" id="As_Business_Vinatge_in_Year" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Business_Vinatge_in_Year.errors }" formControlName="As_Business_Vinatge_in_Year" autocomplete="off" type="text" maxlength="6" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Business_Vinatge_in_Year.errors" class="error">
+                                        <span *ngIf="Employment_control.As_Business_Vinatge_in_Year.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-md-12 upload_min_height">
+                                <button class="btn blue_btn mb-5 uploadn-btn-news has-content effect-16" title="Upload Documents" data-toggle="control-sidebar"><i class="fa fa-upload" aria-hidden="true"></i>
+                                </button>
+                                <label for="IDProof">Document Upload</label>
+                              </div>
+                              <div class="col-md-12 mb-4">
+                                <p>Income documents: Salary slip/ salary certificate, Form 16, ITR, Business registration documents</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="line" style="border-right:1px solid #aea6a6;;"></div>
+                          <div class="col-md-6" style="flex: 0 0 49%;">
+                            <div class="row">
+                              <div class="form-group col-md-12">
+                                <mat-form-field>
+                                  <textarea specialIsAlphaNumeric matInput placeholder="Business Address" id="As_Business_Address"  [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Business_Address.errors }" formControlName="As_Business_Address" autocomplete="off" required></textarea>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Business_Address.errors" class="error">
+                                                                      <span *ngIf="Employment_control.As_Business_Address.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-8">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="Landmark" id="As_Landmark" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Landmark.errors }" formControlName="As_Landmark" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Landmark.errors" class="error">
+                                                                      <span *ngIf="Employment_control.As_Landmark.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-3">
+                                <mat-form-field>
+                                  <input matInput numbersOnly placeholder="Pin Code" id="As_Pin_Code" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Pin_Code.errors }" formControlName="As_Pin_Code" autocomplete="off" required maxlength="8">
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_Pin_Code.errors" class="error">
+                                                                      <span *ngIf="Employment_control.As_Pin_Code.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="City" id="As_City" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_City.errors }" formControlName="As_City" autocomplete="off">
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_City.errors" class="error">
+                                                                      <span *ngIf="Employment_control.As_City.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field>
+                                  <input matInput specialIsAlphaNumeric placeholder="District" id="As_District" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_District.errors }" formControlName="As_District" autocomplete="off" required>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_District.errors" class="error">
+                                                                      <span *ngIf="Employment_control.As_District.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4 select-wrapper">
+                                <mat-form-field>
+                                  <mat-label>State <span class="txt-red">*</span>
+                                  </mat-label>
+                                  <mat-select [(value)]="As_State " id="As_State " [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_State.errors }" formControlName="As_State" autocomplete="off">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="Delhi">Delhi</mat-option>
+                                    <mat-option value="Utter Pradesh">Utter Pradesh</mat-option>
+                                  </mat-select>
+                                </mat-form-field>	<span *ngIf="submitted4 && Employment_control.As_State.errors" class="error">
+                                            <span *ngIf="Employment_control.As_State.errors.required">{{ requireerror }}</span>
+                                </span>
+                              </div>
+                              <div class="form-group col-6 col-md-6 col-xl-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput numbersOnly placeholder="Landline No" id="As_Landline_No" [ngClass]="{ 'is-invalid': submitted4 && Employment_control.As_Landline_No.errors }" formControlName="As_Landline_No" autocomplete="off" maxlength="11">
+                                </mat-form-field>
+                                <span *ngIf="submitted4 && Employment_control.As_Landline_No.errors" class="error">
+                                    <span *ngIf="Employment_control.As_Landline_No.errors.required">{{ requireerror }}</span>
+                                    <span *ngIf="Employment_control.As_Landline_No.errors.minlength">{{ minerror }} </span>
+                                </span>
+ 
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-button text-center">
+                        <button class=" btn btn-lg btn-primary mx-1" id="next"> <span>Save &amp; Continue</span><i class="ti-angle-double-right"></i>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- Co-Applicant Employment Info start-->
+                <div class="tab-pane fade" id="co-applicant">
+                  <div class="first_blk_line form-element">
+                    <h4 class="inte-box-title"><strong>Same as Applicant</strong></h4>
+                  </div>
+                </div>
+                <!-- Co-Applicant Employment Info end-->
+              </div>
+            </div>
+          </div>
+          <!--Employment Info end-->
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
